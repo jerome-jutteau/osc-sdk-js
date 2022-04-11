@@ -31,13 +31,14 @@ osc-generate: osc-api/outscale.yaml
 	mv .sdk/package.json ./
 	mv .sdk/tsconfig.json ./
 	rm -rf .sdk
+	npm install
 
 osc-api/outscale.yaml:
 	git clone https://github.com/outscale/osc-api.git && cd osc-api && git checkout -b $(API_VERSION) $(API_VERSION)
 
 .PHONY: clean
 clean:
-	rm -rf .sdk osc-api src package.json tsconfig.json || true
+	rm -rf .sdk osc-api src package.json tsconfig.json package-lock.json node_modules dist || true
 
 .PHONY: test
 test: reuse-test examples-test
