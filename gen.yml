@@ -1,0 +1,9 @@
+# OpenAPI Generator configuration file
+npmName: outscale-api
+npmRepository: https://github.com/outscale/osc-sdk-js
+withInterfaces: true
+
+#packageName: outscale-api
+#gitUserId: outscale
+#gitRepoId: osc-sdk-go/v2
+#withAWSV4Signature: true

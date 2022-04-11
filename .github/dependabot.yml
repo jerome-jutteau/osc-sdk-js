@@ -1,0 +1,24 @@
+# https://help.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+
+version: 2
+updates:
+  - package-ecosystem: "gomod"
+    directory: "/"
+    target-branch: "v2"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "gomod"
+    directory: "/v2"
+    target-branch: "v2"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "gomod"
+    directory: "/"
+    target-branch: "v1"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "gomod"
+    directory: "/osc"
+    target-branch: "v1"
+    schedule:
+      interval: "daily"
