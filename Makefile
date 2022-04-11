@@ -30,6 +30,7 @@ osc-generate: osc-api/outscale.yaml
 	mv .sdk/src ./
 	mv .sdk/package.json ./
 	mv .sdk/tsconfig.json ./
+	rm -rf .sdk
 
 osc-api/outscale.yaml:
 	git clone https://github.com/outscale/osc-api.git && cd osc-api && git checkout -b $(API_VERSION) $(API_VERSION)
