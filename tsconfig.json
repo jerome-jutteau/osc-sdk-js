@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "declaration": true,
+    "declaration": false,
     "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
@@ -15,6 +15,7 @@
   },
   "exclude": [
     "dist",
-    "node_modules"
+    "node_modules",
+    "examples"
   ]
 }

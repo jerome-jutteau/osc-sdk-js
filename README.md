@@ -1,3 +1,6 @@
+https://openapi-generator.tech/docs/generators/typescript-fetch/
+
+
 # Outscale SDK for Javascript
 
 Welcome to Outscale SDK for [javascript](XXX)/[typescript](XXX).
