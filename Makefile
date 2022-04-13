@@ -29,7 +29,6 @@ osc-generate: osc-api/outscale.yaml
 	docker run -v $(PWD):/sdk --rm $(OPENAPI_IMG) chown -R $(USER_ID).$(GROUP_ID) /sdk/.sdk
 	mv .sdk/src ./
 	mv .sdk/package.json ./
-	mv .sdk/tsconfig.json ./
 	rm -rf .sdk
 	npm install
 
@@ -38,7 +37,7 @@ osc-api/outscale.yaml:
 
 .PHONY: clean
 clean:
-	rm -rf .sdk osc-api src package.json tsconfig.json package-lock.json node_modules dist || true
+	rm -rf .sdk osc-api src package.json package-lock.json node_modules dist || true
 
 .PHONY: test
 test: reuse-test examples-test
@@ -54,7 +53,7 @@ reuse-test:
 # try to regen, should not have any difference
 .PHONY: regen-test
 regen-test: gen
-	git add src package.json tsconfig.json
+	git add src package.json
 	git diff --cached -s --exit-code
 	git diff -s --exit-code
 
