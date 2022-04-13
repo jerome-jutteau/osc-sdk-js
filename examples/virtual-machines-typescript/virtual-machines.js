@@ -1,6 +1,7 @@
-//import { ReadVolumesRequest, ReadVolumesRequestFromJSON } from '../../src/models/ReadVolumesRequest';
-import '../../src/index';
-console.log("hello");
-let readRequest = ReadVolumesRequestFromJSON({});
-console.log(readRequest);
-//VolumeApi.readVolumes(readRequest, )
+//import { ReadVolumesRequest, ReadVolumesRequestFromJSON } from '../../dist/models/ReadVolumesRequest.js';
+import { Configuration } from "../../src";
+const configuration = new Configuration({
+    basePath: window.location.origin,
+});
+const volumeApi = new VolumesApi(configuration);
+const posts = volumeApi.getPosts();

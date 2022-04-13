@@ -1,8 +1,11 @@
-//import { ReadVolumesRequest, ReadVolumesRequestFromJSON } from '../../src/models/ReadVolumesRequest';
-import { ReadVolumesRequest, ReadVolumesRequestFromJSON } from '@osc/models/ReadVolumesRequest';
+//import { ReadVolumesRequest, ReadVolumesRequestFromJSON } from '../../dist/models/ReadVolumesRequest.js';
+import { Configuration, Volume, VolumeApi; ReadVolumesOperationRequest, ReadVolumesResponse} from "../../src";
 
-console.log("hello");
-let readRequest : ReadVolumesRequest = ReadVolumesRequestFromJSON({})
-console.log(readRequest);
+const configuration = new Configuration({
+  basePath: window.location.origin,
+});
 
-//VolumeApi.readVolumes(readRequest, )
+const volumeApi = new VolumeApi(configuration);
+
+let req: ReadVolumesOperationRequest;
+let res: Promise<ReadVolumesResponse> = volumeApi.readVolumes(req)
