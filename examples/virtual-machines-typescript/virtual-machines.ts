@@ -1,5 +1,5 @@
-import * as osc from '../../src/index';
-import * as volume from '../../src/apis/index';
+import * as osc from '../../dist/index';
+import * as volume from '../../dist/apis/index';
 
 const configuration = new osc.Configuration({
   basePath: window.location.origin,
