@@ -11,10 +11,10 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { BlockDeviceMappingVmCreationFromJSON, BlockDeviceMappingVmCreationToJSON, } from './BlockDeviceMappingVmCreation';
-import { NicForVmCreationFromJSON, NicForVmCreationToJSON, } from './NicForVmCreation';
-import { PlacementFromJSON, PlacementToJSON, } from './Placement';
+import { exists } from '../runtime.js';
+import { BlockDeviceMappingVmCreationFromJSON, BlockDeviceMappingVmCreationToJSON, } from './BlockDeviceMappingVmCreation.js';
+import { NicForVmCreationFromJSON, NicForVmCreationToJSON, } from './NicForVmCreation.js';
+import { PlacementFromJSON, PlacementToJSON, } from './Placement.js';
 /**
 * @export
 * @enum {string}

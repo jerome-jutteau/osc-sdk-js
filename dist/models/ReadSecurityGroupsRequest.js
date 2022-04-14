@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { FiltersSecurityGroupFromJSON, FiltersSecurityGroupToJSON, } from './FiltersSecurityGroup';
+import { exists } from '../runtime.js';
+import { FiltersSecurityGroupFromJSON, FiltersSecurityGroupToJSON, } from './FiltersSecurityGroup.js';
 export function ReadSecurityGroupsRequestFromJSON(json) {
     return ReadSecurityGroupsRequestFromJSONTyped(json, false);
 }

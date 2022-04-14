@@ -11,11 +11,11 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { LinkRouteTableFromJSON, LinkRouteTableToJSON, } from './LinkRouteTable';
-import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
-import { RouteFromJSON, RouteToJSON, } from './Route';
-import { RoutePropagatingVirtualGatewayFromJSON, RoutePropagatingVirtualGatewayToJSON, } from './RoutePropagatingVirtualGateway';
+import { exists } from '../runtime.js';
+import { LinkRouteTableFromJSON, LinkRouteTableToJSON, } from './LinkRouteTable.js';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag.js';
+import { RouteFromJSON, RouteToJSON, } from './Route.js';
+import { RoutePropagatingVirtualGatewayFromJSON, RoutePropagatingVirtualGatewayToJSON, } from './RoutePropagatingVirtualGateway.js';
 export function RouteTableFromJSON(json) {
     return RouteTableFromJSONTyped(json, false);
 }

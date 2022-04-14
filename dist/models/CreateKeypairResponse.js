@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { KeypairCreatedFromJSON, KeypairCreatedToJSON, } from './KeypairCreated';
-import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { exists } from '../runtime.js';
+import { KeypairCreatedFromJSON, KeypairCreatedToJSON, } from './KeypairCreated.js';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext.js';
 export function CreateKeypairResponseFromJSON(json) {
     return CreateKeypairResponseFromJSONTyped(json, false);
 }

@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
-import { SnapshotFromJSON, SnapshotToJSON, } from './Snapshot';
+import { exists } from '../runtime.js';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext.js';
+import { SnapshotFromJSON, SnapshotToJSON, } from './Snapshot.js';
 export function ReadSnapshotsResponseFromJSON(json) {
     return ReadSnapshotsResponseFromJSONTyped(json, false);
 }

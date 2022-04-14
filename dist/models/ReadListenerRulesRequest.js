@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { FiltersListenerRuleFromJSON, FiltersListenerRuleToJSON, } from './FiltersListenerRule';
+import { exists } from '../runtime.js';
+import { FiltersListenerRuleFromJSON, FiltersListenerRuleToJSON, } from './FiltersListenerRule.js';
 export function ReadListenerRulesRequestFromJSON(json) {
     return ReadListenerRulesRequestFromJSONTyped(json, false);
 }

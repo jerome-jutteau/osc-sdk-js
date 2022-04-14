@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { CaFromJSON, CaToJSON, } from './Ca';
-import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { exists } from '../runtime.js';
+import { CaFromJSON, CaToJSON, } from './Ca.js';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext.js';
 export function CreateCaResponseFromJSON(json) {
     return CreateCaResponseFromJSONTyped(json, false);
 }

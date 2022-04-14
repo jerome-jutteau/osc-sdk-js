@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { BsuToUpdateVmFromJSON, BsuToUpdateVmToJSON, } from './BsuToUpdateVm';
+import { exists } from '../runtime.js';
+import { BsuToUpdateVmFromJSON, BsuToUpdateVmToJSON, } from './BsuToUpdateVm.js';
 export function BlockDeviceMappingVmUpdateFromJSON(json) {
     return BlockDeviceMappingVmUpdateFromJSONTyped(json, false);
 }

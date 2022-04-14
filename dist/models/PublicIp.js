@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
+import { exists } from '../runtime.js';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag.js';
 export function PublicIpFromJSON(json) {
     return PublicIpFromJSONTyped(json, false);
 }

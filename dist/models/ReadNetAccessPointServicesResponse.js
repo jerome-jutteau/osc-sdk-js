@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
-import { ServiceFromJSON, ServiceToJSON, } from './Service';
+import { exists } from '../runtime.js';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext.js';
+import { ServiceFromJSON, ServiceToJSON, } from './Service.js';
 export function ReadNetAccessPointServicesResponseFromJSON(json) {
     return ReadNetAccessPointServicesResponseFromJSONTyped(json, false);
 }

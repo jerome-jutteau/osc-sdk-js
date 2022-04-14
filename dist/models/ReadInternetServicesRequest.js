@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { FiltersInternetServiceFromJSON, FiltersInternetServiceToJSON, } from './FiltersInternetService';
+import { exists } from '../runtime.js';
+import { FiltersInternetServiceFromJSON, FiltersInternetServiceToJSON, } from './FiltersInternetService.js';
 export function ReadInternetServicesRequestFromJSON(json) {
     return ReadInternetServicesRequestFromJSONTyped(json, false);
 }

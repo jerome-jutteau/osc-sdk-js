@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { AccessKeySecretKeyFromJSON, AccessKeySecretKeyToJSON, } from './AccessKeySecretKey';
-import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { exists } from '../runtime.js';
+import { AccessKeySecretKeyFromJSON, AccessKeySecretKeyToJSON, } from './AccessKeySecretKey.js';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext.js';
 export function CreateAccessKeyResponseFromJSON(json) {
     return CreateAccessKeyResponseFromJSONTyped(json, false);
 }

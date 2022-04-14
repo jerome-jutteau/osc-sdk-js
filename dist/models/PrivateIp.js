@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { LinkPublicIpFromJSON, LinkPublicIpToJSON, } from './LinkPublicIp';
+import { exists } from '../runtime.js';
+import { LinkPublicIpFromJSON, LinkPublicIpToJSON, } from './LinkPublicIp.js';
 export function PrivateIpFromJSON(json) {
     return PrivateIpFromJSONTyped(json, false);
 }

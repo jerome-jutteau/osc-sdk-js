@@ -11,11 +11,11 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { AccepterNetFromJSON, AccepterNetToJSON, } from './AccepterNet';
-import { NetPeeringStateFromJSON, NetPeeringStateToJSON, } from './NetPeeringState';
-import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
-import { SourceNetFromJSON, SourceNetToJSON, } from './SourceNet';
+import { exists } from '../runtime.js';
+import { AccepterNetFromJSON, AccepterNetToJSON, } from './AccepterNet.js';
+import { NetPeeringStateFromJSON, NetPeeringStateToJSON, } from './NetPeeringState.js';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag.js';
+import { SourceNetFromJSON, SourceNetToJSON, } from './SourceNet.js';
 export function NetPeeringFromJSON(json) {
     return NetPeeringFromJSONTyped(json, false);
 }

@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
-import { SecurityGroupFromJSON, SecurityGroupToJSON, } from './SecurityGroup';
+import { exists } from '../runtime.js';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext.js';
+import { SecurityGroupFromJSON, SecurityGroupToJSON, } from './SecurityGroup.js';
 export function CreateSecurityGroupRuleResponseFromJSON(json) {
     return CreateSecurityGroupRuleResponseFromJSONTyped(json, false);
 }

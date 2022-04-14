@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ApiAccessRuleFromJSON, ApiAccessRuleToJSON, } from './ApiAccessRule';
-import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { exists } from '../runtime.js';
+import { ApiAccessRuleFromJSON, ApiAccessRuleToJSON, } from './ApiAccessRule.js';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext.js';
 export function UpdateApiAccessRuleResponseFromJSON(json) {
     return UpdateApiAccessRuleResponseFromJSONTyped(json, false);
 }

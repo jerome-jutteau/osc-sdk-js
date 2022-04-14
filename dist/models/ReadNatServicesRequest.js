@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { FiltersNatServiceFromJSON, FiltersNatServiceToJSON, } from './FiltersNatService';
+import { exists } from '../runtime.js';
+import { FiltersNatServiceFromJSON, FiltersNatServiceToJSON, } from './FiltersNatService.js';
 export function ReadNatServicesRequestFromJSON(json) {
     return ReadNatServicesRequestFromJSONTyped(json, false);
 }

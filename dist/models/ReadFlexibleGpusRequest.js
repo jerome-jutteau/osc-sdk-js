@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { FiltersFlexibleGpuFromJSON, FiltersFlexibleGpuToJSON, } from './FiltersFlexibleGpu';
+import { exists } from '../runtime.js';
+import { FiltersFlexibleGpuFromJSON, FiltersFlexibleGpuToJSON, } from './FiltersFlexibleGpu.js';
 export function ReadFlexibleGpusRequestFromJSON(json) {
     return ReadFlexibleGpusRequestFromJSONTyped(json, false);
 }

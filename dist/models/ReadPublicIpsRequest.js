@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { FiltersPublicIpFromJSON, FiltersPublicIpToJSON, } from './FiltersPublicIp';
+import { exists } from '../runtime.js';
+import { FiltersPublicIpFromJSON, FiltersPublicIpToJSON, } from './FiltersPublicIp.js';
 export function ReadPublicIpsRequestFromJSON(json) {
     return ReadPublicIpsRequestFromJSONTyped(json, false);
 }

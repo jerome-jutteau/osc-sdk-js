@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
-import { SecurityGroupRuleFromJSON, SecurityGroupRuleToJSON, } from './SecurityGroupRule';
+import { exists } from '../runtime.js';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag.js';
+import { SecurityGroupRuleFromJSON, SecurityGroupRuleToJSON, } from './SecurityGroupRule.js';
 export function SecurityGroupFromJSON(json) {
     return SecurityGroupFromJSONTyped(json, false);
 }

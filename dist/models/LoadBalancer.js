@@ -11,14 +11,14 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { AccessLogFromJSON, AccessLogToJSON, } from './AccessLog';
-import { ApplicationStickyCookiePolicyFromJSON, ApplicationStickyCookiePolicyToJSON, } from './ApplicationStickyCookiePolicy';
-import { HealthCheckFromJSON, HealthCheckToJSON, } from './HealthCheck';
-import { ListenerFromJSON, ListenerToJSON, } from './Listener';
-import { LoadBalancerStickyCookiePolicyFromJSON, LoadBalancerStickyCookiePolicyToJSON, } from './LoadBalancerStickyCookiePolicy';
-import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
-import { SourceSecurityGroupFromJSON, SourceSecurityGroupToJSON, } from './SourceSecurityGroup';
+import { exists } from '../runtime.js';
+import { AccessLogFromJSON, AccessLogToJSON, } from './AccessLog.js';
+import { ApplicationStickyCookiePolicyFromJSON, ApplicationStickyCookiePolicyToJSON, } from './ApplicationStickyCookiePolicy.js';
+import { HealthCheckFromJSON, HealthCheckToJSON, } from './HealthCheck.js';
+import { ListenerFromJSON, ListenerToJSON, } from './Listener.js';
+import { LoadBalancerStickyCookiePolicyFromJSON, LoadBalancerStickyCookiePolicyToJSON, } from './LoadBalancerStickyCookiePolicy.js';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag.js';
+import { SourceSecurityGroupFromJSON, SourceSecurityGroupToJSON, } from './SourceSecurityGroup.js';
 export function LoadBalancerFromJSON(json) {
     return LoadBalancerFromJSONTyped(json, false);
 }

@@ -11,12 +11,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { BlockDeviceMappingCreatedFromJSON, BlockDeviceMappingCreatedToJSON, } from './BlockDeviceMappingCreated';
-import { NicLightFromJSON, NicLightToJSON, } from './NicLight';
-import { PlacementFromJSON, PlacementToJSON, } from './Placement';
-import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
-import { SecurityGroupLightFromJSON, SecurityGroupLightToJSON, } from './SecurityGroupLight';
+import { exists } from '../runtime.js';
+import { BlockDeviceMappingCreatedFromJSON, BlockDeviceMappingCreatedToJSON, } from './BlockDeviceMappingCreated.js';
+import { NicLightFromJSON, NicLightToJSON, } from './NicLight.js';
+import { PlacementFromJSON, PlacementToJSON, } from './Placement.js';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag.js';
+import { SecurityGroupLightFromJSON, SecurityGroupLightToJSON, } from './SecurityGroupLight.js';
 export function VmFromJSON(json) {
     return VmFromJSONTyped(json, false);
 }

@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { FlexibleGpuCatalogFromJSON, FlexibleGpuCatalogToJSON, } from './FlexibleGpuCatalog';
-import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { exists } from '../runtime.js';
+import { FlexibleGpuCatalogFromJSON, FlexibleGpuCatalogToJSON, } from './FlexibleGpuCatalog.js';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext.js';
 export function ReadFlexibleGpuCatalogResponseFromJSON(json) {
     return ReadFlexibleGpuCatalogResponseFromJSONTyped(json, false);
 }

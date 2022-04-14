@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { FiltersClientGatewayFromJSON, FiltersClientGatewayToJSON, } from './FiltersClientGateway';
+import { exists } from '../runtime.js';
+import { FiltersClientGatewayFromJSON, FiltersClientGatewayToJSON, } from './FiltersClientGateway.js';
 export function ReadClientGatewaysRequestFromJSON(json) {
     return ReadClientGatewaysRequestFromJSONTyped(json, false);
 }

@@ -19,8 +19,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as runtime from '../runtime';
-import { CreatePublicIpRequestToJSON, CreatePublicIpResponseFromJSON, DeletePublicIpRequestToJSON, DeletePublicIpResponseFromJSON, LinkPublicIpRequestToJSON, LinkPublicIpResponseFromJSON, ReadPublicIpRangesRequestToJSON, ReadPublicIpRangesResponseFromJSON, ReadPublicIpsRequestToJSON, ReadPublicIpsResponseFromJSON, UnlinkPublicIpRequestToJSON, UnlinkPublicIpResponseFromJSON, } from '../models';
+import * as runtime from '../runtime.js';
+import { CreatePublicIpRequestToJSON, CreatePublicIpResponseFromJSON, DeletePublicIpRequestToJSON, DeletePublicIpResponseFromJSON, LinkPublicIpRequestToJSON, LinkPublicIpResponseFromJSON, ReadPublicIpRangesRequestToJSON, ReadPublicIpRangesResponseFromJSON, ReadPublicIpsRequestToJSON, ReadPublicIpsResponseFromJSON, UnlinkPublicIpRequestToJSON, UnlinkPublicIpResponseFromJSON, } from '../models/index.js';
 /**
  *
  */

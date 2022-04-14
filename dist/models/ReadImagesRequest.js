@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { FiltersImageFromJSON, FiltersImageToJSON, } from './FiltersImage';
+import { exists } from '../runtime.js';
+import { FiltersImageFromJSON, FiltersImageToJSON, } from './FiltersImage.js';
 export function ReadImagesRequestFromJSON(json) {
     return ReadImagesRequestFromJSONTyped(json, false);
 }

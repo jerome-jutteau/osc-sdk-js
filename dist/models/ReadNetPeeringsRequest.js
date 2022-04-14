@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { FiltersNetPeeringFromJSON, FiltersNetPeeringToJSON, } from './FiltersNetPeering';
+import { exists } from '../runtime.js';
+import { FiltersNetPeeringFromJSON, FiltersNetPeeringToJSON, } from './FiltersNetPeering.js';
 export function ReadNetPeeringsRequestFromJSON(json) {
     return ReadNetPeeringsRequestFromJSONTyped(json, false);
 }

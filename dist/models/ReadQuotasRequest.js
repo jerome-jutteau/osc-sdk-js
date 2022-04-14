@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { FiltersQuotaFromJSON, FiltersQuotaToJSON, } from './FiltersQuota';
+import { exists } from '../runtime.js';
+import { FiltersQuotaFromJSON, FiltersQuotaToJSON, } from './FiltersQuota.js';
 export function ReadQuotasRequestFromJSON(json) {
     return ReadQuotasRequestFromJSONTyped(json, false);
 }

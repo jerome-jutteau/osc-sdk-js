@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
-import { PublicIpFromJSON, PublicIpToJSON, } from './PublicIp';
+import { exists } from '../runtime.js';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext.js';
+import { PublicIpFromJSON, PublicIpToJSON, } from './PublicIp.js';
 export function ReadPublicIpsResponseFromJSON(json) {
     return ReadPublicIpsResponseFromJSONTyped(json, false);
 }

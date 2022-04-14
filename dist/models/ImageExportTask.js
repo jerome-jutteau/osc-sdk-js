@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { OsuExportImageExportTaskFromJSON, OsuExportImageExportTaskToJSON, } from './OsuExportImageExportTask';
-import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
+import { exists } from '../runtime.js';
+import { OsuExportImageExportTaskFromJSON, OsuExportImageExportTaskToJSON, } from './OsuExportImageExportTask.js';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag.js';
 export function ImageExportTaskFromJSON(json) {
     return ImageExportTaskFromJSONTyped(json, false);
 }

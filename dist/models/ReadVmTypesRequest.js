@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { FiltersVmTypeFromJSON, FiltersVmTypeToJSON, } from './FiltersVmType';
+import { exists } from '../runtime.js';
+import { FiltersVmTypeFromJSON, FiltersVmTypeToJSON, } from './FiltersVmType.js';
 export function ReadVmTypesRequestFromJSON(json) {
     return ReadVmTypesRequestFromJSONTyped(json, false);
 }

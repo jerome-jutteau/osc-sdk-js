@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { LinkedVolumeFromJSON, LinkedVolumeToJSON, } from './LinkedVolume';
-import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
+import { exists } from '../runtime.js';
+import { LinkedVolumeFromJSON, LinkedVolumeToJSON, } from './LinkedVolume.js';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag.js';
 export function VolumeFromJSON(json) {
     return VolumeFromJSONTyped(json, false);
 }

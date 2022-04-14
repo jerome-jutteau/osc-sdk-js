@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { FiltersDirectLinkFromJSON, FiltersDirectLinkToJSON, } from './FiltersDirectLink';
+import { exists } from '../runtime.js';
+import { FiltersDirectLinkFromJSON, FiltersDirectLinkToJSON, } from './FiltersDirectLink.js';
 export function ReadDirectLinksRequestFromJSON(json) {
     return ReadDirectLinksRequestFromJSONTyped(json, false);
 }

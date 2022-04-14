@@ -19,8 +19,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as runtime from '../runtime';
-import { CreateNicRequestToJSON, CreateNicResponseFromJSON, DeleteNicRequestToJSON, DeleteNicResponseFromJSON, LinkNicRequestToJSON, LinkNicResponseFromJSON, LinkPrivateIpsRequestToJSON, LinkPrivateIpsResponseFromJSON, ReadNicsRequestToJSON, ReadNicsResponseFromJSON, UnlinkNicRequestToJSON, UnlinkNicResponseFromJSON, UnlinkPrivateIpsRequestToJSON, UnlinkPrivateIpsResponseFromJSON, UpdateNicRequestToJSON, UpdateNicResponseFromJSON, } from '../models';
+import * as runtime from '../runtime.js';
+import { CreateNicRequestToJSON, CreateNicResponseFromJSON, DeleteNicRequestToJSON, DeleteNicResponseFromJSON, LinkNicRequestToJSON, LinkNicResponseFromJSON, LinkPrivateIpsRequestToJSON, LinkPrivateIpsResponseFromJSON, ReadNicsRequestToJSON, ReadNicsResponseFromJSON, UnlinkNicRequestToJSON, UnlinkNicResponseFromJSON, UnlinkPrivateIpsRequestToJSON, UnlinkPrivateIpsResponseFromJSON, UpdateNicRequestToJSON, UpdateNicResponseFromJSON, } from '../models/index.js';
 /**
  *
  */

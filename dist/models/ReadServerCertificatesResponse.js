@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
-import { ServerCertificateFromJSON, ServerCertificateToJSON, } from './ServerCertificate';
+import { exists } from '../runtime.js';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext.js';
+import { ServerCertificateFromJSON, ServerCertificateToJSON, } from './ServerCertificate.js';
 export function ReadServerCertificatesResponseFromJSON(json) {
     return ReadServerCertificatesResponseFromJSONTyped(json, false);
 }

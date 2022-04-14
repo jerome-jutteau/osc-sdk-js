@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
-import { VpnConnectionFromJSON, VpnConnectionToJSON, } from './VpnConnection';
+import { exists } from '../runtime.js';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext.js';
+import { VpnConnectionFromJSON, VpnConnectionToJSON, } from './VpnConnection.js';
 export function UpdateVpnConnectionResponseFromJSON(json) {
     return UpdateVpnConnectionResponseFromJSONTyped(json, false);
 }

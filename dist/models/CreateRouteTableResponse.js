@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
-import { RouteTableFromJSON, RouteTableToJSON, } from './RouteTable';
+import { exists } from '../runtime.js';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext.js';
+import { RouteTableFromJSON, RouteTableToJSON, } from './RouteTable.js';
 export function CreateRouteTableResponseFromJSON(json) {
     return CreateRouteTableResponseFromJSONTyped(json, false);
 }

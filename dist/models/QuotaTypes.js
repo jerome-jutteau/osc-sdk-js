@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { QuotaFromJSON, QuotaToJSON, } from './Quota';
+import { exists } from '../runtime.js';
+import { QuotaFromJSON, QuotaToJSON, } from './Quota.js';
 export function QuotaTypesFromJSON(json) {
     return QuotaTypesFromJSONTyped(json, false);
 }

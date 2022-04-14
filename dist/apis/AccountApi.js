@@ -19,8 +19,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as runtime from '../runtime';
-import { CheckAuthenticationRequestToJSON, CheckAuthenticationResponseFromJSON, CreateAccountRequestToJSON, CreateAccountResponseFromJSON, ReadAccountsRequestToJSON, ReadAccountsResponseFromJSON, ReadConsumptionAccountRequestToJSON, ReadConsumptionAccountResponseFromJSON, ResetAccountPasswordRequestToJSON, ResetAccountPasswordResponseFromJSON, SendResetPasswordEmailRequestToJSON, SendResetPasswordEmailResponseFromJSON, UpdateAccountRequestToJSON, UpdateAccountResponseFromJSON, } from '../models';
+import * as runtime from '../runtime.js';
+import { CheckAuthenticationRequestToJSON, CheckAuthenticationResponseFromJSON, CreateAccountRequestToJSON, CreateAccountResponseFromJSON, ReadAccountsRequestToJSON, ReadAccountsResponseFromJSON, ReadConsumptionAccountRequestToJSON, ReadConsumptionAccountResponseFromJSON, ResetAccountPasswordRequestToJSON, ResetAccountPasswordResponseFromJSON, SendResetPasswordEmailRequestToJSON, SendResetPasswordEmailResponseFromJSON, UpdateAccountRequestToJSON, UpdateAccountResponseFromJSON, } from '../models/index.js';
 /**
  *
  */

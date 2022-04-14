@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { LoadBalancerTagFromJSON, LoadBalancerTagToJSON, } from './LoadBalancerTag';
-import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { exists } from '../runtime.js';
+import { LoadBalancerTagFromJSON, LoadBalancerTagToJSON, } from './LoadBalancerTag.js';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext.js';
 export function ReadLoadBalancerTagsResponseFromJSON(json) {
     return ReadLoadBalancerTagsResponseFromJSONTyped(json, false);
 }

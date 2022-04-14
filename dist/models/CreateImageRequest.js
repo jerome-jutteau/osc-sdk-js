@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { BlockDeviceMappingImageFromJSON, BlockDeviceMappingImageToJSON, } from './BlockDeviceMappingImage';
+import { exists } from '../runtime.js';
+import { BlockDeviceMappingImageFromJSON, BlockDeviceMappingImageToJSON, } from './BlockDeviceMappingImage.js';
 export function CreateImageRequestFromJSON(json) {
     return CreateImageRequestFromJSONTyped(json, false);
 }

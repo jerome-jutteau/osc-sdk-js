@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
-import { SubnetFromJSON, SubnetToJSON, } from './Subnet';
+import { exists } from '../runtime.js';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext.js';
+import { SubnetFromJSON, SubnetToJSON, } from './Subnet.js';
 export function CreateSubnetResponseFromJSON(json) {
     return CreateSubnetResponseFromJSONTyped(json, false);
 }

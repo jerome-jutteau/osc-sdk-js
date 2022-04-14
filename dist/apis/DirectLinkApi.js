@@ -19,8 +19,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as runtime from '../runtime';
-import { CreateDirectLinkRequestToJSON, CreateDirectLinkResponseFromJSON, DeleteDirectLinkRequestToJSON, DeleteDirectLinkResponseFromJSON, ReadDirectLinksRequestToJSON, ReadDirectLinksResponseFromJSON, } from '../models';
+import * as runtime from '../runtime.js';
+import { CreateDirectLinkRequestToJSON, CreateDirectLinkResponseFromJSON, DeleteDirectLinkRequestToJSON, DeleteDirectLinkResponseFromJSON, ReadDirectLinksRequestToJSON, ReadDirectLinksResponseFromJSON, } from '../models/index.js';
 /**
  *
  */

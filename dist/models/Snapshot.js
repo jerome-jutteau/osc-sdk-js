@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { PermissionsOnResourceFromJSON, PermissionsOnResourceToJSON, } from './PermissionsOnResource';
-import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
+import { exists } from '../runtime.js';
+import { PermissionsOnResourceFromJSON, PermissionsOnResourceToJSON, } from './PermissionsOnResource.js';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag.js';
 export function SnapshotFromJSON(json) {
     return SnapshotFromJSONTyped(json, false);
 }

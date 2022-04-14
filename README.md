@@ -1,5 +1,8 @@
 https://openapi-generator.tech/docs/generators/typescript-fetch/
 
+best thread: https://github.com/microsoft/TypeScript/issues/13422
+https://github.com/digital-loukoum/tsc-esm
+
 
 # Outscale SDK for Javascript
 

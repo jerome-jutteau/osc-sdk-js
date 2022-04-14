@@ -19,8 +19,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as runtime from '../runtime';
-import { CreateInternetServiceRequestToJSON, CreateInternetServiceResponseFromJSON, DeleteInternetServiceRequestToJSON, DeleteInternetServiceResponseFromJSON, LinkInternetServiceRequestToJSON, LinkInternetServiceResponseFromJSON, ReadInternetServicesRequestToJSON, ReadInternetServicesResponseFromJSON, UnlinkInternetServiceRequestToJSON, UnlinkInternetServiceResponseFromJSON, } from '../models';
+import * as runtime from '../runtime.js';
+import { CreateInternetServiceRequestToJSON, CreateInternetServiceResponseFromJSON, DeleteInternetServiceRequestToJSON, DeleteInternetServiceResponseFromJSON, LinkInternetServiceRequestToJSON, LinkInternetServiceResponseFromJSON, ReadInternetServicesRequestToJSON, ReadInternetServicesResponseFromJSON, UnlinkInternetServiceRequestToJSON, UnlinkInternetServiceResponseFromJSON, } from '../models/index.js';
 /**
  *
  */

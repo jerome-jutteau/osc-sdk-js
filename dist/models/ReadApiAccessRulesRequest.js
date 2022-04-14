@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { FiltersApiAccessRuleFromJSON, FiltersApiAccessRuleToJSON, } from './FiltersApiAccessRule';
+import { exists } from '../runtime.js';
+import { FiltersApiAccessRuleFromJSON, FiltersApiAccessRuleToJSON, } from './FiltersApiAccessRule.js';
 export function ReadApiAccessRulesRequestFromJSON(json) {
     return ReadApiAccessRulesRequestFromJSONTyped(json, false);
 }

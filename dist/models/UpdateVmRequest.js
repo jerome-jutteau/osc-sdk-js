@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { BlockDeviceMappingVmUpdateFromJSON, BlockDeviceMappingVmUpdateToJSON, } from './BlockDeviceMappingVmUpdate';
+import { exists } from '../runtime.js';
+import { BlockDeviceMappingVmUpdateFromJSON, BlockDeviceMappingVmUpdateToJSON, } from './BlockDeviceMappingVmUpdate.js';
 /**
 * @export
 * @enum {string}

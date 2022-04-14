@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ClientGatewayFromJSON, ClientGatewayToJSON, } from './ClientGateway';
-import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { exists } from '../runtime.js';
+import { ClientGatewayFromJSON, ClientGatewayToJSON, } from './ClientGateway.js';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext.js';
 export function ReadClientGatewaysResponseFromJSON(json) {
     return ReadClientGatewaysResponseFromJSONTyped(json, false);
 }

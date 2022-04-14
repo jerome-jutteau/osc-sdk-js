@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { AccountFromJSON, AccountToJSON, } from './Account';
-import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { exists } from '../runtime.js';
+import { AccountFromJSON, AccountToJSON, } from './Account.js';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext.js';
 export function UpdateAccountResponseFromJSON(json) {
     return UpdateAccountResponseFromJSONTyped(json, false);
 }

@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
-import { NetToVirtualGatewayLinkFromJSON, NetToVirtualGatewayLinkToJSON, } from './NetToVirtualGatewayLink';
+import { exists } from '../runtime.js';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext.js';
+import { NetToVirtualGatewayLinkFromJSON, NetToVirtualGatewayLinkToJSON, } from './NetToVirtualGatewayLink.js';
 export function LinkVirtualGatewayResponseFromJSON(json) {
     return LinkVirtualGatewayResponseFromJSONTyped(json, false);
 }

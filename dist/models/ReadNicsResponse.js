@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
-import { NicFromJSON, NicToJSON, } from './Nic';
+import { exists } from '../runtime.js';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext.js';
+import { NicFromJSON, NicToJSON, } from './Nic.js';
 export function ReadNicsResponseFromJSON(json) {
     return ReadNicsResponseFromJSONTyped(json, false);
 }

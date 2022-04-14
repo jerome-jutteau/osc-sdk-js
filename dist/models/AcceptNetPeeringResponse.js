@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
-import { NetPeeringFromJSON, NetPeeringToJSON, } from './NetPeering';
+import { exists } from '../runtime.js';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext.js';
+import { NetPeeringFromJSON, NetPeeringToJSON, } from './NetPeering.js';
 export function AcceptNetPeeringResponseFromJSON(json) {
     return AcceptNetPeeringResponseFromJSONTyped(json, false);
 }

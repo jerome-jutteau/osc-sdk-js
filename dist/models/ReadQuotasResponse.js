@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
-import { QuotaTypesFromJSON, QuotaTypesToJSON, } from './QuotaTypes';
+import { exists } from '../runtime.js';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext.js';
+import { QuotaTypesFromJSON, QuotaTypesToJSON, } from './QuotaTypes.js';
 export function ReadQuotasResponseFromJSON(json) {
     return ReadQuotasResponseFromJSONTyped(json, false);
 }

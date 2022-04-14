@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ConsumptionEntryFromJSON, ConsumptionEntryToJSON, } from './ConsumptionEntry';
-import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { exists } from '../runtime.js';
+import { ConsumptionEntryFromJSON, ConsumptionEntryToJSON, } from './ConsumptionEntry.js';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext.js';
 export function ReadConsumptionAccountResponseFromJSON(json) {
     return ReadConsumptionAccountResponseFromJSONTyped(json, false);
 }

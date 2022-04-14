@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ImageExportTaskFromJSON, ImageExportTaskToJSON, } from './ImageExportTask';
-import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { exists } from '../runtime.js';
+import { ImageExportTaskFromJSON, ImageExportTaskToJSON, } from './ImageExportTask.js';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext.js';
 export function ReadImageExportTasksResponseFromJSON(json) {
     return ReadImageExportTasksResponseFromJSONTyped(json, false);
 }

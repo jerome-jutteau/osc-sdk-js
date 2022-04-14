@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { LocationFromJSON, LocationToJSON, } from './Location';
-import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { exists } from '../runtime.js';
+import { LocationFromJSON, LocationToJSON, } from './Location.js';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext.js';
 export function ReadLocationsResponseFromJSON(json) {
     return ReadLocationsResponseFromJSONTyped(json, false);
 }

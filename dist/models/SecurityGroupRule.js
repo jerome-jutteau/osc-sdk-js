@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { SecurityGroupsMemberFromJSON, SecurityGroupsMemberToJSON, } from './SecurityGroupsMember';
+import { exists } from '../runtime.js';
+import { SecurityGroupsMemberFromJSON, SecurityGroupsMemberToJSON, } from './SecurityGroupsMember.js';
 export function SecurityGroupRuleFromJSON(json) {
     return SecurityGroupRuleFromJSONTyped(json, false);
 }

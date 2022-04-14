@@ -11,10 +11,10 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
-import { RouteLightFromJSON, RouteLightToJSON, } from './RouteLight';
-import { VpnOptionsFromJSON, VpnOptionsToJSON, } from './VpnOptions';
+import { exists } from '../runtime.js';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag.js';
+import { RouteLightFromJSON, RouteLightToJSON, } from './RouteLight.js';
+import { VpnOptionsFromJSON, VpnOptionsToJSON, } from './VpnOptions.js';
 export function VpnConnectionFromJSON(json) {
     return VpnConnectionFromJSONTyped(json, false);
 }

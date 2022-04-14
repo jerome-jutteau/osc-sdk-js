@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { FiltersVpnConnectionFromJSON, FiltersVpnConnectionToJSON, } from './FiltersVpnConnection';
+import { exists } from '../runtime.js';
+import { FiltersVpnConnectionFromJSON, FiltersVpnConnectionToJSON, } from './FiltersVpnConnection.js';
 export function ReadVpnConnectionsRequestFromJSON(json) {
     return ReadVpnConnectionsRequestFromJSONTyped(json, false);
 }

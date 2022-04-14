@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { FiltersSnapshotFromJSON, FiltersSnapshotToJSON, } from './FiltersSnapshot';
+import { exists } from '../runtime.js';
+import { FiltersSnapshotFromJSON, FiltersSnapshotToJSON, } from './FiltersSnapshot.js';
 export function ReadSnapshotsRequestFromJSON(json) {
     return ReadSnapshotsRequestFromJSONTyped(json, false);
 }

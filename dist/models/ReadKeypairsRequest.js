@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { FiltersKeypairFromJSON, FiltersKeypairToJSON, } from './FiltersKeypair';
+import { exists } from '../runtime.js';
+import { FiltersKeypairFromJSON, FiltersKeypairToJSON, } from './FiltersKeypair.js';
 export function ReadKeypairsRequestFromJSON(json) {
     return ReadKeypairsRequestFromJSONTyped(json, false);
 }

@@ -11,7 +11,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+import { exists } from '../runtime.js';
 export function Phase1OptionsFromJSON(json) {
     return Phase1OptionsFromJSONTyped(json, false);
 }

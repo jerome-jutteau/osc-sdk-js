@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
-import { TagFromJSON, TagToJSON, } from './Tag';
+import { exists } from '../runtime.js';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext.js';
+import { TagFromJSON, TagToJSON, } from './Tag.js';
 export function ReadTagsResponseFromJSON(json) {
     return ReadTagsResponseFromJSONTyped(json, false);
 }

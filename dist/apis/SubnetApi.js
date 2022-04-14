@@ -19,8 +19,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as runtime from '../runtime';
-import { CreateSubnetRequestToJSON, CreateSubnetResponseFromJSON, DeleteSubnetRequestToJSON, DeleteSubnetResponseFromJSON, ReadSubnetsRequestToJSON, ReadSubnetsResponseFromJSON, UpdateSubnetRequestToJSON, UpdateSubnetResponseFromJSON, } from '../models';
+import * as runtime from '../runtime.js';
+import { CreateSubnetRequestToJSON, CreateSubnetResponseFromJSON, DeleteSubnetRequestToJSON, DeleteSubnetResponseFromJSON, ReadSubnetsRequestToJSON, ReadSubnetsResponseFromJSON, UpdateSubnetRequestToJSON, UpdateSubnetResponseFromJSON, } from '../models/index.js';
 /**
  *
  */

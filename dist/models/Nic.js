@@ -11,12 +11,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { LinkNicFromJSON, LinkNicToJSON, } from './LinkNic';
-import { LinkPublicIpFromJSON, LinkPublicIpToJSON, } from './LinkPublicIp';
-import { PrivateIpFromJSON, PrivateIpToJSON, } from './PrivateIp';
-import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
-import { SecurityGroupLightFromJSON, SecurityGroupLightToJSON, } from './SecurityGroupLight';
+import { exists } from '../runtime.js';
+import { LinkNicFromJSON, LinkNicToJSON, } from './LinkNic.js';
+import { LinkPublicIpFromJSON, LinkPublicIpToJSON, } from './LinkPublicIp.js';
+import { PrivateIpFromJSON, PrivateIpToJSON, } from './PrivateIp.js';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag.js';
+import { SecurityGroupLightFromJSON, SecurityGroupLightToJSON, } from './SecurityGroupLight.js';
 export function NicFromJSON(json) {
     return NicFromJSONTyped(json, false);
 }

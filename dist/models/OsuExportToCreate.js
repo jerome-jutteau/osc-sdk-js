@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { OsuApiKeyFromJSON, OsuApiKeyToJSON, } from './OsuApiKey';
+import { exists } from '../runtime.js';
+import { OsuApiKeyFromJSON, OsuApiKeyToJSON, } from './OsuApiKey.js';
 export function OsuExportToCreateFromJSON(json) {
     return OsuExportToCreateFromJSONTyped(json, false);
 }

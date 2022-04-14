@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { LoadBalancerFromJSON, LoadBalancerToJSON, } from './LoadBalancer';
-import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { exists } from '../runtime.js';
+import { LoadBalancerFromJSON, LoadBalancerToJSON, } from './LoadBalancer.js';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext.js';
 export function DeleteLoadBalancerListenersResponseFromJSON(json) {
     return DeleteLoadBalancerListenersResponseFromJSONTyped(json, false);
 }

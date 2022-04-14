@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { AccessLogFromJSON, AccessLogToJSON, } from './AccessLog';
-import { HealthCheckFromJSON, HealthCheckToJSON, } from './HealthCheck';
+import { exists } from '../runtime.js';
+import { AccessLogFromJSON, AccessLogToJSON, } from './AccessLog.js';
+import { HealthCheckFromJSON, HealthCheckToJSON, } from './HealthCheck.js';
 export function UpdateLoadBalancerRequestFromJSON(json) {
     return UpdateLoadBalancerRequestFromJSONTyped(json, false);
 }

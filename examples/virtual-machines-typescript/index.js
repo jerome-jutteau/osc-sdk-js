@@ -1,5 +1,5 @@
-import { Configuration, BaseAPI } from "osc";
-import { VolumeApi } from "osc/apis";
+import { Configuration, BaseAPI } from "../../dist/index.js";
+import { VolumeApi } from "../../dist/apis/index.js";
 let configuration = new Configuration();
 let api = new BaseAPI(configuration);
 let v = new VolumeApi(configuration);

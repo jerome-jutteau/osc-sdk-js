@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ErrorsFromJSON, ErrorsToJSON, } from './Errors';
-import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { exists } from '../runtime.js';
+import { ErrorsFromJSON, ErrorsToJSON, } from './Errors.js';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext.js';
 export function ErrorResponseFromJSON(json) {
     return ErrorResponseFromJSONTyped(json, false);
 }

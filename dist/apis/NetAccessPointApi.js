@@ -19,8 +19,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as runtime from '../runtime';
-import { CreateNetAccessPointRequestToJSON, CreateNetAccessPointResponseFromJSON, DeleteNetAccessPointRequestToJSON, DeleteNetAccessPointResponseFromJSON, ReadNetAccessPointServicesRequestToJSON, ReadNetAccessPointServicesResponseFromJSON, ReadNetAccessPointsRequestToJSON, ReadNetAccessPointsResponseFromJSON, UpdateNetAccessPointRequestToJSON, UpdateNetAccessPointResponseFromJSON, } from '../models';
+import * as runtime from '../runtime.js';
+import { CreateNetAccessPointRequestToJSON, CreateNetAccessPointResponseFromJSON, DeleteNetAccessPointRequestToJSON, DeleteNetAccessPointResponseFromJSON, ReadNetAccessPointServicesRequestToJSON, ReadNetAccessPointServicesResponseFromJSON, ReadNetAccessPointsRequestToJSON, ReadNetAccessPointsResponseFromJSON, UpdateNetAccessPointRequestToJSON, UpdateNetAccessPointResponseFromJSON, } from '../models/index.js';
 /**
  *
  */

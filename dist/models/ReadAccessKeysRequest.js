@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { FiltersAccessKeysFromJSON, FiltersAccessKeysToJSON, } from './FiltersAccessKeys';
+import { exists } from '../runtime.js';
+import { FiltersAccessKeysFromJSON, FiltersAccessKeysToJSON, } from './FiltersAccessKeys.js';
 export function ReadAccessKeysRequestFromJSON(json) {
     return ReadAccessKeysRequestFromJSONTyped(json, false);
 }

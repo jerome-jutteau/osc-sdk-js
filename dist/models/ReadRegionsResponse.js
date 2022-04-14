@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
-import { RegionFromJSON, RegionToJSON, } from './Region';
+import { exists } from '../runtime.js';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext.js';
+import { RegionFromJSON, RegionToJSON, } from './Region.js';
 export function ReadRegionsResponseFromJSON(json) {
     return ReadRegionsResponseFromJSONTyped(json, false);
 }

@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { FiltersNicFromJSON, FiltersNicToJSON, } from './FiltersNic';
+import { exists } from '../runtime.js';
+import { FiltersNicFromJSON, FiltersNicToJSON, } from './FiltersNic.js';
 export function ReadNicsRequestFromJSON(json) {
     return ReadNicsRequestFromJSONTyped(json, false);
 }

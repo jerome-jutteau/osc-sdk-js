@@ -19,8 +19,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as runtime from '../runtime';
-import { CreateVmsRequestToJSON, CreateVmsResponseFromJSON, DeleteVmsRequestToJSON, DeleteVmsResponseFromJSON, ReadAdminPasswordRequestToJSON, ReadAdminPasswordResponseFromJSON, ReadConsoleOutputRequestToJSON, ReadConsoleOutputResponseFromJSON, ReadVmTypesRequestToJSON, ReadVmTypesResponseFromJSON, ReadVmsRequestToJSON, ReadVmsResponseFromJSON, ReadVmsStateRequestToJSON, ReadVmsStateResponseFromJSON, RebootVmsRequestToJSON, RebootVmsResponseFromJSON, StartVmsRequestToJSON, StartVmsResponseFromJSON, StopVmsRequestToJSON, StopVmsResponseFromJSON, UpdateVmRequestToJSON, UpdateVmResponseFromJSON, } from '../models';
+import * as runtime from '../runtime.js';
+import { CreateVmsRequestToJSON, CreateVmsResponseFromJSON, DeleteVmsRequestToJSON, DeleteVmsResponseFromJSON, ReadAdminPasswordRequestToJSON, ReadAdminPasswordResponseFromJSON, ReadConsoleOutputRequestToJSON, ReadConsoleOutputResponseFromJSON, ReadVmTypesRequestToJSON, ReadVmTypesResponseFromJSON, ReadVmsRequestToJSON, ReadVmsResponseFromJSON, ReadVmsStateRequestToJSON, ReadVmsStateResponseFromJSON, RebootVmsRequestToJSON, RebootVmsResponseFromJSON, StartVmsRequestToJSON, StartVmsResponseFromJSON, StopVmsRequestToJSON, StopVmsResponseFromJSON, UpdateVmRequestToJSON, UpdateVmResponseFromJSON, } from '../models/index.js';
 /**
  *
  */

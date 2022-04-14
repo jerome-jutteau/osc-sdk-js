@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { DirectLinkFromJSON, DirectLinkToJSON, } from './DirectLink';
-import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { exists } from '../runtime.js';
+import { DirectLinkFromJSON, DirectLinkToJSON, } from './DirectLink.js';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext.js';
 export function ReadDirectLinksResponseFromJSON(json) {
     return ReadDirectLinksResponseFromJSONTyped(json, false);
 }

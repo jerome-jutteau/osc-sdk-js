@@ -11,7 +11,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+import { exists } from '../runtime.js';
 export function PermissionsOnResourceFromJSON(json) {
     return PermissionsOnResourceFromJSONTyped(json, false);
 }

@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { FiltersTagFromJSON, FiltersTagToJSON, } from './FiltersTag';
+import { exists } from '../runtime.js';
+import { FiltersTagFromJSON, FiltersTagToJSON, } from './FiltersTag.js';
 export function ReadTagsRequestFromJSON(json) {
     return ReadTagsRequestFromJSONTyped(json, false);
 }

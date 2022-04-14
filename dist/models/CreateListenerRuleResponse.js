@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ListenerRuleFromJSON, ListenerRuleToJSON, } from './ListenerRule';
-import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { exists } from '../runtime.js';
+import { ListenerRuleFromJSON, ListenerRuleToJSON, } from './ListenerRule.js';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext.js';
 export function CreateListenerRuleResponseFromJSON(json) {
     return CreateListenerRuleResponseFromJSONTyped(json, false);
 }

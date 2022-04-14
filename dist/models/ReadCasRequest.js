@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { FiltersCaFromJSON, FiltersCaToJSON, } from './FiltersCa';
+import { exists } from '../runtime.js';
+import { FiltersCaFromJSON, FiltersCaToJSON, } from './FiltersCa.js';
 export function ReadCasRequestFromJSON(json) {
     return ReadCasRequestFromJSONTyped(json, false);
 }

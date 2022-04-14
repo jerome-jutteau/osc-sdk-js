@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { PrivateIpLightFromJSON, PrivateIpLightToJSON, } from './PrivateIpLight';
+import { exists } from '../runtime.js';
+import { PrivateIpLightFromJSON, PrivateIpLightToJSON, } from './PrivateIpLight.js';
 export function CreateNicRequestFromJSON(json) {
     return CreateNicRequestFromJSONTyped(json, false);
 }

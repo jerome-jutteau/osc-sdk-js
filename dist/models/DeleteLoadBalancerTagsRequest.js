@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ResourceLoadBalancerTagFromJSON, ResourceLoadBalancerTagToJSON, } from './ResourceLoadBalancerTag';
+import { exists } from '../runtime.js';
+import { ResourceLoadBalancerTagFromJSON, ResourceLoadBalancerTagToJSON, } from './ResourceLoadBalancerTag.js';
 export function DeleteLoadBalancerTagsRequestFromJSON(json) {
     return DeleteLoadBalancerTagsRequestFromJSONTyped(json, false);
 }

@@ -19,8 +19,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as runtime from '../runtime';
-import { CreateListenerRuleRequestToJSON, CreateListenerRuleResponseFromJSON, CreateLoadBalancerListenersRequestToJSON, CreateLoadBalancerListenersResponseFromJSON, DeleteListenerRuleRequestToJSON, DeleteListenerRuleResponseFromJSON, DeleteLoadBalancerListenersRequestToJSON, DeleteLoadBalancerListenersResponseFromJSON, ReadListenerRulesRequestToJSON, ReadListenerRulesResponseFromJSON, UpdateListenerRuleRequestToJSON, UpdateListenerRuleResponseFromJSON, } from '../models';
+import * as runtime from '../runtime.js';
+import { CreateListenerRuleRequestToJSON, CreateListenerRuleResponseFromJSON, CreateLoadBalancerListenersRequestToJSON, CreateLoadBalancerListenersResponseFromJSON, DeleteListenerRuleRequestToJSON, DeleteListenerRuleResponseFromJSON, DeleteLoadBalancerListenersRequestToJSON, DeleteLoadBalancerListenersResponseFromJSON, ReadListenerRulesRequestToJSON, ReadListenerRulesResponseFromJSON, UpdateListenerRuleRequestToJSON, UpdateListenerRuleResponseFromJSON, } from '../models/index.js';
 /**
  *
  */

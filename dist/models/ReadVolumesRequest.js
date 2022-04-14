@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { FiltersVolumeFromJSON, FiltersVolumeToJSON, } from './FiltersVolume';
+import { exists } from '../runtime.js';
+import { FiltersVolumeFromJSON, FiltersVolumeToJSON, } from './FiltersVolume.js';
 export function ReadVolumesRequestFromJSON(json) {
     return ReadVolumesRequestFromJSONTyped(json, false);
 }

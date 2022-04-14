@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { OsuExportToCreateFromJSON, OsuExportToCreateToJSON, } from './OsuExportToCreate';
+import { exists } from '../runtime.js';
+import { OsuExportToCreateFromJSON, OsuExportToCreateToJSON, } from './OsuExportToCreate.js';
 export function CreateSnapshotExportTaskRequestFromJSON(json) {
     return CreateSnapshotExportTaskRequestFromJSONTyped(json, false);
 }

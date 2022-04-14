@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { MaintenanceEventFromJSON, MaintenanceEventToJSON, } from './MaintenanceEvent';
+import { exists } from '../runtime.js';
+import { MaintenanceEventFromJSON, MaintenanceEventToJSON, } from './MaintenanceEvent.js';
 export function VmStatesFromJSON(json) {
     return VmStatesFromJSONTyped(json, false);
 }

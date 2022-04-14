@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { FiltersNetAccessPointFromJSON, FiltersNetAccessPointToJSON, } from './FiltersNetAccessPoint';
+import { exists } from '../runtime.js';
+import { FiltersNetAccessPointFromJSON, FiltersNetAccessPointToJSON, } from './FiltersNetAccessPoint.js';
 export function ReadNetAccessPointsRequestFromJSON(json) {
     return ReadNetAccessPointsRequestFromJSONTyped(json, false);
 }

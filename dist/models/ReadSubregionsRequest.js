@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { FiltersSubregionFromJSON, FiltersSubregionToJSON, } from './FiltersSubregion';
+import { exists } from '../runtime.js';
+import { FiltersSubregionFromJSON, FiltersSubregionToJSON, } from './FiltersSubregion.js';
 export function ReadSubregionsRequestFromJSON(json) {
     return ReadSubregionsRequestFromJSONTyped(json, false);
 }

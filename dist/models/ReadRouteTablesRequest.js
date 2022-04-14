@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { FiltersRouteTableFromJSON, FiltersRouteTableToJSON, } from './FiltersRouteTable';
+import { exists } from '../runtime.js';
+import { FiltersRouteTableFromJSON, FiltersRouteTableToJSON, } from './FiltersRouteTable.js';
 export function ReadRouteTablesRequestFromJSON(json) {
     return ReadRouteTablesRequestFromJSONTyped(json, false);
 }

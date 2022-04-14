@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { InternetServiceFromJSON, InternetServiceToJSON, } from './InternetService';
-import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { exists } from '../runtime.js';
+import { InternetServiceFromJSON, InternetServiceToJSON, } from './InternetService.js';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext.js';
 export function ReadInternetServicesResponseFromJSON(json) {
     return ReadInternetServicesResponseFromJSONTyped(json, false);
 }

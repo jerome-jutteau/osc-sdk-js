@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
-import { VolumeFromJSON, VolumeToJSON, } from './Volume';
+import { exists } from '../runtime.js';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext.js';
+import { VolumeFromJSON, VolumeToJSON, } from './Volume.js';
 export function UpdateVolumeResponseFromJSON(json) {
     return UpdateVolumeResponseFromJSONTyped(json, false);
 }

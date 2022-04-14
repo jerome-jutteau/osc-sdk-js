@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { Phase1OptionsFromJSON, Phase1OptionsToJSON, } from './Phase1Options';
-import { Phase2OptionsFromJSON, Phase2OptionsToJSON, } from './Phase2Options';
+import { exists } from '../runtime.js';
+import { Phase1OptionsFromJSON, Phase1OptionsToJSON, } from './Phase1Options.js';
+import { Phase2OptionsFromJSON, Phase2OptionsToJSON, } from './Phase2Options.js';
 export function VpnOptionsFromJSON(json) {
     return VpnOptionsFromJSONTyped(json, false);
 }

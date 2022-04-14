@@ -11,11 +11,11 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { BlockDeviceMappingImageFromJSON, BlockDeviceMappingImageToJSON, } from './BlockDeviceMappingImage';
-import { PermissionsOnResourceFromJSON, PermissionsOnResourceToJSON, } from './PermissionsOnResource';
-import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
-import { StateCommentFromJSON, StateCommentToJSON, } from './StateComment';
+import { exists } from '../runtime.js';
+import { BlockDeviceMappingImageFromJSON, BlockDeviceMappingImageToJSON, } from './BlockDeviceMappingImage.js';
+import { PermissionsOnResourceFromJSON, PermissionsOnResourceToJSON, } from './PermissionsOnResource.js';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag.js';
+import { StateCommentFromJSON, StateCommentToJSON, } from './StateComment.js';
 export function ImageFromJSON(json) {
     return ImageFromJSONTyped(json, false);
 }

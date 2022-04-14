@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { FiltersLoadBalancerFromJSON, FiltersLoadBalancerToJSON, } from './FiltersLoadBalancer';
+import { exists } from '../runtime.js';
+import { FiltersLoadBalancerFromJSON, FiltersLoadBalancerToJSON, } from './FiltersLoadBalancer.js';
 export function ReadLoadBalancersRequestFromJSON(json) {
     return ReadLoadBalancersRequestFromJSONTyped(json, false);
 }

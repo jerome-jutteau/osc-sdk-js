@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ListenerRuleForCreationFromJSON, ListenerRuleForCreationToJSON, } from './ListenerRuleForCreation';
-import { LoadBalancerLightFromJSON, LoadBalancerLightToJSON, } from './LoadBalancerLight';
+import { exists } from '../runtime.js';
+import { ListenerRuleForCreationFromJSON, ListenerRuleForCreationToJSON, } from './ListenerRuleForCreation.js';
+import { LoadBalancerLightFromJSON, LoadBalancerLightToJSON, } from './LoadBalancerLight.js';
 export function CreateListenerRuleRequestFromJSON(json) {
     return CreateListenerRuleRequestFromJSONTyped(json, false);
 }

@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { NetToVirtualGatewayLinkFromJSON, NetToVirtualGatewayLinkToJSON, } from './NetToVirtualGatewayLink';
-import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
+import { exists } from '../runtime.js';
+import { NetToVirtualGatewayLinkFromJSON, NetToVirtualGatewayLinkToJSON, } from './NetToVirtualGatewayLink.js';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag.js';
 export function VirtualGatewayFromJSON(json) {
     return VirtualGatewayFromJSONTyped(json, false);
 }

@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { BsuCreatedFromJSON, BsuCreatedToJSON, } from './BsuCreated';
+import { exists } from '../runtime.js';
+import { BsuCreatedFromJSON, BsuCreatedToJSON, } from './BsuCreated.js';
 export function BlockDeviceMappingCreatedFromJSON(json) {
     return BlockDeviceMappingCreatedFromJSONTyped(json, false);
 }

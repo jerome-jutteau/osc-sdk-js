@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { LinkPublicIpLightForVmFromJSON, LinkPublicIpLightForVmToJSON, } from './LinkPublicIpLightForVm';
+import { exists } from '../runtime.js';
+import { LinkPublicIpLightForVmFromJSON, LinkPublicIpLightForVmToJSON, } from './LinkPublicIpLightForVm.js';
 export function PrivateIpLightForVmFromJSON(json) {
     return PrivateIpLightForVmFromJSONTyped(json, false);
 }

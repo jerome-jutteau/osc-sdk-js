@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { FiltersVirtualGatewayFromJSON, FiltersVirtualGatewayToJSON, } from './FiltersVirtualGateway';
+import { exists } from '../runtime.js';
+import { FiltersVirtualGatewayFromJSON, FiltersVirtualGatewayToJSON, } from './FiltersVirtualGateway.js';
 export function ReadVirtualGatewaysRequestFromJSON(json) {
     return ReadVirtualGatewaysRequestFromJSONTyped(json, false);
 }

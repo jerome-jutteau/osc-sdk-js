@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ListenerForCreationFromJSON, ListenerForCreationToJSON, } from './ListenerForCreation';
-import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
+import { exists } from '../runtime.js';
+import { ListenerForCreationFromJSON, ListenerForCreationToJSON, } from './ListenerForCreation.js';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag.js';
 export function CreateLoadBalancerRequestFromJSON(json) {
     return CreateLoadBalancerRequestFromJSONTyped(json, false);
 }

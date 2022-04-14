@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { DhcpOptionsSetFromJSON, DhcpOptionsSetToJSON, } from './DhcpOptionsSet';
-import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { exists } from '../runtime.js';
+import { DhcpOptionsSetFromJSON, DhcpOptionsSetToJSON, } from './DhcpOptionsSet.js';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext.js';
 export function ReadDhcpOptionsResponseFromJSON(json) {
     return ReadDhcpOptionsResponseFromJSONTyped(json, false);
 }

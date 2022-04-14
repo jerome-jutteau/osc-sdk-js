@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { FiltersApiLogFromJSON, FiltersApiLogToJSON, } from './FiltersApiLog';
-import { WithFromJSON, WithToJSON, } from './With';
+import { exists } from '../runtime.js';
+import { FiltersApiLogFromJSON, FiltersApiLogToJSON, } from './FiltersApiLog.js';
+import { WithFromJSON, WithToJSON, } from './With.js';
 export function ReadApiLogsRequestFromJSON(json) {
     return ReadApiLogsRequestFromJSONTyped(json, false);
 }

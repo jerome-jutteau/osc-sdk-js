@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { LogFromJSON, LogToJSON, } from './Log';
-import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { exists } from '../runtime.js';
+import { LogFromJSON, LogToJSON, } from './Log.js';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext.js';
 export function ReadApiLogsResponseFromJSON(json) {
     return ReadApiLogsResponseFromJSONTyped(json, false);
 }

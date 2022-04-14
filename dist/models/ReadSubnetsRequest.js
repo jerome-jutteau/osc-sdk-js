@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { FiltersSubnetFromJSON, FiltersSubnetToJSON, } from './FiltersSubnet';
+import { exists } from '../runtime.js';
+import { FiltersSubnetFromJSON, FiltersSubnetToJSON, } from './FiltersSubnet.js';
 export function ReadSubnetsRequestFromJSON(json) {
     return ReadSubnetsRequestFromJSONTyped(json, false);
 }

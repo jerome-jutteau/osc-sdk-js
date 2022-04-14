@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { FiltersDhcpOptionsFromJSON, FiltersDhcpOptionsToJSON, } from './FiltersDhcpOptions';
+import { exists } from '../runtime.js';
+import { FiltersDhcpOptionsFromJSON, FiltersDhcpOptionsToJSON, } from './FiltersDhcpOptions.js';
 export function ReadDhcpOptionsRequestFromJSON(json) {
     return ReadDhcpOptionsRequestFromJSONTyped(json, false);
 }

@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { BackendVmHealthFromJSON, BackendVmHealthToJSON, } from './BackendVmHealth';
-import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { exists } from '../runtime.js';
+import { BackendVmHealthFromJSON, BackendVmHealthToJSON, } from './BackendVmHealth.js';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext.js';
 export function ReadVmsHealthResponseFromJSON(json) {
     return ReadVmsHealthResponseFromJSONTyped(json, false);
 }

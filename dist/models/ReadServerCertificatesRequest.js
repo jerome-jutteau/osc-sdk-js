@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { FiltersServerCertificateFromJSON, FiltersServerCertificateToJSON, } from './FiltersServerCertificate';
+import { exists } from '../runtime.js';
+import { FiltersServerCertificateFromJSON, FiltersServerCertificateToJSON, } from './FiltersServerCertificate.js';
 export function ReadServerCertificatesRequestFromJSON(json) {
     return ReadServerCertificatesRequestFromJSONTyped(json, false);
 }

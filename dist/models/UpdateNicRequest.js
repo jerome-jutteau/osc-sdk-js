@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { LinkNicToUpdateFromJSON, LinkNicToUpdateToJSON, } from './LinkNicToUpdate';
+import { exists } from '../runtime.js';
+import { LinkNicToUpdateFromJSON, LinkNicToUpdateToJSON, } from './LinkNicToUpdate.js';
 export function UpdateNicRequestFromJSON(json) {
     return UpdateNicRequestFromJSONTyped(json, false);
 }

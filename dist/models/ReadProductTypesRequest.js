@@ -11,8 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { FiltersProductTypeFromJSON, FiltersProductTypeToJSON, } from './FiltersProductType';
+import { exists } from '../runtime.js';
+import { FiltersProductTypeFromJSON, FiltersProductTypeToJSON, } from './FiltersProductType.js';
 export function ReadProductTypesRequestFromJSON(json) {
     return ReadProductTypesRequestFromJSONTyped(json, false);
 }

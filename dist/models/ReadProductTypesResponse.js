@@ -11,9 +11,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
-import { ProductTypeFromJSON, ProductTypeToJSON, } from './ProductType';
+import { exists } from '../runtime.js';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext.js';
+import { ProductTypeFromJSON, ProductTypeToJSON, } from './ProductType.js';
 export function ReadProductTypesResponseFromJSON(json) {
     return ReadProductTypesResponseFromJSONTyped(json, false);
 }
