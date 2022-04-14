@@ -1,10 +1,9 @@
-import { Configuration, BaseAPI } from "osc";
-import { VolumeApi, ReadVolumesOperationRequest} from "osc/apis"
+import * as osc from "osc";
 
-let configuration = new Configuration();
+let configuration = new osc.Configuration();
 
-let api = new BaseAPI(configuration);
-let v = new VolumeApi(configuration)
+let api = new osc.BaseAPI(configuration);
+let v = new osc.VolumeApi(configuration)
 
-let readParameters : ReadVolumesOperationRequest = {};
+let readParameters : osc.ReadVolumesOperationRequest = {};
 let response = v.readVolumes(readParameters)

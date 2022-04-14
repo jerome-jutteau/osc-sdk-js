@@ -1,7 +1,6 @@
-import { Configuration, BaseAPI } from "../../dist/index.js";
-import { VolumeApi } from "../../dist/apis/index.js";
-let configuration = new Configuration();
-let api = new BaseAPI(configuration);
-let v = new VolumeApi(configuration);
+import * as osc from "../../dist/index.js";
+let configuration = new osc.Configuration();
+let api = new osc.BaseAPI(configuration);
+let v = new osc.VolumeApi(configuration);
 let readParameters = {};
 let response = v.readVolumes(readParameters);
