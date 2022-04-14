@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function RejectNetPeeringRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function RejectNetPeeringRequestFromJSON(json) {
     return RejectNetPeeringRequestFromJSONTyped(json, false);
 }
-exports.RejectNetPeeringRequestFromJSON = RejectNetPeeringRequestFromJSON;
-function RejectNetPeeringRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function RejectNetPeeringRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'netPeeringId': json['NetPeeringId'],
     };
 }
-exports.RejectNetPeeringRequestFromJSONTyped = RejectNetPeeringRequestFromJSONTyped;
-function RejectNetPeeringRequestToJSON(value) {
+export function RejectNetPeeringRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function RejectNetPeeringRequestToJSON(value) {
         'NetPeeringId': value.netPeeringId,
     };
 }
-exports.RejectNetPeeringRequestToJSON = RejectNetPeeringRequestToJSON;

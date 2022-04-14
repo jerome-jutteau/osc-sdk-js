@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var Vm_1 = require("./Vm");
-function CreateVmsResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { VmFromJSON, VmToJSON, } from './Vm';
+export function CreateVmsResponseFromJSON(json) {
     return CreateVmsResponseFromJSONTyped(json, false);
 }
-exports.CreateVmsResponseFromJSON = CreateVmsResponseFromJSON;
-function CreateVmsResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateVmsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
-        'vms': !runtime_1.exists(json, 'Vms') ? undefined : (json['Vms'].map(Vm_1.VmFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
+        'vms': !exists(json, 'Vms') ? undefined : (json['Vms'].map(VmFromJSON)),
     };
 }
-exports.CreateVmsResponseFromJSONTyped = CreateVmsResponseFromJSONTyped;
-function CreateVmsResponseToJSON(value) {
+export function CreateVmsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function CreateVmsResponseToJSON(value) {
         return null;
     }
     return {
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
-        'Vms': value.vms === undefined ? undefined : (value.vms.map(Vm_1.VmToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
+        'Vms': value.vms === undefined ? undefined : (value.vms.map(VmToJSON)),
     };
 }
-exports.CreateVmsResponseToJSON = CreateVmsResponseToJSON;

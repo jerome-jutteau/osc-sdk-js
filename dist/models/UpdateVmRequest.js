@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,44 +11,41 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var BlockDeviceMappingVmUpdate_1 = require("./BlockDeviceMappingVmUpdate");
+import { exists } from '../runtime';
+import { BlockDeviceMappingVmUpdateFromJSON, BlockDeviceMappingVmUpdateToJSON, } from './BlockDeviceMappingVmUpdate';
 /**
 * @export
 * @enum {string}
 */
-var UpdateVmRequestPerformanceEnum;
+export var UpdateVmRequestPerformanceEnum;
 (function (UpdateVmRequestPerformanceEnum) {
     UpdateVmRequestPerformanceEnum["Medium"] = "medium";
     UpdateVmRequestPerformanceEnum["High"] = "high";
     UpdateVmRequestPerformanceEnum["Highest"] = "highest";
-})(UpdateVmRequestPerformanceEnum = exports.UpdateVmRequestPerformanceEnum || (exports.UpdateVmRequestPerformanceEnum = {}));
-function UpdateVmRequestFromJSON(json) {
+})(UpdateVmRequestPerformanceEnum || (UpdateVmRequestPerformanceEnum = {}));
+export function UpdateVmRequestFromJSON(json) {
     return UpdateVmRequestFromJSONTyped(json, false);
 }
-exports.UpdateVmRequestFromJSON = UpdateVmRequestFromJSON;
-function UpdateVmRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function UpdateVmRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'blockDeviceMappings': !runtime_1.exists(json, 'BlockDeviceMappings') ? undefined : (json['BlockDeviceMappings'].map(BlockDeviceMappingVmUpdate_1.BlockDeviceMappingVmUpdateFromJSON)),
-        'bsuOptimized': !runtime_1.exists(json, 'BsuOptimized') ? undefined : json['BsuOptimized'],
-        'deletionProtection': !runtime_1.exists(json, 'DeletionProtection') ? undefined : json['DeletionProtection'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'isSourceDestChecked': !runtime_1.exists(json, 'IsSourceDestChecked') ? undefined : json['IsSourceDestChecked'],
-        'keypairName': !runtime_1.exists(json, 'KeypairName') ? undefined : json['KeypairName'],
-        'performance': !runtime_1.exists(json, 'Performance') ? undefined : json['Performance'],
-        'securityGroupIds': !runtime_1.exists(json, 'SecurityGroupIds') ? undefined : json['SecurityGroupIds'],
-        'userData': !runtime_1.exists(json, 'UserData') ? undefined : json['UserData'],
+        'blockDeviceMappings': !exists(json, 'BlockDeviceMappings') ? undefined : (json['BlockDeviceMappings'].map(BlockDeviceMappingVmUpdateFromJSON)),
+        'bsuOptimized': !exists(json, 'BsuOptimized') ? undefined : json['BsuOptimized'],
+        'deletionProtection': !exists(json, 'DeletionProtection') ? undefined : json['DeletionProtection'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'isSourceDestChecked': !exists(json, 'IsSourceDestChecked') ? undefined : json['IsSourceDestChecked'],
+        'keypairName': !exists(json, 'KeypairName') ? undefined : json['KeypairName'],
+        'performance': !exists(json, 'Performance') ? undefined : json['Performance'],
+        'securityGroupIds': !exists(json, 'SecurityGroupIds') ? undefined : json['SecurityGroupIds'],
+        'userData': !exists(json, 'UserData') ? undefined : json['UserData'],
         'vmId': json['VmId'],
-        'vmInitiatedShutdownBehavior': !runtime_1.exists(json, 'VmInitiatedShutdownBehavior') ? undefined : json['VmInitiatedShutdownBehavior'],
-        'vmType': !runtime_1.exists(json, 'VmType') ? undefined : json['VmType'],
+        'vmInitiatedShutdownBehavior': !exists(json, 'VmInitiatedShutdownBehavior') ? undefined : json['VmInitiatedShutdownBehavior'],
+        'vmType': !exists(json, 'VmType') ? undefined : json['VmType'],
     };
 }
-exports.UpdateVmRequestFromJSONTyped = UpdateVmRequestFromJSONTyped;
-function UpdateVmRequestToJSON(value) {
+export function UpdateVmRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -57,7 +53,7 @@ function UpdateVmRequestToJSON(value) {
         return null;
     }
     return {
-        'BlockDeviceMappings': value.blockDeviceMappings === undefined ? undefined : (value.blockDeviceMappings.map(BlockDeviceMappingVmUpdate_1.BlockDeviceMappingVmUpdateToJSON)),
+        'BlockDeviceMappings': value.blockDeviceMappings === undefined ? undefined : (value.blockDeviceMappings.map(BlockDeviceMappingVmUpdateToJSON)),
         'BsuOptimized': value.bsuOptimized,
         'DeletionProtection': value.deletionProtection,
         'DryRun': value.dryRun,
@@ -71,4 +67,3 @@ function UpdateVmRequestToJSON(value) {
         'VmType': value.vmType,
     };
 }
-exports.UpdateVmRequestToJSON = UpdateVmRequestToJSON;

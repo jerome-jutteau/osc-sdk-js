@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,59 +11,56 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var BlockDeviceMappingCreated_1 = require("./BlockDeviceMappingCreated");
-var NicLight_1 = require("./NicLight");
-var Placement_1 = require("./Placement");
-var ResourceTag_1 = require("./ResourceTag");
-var SecurityGroupLight_1 = require("./SecurityGroupLight");
-function VmFromJSON(json) {
+import { exists } from '../runtime';
+import { BlockDeviceMappingCreatedFromJSON, BlockDeviceMappingCreatedToJSON, } from './BlockDeviceMappingCreated';
+import { NicLightFromJSON, NicLightToJSON, } from './NicLight';
+import { PlacementFromJSON, PlacementToJSON, } from './Placement';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
+import { SecurityGroupLightFromJSON, SecurityGroupLightToJSON, } from './SecurityGroupLight';
+export function VmFromJSON(json) {
     return VmFromJSONTyped(json, false);
 }
-exports.VmFromJSON = VmFromJSON;
-function VmFromJSONTyped(json, ignoreDiscriminator) {
+export function VmFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'architecture': !runtime_1.exists(json, 'Architecture') ? undefined : json['Architecture'],
-        'blockDeviceMappings': !runtime_1.exists(json, 'BlockDeviceMappings') ? undefined : (json['BlockDeviceMappings'].map(BlockDeviceMappingCreated_1.BlockDeviceMappingCreatedFromJSON)),
-        'bsuOptimized': !runtime_1.exists(json, 'BsuOptimized') ? undefined : json['BsuOptimized'],
-        'clientToken': !runtime_1.exists(json, 'ClientToken') ? undefined : json['ClientToken'],
-        'creationDate': !runtime_1.exists(json, 'CreationDate') ? undefined : json['CreationDate'],
-        'deletionProtection': !runtime_1.exists(json, 'DeletionProtection') ? undefined : json['DeletionProtection'],
-        'hypervisor': !runtime_1.exists(json, 'Hypervisor') ? undefined : json['Hypervisor'],
-        'imageId': !runtime_1.exists(json, 'ImageId') ? undefined : json['ImageId'],
-        'isSourceDestChecked': !runtime_1.exists(json, 'IsSourceDestChecked') ? undefined : json['IsSourceDestChecked'],
-        'keypairName': !runtime_1.exists(json, 'KeypairName') ? undefined : json['KeypairName'],
-        'launchNumber': !runtime_1.exists(json, 'LaunchNumber') ? undefined : json['LaunchNumber'],
-        'netId': !runtime_1.exists(json, 'NetId') ? undefined : json['NetId'],
-        'nics': !runtime_1.exists(json, 'Nics') ? undefined : (json['Nics'].map(NicLight_1.NicLightFromJSON)),
-        'osFamily': !runtime_1.exists(json, 'OsFamily') ? undefined : json['OsFamily'],
-        'performance': !runtime_1.exists(json, 'Performance') ? undefined : json['Performance'],
-        'placement': !runtime_1.exists(json, 'Placement') ? undefined : Placement_1.PlacementFromJSON(json['Placement']),
-        'privateDnsName': !runtime_1.exists(json, 'PrivateDnsName') ? undefined : json['PrivateDnsName'],
-        'privateIp': !runtime_1.exists(json, 'PrivateIp') ? undefined : json['PrivateIp'],
-        'productCodes': !runtime_1.exists(json, 'ProductCodes') ? undefined : json['ProductCodes'],
-        'publicDnsName': !runtime_1.exists(json, 'PublicDnsName') ? undefined : json['PublicDnsName'],
-        'publicIp': !runtime_1.exists(json, 'PublicIp') ? undefined : json['PublicIp'],
-        'reservationId': !runtime_1.exists(json, 'ReservationId') ? undefined : json['ReservationId'],
-        'rootDeviceName': !runtime_1.exists(json, 'RootDeviceName') ? undefined : json['RootDeviceName'],
-        'rootDeviceType': !runtime_1.exists(json, 'RootDeviceType') ? undefined : json['RootDeviceType'],
-        'securityGroups': !runtime_1.exists(json, 'SecurityGroups') ? undefined : (json['SecurityGroups'].map(SecurityGroupLight_1.SecurityGroupLightFromJSON)),
-        'state': !runtime_1.exists(json, 'State') ? undefined : json['State'],
-        'stateReason': !runtime_1.exists(json, 'StateReason') ? undefined : json['StateReason'],
-        'subnetId': !runtime_1.exists(json, 'SubnetId') ? undefined : json['SubnetId'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
-        'userData': !runtime_1.exists(json, 'UserData') ? undefined : json['UserData'],
-        'vmId': !runtime_1.exists(json, 'VmId') ? undefined : json['VmId'],
-        'vmInitiatedShutdownBehavior': !runtime_1.exists(json, 'VmInitiatedShutdownBehavior') ? undefined : json['VmInitiatedShutdownBehavior'],
-        'vmType': !runtime_1.exists(json, 'VmType') ? undefined : json['VmType'],
+        'architecture': !exists(json, 'Architecture') ? undefined : json['Architecture'],
+        'blockDeviceMappings': !exists(json, 'BlockDeviceMappings') ? undefined : (json['BlockDeviceMappings'].map(BlockDeviceMappingCreatedFromJSON)),
+        'bsuOptimized': !exists(json, 'BsuOptimized') ? undefined : json['BsuOptimized'],
+        'clientToken': !exists(json, 'ClientToken') ? undefined : json['ClientToken'],
+        'creationDate': !exists(json, 'CreationDate') ? undefined : json['CreationDate'],
+        'deletionProtection': !exists(json, 'DeletionProtection') ? undefined : json['DeletionProtection'],
+        'hypervisor': !exists(json, 'Hypervisor') ? undefined : json['Hypervisor'],
+        'imageId': !exists(json, 'ImageId') ? undefined : json['ImageId'],
+        'isSourceDestChecked': !exists(json, 'IsSourceDestChecked') ? undefined : json['IsSourceDestChecked'],
+        'keypairName': !exists(json, 'KeypairName') ? undefined : json['KeypairName'],
+        'launchNumber': !exists(json, 'LaunchNumber') ? undefined : json['LaunchNumber'],
+        'netId': !exists(json, 'NetId') ? undefined : json['NetId'],
+        'nics': !exists(json, 'Nics') ? undefined : (json['Nics'].map(NicLightFromJSON)),
+        'osFamily': !exists(json, 'OsFamily') ? undefined : json['OsFamily'],
+        'performance': !exists(json, 'Performance') ? undefined : json['Performance'],
+        'placement': !exists(json, 'Placement') ? undefined : PlacementFromJSON(json['Placement']),
+        'privateDnsName': !exists(json, 'PrivateDnsName') ? undefined : json['PrivateDnsName'],
+        'privateIp': !exists(json, 'PrivateIp') ? undefined : json['PrivateIp'],
+        'productCodes': !exists(json, 'ProductCodes') ? undefined : json['ProductCodes'],
+        'publicDnsName': !exists(json, 'PublicDnsName') ? undefined : json['PublicDnsName'],
+        'publicIp': !exists(json, 'PublicIp') ? undefined : json['PublicIp'],
+        'reservationId': !exists(json, 'ReservationId') ? undefined : json['ReservationId'],
+        'rootDeviceName': !exists(json, 'RootDeviceName') ? undefined : json['RootDeviceName'],
+        'rootDeviceType': !exists(json, 'RootDeviceType') ? undefined : json['RootDeviceType'],
+        'securityGroups': !exists(json, 'SecurityGroups') ? undefined : (json['SecurityGroups'].map(SecurityGroupLightFromJSON)),
+        'state': !exists(json, 'State') ? undefined : json['State'],
+        'stateReason': !exists(json, 'StateReason') ? undefined : json['StateReason'],
+        'subnetId': !exists(json, 'SubnetId') ? undefined : json['SubnetId'],
+        'tags': !exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTagFromJSON)),
+        'userData': !exists(json, 'UserData') ? undefined : json['UserData'],
+        'vmId': !exists(json, 'VmId') ? undefined : json['VmId'],
+        'vmInitiatedShutdownBehavior': !exists(json, 'VmInitiatedShutdownBehavior') ? undefined : json['VmInitiatedShutdownBehavior'],
+        'vmType': !exists(json, 'VmType') ? undefined : json['VmType'],
     };
 }
-exports.VmFromJSONTyped = VmFromJSONTyped;
-function VmToJSON(value) {
+export function VmToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -73,7 +69,7 @@ function VmToJSON(value) {
     }
     return {
         'Architecture': value.architecture,
-        'BlockDeviceMappings': value.blockDeviceMappings === undefined ? undefined : (value.blockDeviceMappings.map(BlockDeviceMappingCreated_1.BlockDeviceMappingCreatedToJSON)),
+        'BlockDeviceMappings': value.blockDeviceMappings === undefined ? undefined : (value.blockDeviceMappings.map(BlockDeviceMappingCreatedToJSON)),
         'BsuOptimized': value.bsuOptimized,
         'ClientToken': value.clientToken,
         'CreationDate': value.creationDate,
@@ -84,10 +80,10 @@ function VmToJSON(value) {
         'KeypairName': value.keypairName,
         'LaunchNumber': value.launchNumber,
         'NetId': value.netId,
-        'Nics': value.nics === undefined ? undefined : (value.nics.map(NicLight_1.NicLightToJSON)),
+        'Nics': value.nics === undefined ? undefined : (value.nics.map(NicLightToJSON)),
         'OsFamily': value.osFamily,
         'Performance': value.performance,
-        'Placement': Placement_1.PlacementToJSON(value.placement),
+        'Placement': PlacementToJSON(value.placement),
         'PrivateDnsName': value.privateDnsName,
         'PrivateIp': value.privateIp,
         'ProductCodes': value.productCodes,
@@ -96,15 +92,14 @@ function VmToJSON(value) {
         'ReservationId': value.reservationId,
         'RootDeviceName': value.rootDeviceName,
         'RootDeviceType': value.rootDeviceType,
-        'SecurityGroups': value.securityGroups === undefined ? undefined : (value.securityGroups.map(SecurityGroupLight_1.SecurityGroupLightToJSON)),
+        'SecurityGroups': value.securityGroups === undefined ? undefined : (value.securityGroups.map(SecurityGroupLightToJSON)),
         'State': value.state,
         'StateReason': value.stateReason,
         'SubnetId': value.subnetId,
-        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
+        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTagToJSON)),
         'UserData': value.userData,
         'VmId': value.vmId,
         'VmInitiatedShutdownBehavior': value.vmInitiatedShutdownBehavior,
         'VmType': value.vmType,
     };
 }
-exports.VmToJSON = VmToJSON;

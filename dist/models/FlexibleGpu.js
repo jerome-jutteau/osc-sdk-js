@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,28 +11,25 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FlexibleGpuFromJSON(json) {
+import { exists } from '../runtime';
+export function FlexibleGpuFromJSON(json) {
     return FlexibleGpuFromJSONTyped(json, false);
 }
-exports.FlexibleGpuFromJSON = FlexibleGpuFromJSON;
-function FlexibleGpuFromJSONTyped(json, ignoreDiscriminator) {
+export function FlexibleGpuFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'deleteOnVmDeletion': !runtime_1.exists(json, 'DeleteOnVmDeletion') ? undefined : json['DeleteOnVmDeletion'],
-        'flexibleGpuId': !runtime_1.exists(json, 'FlexibleGpuId') ? undefined : json['FlexibleGpuId'],
-        'generation': !runtime_1.exists(json, 'Generation') ? undefined : json['Generation'],
-        'modelName': !runtime_1.exists(json, 'ModelName') ? undefined : json['ModelName'],
-        'state': !runtime_1.exists(json, 'State') ? undefined : json['State'],
-        'subregionName': !runtime_1.exists(json, 'SubregionName') ? undefined : json['SubregionName'],
-        'vmId': !runtime_1.exists(json, 'VmId') ? undefined : json['VmId'],
+        'deleteOnVmDeletion': !exists(json, 'DeleteOnVmDeletion') ? undefined : json['DeleteOnVmDeletion'],
+        'flexibleGpuId': !exists(json, 'FlexibleGpuId') ? undefined : json['FlexibleGpuId'],
+        'generation': !exists(json, 'Generation') ? undefined : json['Generation'],
+        'modelName': !exists(json, 'ModelName') ? undefined : json['ModelName'],
+        'state': !exists(json, 'State') ? undefined : json['State'],
+        'subregionName': !exists(json, 'SubregionName') ? undefined : json['SubregionName'],
+        'vmId': !exists(json, 'VmId') ? undefined : json['VmId'],
     };
 }
-exports.FlexibleGpuFromJSONTyped = FlexibleGpuFromJSONTyped;
-function FlexibleGpuToJSON(value) {
+export function FlexibleGpuToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -50,4 +46,3 @@ function FlexibleGpuToJSON(value) {
         'VmId': value.vmId,
     };
 }
-exports.FlexibleGpuToJSON = FlexibleGpuToJSON;

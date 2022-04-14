@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,32 +11,29 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var AccessLog_1 = require("./AccessLog");
-var HealthCheck_1 = require("./HealthCheck");
-function UpdateLoadBalancerRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { AccessLogFromJSON, AccessLogToJSON, } from './AccessLog';
+import { HealthCheckFromJSON, HealthCheckToJSON, } from './HealthCheck';
+export function UpdateLoadBalancerRequestFromJSON(json) {
     return UpdateLoadBalancerRequestFromJSONTyped(json, false);
 }
-exports.UpdateLoadBalancerRequestFromJSON = UpdateLoadBalancerRequestFromJSON;
-function UpdateLoadBalancerRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function UpdateLoadBalancerRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'accessLog': !runtime_1.exists(json, 'AccessLog') ? undefined : AccessLog_1.AccessLogFromJSON(json['AccessLog']),
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'healthCheck': !runtime_1.exists(json, 'HealthCheck') ? undefined : HealthCheck_1.HealthCheckFromJSON(json['HealthCheck']),
+        'accessLog': !exists(json, 'AccessLog') ? undefined : AccessLogFromJSON(json['AccessLog']),
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'healthCheck': !exists(json, 'HealthCheck') ? undefined : HealthCheckFromJSON(json['HealthCheck']),
         'loadBalancerName': json['LoadBalancerName'],
-        'loadBalancerPort': !runtime_1.exists(json, 'LoadBalancerPort') ? undefined : json['LoadBalancerPort'],
-        'policyNames': !runtime_1.exists(json, 'PolicyNames') ? undefined : json['PolicyNames'],
-        'publicIp': !runtime_1.exists(json, 'PublicIp') ? undefined : json['PublicIp'],
-        'securityGroups': !runtime_1.exists(json, 'SecurityGroups') ? undefined : json['SecurityGroups'],
-        'serverCertificateId': !runtime_1.exists(json, 'ServerCertificateId') ? undefined : json['ServerCertificateId'],
+        'loadBalancerPort': !exists(json, 'LoadBalancerPort') ? undefined : json['LoadBalancerPort'],
+        'policyNames': !exists(json, 'PolicyNames') ? undefined : json['PolicyNames'],
+        'publicIp': !exists(json, 'PublicIp') ? undefined : json['PublicIp'],
+        'securityGroups': !exists(json, 'SecurityGroups') ? undefined : json['SecurityGroups'],
+        'serverCertificateId': !exists(json, 'ServerCertificateId') ? undefined : json['ServerCertificateId'],
     };
 }
-exports.UpdateLoadBalancerRequestFromJSONTyped = UpdateLoadBalancerRequestFromJSONTyped;
-function UpdateLoadBalancerRequestToJSON(value) {
+export function UpdateLoadBalancerRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -45,9 +41,9 @@ function UpdateLoadBalancerRequestToJSON(value) {
         return null;
     }
     return {
-        'AccessLog': AccessLog_1.AccessLogToJSON(value.accessLog),
+        'AccessLog': AccessLogToJSON(value.accessLog),
         'DryRun': value.dryRun,
-        'HealthCheck': HealthCheck_1.HealthCheckToJSON(value.healthCheck),
+        'HealthCheck': HealthCheckToJSON(value.healthCheck),
         'LoadBalancerName': value.loadBalancerName,
         'LoadBalancerPort': value.loadBalancerPort,
         'PolicyNames': value.policyNames,
@@ -56,4 +52,3 @@ function UpdateLoadBalancerRequestToJSON(value) {
         'ServerCertificateId': value.serverCertificateId,
     };
 }
-exports.UpdateLoadBalancerRequestToJSON = UpdateLoadBalancerRequestToJSON;

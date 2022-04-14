@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var NatService_1 = require("./NatService");
-function CreateNatServiceResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { NatServiceFromJSON, NatServiceToJSON, } from './NatService';
+export function CreateNatServiceResponseFromJSON(json) {
     return CreateNatServiceResponseFromJSONTyped(json, false);
 }
-exports.CreateNatServiceResponseFromJSON = CreateNatServiceResponseFromJSON;
-function CreateNatServiceResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateNatServiceResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'natService': !runtime_1.exists(json, 'NatService') ? undefined : NatService_1.NatServiceFromJSON(json['NatService']),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'natService': !exists(json, 'NatService') ? undefined : NatServiceFromJSON(json['NatService']),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.CreateNatServiceResponseFromJSONTyped = CreateNatServiceResponseFromJSONTyped;
-function CreateNatServiceResponseToJSON(value) {
+export function CreateNatServiceResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function CreateNatServiceResponseToJSON(value) {
         return null;
     }
     return {
-        'NatService': NatService_1.NatServiceToJSON(value.natService),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'NatService': NatServiceToJSON(value.natService),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.CreateNatServiceResponseToJSON = CreateNatServiceResponseToJSON;

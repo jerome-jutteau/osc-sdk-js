@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ClientGateway_1 = require("./ClientGateway");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function CreateClientGatewayResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ClientGatewayFromJSON, ClientGatewayToJSON, } from './ClientGateway';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function CreateClientGatewayResponseFromJSON(json) {
     return CreateClientGatewayResponseFromJSONTyped(json, false);
 }
-exports.CreateClientGatewayResponseFromJSON = CreateClientGatewayResponseFromJSON;
-function CreateClientGatewayResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateClientGatewayResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'clientGateway': !runtime_1.exists(json, 'ClientGateway') ? undefined : ClientGateway_1.ClientGatewayFromJSON(json['ClientGateway']),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'clientGateway': !exists(json, 'ClientGateway') ? undefined : ClientGatewayFromJSON(json['ClientGateway']),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.CreateClientGatewayResponseFromJSONTyped = CreateClientGatewayResponseFromJSONTyped;
-function CreateClientGatewayResponseToJSON(value) {
+export function CreateClientGatewayResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function CreateClientGatewayResponseToJSON(value) {
         return null;
     }
     return {
-        'ClientGateway': ClientGateway_1.ClientGatewayToJSON(value.clientGateway),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'ClientGateway': ClientGatewayToJSON(value.clientGateway),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.CreateClientGatewayResponseToJSON = CreateClientGatewayResponseToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var FiltersNatService_1 = require("./FiltersNatService");
-function ReadNatServicesRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { FiltersNatServiceFromJSON, FiltersNatServiceToJSON, } from './FiltersNatService';
+export function ReadNatServicesRequestFromJSON(json) {
     return ReadNatServicesRequestFromJSONTyped(json, false);
 }
-exports.ReadNatServicesRequestFromJSON = ReadNatServicesRequestFromJSON;
-function ReadNatServicesRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadNatServicesRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'filters': !runtime_1.exists(json, 'Filters') ? undefined : FiltersNatService_1.FiltersNatServiceFromJSON(json['Filters']),
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'filters': !exists(json, 'Filters') ? undefined : FiltersNatServiceFromJSON(json['Filters']),
     };
 }
-exports.ReadNatServicesRequestFromJSONTyped = ReadNatServicesRequestFromJSONTyped;
-function ReadNatServicesRequestToJSON(value) {
+export function ReadNatServicesRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,7 +34,6 @@ function ReadNatServicesRequestToJSON(value) {
     }
     return {
         'DryRun': value.dryRun,
-        'Filters': FiltersNatService_1.FiltersNatServiceToJSON(value.filters),
+        'Filters': FiltersNatServiceToJSON(value.filters),
     };
 }
-exports.ReadNatServicesRequestToJSON = ReadNatServicesRequestToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var FiltersProductType_1 = require("./FiltersProductType");
-function ReadProductTypesRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { FiltersProductTypeFromJSON, FiltersProductTypeToJSON, } from './FiltersProductType';
+export function ReadProductTypesRequestFromJSON(json) {
     return ReadProductTypesRequestFromJSONTyped(json, false);
 }
-exports.ReadProductTypesRequestFromJSON = ReadProductTypesRequestFromJSON;
-function ReadProductTypesRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadProductTypesRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'filters': !runtime_1.exists(json, 'Filters') ? undefined : FiltersProductType_1.FiltersProductTypeFromJSON(json['Filters']),
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'filters': !exists(json, 'Filters') ? undefined : FiltersProductTypeFromJSON(json['Filters']),
     };
 }
-exports.ReadProductTypesRequestFromJSONTyped = ReadProductTypesRequestFromJSONTyped;
-function ReadProductTypesRequestToJSON(value) {
+export function ReadProductTypesRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,7 +34,6 @@ function ReadProductTypesRequestToJSON(value) {
     }
     return {
         'DryRun': value.dryRun,
-        'Filters': FiltersProductType_1.FiltersProductTypeToJSON(value.filters),
+        'Filters': FiltersProductTypeToJSON(value.filters),
     };
 }
-exports.ReadProductTypesRequestToJSON = ReadProductTypesRequestToJSON;

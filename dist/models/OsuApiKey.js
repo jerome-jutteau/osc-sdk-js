@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function OsuApiKeyFromJSON(json) {
+import { exists } from '../runtime';
+export function OsuApiKeyFromJSON(json) {
     return OsuApiKeyFromJSONTyped(json, false);
 }
-exports.OsuApiKeyFromJSON = OsuApiKeyFromJSON;
-function OsuApiKeyFromJSONTyped(json, ignoreDiscriminator) {
+export function OsuApiKeyFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'apiKeyId': !runtime_1.exists(json, 'ApiKeyId') ? undefined : json['ApiKeyId'],
-        'secretKey': !runtime_1.exists(json, 'SecretKey') ? undefined : json['SecretKey'],
+        'apiKeyId': !exists(json, 'ApiKeyId') ? undefined : json['ApiKeyId'],
+        'secretKey': !exists(json, 'SecretKey') ? undefined : json['SecretKey'],
     };
 }
-exports.OsuApiKeyFromJSONTyped = OsuApiKeyFromJSONTyped;
-function OsuApiKeyToJSON(value) {
+export function OsuApiKeyToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function OsuApiKeyToJSON(value) {
         'SecretKey': value.secretKey,
     };
 }
-exports.OsuApiKeyToJSON = OsuApiKeyToJSON;

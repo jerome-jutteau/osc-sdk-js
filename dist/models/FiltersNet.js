@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,29 +11,26 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersNetFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersNetFromJSON(json) {
     return FiltersNetFromJSONTyped(json, false);
 }
-exports.FiltersNetFromJSON = FiltersNetFromJSON;
-function FiltersNetFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersNetFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dhcpOptionsSetIds': !runtime_1.exists(json, 'DhcpOptionsSetIds') ? undefined : json['DhcpOptionsSetIds'],
-        'ipRanges': !runtime_1.exists(json, 'IpRanges') ? undefined : json['IpRanges'],
-        'isDefault': !runtime_1.exists(json, 'IsDefault') ? undefined : json['IsDefault'],
-        'netIds': !runtime_1.exists(json, 'NetIds') ? undefined : json['NetIds'],
-        'states': !runtime_1.exists(json, 'States') ? undefined : json['States'],
-        'tagKeys': !runtime_1.exists(json, 'TagKeys') ? undefined : json['TagKeys'],
-        'tagValues': !runtime_1.exists(json, 'TagValues') ? undefined : json['TagValues'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : json['Tags'],
+        'dhcpOptionsSetIds': !exists(json, 'DhcpOptionsSetIds') ? undefined : json['DhcpOptionsSetIds'],
+        'ipRanges': !exists(json, 'IpRanges') ? undefined : json['IpRanges'],
+        'isDefault': !exists(json, 'IsDefault') ? undefined : json['IsDefault'],
+        'netIds': !exists(json, 'NetIds') ? undefined : json['NetIds'],
+        'states': !exists(json, 'States') ? undefined : json['States'],
+        'tagKeys': !exists(json, 'TagKeys') ? undefined : json['TagKeys'],
+        'tagValues': !exists(json, 'TagValues') ? undefined : json['TagValues'],
+        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
     };
 }
-exports.FiltersNetFromJSONTyped = FiltersNetFromJSONTyped;
-function FiltersNetToJSON(value) {
+export function FiltersNetToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -52,4 +48,3 @@ function FiltersNetToJSON(value) {
         'Tags': value.tags,
     };
 }
-exports.FiltersNetToJSON = FiltersNetToJSON;

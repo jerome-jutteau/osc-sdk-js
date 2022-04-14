@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var FiltersSubregion_1 = require("./FiltersSubregion");
-function ReadSubregionsRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { FiltersSubregionFromJSON, FiltersSubregionToJSON, } from './FiltersSubregion';
+export function ReadSubregionsRequestFromJSON(json) {
     return ReadSubregionsRequestFromJSONTyped(json, false);
 }
-exports.ReadSubregionsRequestFromJSON = ReadSubregionsRequestFromJSON;
-function ReadSubregionsRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadSubregionsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'filters': !runtime_1.exists(json, 'Filters') ? undefined : FiltersSubregion_1.FiltersSubregionFromJSON(json['Filters']),
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'filters': !exists(json, 'Filters') ? undefined : FiltersSubregionFromJSON(json['Filters']),
     };
 }
-exports.ReadSubregionsRequestFromJSONTyped = ReadSubregionsRequestFromJSONTyped;
-function ReadSubregionsRequestToJSON(value) {
+export function ReadSubregionsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,7 +34,6 @@ function ReadSubregionsRequestToJSON(value) {
     }
     return {
         'DryRun': value.dryRun,
-        'Filters': FiltersSubregion_1.FiltersSubregionToJSON(value.filters),
+        'Filters': FiltersSubregionToJSON(value.filters),
     };
 }
-exports.ReadSubregionsRequestToJSON = ReadSubregionsRequestToJSON;

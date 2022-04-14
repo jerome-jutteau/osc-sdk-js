@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var DirectLink_1 = require("./DirectLink");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function ReadDirectLinksResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { DirectLinkFromJSON, DirectLinkToJSON, } from './DirectLink';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function ReadDirectLinksResponseFromJSON(json) {
     return ReadDirectLinksResponseFromJSONTyped(json, false);
 }
-exports.ReadDirectLinksResponseFromJSON = ReadDirectLinksResponseFromJSON;
-function ReadDirectLinksResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadDirectLinksResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'directLinks': !runtime_1.exists(json, 'DirectLinks') ? undefined : (json['DirectLinks'].map(DirectLink_1.DirectLinkFromJSON)),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'directLinks': !exists(json, 'DirectLinks') ? undefined : (json['DirectLinks'].map(DirectLinkFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.ReadDirectLinksResponseFromJSONTyped = ReadDirectLinksResponseFromJSONTyped;
-function ReadDirectLinksResponseToJSON(value) {
+export function ReadDirectLinksResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadDirectLinksResponseToJSON(value) {
         return null;
     }
     return {
-        'DirectLinks': value.directLinks === undefined ? undefined : (value.directLinks.map(DirectLink_1.DirectLinkToJSON)),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'DirectLinks': value.directLinks === undefined ? undefined : (value.directLinks.map(DirectLinkToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.ReadDirectLinksResponseToJSON = ReadDirectLinksResponseToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function RegionFromJSON(json) {
+import { exists } from '../runtime';
+export function RegionFromJSON(json) {
     return RegionFromJSONTyped(json, false);
 }
-exports.RegionFromJSON = RegionFromJSON;
-function RegionFromJSONTyped(json, ignoreDiscriminator) {
+export function RegionFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'endpoint': !runtime_1.exists(json, 'Endpoint') ? undefined : json['Endpoint'],
-        'regionName': !runtime_1.exists(json, 'RegionName') ? undefined : json['RegionName'],
+        'endpoint': !exists(json, 'Endpoint') ? undefined : json['Endpoint'],
+        'regionName': !exists(json, 'RegionName') ? undefined : json['RegionName'],
     };
 }
-exports.RegionFromJSONTyped = RegionFromJSONTyped;
-function RegionToJSON(value) {
+export function RegionToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function RegionToJSON(value) {
         'RegionName': value.regionName,
     };
 }
-exports.RegionToJSON = RegionToJSON;

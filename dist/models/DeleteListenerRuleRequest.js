@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function DeleteListenerRuleRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function DeleteListenerRuleRequestFromJSON(json) {
     return DeleteListenerRuleRequestFromJSONTyped(json, false);
 }
-exports.DeleteListenerRuleRequestFromJSON = DeleteListenerRuleRequestFromJSON;
-function DeleteListenerRuleRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function DeleteListenerRuleRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'listenerRuleName': json['ListenerRuleName'],
     };
 }
-exports.DeleteListenerRuleRequestFromJSONTyped = DeleteListenerRuleRequestFromJSONTyped;
-function DeleteListenerRuleRequestToJSON(value) {
+export function DeleteListenerRuleRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function DeleteListenerRuleRequestToJSON(value) {
         'ListenerRuleName': value.listenerRuleName,
     };
 }
-exports.DeleteListenerRuleRequestToJSON = DeleteListenerRuleRequestToJSON;

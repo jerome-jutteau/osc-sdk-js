@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,26 +11,23 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var BsuToCreate_1 = require("./BsuToCreate");
-function BlockDeviceMappingVmCreationFromJSON(json) {
+import { exists } from '../runtime';
+import { BsuToCreateFromJSON, BsuToCreateToJSON, } from './BsuToCreate';
+export function BlockDeviceMappingVmCreationFromJSON(json) {
     return BlockDeviceMappingVmCreationFromJSONTyped(json, false);
 }
-exports.BlockDeviceMappingVmCreationFromJSON = BlockDeviceMappingVmCreationFromJSON;
-function BlockDeviceMappingVmCreationFromJSONTyped(json, ignoreDiscriminator) {
+export function BlockDeviceMappingVmCreationFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'bsu': !runtime_1.exists(json, 'Bsu') ? undefined : BsuToCreate_1.BsuToCreateFromJSON(json['Bsu']),
-        'deviceName': !runtime_1.exists(json, 'DeviceName') ? undefined : json['DeviceName'],
-        'noDevice': !runtime_1.exists(json, 'NoDevice') ? undefined : json['NoDevice'],
-        'virtualDeviceName': !runtime_1.exists(json, 'VirtualDeviceName') ? undefined : json['VirtualDeviceName'],
+        'bsu': !exists(json, 'Bsu') ? undefined : BsuToCreateFromJSON(json['Bsu']),
+        'deviceName': !exists(json, 'DeviceName') ? undefined : json['DeviceName'],
+        'noDevice': !exists(json, 'NoDevice') ? undefined : json['NoDevice'],
+        'virtualDeviceName': !exists(json, 'VirtualDeviceName') ? undefined : json['VirtualDeviceName'],
     };
 }
-exports.BlockDeviceMappingVmCreationFromJSONTyped = BlockDeviceMappingVmCreationFromJSONTyped;
-function BlockDeviceMappingVmCreationToJSON(value) {
+export function BlockDeviceMappingVmCreationToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -39,10 +35,9 @@ function BlockDeviceMappingVmCreationToJSON(value) {
         return null;
     }
     return {
-        'Bsu': BsuToCreate_1.BsuToCreateToJSON(value.bsu),
+        'Bsu': BsuToCreateToJSON(value.bsu),
         'DeviceName': value.deviceName,
         'NoDevice': value.noDevice,
         'VirtualDeviceName': value.virtualDeviceName,
     };
 }
-exports.BlockDeviceMappingVmCreationToJSON = BlockDeviceMappingVmCreationToJSON;

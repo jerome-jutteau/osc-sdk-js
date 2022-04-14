@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function UnlinkRouteTableRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function UnlinkRouteTableRequestFromJSON(json) {
     return UnlinkRouteTableRequestFromJSONTyped(json, false);
 }
-exports.UnlinkRouteTableRequestFromJSON = UnlinkRouteTableRequestFromJSON;
-function UnlinkRouteTableRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function UnlinkRouteTableRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'linkRouteTableId': json['LinkRouteTableId'],
     };
 }
-exports.UnlinkRouteTableRequestFromJSONTyped = UnlinkRouteTableRequestFromJSONTyped;
-function UnlinkRouteTableRequestToJSON(value) {
+export function UnlinkRouteTableRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function UnlinkRouteTableRequestToJSON(value) {
         'LinkRouteTableId': value.linkRouteTableId,
     };
 }
-exports.UnlinkRouteTableRequestToJSON = UnlinkRouteTableRequestToJSON;

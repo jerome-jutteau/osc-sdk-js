@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var ServerCertificate_1 = require("./ServerCertificate");
-function ReadServerCertificatesResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { ServerCertificateFromJSON, ServerCertificateToJSON, } from './ServerCertificate';
+export function ReadServerCertificatesResponseFromJSON(json) {
     return ReadServerCertificatesResponseFromJSONTyped(json, false);
 }
-exports.ReadServerCertificatesResponseFromJSON = ReadServerCertificatesResponseFromJSON;
-function ReadServerCertificatesResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadServerCertificatesResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
-        'serverCertificates': !runtime_1.exists(json, 'ServerCertificates') ? undefined : (json['ServerCertificates'].map(ServerCertificate_1.ServerCertificateFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
+        'serverCertificates': !exists(json, 'ServerCertificates') ? undefined : (json['ServerCertificates'].map(ServerCertificateFromJSON)),
     };
 }
-exports.ReadServerCertificatesResponseFromJSONTyped = ReadServerCertificatesResponseFromJSONTyped;
-function ReadServerCertificatesResponseToJSON(value) {
+export function ReadServerCertificatesResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadServerCertificatesResponseToJSON(value) {
         return null;
     }
     return {
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
-        'ServerCertificates': value.serverCertificates === undefined ? undefined : (value.serverCertificates.map(ServerCertificate_1.ServerCertificateToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
+        'ServerCertificates': value.serverCertificates === undefined ? undefined : (value.serverCertificates.map(ServerCertificateToJSON)),
     };
 }
-exports.ReadServerCertificatesResponseToJSON = ReadServerCertificatesResponseToJSON;

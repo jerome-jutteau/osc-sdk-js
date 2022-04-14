@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function CreateCaRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function CreateCaRequestFromJSON(json) {
     return CreateCaRequestFromJSONTyped(json, false);
 }
-exports.CreateCaRequestFromJSON = CreateCaRequestFromJSON;
-function CreateCaRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateCaRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'caPem': json['CaPem'],
-        'description': !runtime_1.exists(json, 'Description') ? undefined : json['Description'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'description': !exists(json, 'Description') ? undefined : json['Description'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
     };
 }
-exports.CreateCaRequestFromJSONTyped = CreateCaRequestFromJSONTyped;
-function CreateCaRequestToJSON(value) {
+export function CreateCaRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,4 +38,3 @@ function CreateCaRequestToJSON(value) {
         'DryRun': value.dryRun,
     };
 }
-exports.CreateCaRequestToJSON = CreateCaRequestToJSON;

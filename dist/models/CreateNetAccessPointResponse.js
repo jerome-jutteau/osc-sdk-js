@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var NetAccessPoint_1 = require("./NetAccessPoint");
-function CreateNetAccessPointResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { NetAccessPointFromJSON, NetAccessPointToJSON, } from './NetAccessPoint';
+export function CreateNetAccessPointResponseFromJSON(json) {
     return CreateNetAccessPointResponseFromJSONTyped(json, false);
 }
-exports.CreateNetAccessPointResponseFromJSON = CreateNetAccessPointResponseFromJSON;
-function CreateNetAccessPointResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateNetAccessPointResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'netAccessPoint': !runtime_1.exists(json, 'NetAccessPoint') ? undefined : NetAccessPoint_1.NetAccessPointFromJSON(json['NetAccessPoint']),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'netAccessPoint': !exists(json, 'NetAccessPoint') ? undefined : NetAccessPointFromJSON(json['NetAccessPoint']),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.CreateNetAccessPointResponseFromJSONTyped = CreateNetAccessPointResponseFromJSONTyped;
-function CreateNetAccessPointResponseToJSON(value) {
+export function CreateNetAccessPointResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function CreateNetAccessPointResponseToJSON(value) {
         return null;
     }
     return {
-        'NetAccessPoint': NetAccessPoint_1.NetAccessPointToJSON(value.netAccessPoint),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'NetAccessPoint': NetAccessPointToJSON(value.netAccessPoint),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.CreateNetAccessPointResponseToJSON = CreateNetAccessPointResponseToJSON;

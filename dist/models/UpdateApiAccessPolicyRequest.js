@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function UpdateApiAccessPolicyRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function UpdateApiAccessPolicyRequestFromJSON(json) {
     return UpdateApiAccessPolicyRequestFromJSONTyped(json, false);
 }
-exports.UpdateApiAccessPolicyRequestFromJSON = UpdateApiAccessPolicyRequestFromJSON;
-function UpdateApiAccessPolicyRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function UpdateApiAccessPolicyRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'maxAccessKeyExpirationSeconds': json['MaxAccessKeyExpirationSeconds'],
         'requireTrustedEnv': json['RequireTrustedEnv'],
     };
 }
-exports.UpdateApiAccessPolicyRequestFromJSONTyped = UpdateApiAccessPolicyRequestFromJSONTyped;
-function UpdateApiAccessPolicyRequestToJSON(value) {
+export function UpdateApiAccessPolicyRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,4 +38,3 @@ function UpdateApiAccessPolicyRequestToJSON(value) {
         'RequireTrustedEnv': value.requireTrustedEnv,
     };
 }
-exports.UpdateApiAccessPolicyRequestToJSON = UpdateApiAccessPolicyRequestToJSON;

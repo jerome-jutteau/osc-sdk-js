@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function UnlinkPublicIpRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function UnlinkPublicIpRequestFromJSON(json) {
     return UnlinkPublicIpRequestFromJSONTyped(json, false);
 }
-exports.UnlinkPublicIpRequestFromJSON = UnlinkPublicIpRequestFromJSON;
-function UnlinkPublicIpRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function UnlinkPublicIpRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'linkPublicIpId': !runtime_1.exists(json, 'LinkPublicIpId') ? undefined : json['LinkPublicIpId'],
-        'publicIp': !runtime_1.exists(json, 'PublicIp') ? undefined : json['PublicIp'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'linkPublicIpId': !exists(json, 'LinkPublicIpId') ? undefined : json['LinkPublicIpId'],
+        'publicIp': !exists(json, 'PublicIp') ? undefined : json['PublicIp'],
     };
 }
-exports.UnlinkPublicIpRequestFromJSONTyped = UnlinkPublicIpRequestFromJSONTyped;
-function UnlinkPublicIpRequestToJSON(value) {
+export function UnlinkPublicIpRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,4 +38,3 @@ function UnlinkPublicIpRequestToJSON(value) {
         'PublicIp': value.publicIp,
     };
 }
-exports.UnlinkPublicIpRequestToJSON = UnlinkPublicIpRequestToJSON;

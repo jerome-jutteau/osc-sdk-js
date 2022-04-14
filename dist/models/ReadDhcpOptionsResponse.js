@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var DhcpOptionsSet_1 = require("./DhcpOptionsSet");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function ReadDhcpOptionsResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { DhcpOptionsSetFromJSON, DhcpOptionsSetToJSON, } from './DhcpOptionsSet';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function ReadDhcpOptionsResponseFromJSON(json) {
     return ReadDhcpOptionsResponseFromJSONTyped(json, false);
 }
-exports.ReadDhcpOptionsResponseFromJSON = ReadDhcpOptionsResponseFromJSON;
-function ReadDhcpOptionsResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadDhcpOptionsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dhcpOptionsSets': !runtime_1.exists(json, 'DhcpOptionsSets') ? undefined : (json['DhcpOptionsSets'].map(DhcpOptionsSet_1.DhcpOptionsSetFromJSON)),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'dhcpOptionsSets': !exists(json, 'DhcpOptionsSets') ? undefined : (json['DhcpOptionsSets'].map(DhcpOptionsSetFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.ReadDhcpOptionsResponseFromJSONTyped = ReadDhcpOptionsResponseFromJSONTyped;
-function ReadDhcpOptionsResponseToJSON(value) {
+export function ReadDhcpOptionsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadDhcpOptionsResponseToJSON(value) {
         return null;
     }
     return {
-        'DhcpOptionsSets': value.dhcpOptionsSets === undefined ? undefined : (value.dhcpOptionsSets.map(DhcpOptionsSet_1.DhcpOptionsSetToJSON)),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'DhcpOptionsSets': value.dhcpOptionsSets === undefined ? undefined : (value.dhcpOptionsSets.map(DhcpOptionsSetToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.ReadDhcpOptionsResponseToJSON = ReadDhcpOptionsResponseToJSON;

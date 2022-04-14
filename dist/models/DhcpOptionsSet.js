@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,28 +11,25 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ResourceTag_1 = require("./ResourceTag");
-function DhcpOptionsSetFromJSON(json) {
+import { exists } from '../runtime';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
+export function DhcpOptionsSetFromJSON(json) {
     return DhcpOptionsSetFromJSONTyped(json, false);
 }
-exports.DhcpOptionsSetFromJSON = DhcpOptionsSetFromJSON;
-function DhcpOptionsSetFromJSONTyped(json, ignoreDiscriminator) {
+export function DhcpOptionsSetFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        '_default': !runtime_1.exists(json, 'Default') ? undefined : json['Default'],
-        'dhcpOptionsSetId': !runtime_1.exists(json, 'DhcpOptionsSetId') ? undefined : json['DhcpOptionsSetId'],
-        'domainName': !runtime_1.exists(json, 'DomainName') ? undefined : json['DomainName'],
-        'domainNameServers': !runtime_1.exists(json, 'DomainNameServers') ? undefined : json['DomainNameServers'],
-        'ntpServers': !runtime_1.exists(json, 'NtpServers') ? undefined : json['NtpServers'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
+        '_default': !exists(json, 'Default') ? undefined : json['Default'],
+        'dhcpOptionsSetId': !exists(json, 'DhcpOptionsSetId') ? undefined : json['DhcpOptionsSetId'],
+        'domainName': !exists(json, 'DomainName') ? undefined : json['DomainName'],
+        'domainNameServers': !exists(json, 'DomainNameServers') ? undefined : json['DomainNameServers'],
+        'ntpServers': !exists(json, 'NtpServers') ? undefined : json['NtpServers'],
+        'tags': !exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTagFromJSON)),
     };
 }
-exports.DhcpOptionsSetFromJSONTyped = DhcpOptionsSetFromJSONTyped;
-function DhcpOptionsSetToJSON(value) {
+export function DhcpOptionsSetToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -46,7 +42,6 @@ function DhcpOptionsSetToJSON(value) {
         'DomainName': value.domainName,
         'DomainNameServers': value.domainNameServers,
         'NtpServers': value.ntpServers,
-        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
+        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTagToJSON)),
     };
 }
-exports.DhcpOptionsSetToJSON = DhcpOptionsSetToJSON;

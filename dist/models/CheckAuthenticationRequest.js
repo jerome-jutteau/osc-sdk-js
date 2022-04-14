@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function CheckAuthenticationRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function CheckAuthenticationRequestFromJSON(json) {
     return CheckAuthenticationRequestFromJSONTyped(json, false);
 }
-exports.CheckAuthenticationRequestFromJSON = CheckAuthenticationRequestFromJSON;
-function CheckAuthenticationRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function CheckAuthenticationRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'login': json['Login'],
         'password': json['Password'],
     };
 }
-exports.CheckAuthenticationRequestFromJSONTyped = CheckAuthenticationRequestFromJSONTyped;
-function CheckAuthenticationRequestToJSON(value) {
+export function CheckAuthenticationRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,4 +38,3 @@ function CheckAuthenticationRequestToJSON(value) {
         'Password': value.password,
     };
 }
-exports.CheckAuthenticationRequestToJSON = CheckAuthenticationRequestToJSON;

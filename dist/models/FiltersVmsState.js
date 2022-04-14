@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,28 +11,25 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersVmsStateFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersVmsStateFromJSON(json) {
     return FiltersVmsStateFromJSONTyped(json, false);
 }
-exports.FiltersVmsStateFromJSON = FiltersVmsStateFromJSON;
-function FiltersVmsStateFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersVmsStateFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'maintenanceEventCodes': !runtime_1.exists(json, 'MaintenanceEventCodes') ? undefined : json['MaintenanceEventCodes'],
-        'maintenanceEventDescriptions': !runtime_1.exists(json, 'MaintenanceEventDescriptions') ? undefined : json['MaintenanceEventDescriptions'],
-        'maintenanceEventsNotAfter': !runtime_1.exists(json, 'MaintenanceEventsNotAfter') ? undefined : json['MaintenanceEventsNotAfter'],
-        'maintenanceEventsNotBefore': !runtime_1.exists(json, 'MaintenanceEventsNotBefore') ? undefined : json['MaintenanceEventsNotBefore'],
-        'subregionNames': !runtime_1.exists(json, 'SubregionNames') ? undefined : json['SubregionNames'],
-        'vmIds': !runtime_1.exists(json, 'VmIds') ? undefined : json['VmIds'],
-        'vmStates': !runtime_1.exists(json, 'VmStates') ? undefined : json['VmStates'],
+        'maintenanceEventCodes': !exists(json, 'MaintenanceEventCodes') ? undefined : json['MaintenanceEventCodes'],
+        'maintenanceEventDescriptions': !exists(json, 'MaintenanceEventDescriptions') ? undefined : json['MaintenanceEventDescriptions'],
+        'maintenanceEventsNotAfter': !exists(json, 'MaintenanceEventsNotAfter') ? undefined : json['MaintenanceEventsNotAfter'],
+        'maintenanceEventsNotBefore': !exists(json, 'MaintenanceEventsNotBefore') ? undefined : json['MaintenanceEventsNotBefore'],
+        'subregionNames': !exists(json, 'SubregionNames') ? undefined : json['SubregionNames'],
+        'vmIds': !exists(json, 'VmIds') ? undefined : json['VmIds'],
+        'vmStates': !exists(json, 'VmStates') ? undefined : json['VmStates'],
     };
 }
-exports.FiltersVmsStateFromJSONTyped = FiltersVmsStateFromJSONTyped;
-function FiltersVmsStateToJSON(value) {
+export function FiltersVmsStateToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -50,4 +46,3 @@ function FiltersVmsStateToJSON(value) {
         'VmStates': value.vmStates,
     };
 }
-exports.FiltersVmsStateToJSON = FiltersVmsStateToJSON;

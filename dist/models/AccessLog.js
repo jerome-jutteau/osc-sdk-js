@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function AccessLogFromJSON(json) {
+import { exists } from '../runtime';
+export function AccessLogFromJSON(json) {
     return AccessLogFromJSONTyped(json, false);
 }
-exports.AccessLogFromJSON = AccessLogFromJSON;
-function AccessLogFromJSONTyped(json, ignoreDiscriminator) {
+export function AccessLogFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'isEnabled': !runtime_1.exists(json, 'IsEnabled') ? undefined : json['IsEnabled'],
-        'osuBucketName': !runtime_1.exists(json, 'OsuBucketName') ? undefined : json['OsuBucketName'],
-        'osuBucketPrefix': !runtime_1.exists(json, 'OsuBucketPrefix') ? undefined : json['OsuBucketPrefix'],
-        'publicationInterval': !runtime_1.exists(json, 'PublicationInterval') ? undefined : json['PublicationInterval'],
+        'isEnabled': !exists(json, 'IsEnabled') ? undefined : json['IsEnabled'],
+        'osuBucketName': !exists(json, 'OsuBucketName') ? undefined : json['OsuBucketName'],
+        'osuBucketPrefix': !exists(json, 'OsuBucketPrefix') ? undefined : json['OsuBucketPrefix'],
+        'publicationInterval': !exists(json, 'PublicationInterval') ? undefined : json['PublicationInterval'],
     };
 }
-exports.AccessLogFromJSONTyped = AccessLogFromJSONTyped;
-function AccessLogToJSON(value) {
+export function AccessLogToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,4 +40,3 @@ function AccessLogToJSON(value) {
         'PublicationInterval': value.publicationInterval,
     };
 }
-exports.AccessLogToJSON = AccessLogToJSON;

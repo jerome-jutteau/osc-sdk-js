@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var FiltersVm_1 = require("./FiltersVm");
-function ReadVmsRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { FiltersVmFromJSON, FiltersVmToJSON, } from './FiltersVm';
+export function ReadVmsRequestFromJSON(json) {
     return ReadVmsRequestFromJSONTyped(json, false);
 }
-exports.ReadVmsRequestFromJSON = ReadVmsRequestFromJSON;
-function ReadVmsRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadVmsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'filters': !runtime_1.exists(json, 'Filters') ? undefined : FiltersVm_1.FiltersVmFromJSON(json['Filters']),
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'filters': !exists(json, 'Filters') ? undefined : FiltersVmFromJSON(json['Filters']),
     };
 }
-exports.ReadVmsRequestFromJSONTyped = ReadVmsRequestFromJSONTyped;
-function ReadVmsRequestToJSON(value) {
+export function ReadVmsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,7 +34,6 @@ function ReadVmsRequestToJSON(value) {
     }
     return {
         'DryRun': value.dryRun,
-        'Filters': FiltersVm_1.FiltersVmToJSON(value.filters),
+        'Filters': FiltersVmToJSON(value.filters),
     };
 }
-exports.ReadVmsRequestToJSON = ReadVmsRequestToJSON;

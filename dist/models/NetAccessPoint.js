@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,28 +11,25 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ResourceTag_1 = require("./ResourceTag");
-function NetAccessPointFromJSON(json) {
+import { exists } from '../runtime';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
+export function NetAccessPointFromJSON(json) {
     return NetAccessPointFromJSONTyped(json, false);
 }
-exports.NetAccessPointFromJSON = NetAccessPointFromJSON;
-function NetAccessPointFromJSONTyped(json, ignoreDiscriminator) {
+export function NetAccessPointFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'netAccessPointId': !runtime_1.exists(json, 'NetAccessPointId') ? undefined : json['NetAccessPointId'],
-        'netId': !runtime_1.exists(json, 'NetId') ? undefined : json['NetId'],
-        'routeTableIds': !runtime_1.exists(json, 'RouteTableIds') ? undefined : json['RouteTableIds'],
-        'serviceName': !runtime_1.exists(json, 'ServiceName') ? undefined : json['ServiceName'],
-        'state': !runtime_1.exists(json, 'State') ? undefined : json['State'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
+        'netAccessPointId': !exists(json, 'NetAccessPointId') ? undefined : json['NetAccessPointId'],
+        'netId': !exists(json, 'NetId') ? undefined : json['NetId'],
+        'routeTableIds': !exists(json, 'RouteTableIds') ? undefined : json['RouteTableIds'],
+        'serviceName': !exists(json, 'ServiceName') ? undefined : json['ServiceName'],
+        'state': !exists(json, 'State') ? undefined : json['State'],
+        'tags': !exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTagFromJSON)),
     };
 }
-exports.NetAccessPointFromJSONTyped = NetAccessPointFromJSONTyped;
-function NetAccessPointToJSON(value) {
+export function NetAccessPointToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -46,7 +42,6 @@ function NetAccessPointToJSON(value) {
         'RouteTableIds': value.routeTableIds,
         'ServiceName': value.serviceName,
         'State': value.state,
-        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
+        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTagToJSON)),
     };
 }
-exports.NetAccessPointToJSON = NetAccessPointToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,22 +11,19 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function ReadApiAccessPolicyRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function ReadApiAccessPolicyRequestFromJSON(json) {
     return ReadApiAccessPolicyRequestFromJSONTyped(json, false);
 }
-exports.ReadApiAccessPolicyRequestFromJSON = ReadApiAccessPolicyRequestFromJSON;
-function ReadApiAccessPolicyRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadApiAccessPolicyRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
     };
 }
-exports.ReadApiAccessPolicyRequestFromJSONTyped = ReadApiAccessPolicyRequestFromJSONTyped;
-function ReadApiAccessPolicyRequestToJSON(value) {
+export function ReadApiAccessPolicyRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,4 +34,3 @@ function ReadApiAccessPolicyRequestToJSON(value) {
         'DryRun': value.dryRun,
     };
 }
-exports.ReadApiAccessPolicyRequestToJSON = ReadApiAccessPolicyRequestToJSON;

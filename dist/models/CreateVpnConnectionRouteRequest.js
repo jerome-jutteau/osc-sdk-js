@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function CreateVpnConnectionRouteRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function CreateVpnConnectionRouteRequestFromJSON(json) {
     return CreateVpnConnectionRouteRequestFromJSONTyped(json, false);
 }
-exports.CreateVpnConnectionRouteRequestFromJSON = CreateVpnConnectionRouteRequestFromJSON;
-function CreateVpnConnectionRouteRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateVpnConnectionRouteRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'destinationIpRange': json['DestinationIpRange'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'vpnConnectionId': json['VpnConnectionId'],
     };
 }
-exports.CreateVpnConnectionRouteRequestFromJSONTyped = CreateVpnConnectionRouteRequestFromJSONTyped;
-function CreateVpnConnectionRouteRequestToJSON(value) {
+export function CreateVpnConnectionRouteRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,4 +38,3 @@ function CreateVpnConnectionRouteRequestToJSON(value) {
         'VpnConnectionId': value.vpnConnectionId,
     };
 }
-exports.CreateVpnConnectionRouteRequestToJSON = CreateVpnConnectionRouteRequestToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var DirectLinkInterfaces_1 = require("./DirectLinkInterfaces");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function CreateDirectLinkInterfaceResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { DirectLinkInterfacesFromJSON, DirectLinkInterfacesToJSON, } from './DirectLinkInterfaces';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function CreateDirectLinkInterfaceResponseFromJSON(json) {
     return CreateDirectLinkInterfaceResponseFromJSONTyped(json, false);
 }
-exports.CreateDirectLinkInterfaceResponseFromJSON = CreateDirectLinkInterfaceResponseFromJSON;
-function CreateDirectLinkInterfaceResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateDirectLinkInterfaceResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'directLinkInterface': !runtime_1.exists(json, 'DirectLinkInterface') ? undefined : DirectLinkInterfaces_1.DirectLinkInterfacesFromJSON(json['DirectLinkInterface']),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'directLinkInterface': !exists(json, 'DirectLinkInterface') ? undefined : DirectLinkInterfacesFromJSON(json['DirectLinkInterface']),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.CreateDirectLinkInterfaceResponseFromJSONTyped = CreateDirectLinkInterfaceResponseFromJSONTyped;
-function CreateDirectLinkInterfaceResponseToJSON(value) {
+export function CreateDirectLinkInterfaceResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function CreateDirectLinkInterfaceResponseToJSON(value) {
         return null;
     }
     return {
-        'DirectLinkInterface': DirectLinkInterfaces_1.DirectLinkInterfacesToJSON(value.directLinkInterface),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'DirectLinkInterface': DirectLinkInterfacesToJSON(value.directLinkInterface),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.CreateDirectLinkInterfaceResponseToJSON = CreateDirectLinkInterfaceResponseToJSON;

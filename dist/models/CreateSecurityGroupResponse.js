@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var SecurityGroup_1 = require("./SecurityGroup");
-function CreateSecurityGroupResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { SecurityGroupFromJSON, SecurityGroupToJSON, } from './SecurityGroup';
+export function CreateSecurityGroupResponseFromJSON(json) {
     return CreateSecurityGroupResponseFromJSONTyped(json, false);
 }
-exports.CreateSecurityGroupResponseFromJSON = CreateSecurityGroupResponseFromJSON;
-function CreateSecurityGroupResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateSecurityGroupResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
-        'securityGroup': !runtime_1.exists(json, 'SecurityGroup') ? undefined : SecurityGroup_1.SecurityGroupFromJSON(json['SecurityGroup']),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
+        'securityGroup': !exists(json, 'SecurityGroup') ? undefined : SecurityGroupFromJSON(json['SecurityGroup']),
     };
 }
-exports.CreateSecurityGroupResponseFromJSONTyped = CreateSecurityGroupResponseFromJSONTyped;
-function CreateSecurityGroupResponseToJSON(value) {
+export function CreateSecurityGroupResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function CreateSecurityGroupResponseToJSON(value) {
         return null;
     }
     return {
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
-        'SecurityGroup': SecurityGroup_1.SecurityGroupToJSON(value.securityGroup),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
+        'SecurityGroup': SecurityGroupToJSON(value.securityGroup),
     };
 }
-exports.CreateSecurityGroupResponseToJSON = CreateSecurityGroupResponseToJSON;

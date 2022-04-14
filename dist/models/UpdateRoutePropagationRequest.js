@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function UpdateRoutePropagationRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function UpdateRoutePropagationRequestFromJSON(json) {
     return UpdateRoutePropagationRequestFromJSONTyped(json, false);
 }
-exports.UpdateRoutePropagationRequestFromJSON = UpdateRoutePropagationRequestFromJSON;
-function UpdateRoutePropagationRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function UpdateRoutePropagationRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'enable': json['Enable'],
         'routeTableId': json['RouteTableId'],
         'virtualGatewayId': json['VirtualGatewayId'],
     };
 }
-exports.UpdateRoutePropagationRequestFromJSONTyped = UpdateRoutePropagationRequestFromJSONTyped;
-function UpdateRoutePropagationRequestToJSON(value) {
+export function UpdateRoutePropagationRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,4 +40,3 @@ function UpdateRoutePropagationRequestToJSON(value) {
         'VirtualGatewayId': value.virtualGatewayId,
     };
 }
-exports.UpdateRoutePropagationRequestToJSON = UpdateRoutePropagationRequestToJSON;

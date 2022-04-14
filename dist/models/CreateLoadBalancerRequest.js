@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,32 +11,29 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ListenerForCreation_1 = require("./ListenerForCreation");
-var ResourceTag_1 = require("./ResourceTag");
-function CreateLoadBalancerRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { ListenerForCreationFromJSON, ListenerForCreationToJSON, } from './ListenerForCreation';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
+export function CreateLoadBalancerRequestFromJSON(json) {
     return CreateLoadBalancerRequestFromJSONTyped(json, false);
 }
-exports.CreateLoadBalancerRequestFromJSON = CreateLoadBalancerRequestFromJSON;
-function CreateLoadBalancerRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateLoadBalancerRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'listeners': (json['Listeners'].map(ListenerForCreation_1.ListenerForCreationFromJSON)),
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'listeners': (json['Listeners'].map(ListenerForCreationFromJSON)),
         'loadBalancerName': json['LoadBalancerName'],
-        'loadBalancerType': !runtime_1.exists(json, 'LoadBalancerType') ? undefined : json['LoadBalancerType'],
-        'publicIp': !runtime_1.exists(json, 'PublicIp') ? undefined : json['PublicIp'],
-        'securityGroups': !runtime_1.exists(json, 'SecurityGroups') ? undefined : json['SecurityGroups'],
-        'subnets': !runtime_1.exists(json, 'Subnets') ? undefined : json['Subnets'],
-        'subregionNames': !runtime_1.exists(json, 'SubregionNames') ? undefined : json['SubregionNames'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
+        'loadBalancerType': !exists(json, 'LoadBalancerType') ? undefined : json['LoadBalancerType'],
+        'publicIp': !exists(json, 'PublicIp') ? undefined : json['PublicIp'],
+        'securityGroups': !exists(json, 'SecurityGroups') ? undefined : json['SecurityGroups'],
+        'subnets': !exists(json, 'Subnets') ? undefined : json['Subnets'],
+        'subregionNames': !exists(json, 'SubregionNames') ? undefined : json['SubregionNames'],
+        'tags': !exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTagFromJSON)),
     };
 }
-exports.CreateLoadBalancerRequestFromJSONTyped = CreateLoadBalancerRequestFromJSONTyped;
-function CreateLoadBalancerRequestToJSON(value) {
+export function CreateLoadBalancerRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -46,14 +42,13 @@ function CreateLoadBalancerRequestToJSON(value) {
     }
     return {
         'DryRun': value.dryRun,
-        'Listeners': (value.listeners.map(ListenerForCreation_1.ListenerForCreationToJSON)),
+        'Listeners': (value.listeners.map(ListenerForCreationToJSON)),
         'LoadBalancerName': value.loadBalancerName,
         'LoadBalancerType': value.loadBalancerType,
         'PublicIp': value.publicIp,
         'SecurityGroups': value.securityGroups,
         'Subnets': value.subnets,
         'SubregionNames': value.subregionNames,
-        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
+        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTagToJSON)),
     };
 }
-exports.CreateLoadBalancerRequestToJSON = CreateLoadBalancerRequestToJSON;

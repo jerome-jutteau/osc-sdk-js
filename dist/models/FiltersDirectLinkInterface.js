@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersDirectLinkInterfaceFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersDirectLinkInterfaceFromJSON(json) {
     return FiltersDirectLinkInterfaceFromJSONTyped(json, false);
 }
-exports.FiltersDirectLinkInterfaceFromJSON = FiltersDirectLinkInterfaceFromJSON;
-function FiltersDirectLinkInterfaceFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersDirectLinkInterfaceFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'directLinkIds': !runtime_1.exists(json, 'DirectLinkIds') ? undefined : json['DirectLinkIds'],
-        'directLinkInterfaceIds': !runtime_1.exists(json, 'DirectLinkInterfaceIds') ? undefined : json['DirectLinkInterfaceIds'],
+        'directLinkIds': !exists(json, 'DirectLinkIds') ? undefined : json['DirectLinkIds'],
+        'directLinkInterfaceIds': !exists(json, 'DirectLinkInterfaceIds') ? undefined : json['DirectLinkInterfaceIds'],
     };
 }
-exports.FiltersDirectLinkInterfaceFromJSONTyped = FiltersDirectLinkInterfaceFromJSONTyped;
-function FiltersDirectLinkInterfaceToJSON(value) {
+export function FiltersDirectLinkInterfaceToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function FiltersDirectLinkInterfaceToJSON(value) {
         'DirectLinkInterfaceIds': value.directLinkInterfaceIds,
     };
 }
-exports.FiltersDirectLinkInterfaceToJSON = FiltersDirectLinkInterfaceToJSON;

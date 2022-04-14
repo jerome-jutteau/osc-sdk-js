@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,28 +11,25 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function DirectLinkFromJSON(json) {
+import { exists } from '../runtime';
+export function DirectLinkFromJSON(json) {
     return DirectLinkFromJSONTyped(json, false);
 }
-exports.DirectLinkFromJSON = DirectLinkFromJSON;
-function DirectLinkFromJSONTyped(json, ignoreDiscriminator) {
+export function DirectLinkFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'accountId': !runtime_1.exists(json, 'AccountId') ? undefined : json['AccountId'],
-        'bandwidth': !runtime_1.exists(json, 'Bandwidth') ? undefined : json['Bandwidth'],
-        'directLinkId': !runtime_1.exists(json, 'DirectLinkId') ? undefined : json['DirectLinkId'],
-        'directLinkName': !runtime_1.exists(json, 'DirectLinkName') ? undefined : json['DirectLinkName'],
-        'location': !runtime_1.exists(json, 'Location') ? undefined : json['Location'],
-        'regionName': !runtime_1.exists(json, 'RegionName') ? undefined : json['RegionName'],
-        'state': !runtime_1.exists(json, 'State') ? undefined : json['State'],
+        'accountId': !exists(json, 'AccountId') ? undefined : json['AccountId'],
+        'bandwidth': !exists(json, 'Bandwidth') ? undefined : json['Bandwidth'],
+        'directLinkId': !exists(json, 'DirectLinkId') ? undefined : json['DirectLinkId'],
+        'directLinkName': !exists(json, 'DirectLinkName') ? undefined : json['DirectLinkName'],
+        'location': !exists(json, 'Location') ? undefined : json['Location'],
+        'regionName': !exists(json, 'RegionName') ? undefined : json['RegionName'],
+        'state': !exists(json, 'State') ? undefined : json['State'],
     };
 }
-exports.DirectLinkFromJSONTyped = DirectLinkFromJSONTyped;
-function DirectLinkToJSON(value) {
+export function DirectLinkToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -50,4 +46,3 @@ function DirectLinkToJSON(value) {
         'State': value.state,
     };
 }
-exports.DirectLinkToJSON = DirectLinkToJSON;

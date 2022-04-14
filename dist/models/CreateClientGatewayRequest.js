@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function CreateClientGatewayRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function CreateClientGatewayRequestFromJSON(json) {
     return CreateClientGatewayRequestFromJSONTyped(json, false);
 }
-exports.CreateClientGatewayRequestFromJSON = CreateClientGatewayRequestFromJSON;
-function CreateClientGatewayRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateClientGatewayRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'bgpAsn': json['BgpAsn'],
         'connectionType': json['ConnectionType'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'publicIp': json['PublicIp'],
     };
 }
-exports.CreateClientGatewayRequestFromJSONTyped = CreateClientGatewayRequestFromJSONTyped;
-function CreateClientGatewayRequestToJSON(value) {
+export function CreateClientGatewayRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,4 +40,3 @@ function CreateClientGatewayRequestToJSON(value) {
         'PublicIp': value.publicIp,
     };
 }
-exports.CreateClientGatewayRequestToJSON = CreateClientGatewayRequestToJSON;

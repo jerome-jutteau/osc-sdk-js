@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function ReadVmsHealthRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function ReadVmsHealthRequestFromJSON(json) {
     return ReadVmsHealthRequestFromJSONTyped(json, false);
 }
-exports.ReadVmsHealthRequestFromJSON = ReadVmsHealthRequestFromJSON;
-function ReadVmsHealthRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadVmsHealthRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'backendVmIds': !runtime_1.exists(json, 'BackendVmIds') ? undefined : json['BackendVmIds'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'backendVmIds': !exists(json, 'BackendVmIds') ? undefined : json['BackendVmIds'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'loadBalancerName': json['LoadBalancerName'],
     };
 }
-exports.ReadVmsHealthRequestFromJSONTyped = ReadVmsHealthRequestFromJSONTyped;
-function ReadVmsHealthRequestToJSON(value) {
+export function ReadVmsHealthRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,4 +38,3 @@ function ReadVmsHealthRequestToJSON(value) {
         'LoadBalancerName': value.loadBalancerName,
     };
 }
-exports.ReadVmsHealthRequestToJSON = ReadVmsHealthRequestToJSON;

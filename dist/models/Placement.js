@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function PlacementFromJSON(json) {
+import { exists } from '../runtime';
+export function PlacementFromJSON(json) {
     return PlacementFromJSONTyped(json, false);
 }
-exports.PlacementFromJSON = PlacementFromJSON;
-function PlacementFromJSONTyped(json, ignoreDiscriminator) {
+export function PlacementFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'subregionName': !runtime_1.exists(json, 'SubregionName') ? undefined : json['SubregionName'],
-        'tenancy': !runtime_1.exists(json, 'Tenancy') ? undefined : json['Tenancy'],
+        'subregionName': !exists(json, 'SubregionName') ? undefined : json['SubregionName'],
+        'tenancy': !exists(json, 'Tenancy') ? undefined : json['Tenancy'],
     };
 }
-exports.PlacementFromJSONTyped = PlacementFromJSONTyped;
-function PlacementToJSON(value) {
+export function PlacementToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function PlacementToJSON(value) {
         'Tenancy': value.tenancy,
     };
 }
-exports.PlacementToJSON = PlacementToJSON;

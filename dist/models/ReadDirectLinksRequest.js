@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var FiltersDirectLink_1 = require("./FiltersDirectLink");
-function ReadDirectLinksRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { FiltersDirectLinkFromJSON, FiltersDirectLinkToJSON, } from './FiltersDirectLink';
+export function ReadDirectLinksRequestFromJSON(json) {
     return ReadDirectLinksRequestFromJSONTyped(json, false);
 }
-exports.ReadDirectLinksRequestFromJSON = ReadDirectLinksRequestFromJSON;
-function ReadDirectLinksRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadDirectLinksRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'filters': !runtime_1.exists(json, 'Filters') ? undefined : FiltersDirectLink_1.FiltersDirectLinkFromJSON(json['Filters']),
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'filters': !exists(json, 'Filters') ? undefined : FiltersDirectLinkFromJSON(json['Filters']),
     };
 }
-exports.ReadDirectLinksRequestFromJSONTyped = ReadDirectLinksRequestFromJSONTyped;
-function ReadDirectLinksRequestToJSON(value) {
+export function ReadDirectLinksRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,7 +34,6 @@ function ReadDirectLinksRequestToJSON(value) {
     }
     return {
         'DryRun': value.dryRun,
-        'Filters': FiltersDirectLink_1.FiltersDirectLinkToJSON(value.filters),
+        'Filters': FiltersDirectLinkToJSON(value.filters),
     };
 }
-exports.ReadDirectLinksRequestToJSON = ReadDirectLinksRequestToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,30 +11,27 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersSubnetFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersSubnetFromJSON(json) {
     return FiltersSubnetFromJSONTyped(json, false);
 }
-exports.FiltersSubnetFromJSON = FiltersSubnetFromJSON;
-function FiltersSubnetFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersSubnetFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'availableIpsCounts': !runtime_1.exists(json, 'AvailableIpsCounts') ? undefined : json['AvailableIpsCounts'],
-        'ipRanges': !runtime_1.exists(json, 'IpRanges') ? undefined : json['IpRanges'],
-        'netIds': !runtime_1.exists(json, 'NetIds') ? undefined : json['NetIds'],
-        'states': !runtime_1.exists(json, 'States') ? undefined : json['States'],
-        'subnetIds': !runtime_1.exists(json, 'SubnetIds') ? undefined : json['SubnetIds'],
-        'subregionNames': !runtime_1.exists(json, 'SubregionNames') ? undefined : json['SubregionNames'],
-        'tagKeys': !runtime_1.exists(json, 'TagKeys') ? undefined : json['TagKeys'],
-        'tagValues': !runtime_1.exists(json, 'TagValues') ? undefined : json['TagValues'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : json['Tags'],
+        'availableIpsCounts': !exists(json, 'AvailableIpsCounts') ? undefined : json['AvailableIpsCounts'],
+        'ipRanges': !exists(json, 'IpRanges') ? undefined : json['IpRanges'],
+        'netIds': !exists(json, 'NetIds') ? undefined : json['NetIds'],
+        'states': !exists(json, 'States') ? undefined : json['States'],
+        'subnetIds': !exists(json, 'SubnetIds') ? undefined : json['SubnetIds'],
+        'subregionNames': !exists(json, 'SubregionNames') ? undefined : json['SubregionNames'],
+        'tagKeys': !exists(json, 'TagKeys') ? undefined : json['TagKeys'],
+        'tagValues': !exists(json, 'TagValues') ? undefined : json['TagValues'],
+        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
     };
 }
-exports.FiltersSubnetFromJSONTyped = FiltersSubnetFromJSONTyped;
-function FiltersSubnetToJSON(value) {
+export function FiltersSubnetToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -54,4 +50,3 @@ function FiltersSubnetToJSON(value) {
         'Tags': value.tags,
     };
 }
-exports.FiltersSubnetToJSON = FiltersSubnetToJSON;

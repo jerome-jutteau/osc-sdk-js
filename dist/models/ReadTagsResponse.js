@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var Tag_1 = require("./Tag");
-function ReadTagsResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { TagFromJSON, TagToJSON, } from './Tag';
+export function ReadTagsResponseFromJSON(json) {
     return ReadTagsResponseFromJSONTyped(json, false);
 }
-exports.ReadTagsResponseFromJSON = ReadTagsResponseFromJSON;
-function ReadTagsResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadTagsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : (json['Tags'].map(Tag_1.TagFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
+        'tags': !exists(json, 'Tags') ? undefined : (json['Tags'].map(TagFromJSON)),
     };
 }
-exports.ReadTagsResponseFromJSONTyped = ReadTagsResponseFromJSONTyped;
-function ReadTagsResponseToJSON(value) {
+export function ReadTagsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadTagsResponseToJSON(value) {
         return null;
     }
     return {
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
-        'Tags': value.tags === undefined ? undefined : (value.tags.map(Tag_1.TagToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
+        'Tags': value.tags === undefined ? undefined : (value.tags.map(TagToJSON)),
     };
 }
-exports.ReadTagsResponseToJSON = ReadTagsResponseToJSON;

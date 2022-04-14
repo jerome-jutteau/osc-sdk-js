@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var PublicIp_1 = require("./PublicIp");
-function CreatePublicIpResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { PublicIpFromJSON, PublicIpToJSON, } from './PublicIp';
+export function CreatePublicIpResponseFromJSON(json) {
     return CreatePublicIpResponseFromJSONTyped(json, false);
 }
-exports.CreatePublicIpResponseFromJSON = CreatePublicIpResponseFromJSON;
-function CreatePublicIpResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function CreatePublicIpResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'publicIp': !runtime_1.exists(json, 'PublicIp') ? undefined : PublicIp_1.PublicIpFromJSON(json['PublicIp']),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'publicIp': !exists(json, 'PublicIp') ? undefined : PublicIpFromJSON(json['PublicIp']),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.CreatePublicIpResponseFromJSONTyped = CreatePublicIpResponseFromJSONTyped;
-function CreatePublicIpResponseToJSON(value) {
+export function CreatePublicIpResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function CreatePublicIpResponseToJSON(value) {
         return null;
     }
     return {
-        'PublicIp': PublicIp_1.PublicIpToJSON(value.publicIp),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'PublicIp': PublicIpToJSON(value.publicIp),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.CreatePublicIpResponseToJSON = CreatePublicIpResponseToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function PermissionsOnResourceFromJSON(json) {
+import { exists } from '../runtime';
+export function PermissionsOnResourceFromJSON(json) {
     return PermissionsOnResourceFromJSONTyped(json, false);
 }
-exports.PermissionsOnResourceFromJSON = PermissionsOnResourceFromJSON;
-function PermissionsOnResourceFromJSONTyped(json, ignoreDiscriminator) {
+export function PermissionsOnResourceFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'accountIds': !runtime_1.exists(json, 'AccountIds') ? undefined : json['AccountIds'],
-        'globalPermission': !runtime_1.exists(json, 'GlobalPermission') ? undefined : json['GlobalPermission'],
+        'accountIds': !exists(json, 'AccountIds') ? undefined : json['AccountIds'],
+        'globalPermission': !exists(json, 'GlobalPermission') ? undefined : json['GlobalPermission'],
     };
 }
-exports.PermissionsOnResourceFromJSONTyped = PermissionsOnResourceFromJSONTyped;
-function PermissionsOnResourceToJSON(value) {
+export function PermissionsOnResourceToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function PermissionsOnResourceToJSON(value) {
         'GlobalPermission': value.globalPermission,
     };
 }
-exports.PermissionsOnResourceToJSON = PermissionsOnResourceToJSON;

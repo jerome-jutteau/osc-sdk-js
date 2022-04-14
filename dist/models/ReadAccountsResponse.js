@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var Account_1 = require("./Account");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function ReadAccountsResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { AccountFromJSON, AccountToJSON, } from './Account';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function ReadAccountsResponseFromJSON(json) {
     return ReadAccountsResponseFromJSONTyped(json, false);
 }
-exports.ReadAccountsResponseFromJSON = ReadAccountsResponseFromJSON;
-function ReadAccountsResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadAccountsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'accounts': !runtime_1.exists(json, 'Accounts') ? undefined : (json['Accounts'].map(Account_1.AccountFromJSON)),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'accounts': !exists(json, 'Accounts') ? undefined : (json['Accounts'].map(AccountFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.ReadAccountsResponseFromJSONTyped = ReadAccountsResponseFromJSONTyped;
-function ReadAccountsResponseToJSON(value) {
+export function ReadAccountsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadAccountsResponseToJSON(value) {
         return null;
     }
     return {
-        'Accounts': value.accounts === undefined ? undefined : (value.accounts.map(Account_1.AccountToJSON)),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'Accounts': value.accounts === undefined ? undefined : (value.accounts.map(AccountToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.ReadAccountsResponseToJSON = ReadAccountsResponseToJSON;

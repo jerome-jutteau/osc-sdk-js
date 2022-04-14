@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function DeleteDirectLinkRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function DeleteDirectLinkRequestFromJSON(json) {
     return DeleteDirectLinkRequestFromJSONTyped(json, false);
 }
-exports.DeleteDirectLinkRequestFromJSON = DeleteDirectLinkRequestFromJSON;
-function DeleteDirectLinkRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function DeleteDirectLinkRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'directLinkId': json['DirectLinkId'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
     };
 }
-exports.DeleteDirectLinkRequestFromJSONTyped = DeleteDirectLinkRequestFromJSONTyped;
-function DeleteDirectLinkRequestToJSON(value) {
+export function DeleteDirectLinkRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function DeleteDirectLinkRequestToJSON(value) {
         'DryRun': value.dryRun,
     };
 }
-exports.DeleteDirectLinkRequestToJSON = DeleteDirectLinkRequestToJSON;

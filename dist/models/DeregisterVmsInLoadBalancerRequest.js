@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function DeregisterVmsInLoadBalancerRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function DeregisterVmsInLoadBalancerRequestFromJSON(json) {
     return DeregisterVmsInLoadBalancerRequestFromJSONTyped(json, false);
 }
-exports.DeregisterVmsInLoadBalancerRequestFromJSON = DeregisterVmsInLoadBalancerRequestFromJSON;
-function DeregisterVmsInLoadBalancerRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function DeregisterVmsInLoadBalancerRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'backendVmIds': json['BackendVmIds'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'loadBalancerName': json['LoadBalancerName'],
     };
 }
-exports.DeregisterVmsInLoadBalancerRequestFromJSONTyped = DeregisterVmsInLoadBalancerRequestFromJSONTyped;
-function DeregisterVmsInLoadBalancerRequestToJSON(value) {
+export function DeregisterVmsInLoadBalancerRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,4 +38,3 @@ function DeregisterVmsInLoadBalancerRequestToJSON(value) {
         'LoadBalancerName': value.loadBalancerName,
     };
 }
-exports.DeregisterVmsInLoadBalancerRequestToJSON = DeregisterVmsInLoadBalancerRequestToJSON;

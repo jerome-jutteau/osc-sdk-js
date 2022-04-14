@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function DeleteNatServiceRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function DeleteNatServiceRequestFromJSON(json) {
     return DeleteNatServiceRequestFromJSONTyped(json, false);
 }
-exports.DeleteNatServiceRequestFromJSON = DeleteNatServiceRequestFromJSON;
-function DeleteNatServiceRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function DeleteNatServiceRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'natServiceId': json['NatServiceId'],
     };
 }
-exports.DeleteNatServiceRequestFromJSONTyped = DeleteNatServiceRequestFromJSONTyped;
-function DeleteNatServiceRequestToJSON(value) {
+export function DeleteNatServiceRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function DeleteNatServiceRequestToJSON(value) {
         'NatServiceId': value.natServiceId,
     };
 }
-exports.DeleteNatServiceRequestToJSON = DeleteNatServiceRequestToJSON;

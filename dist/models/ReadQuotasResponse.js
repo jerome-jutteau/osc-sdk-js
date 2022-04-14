@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var QuotaTypes_1 = require("./QuotaTypes");
-function ReadQuotasResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { QuotaTypesFromJSON, QuotaTypesToJSON, } from './QuotaTypes';
+export function ReadQuotasResponseFromJSON(json) {
     return ReadQuotasResponseFromJSONTyped(json, false);
 }
-exports.ReadQuotasResponseFromJSON = ReadQuotasResponseFromJSON;
-function ReadQuotasResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadQuotasResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'quotaTypes': !runtime_1.exists(json, 'QuotaTypes') ? undefined : (json['QuotaTypes'].map(QuotaTypes_1.QuotaTypesFromJSON)),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'quotaTypes': !exists(json, 'QuotaTypes') ? undefined : (json['QuotaTypes'].map(QuotaTypesFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.ReadQuotasResponseFromJSONTyped = ReadQuotasResponseFromJSONTyped;
-function ReadQuotasResponseToJSON(value) {
+export function ReadQuotasResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadQuotasResponseToJSON(value) {
         return null;
     }
     return {
-        'QuotaTypes': value.quotaTypes === undefined ? undefined : (value.quotaTypes.map(QuotaTypes_1.QuotaTypesToJSON)),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'QuotaTypes': value.quotaTypes === undefined ? undefined : (value.quotaTypes.map(QuotaTypesToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.ReadQuotasResponseToJSON = ReadQuotasResponseToJSON;

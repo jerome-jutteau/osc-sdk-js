@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,26 +11,23 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var MaintenanceEvent_1 = require("./MaintenanceEvent");
-function VmStatesFromJSON(json) {
+import { exists } from '../runtime';
+import { MaintenanceEventFromJSON, MaintenanceEventToJSON, } from './MaintenanceEvent';
+export function VmStatesFromJSON(json) {
     return VmStatesFromJSONTyped(json, false);
 }
-exports.VmStatesFromJSON = VmStatesFromJSON;
-function VmStatesFromJSONTyped(json, ignoreDiscriminator) {
+export function VmStatesFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'maintenanceEvents': !runtime_1.exists(json, 'MaintenanceEvents') ? undefined : (json['MaintenanceEvents'].map(MaintenanceEvent_1.MaintenanceEventFromJSON)),
-        'subregionName': !runtime_1.exists(json, 'SubregionName') ? undefined : json['SubregionName'],
-        'vmId': !runtime_1.exists(json, 'VmId') ? undefined : json['VmId'],
-        'vmState': !runtime_1.exists(json, 'VmState') ? undefined : json['VmState'],
+        'maintenanceEvents': !exists(json, 'MaintenanceEvents') ? undefined : (json['MaintenanceEvents'].map(MaintenanceEventFromJSON)),
+        'subregionName': !exists(json, 'SubregionName') ? undefined : json['SubregionName'],
+        'vmId': !exists(json, 'VmId') ? undefined : json['VmId'],
+        'vmState': !exists(json, 'VmState') ? undefined : json['VmState'],
     };
 }
-exports.VmStatesFromJSONTyped = VmStatesFromJSONTyped;
-function VmStatesToJSON(value) {
+export function VmStatesToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -39,10 +35,9 @@ function VmStatesToJSON(value) {
         return null;
     }
     return {
-        'MaintenanceEvents': value.maintenanceEvents === undefined ? undefined : (value.maintenanceEvents.map(MaintenanceEvent_1.MaintenanceEventToJSON)),
+        'MaintenanceEvents': value.maintenanceEvents === undefined ? undefined : (value.maintenanceEvents.map(MaintenanceEventToJSON)),
         'SubregionName': value.subregionName,
         'VmId': value.vmId,
         'VmState': value.vmState,
     };
 }
-exports.VmStatesToJSON = VmStatesToJSON;

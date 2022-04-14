@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,29 +11,26 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersClientGatewayFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersClientGatewayFromJSON(json) {
     return FiltersClientGatewayFromJSONTyped(json, false);
 }
-exports.FiltersClientGatewayFromJSON = FiltersClientGatewayFromJSON;
-function FiltersClientGatewayFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersClientGatewayFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'bgpAsns': !runtime_1.exists(json, 'BgpAsns') ? undefined : json['BgpAsns'],
-        'clientGatewayIds': !runtime_1.exists(json, 'ClientGatewayIds') ? undefined : json['ClientGatewayIds'],
-        'connectionTypes': !runtime_1.exists(json, 'ConnectionTypes') ? undefined : json['ConnectionTypes'],
-        'publicIps': !runtime_1.exists(json, 'PublicIps') ? undefined : json['PublicIps'],
-        'states': !runtime_1.exists(json, 'States') ? undefined : json['States'],
-        'tagKeys': !runtime_1.exists(json, 'TagKeys') ? undefined : json['TagKeys'],
-        'tagValues': !runtime_1.exists(json, 'TagValues') ? undefined : json['TagValues'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : json['Tags'],
+        'bgpAsns': !exists(json, 'BgpAsns') ? undefined : json['BgpAsns'],
+        'clientGatewayIds': !exists(json, 'ClientGatewayIds') ? undefined : json['ClientGatewayIds'],
+        'connectionTypes': !exists(json, 'ConnectionTypes') ? undefined : json['ConnectionTypes'],
+        'publicIps': !exists(json, 'PublicIps') ? undefined : json['PublicIps'],
+        'states': !exists(json, 'States') ? undefined : json['States'],
+        'tagKeys': !exists(json, 'TagKeys') ? undefined : json['TagKeys'],
+        'tagValues': !exists(json, 'TagValues') ? undefined : json['TagValues'],
+        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
     };
 }
-exports.FiltersClientGatewayFromJSONTyped = FiltersClientGatewayFromJSONTyped;
-function FiltersClientGatewayToJSON(value) {
+export function FiltersClientGatewayToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -52,4 +48,3 @@ function FiltersClientGatewayToJSON(value) {
         'Tags': value.tags,
     };
 }
-exports.FiltersClientGatewayToJSON = FiltersClientGatewayToJSON;

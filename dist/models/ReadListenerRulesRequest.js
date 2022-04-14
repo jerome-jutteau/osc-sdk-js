@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var FiltersListenerRule_1 = require("./FiltersListenerRule");
-function ReadListenerRulesRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { FiltersListenerRuleFromJSON, FiltersListenerRuleToJSON, } from './FiltersListenerRule';
+export function ReadListenerRulesRequestFromJSON(json) {
     return ReadListenerRulesRequestFromJSONTyped(json, false);
 }
-exports.ReadListenerRulesRequestFromJSON = ReadListenerRulesRequestFromJSON;
-function ReadListenerRulesRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadListenerRulesRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'filters': !runtime_1.exists(json, 'Filters') ? undefined : FiltersListenerRule_1.FiltersListenerRuleFromJSON(json['Filters']),
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'filters': !exists(json, 'Filters') ? undefined : FiltersListenerRuleFromJSON(json['Filters']),
     };
 }
-exports.ReadListenerRulesRequestFromJSONTyped = ReadListenerRulesRequestFromJSONTyped;
-function ReadListenerRulesRequestToJSON(value) {
+export function ReadListenerRulesRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,7 +34,6 @@ function ReadListenerRulesRequestToJSON(value) {
     }
     return {
         'DryRun': value.dryRun,
-        'Filters': FiltersListenerRule_1.FiltersListenerRuleToJSON(value.filters),
+        'Filters': FiltersListenerRuleToJSON(value.filters),
     };
 }
-exports.ReadListenerRulesRequestToJSON = ReadListenerRulesRequestToJSON;

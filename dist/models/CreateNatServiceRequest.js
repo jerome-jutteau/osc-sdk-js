@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function CreateNatServiceRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function CreateNatServiceRequestFromJSON(json) {
     return CreateNatServiceRequestFromJSONTyped(json, false);
 }
-exports.CreateNatServiceRequestFromJSON = CreateNatServiceRequestFromJSON;
-function CreateNatServiceRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateNatServiceRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'publicIpId': json['PublicIpId'],
         'subnetId': json['SubnetId'],
     };
 }
-exports.CreateNatServiceRequestFromJSONTyped = CreateNatServiceRequestFromJSONTyped;
-function CreateNatServiceRequestToJSON(value) {
+export function CreateNatServiceRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,4 +38,3 @@ function CreateNatServiceRequestToJSON(value) {
         'SubnetId': value.subnetId,
     };
 }
-exports.CreateNatServiceRequestToJSON = CreateNatServiceRequestToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,32 +11,29 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function ConsumptionEntryFromJSON(json) {
+import { exists } from '../runtime';
+export function ConsumptionEntryFromJSON(json) {
     return ConsumptionEntryFromJSONTyped(json, false);
 }
-exports.ConsumptionEntryFromJSON = ConsumptionEntryFromJSON;
-function ConsumptionEntryFromJSONTyped(json, ignoreDiscriminator) {
+export function ConsumptionEntryFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'accountId': !runtime_1.exists(json, 'AccountId') ? undefined : json['AccountId'],
-        'category': !runtime_1.exists(json, 'Category') ? undefined : json['Category'],
-        'fromDate': !runtime_1.exists(json, 'FromDate') ? undefined : json['FromDate'],
-        'operation': !runtime_1.exists(json, 'Operation') ? undefined : json['Operation'],
-        'payingAccountId': !runtime_1.exists(json, 'PayingAccountId') ? undefined : json['PayingAccountId'],
-        'service': !runtime_1.exists(json, 'Service') ? undefined : json['Service'],
-        'subregionName': !runtime_1.exists(json, 'SubregionName') ? undefined : json['SubregionName'],
-        'title': !runtime_1.exists(json, 'Title') ? undefined : json['Title'],
-        'toDate': !runtime_1.exists(json, 'ToDate') ? undefined : json['ToDate'],
-        'type': !runtime_1.exists(json, 'Type') ? undefined : json['Type'],
-        'value': !runtime_1.exists(json, 'Value') ? undefined : json['Value'],
+        'accountId': !exists(json, 'AccountId') ? undefined : json['AccountId'],
+        'category': !exists(json, 'Category') ? undefined : json['Category'],
+        'fromDate': !exists(json, 'FromDate') ? undefined : json['FromDate'],
+        'operation': !exists(json, 'Operation') ? undefined : json['Operation'],
+        'payingAccountId': !exists(json, 'PayingAccountId') ? undefined : json['PayingAccountId'],
+        'service': !exists(json, 'Service') ? undefined : json['Service'],
+        'subregionName': !exists(json, 'SubregionName') ? undefined : json['SubregionName'],
+        'title': !exists(json, 'Title') ? undefined : json['Title'],
+        'toDate': !exists(json, 'ToDate') ? undefined : json['ToDate'],
+        'type': !exists(json, 'Type') ? undefined : json['Type'],
+        'value': !exists(json, 'Value') ? undefined : json['Value'],
     };
 }
-exports.ConsumptionEntryFromJSONTyped = ConsumptionEntryFromJSONTyped;
-function ConsumptionEntryToJSON(value) {
+export function ConsumptionEntryToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -58,4 +54,3 @@ function ConsumptionEntryToJSON(value) {
         'Value': value.value,
     };
 }
-exports.ConsumptionEntryToJSON = ConsumptionEntryToJSON;

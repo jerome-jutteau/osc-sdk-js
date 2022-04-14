@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,38 +11,35 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersRouteTableFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersRouteTableFromJSON(json) {
     return FiltersRouteTableFromJSONTyped(json, false);
 }
-exports.FiltersRouteTableFromJSON = FiltersRouteTableFromJSON;
-function FiltersRouteTableFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersRouteTableFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'linkRouteTableIds': !runtime_1.exists(json, 'LinkRouteTableIds') ? undefined : json['LinkRouteTableIds'],
-        'linkRouteTableLinkRouteTableIds': !runtime_1.exists(json, 'LinkRouteTableLinkRouteTableIds') ? undefined : json['LinkRouteTableLinkRouteTableIds'],
-        'linkRouteTableMain': !runtime_1.exists(json, 'LinkRouteTableMain') ? undefined : json['LinkRouteTableMain'],
-        'linkSubnetIds': !runtime_1.exists(json, 'LinkSubnetIds') ? undefined : json['LinkSubnetIds'],
-        'netIds': !runtime_1.exists(json, 'NetIds') ? undefined : json['NetIds'],
-        'routeCreationMethods': !runtime_1.exists(json, 'RouteCreationMethods') ? undefined : json['RouteCreationMethods'],
-        'routeDestinationIpRanges': !runtime_1.exists(json, 'RouteDestinationIpRanges') ? undefined : json['RouteDestinationIpRanges'],
-        'routeDestinationServiceIds': !runtime_1.exists(json, 'RouteDestinationServiceIds') ? undefined : json['RouteDestinationServiceIds'],
-        'routeGatewayIds': !runtime_1.exists(json, 'RouteGatewayIds') ? undefined : json['RouteGatewayIds'],
-        'routeNatServiceIds': !runtime_1.exists(json, 'RouteNatServiceIds') ? undefined : json['RouteNatServiceIds'],
-        'routeNetPeeringIds': !runtime_1.exists(json, 'RouteNetPeeringIds') ? undefined : json['RouteNetPeeringIds'],
-        'routeStates': !runtime_1.exists(json, 'RouteStates') ? undefined : json['RouteStates'],
-        'routeTableIds': !runtime_1.exists(json, 'RouteTableIds') ? undefined : json['RouteTableIds'],
-        'routeVmIds': !runtime_1.exists(json, 'RouteVmIds') ? undefined : json['RouteVmIds'],
-        'tagKeys': !runtime_1.exists(json, 'TagKeys') ? undefined : json['TagKeys'],
-        'tagValues': !runtime_1.exists(json, 'TagValues') ? undefined : json['TagValues'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : json['Tags'],
+        'linkRouteTableIds': !exists(json, 'LinkRouteTableIds') ? undefined : json['LinkRouteTableIds'],
+        'linkRouteTableLinkRouteTableIds': !exists(json, 'LinkRouteTableLinkRouteTableIds') ? undefined : json['LinkRouteTableLinkRouteTableIds'],
+        'linkRouteTableMain': !exists(json, 'LinkRouteTableMain') ? undefined : json['LinkRouteTableMain'],
+        'linkSubnetIds': !exists(json, 'LinkSubnetIds') ? undefined : json['LinkSubnetIds'],
+        'netIds': !exists(json, 'NetIds') ? undefined : json['NetIds'],
+        'routeCreationMethods': !exists(json, 'RouteCreationMethods') ? undefined : json['RouteCreationMethods'],
+        'routeDestinationIpRanges': !exists(json, 'RouteDestinationIpRanges') ? undefined : json['RouteDestinationIpRanges'],
+        'routeDestinationServiceIds': !exists(json, 'RouteDestinationServiceIds') ? undefined : json['RouteDestinationServiceIds'],
+        'routeGatewayIds': !exists(json, 'RouteGatewayIds') ? undefined : json['RouteGatewayIds'],
+        'routeNatServiceIds': !exists(json, 'RouteNatServiceIds') ? undefined : json['RouteNatServiceIds'],
+        'routeNetPeeringIds': !exists(json, 'RouteNetPeeringIds') ? undefined : json['RouteNetPeeringIds'],
+        'routeStates': !exists(json, 'RouteStates') ? undefined : json['RouteStates'],
+        'routeTableIds': !exists(json, 'RouteTableIds') ? undefined : json['RouteTableIds'],
+        'routeVmIds': !exists(json, 'RouteVmIds') ? undefined : json['RouteVmIds'],
+        'tagKeys': !exists(json, 'TagKeys') ? undefined : json['TagKeys'],
+        'tagValues': !exists(json, 'TagValues') ? undefined : json['TagValues'],
+        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
     };
 }
-exports.FiltersRouteTableFromJSONTyped = FiltersRouteTableFromJSONTyped;
-function FiltersRouteTableToJSON(value) {
+export function FiltersRouteTableToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -70,4 +66,3 @@ function FiltersRouteTableToJSON(value) {
         'Tags': value.tags,
     };
 }
-exports.FiltersRouteTableToJSON = FiltersRouteTableToJSON;

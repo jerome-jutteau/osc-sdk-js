@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function DeleteImageRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function DeleteImageRequestFromJSON(json) {
     return DeleteImageRequestFromJSONTyped(json, false);
 }
-exports.DeleteImageRequestFromJSON = DeleteImageRequestFromJSON;
-function DeleteImageRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function DeleteImageRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'imageId': json['ImageId'],
     };
 }
-exports.DeleteImageRequestFromJSONTyped = DeleteImageRequestFromJSONTyped;
-function DeleteImageRequestToJSON(value) {
+export function DeleteImageRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function DeleteImageRequestToJSON(value) {
         'ImageId': value.imageId,
     };
 }
-exports.DeleteImageRequestToJSON = DeleteImageRequestToJSON;

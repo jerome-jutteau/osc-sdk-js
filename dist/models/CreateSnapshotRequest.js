@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,28 +11,25 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function CreateSnapshotRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function CreateSnapshotRequestFromJSON(json) {
     return CreateSnapshotRequestFromJSONTyped(json, false);
 }
-exports.CreateSnapshotRequestFromJSON = CreateSnapshotRequestFromJSON;
-function CreateSnapshotRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateSnapshotRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'description': !runtime_1.exists(json, 'Description') ? undefined : json['Description'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'fileLocation': !runtime_1.exists(json, 'FileLocation') ? undefined : json['FileLocation'],
-        'snapshotSize': !runtime_1.exists(json, 'SnapshotSize') ? undefined : json['SnapshotSize'],
-        'sourceRegionName': !runtime_1.exists(json, 'SourceRegionName') ? undefined : json['SourceRegionName'],
-        'sourceSnapshotId': !runtime_1.exists(json, 'SourceSnapshotId') ? undefined : json['SourceSnapshotId'],
-        'volumeId': !runtime_1.exists(json, 'VolumeId') ? undefined : json['VolumeId'],
+        'description': !exists(json, 'Description') ? undefined : json['Description'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'fileLocation': !exists(json, 'FileLocation') ? undefined : json['FileLocation'],
+        'snapshotSize': !exists(json, 'SnapshotSize') ? undefined : json['SnapshotSize'],
+        'sourceRegionName': !exists(json, 'SourceRegionName') ? undefined : json['SourceRegionName'],
+        'sourceSnapshotId': !exists(json, 'SourceSnapshotId') ? undefined : json['SourceSnapshotId'],
+        'volumeId': !exists(json, 'VolumeId') ? undefined : json['VolumeId'],
     };
 }
-exports.CreateSnapshotRequestFromJSONTyped = CreateSnapshotRequestFromJSONTyped;
-function CreateSnapshotRequestToJSON(value) {
+export function CreateSnapshotRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -50,4 +46,3 @@ function CreateSnapshotRequestToJSON(value) {
         'VolumeId': value.volumeId,
     };
 }
-exports.CreateSnapshotRequestToJSON = CreateSnapshotRequestToJSON;

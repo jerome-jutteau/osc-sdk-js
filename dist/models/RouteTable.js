@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,31 +11,28 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var LinkRouteTable_1 = require("./LinkRouteTable");
-var ResourceTag_1 = require("./ResourceTag");
-var Route_1 = require("./Route");
-var RoutePropagatingVirtualGateway_1 = require("./RoutePropagatingVirtualGateway");
-function RouteTableFromJSON(json) {
+import { exists } from '../runtime';
+import { LinkRouteTableFromJSON, LinkRouteTableToJSON, } from './LinkRouteTable';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
+import { RouteFromJSON, RouteToJSON, } from './Route';
+import { RoutePropagatingVirtualGatewayFromJSON, RoutePropagatingVirtualGatewayToJSON, } from './RoutePropagatingVirtualGateway';
+export function RouteTableFromJSON(json) {
     return RouteTableFromJSONTyped(json, false);
 }
-exports.RouteTableFromJSON = RouteTableFromJSON;
-function RouteTableFromJSONTyped(json, ignoreDiscriminator) {
+export function RouteTableFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'linkRouteTables': !runtime_1.exists(json, 'LinkRouteTables') ? undefined : (json['LinkRouteTables'].map(LinkRouteTable_1.LinkRouteTableFromJSON)),
-        'netId': !runtime_1.exists(json, 'NetId') ? undefined : json['NetId'],
-        'routePropagatingVirtualGateways': !runtime_1.exists(json, 'RoutePropagatingVirtualGateways') ? undefined : (json['RoutePropagatingVirtualGateways'].map(RoutePropagatingVirtualGateway_1.RoutePropagatingVirtualGatewayFromJSON)),
-        'routeTableId': !runtime_1.exists(json, 'RouteTableId') ? undefined : json['RouteTableId'],
-        'routes': !runtime_1.exists(json, 'Routes') ? undefined : (json['Routes'].map(Route_1.RouteFromJSON)),
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
+        'linkRouteTables': !exists(json, 'LinkRouteTables') ? undefined : (json['LinkRouteTables'].map(LinkRouteTableFromJSON)),
+        'netId': !exists(json, 'NetId') ? undefined : json['NetId'],
+        'routePropagatingVirtualGateways': !exists(json, 'RoutePropagatingVirtualGateways') ? undefined : (json['RoutePropagatingVirtualGateways'].map(RoutePropagatingVirtualGatewayFromJSON)),
+        'routeTableId': !exists(json, 'RouteTableId') ? undefined : json['RouteTableId'],
+        'routes': !exists(json, 'Routes') ? undefined : (json['Routes'].map(RouteFromJSON)),
+        'tags': !exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTagFromJSON)),
     };
 }
-exports.RouteTableFromJSONTyped = RouteTableFromJSONTyped;
-function RouteTableToJSON(value) {
+export function RouteTableToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,12 +40,11 @@ function RouteTableToJSON(value) {
         return null;
     }
     return {
-        'LinkRouteTables': value.linkRouteTables === undefined ? undefined : (value.linkRouteTables.map(LinkRouteTable_1.LinkRouteTableToJSON)),
+        'LinkRouteTables': value.linkRouteTables === undefined ? undefined : (value.linkRouteTables.map(LinkRouteTableToJSON)),
         'NetId': value.netId,
-        'RoutePropagatingVirtualGateways': value.routePropagatingVirtualGateways === undefined ? undefined : (value.routePropagatingVirtualGateways.map(RoutePropagatingVirtualGateway_1.RoutePropagatingVirtualGatewayToJSON)),
+        'RoutePropagatingVirtualGateways': value.routePropagatingVirtualGateways === undefined ? undefined : (value.routePropagatingVirtualGateways.map(RoutePropagatingVirtualGatewayToJSON)),
         'RouteTableId': value.routeTableId,
-        'Routes': value.routes === undefined ? undefined : (value.routes.map(Route_1.RouteToJSON)),
-        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
+        'Routes': value.routes === undefined ? undefined : (value.routes.map(RouteToJSON)),
+        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTagToJSON)),
     };
 }
-exports.RouteTableToJSON = RouteTableToJSON;

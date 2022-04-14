@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var Net_1 = require("./Net");
-function UpdateNetResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { NetFromJSON, NetToJSON, } from './Net';
+export function UpdateNetResponseFromJSON(json) {
     return UpdateNetResponseFromJSONTyped(json, false);
 }
-exports.UpdateNetResponseFromJSON = UpdateNetResponseFromJSON;
-function UpdateNetResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function UpdateNetResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'net': !runtime_1.exists(json, 'Net') ? undefined : Net_1.NetFromJSON(json['Net']),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'net': !exists(json, 'Net') ? undefined : NetFromJSON(json['Net']),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.UpdateNetResponseFromJSONTyped = UpdateNetResponseFromJSONTyped;
-function UpdateNetResponseToJSON(value) {
+export function UpdateNetResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function UpdateNetResponseToJSON(value) {
         return null;
     }
     return {
-        'Net': Net_1.NetToJSON(value.net),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'Net': NetToJSON(value.net),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.UpdateNetResponseToJSON = UpdateNetResponseToJSON;

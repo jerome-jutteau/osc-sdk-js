@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,29 +11,26 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function ListenerRuleFromJSON(json) {
+import { exists } from '../runtime';
+export function ListenerRuleFromJSON(json) {
     return ListenerRuleFromJSONTyped(json, false);
 }
-exports.ListenerRuleFromJSON = ListenerRuleFromJSON;
-function ListenerRuleFromJSONTyped(json, ignoreDiscriminator) {
+export function ListenerRuleFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'action': !runtime_1.exists(json, 'Action') ? undefined : json['Action'],
-        'hostNamePattern': !runtime_1.exists(json, 'HostNamePattern') ? undefined : json['HostNamePattern'],
-        'listenerId': !runtime_1.exists(json, 'ListenerId') ? undefined : json['ListenerId'],
-        'listenerRuleId': !runtime_1.exists(json, 'ListenerRuleId') ? undefined : json['ListenerRuleId'],
-        'listenerRuleName': !runtime_1.exists(json, 'ListenerRuleName') ? undefined : json['ListenerRuleName'],
-        'pathPattern': !runtime_1.exists(json, 'PathPattern') ? undefined : json['PathPattern'],
-        'priority': !runtime_1.exists(json, 'Priority') ? undefined : json['Priority'],
-        'vmIds': !runtime_1.exists(json, 'VmIds') ? undefined : json['VmIds'],
+        'action': !exists(json, 'Action') ? undefined : json['Action'],
+        'hostNamePattern': !exists(json, 'HostNamePattern') ? undefined : json['HostNamePattern'],
+        'listenerId': !exists(json, 'ListenerId') ? undefined : json['ListenerId'],
+        'listenerRuleId': !exists(json, 'ListenerRuleId') ? undefined : json['ListenerRuleId'],
+        'listenerRuleName': !exists(json, 'ListenerRuleName') ? undefined : json['ListenerRuleName'],
+        'pathPattern': !exists(json, 'PathPattern') ? undefined : json['PathPattern'],
+        'priority': !exists(json, 'Priority') ? undefined : json['Priority'],
+        'vmIds': !exists(json, 'VmIds') ? undefined : json['VmIds'],
     };
 }
-exports.ListenerRuleFromJSONTyped = ListenerRuleFromJSONTyped;
-function ListenerRuleToJSON(value) {
+export function ListenerRuleToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -52,4 +48,3 @@ function ListenerRuleToJSON(value) {
         'VmIds': value.vmIds,
     };
 }
-exports.ListenerRuleToJSON = ListenerRuleToJSON;

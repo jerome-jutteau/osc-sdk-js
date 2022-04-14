@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function ReadLoadBalancerTagsRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function ReadLoadBalancerTagsRequestFromJSON(json) {
     return ReadLoadBalancerTagsRequestFromJSONTyped(json, false);
 }
-exports.ReadLoadBalancerTagsRequestFromJSON = ReadLoadBalancerTagsRequestFromJSON;
-function ReadLoadBalancerTagsRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadLoadBalancerTagsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'loadBalancerNames': json['LoadBalancerNames'],
     };
 }
-exports.ReadLoadBalancerTagsRequestFromJSONTyped = ReadLoadBalancerTagsRequestFromJSONTyped;
-function ReadLoadBalancerTagsRequestToJSON(value) {
+export function ReadLoadBalancerTagsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function ReadLoadBalancerTagsRequestToJSON(value) {
         'LoadBalancerNames': value.loadBalancerNames,
     };
 }
-exports.ReadLoadBalancerTagsRequestToJSON = ReadLoadBalancerTagsRequestToJSON;

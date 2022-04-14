@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,27 +11,24 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function ListenerFromJSON(json) {
+import { exists } from '../runtime';
+export function ListenerFromJSON(json) {
     return ListenerFromJSONTyped(json, false);
 }
-exports.ListenerFromJSON = ListenerFromJSON;
-function ListenerFromJSONTyped(json, ignoreDiscriminator) {
+export function ListenerFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'backendPort': !runtime_1.exists(json, 'BackendPort') ? undefined : json['BackendPort'],
-        'backendProtocol': !runtime_1.exists(json, 'BackendProtocol') ? undefined : json['BackendProtocol'],
-        'loadBalancerPort': !runtime_1.exists(json, 'LoadBalancerPort') ? undefined : json['LoadBalancerPort'],
-        'loadBalancerProtocol': !runtime_1.exists(json, 'LoadBalancerProtocol') ? undefined : json['LoadBalancerProtocol'],
-        'policyNames': !runtime_1.exists(json, 'PolicyNames') ? undefined : json['PolicyNames'],
-        'serverCertificateId': !runtime_1.exists(json, 'ServerCertificateId') ? undefined : json['ServerCertificateId'],
+        'backendPort': !exists(json, 'BackendPort') ? undefined : json['BackendPort'],
+        'backendProtocol': !exists(json, 'BackendProtocol') ? undefined : json['BackendProtocol'],
+        'loadBalancerPort': !exists(json, 'LoadBalancerPort') ? undefined : json['LoadBalancerPort'],
+        'loadBalancerProtocol': !exists(json, 'LoadBalancerProtocol') ? undefined : json['LoadBalancerProtocol'],
+        'policyNames': !exists(json, 'PolicyNames') ? undefined : json['PolicyNames'],
+        'serverCertificateId': !exists(json, 'ServerCertificateId') ? undefined : json['ServerCertificateId'],
     };
 }
-exports.ListenerFromJSONTyped = ListenerFromJSONTyped;
-function ListenerToJSON(value) {
+export function ListenerToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -48,4 +44,3 @@ function ListenerToJSON(value) {
         'ServerCertificateId': value.serverCertificateId,
     };
 }
-exports.ListenerToJSON = ListenerToJSON;

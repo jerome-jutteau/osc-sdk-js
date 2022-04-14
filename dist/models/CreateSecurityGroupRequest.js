@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function CreateSecurityGroupRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function CreateSecurityGroupRequestFromJSON(json) {
     return CreateSecurityGroupRequestFromJSONTyped(json, false);
 }
-exports.CreateSecurityGroupRequestFromJSON = CreateSecurityGroupRequestFromJSON;
-function CreateSecurityGroupRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateSecurityGroupRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'description': json['Description'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'netId': !runtime_1.exists(json, 'NetId') ? undefined : json['NetId'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'netId': !exists(json, 'NetId') ? undefined : json['NetId'],
         'securityGroupName': json['SecurityGroupName'],
     };
 }
-exports.CreateSecurityGroupRequestFromJSONTyped = CreateSecurityGroupRequestFromJSONTyped;
-function CreateSecurityGroupRequestToJSON(value) {
+export function CreateSecurityGroupRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,4 +40,3 @@ function CreateSecurityGroupRequestToJSON(value) {
         'SecurityGroupName': value.securityGroupName,
     };
 }
-exports.CreateSecurityGroupRequestToJSON = CreateSecurityGroupRequestToJSON;

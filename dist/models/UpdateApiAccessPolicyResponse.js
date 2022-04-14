@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ApiAccessPolicy_1 = require("./ApiAccessPolicy");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function UpdateApiAccessPolicyResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ApiAccessPolicyFromJSON, ApiAccessPolicyToJSON, } from './ApiAccessPolicy';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function UpdateApiAccessPolicyResponseFromJSON(json) {
     return UpdateApiAccessPolicyResponseFromJSONTyped(json, false);
 }
-exports.UpdateApiAccessPolicyResponseFromJSON = UpdateApiAccessPolicyResponseFromJSON;
-function UpdateApiAccessPolicyResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function UpdateApiAccessPolicyResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'apiAccessPolicy': !runtime_1.exists(json, 'ApiAccessPolicy') ? undefined : ApiAccessPolicy_1.ApiAccessPolicyFromJSON(json['ApiAccessPolicy']),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'apiAccessPolicy': !exists(json, 'ApiAccessPolicy') ? undefined : ApiAccessPolicyFromJSON(json['ApiAccessPolicy']),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.UpdateApiAccessPolicyResponseFromJSONTyped = UpdateApiAccessPolicyResponseFromJSONTyped;
-function UpdateApiAccessPolicyResponseToJSON(value) {
+export function UpdateApiAccessPolicyResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function UpdateApiAccessPolicyResponseToJSON(value) {
         return null;
     }
     return {
-        'ApiAccessPolicy': ApiAccessPolicy_1.ApiAccessPolicyToJSON(value.apiAccessPolicy),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'ApiAccessPolicy': ApiAccessPolicyToJSON(value.apiAccessPolicy),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.UpdateApiAccessPolicyResponseToJSON = UpdateApiAccessPolicyResponseToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ResourceTag_1 = require("./ResourceTag");
-function CreateTagsRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
+export function CreateTagsRequestFromJSON(json) {
     return CreateTagsRequestFromJSONTyped(json, false);
 }
-exports.CreateTagsRequestFromJSON = CreateTagsRequestFromJSON;
-function CreateTagsRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateTagsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'resourceIds': json['ResourceIds'],
-        'tags': (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
+        'tags': (json['Tags'].map(ResourceTagFromJSON)),
     };
 }
-exports.CreateTagsRequestFromJSONTyped = CreateTagsRequestFromJSONTyped;
-function CreateTagsRequestToJSON(value) {
+export function CreateTagsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,7 +36,6 @@ function CreateTagsRequestToJSON(value) {
     return {
         'DryRun': value.dryRun,
         'ResourceIds': value.resourceIds,
-        'Tags': (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
+        'Tags': (value.tags.map(ResourceTagToJSON)),
     };
 }
-exports.CreateTagsRequestToJSON = CreateTagsRequestToJSON;

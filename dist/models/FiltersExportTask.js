@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,22 +11,19 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersExportTaskFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersExportTaskFromJSON(json) {
     return FiltersExportTaskFromJSONTyped(json, false);
 }
-exports.FiltersExportTaskFromJSON = FiltersExportTaskFromJSON;
-function FiltersExportTaskFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersExportTaskFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'taskIds': !runtime_1.exists(json, 'TaskIds') ? undefined : json['TaskIds'],
+        'taskIds': !exists(json, 'TaskIds') ? undefined : json['TaskIds'],
     };
 }
-exports.FiltersExportTaskFromJSONTyped = FiltersExportTaskFromJSONTyped;
-function FiltersExportTaskToJSON(value) {
+export function FiltersExportTaskToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,4 +34,3 @@ function FiltersExportTaskToJSON(value) {
         'TaskIds': value.taskIds,
     };
 }
-exports.FiltersExportTaskToJSON = FiltersExportTaskToJSON;

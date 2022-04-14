@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function LinkNicLightFromJSON(json) {
+import { exists } from '../runtime';
+export function LinkNicLightFromJSON(json) {
     return LinkNicLightFromJSONTyped(json, false);
 }
-exports.LinkNicLightFromJSON = LinkNicLightFromJSON;
-function LinkNicLightFromJSONTyped(json, ignoreDiscriminator) {
+export function LinkNicLightFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'deleteOnVmDeletion': !runtime_1.exists(json, 'DeleteOnVmDeletion') ? undefined : json['DeleteOnVmDeletion'],
-        'deviceNumber': !runtime_1.exists(json, 'DeviceNumber') ? undefined : json['DeviceNumber'],
-        'linkNicId': !runtime_1.exists(json, 'LinkNicId') ? undefined : json['LinkNicId'],
-        'state': !runtime_1.exists(json, 'State') ? undefined : json['State'],
+        'deleteOnVmDeletion': !exists(json, 'DeleteOnVmDeletion') ? undefined : json['DeleteOnVmDeletion'],
+        'deviceNumber': !exists(json, 'DeviceNumber') ? undefined : json['DeviceNumber'],
+        'linkNicId': !exists(json, 'LinkNicId') ? undefined : json['LinkNicId'],
+        'state': !exists(json, 'State') ? undefined : json['State'],
     };
 }
-exports.LinkNicLightFromJSONTyped = LinkNicLightFromJSONTyped;
-function LinkNicLightToJSON(value) {
+export function LinkNicLightToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,4 +40,3 @@ function LinkNicLightToJSON(value) {
         'State': value.state,
     };
 }
-exports.LinkNicLightToJSON = LinkNicLightToJSON;

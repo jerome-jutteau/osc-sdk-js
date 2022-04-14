@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,34 +11,31 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersSnapshotFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersSnapshotFromJSON(json) {
     return FiltersSnapshotFromJSONTyped(json, false);
 }
-exports.FiltersSnapshotFromJSON = FiltersSnapshotFromJSON;
-function FiltersSnapshotFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersSnapshotFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'accountAliases': !runtime_1.exists(json, 'AccountAliases') ? undefined : json['AccountAliases'],
-        'accountIds': !runtime_1.exists(json, 'AccountIds') ? undefined : json['AccountIds'],
-        'descriptions': !runtime_1.exists(json, 'Descriptions') ? undefined : json['Descriptions'],
-        'permissionsToCreateVolumeAccountIds': !runtime_1.exists(json, 'PermissionsToCreateVolumeAccountIds') ? undefined : json['PermissionsToCreateVolumeAccountIds'],
-        'permissionsToCreateVolumeGlobalPermission': !runtime_1.exists(json, 'PermissionsToCreateVolumeGlobalPermission') ? undefined : json['PermissionsToCreateVolumeGlobalPermission'],
-        'progresses': !runtime_1.exists(json, 'Progresses') ? undefined : json['Progresses'],
-        'snapshotIds': !runtime_1.exists(json, 'SnapshotIds') ? undefined : json['SnapshotIds'],
-        'states': !runtime_1.exists(json, 'States') ? undefined : json['States'],
-        'tagKeys': !runtime_1.exists(json, 'TagKeys') ? undefined : json['TagKeys'],
-        'tagValues': !runtime_1.exists(json, 'TagValues') ? undefined : json['TagValues'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : json['Tags'],
-        'volumeIds': !runtime_1.exists(json, 'VolumeIds') ? undefined : json['VolumeIds'],
-        'volumeSizes': !runtime_1.exists(json, 'VolumeSizes') ? undefined : json['VolumeSizes'],
+        'accountAliases': !exists(json, 'AccountAliases') ? undefined : json['AccountAliases'],
+        'accountIds': !exists(json, 'AccountIds') ? undefined : json['AccountIds'],
+        'descriptions': !exists(json, 'Descriptions') ? undefined : json['Descriptions'],
+        'permissionsToCreateVolumeAccountIds': !exists(json, 'PermissionsToCreateVolumeAccountIds') ? undefined : json['PermissionsToCreateVolumeAccountIds'],
+        'permissionsToCreateVolumeGlobalPermission': !exists(json, 'PermissionsToCreateVolumeGlobalPermission') ? undefined : json['PermissionsToCreateVolumeGlobalPermission'],
+        'progresses': !exists(json, 'Progresses') ? undefined : json['Progresses'],
+        'snapshotIds': !exists(json, 'SnapshotIds') ? undefined : json['SnapshotIds'],
+        'states': !exists(json, 'States') ? undefined : json['States'],
+        'tagKeys': !exists(json, 'TagKeys') ? undefined : json['TagKeys'],
+        'tagValues': !exists(json, 'TagValues') ? undefined : json['TagValues'],
+        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
+        'volumeIds': !exists(json, 'VolumeIds') ? undefined : json['VolumeIds'],
+        'volumeSizes': !exists(json, 'VolumeSizes') ? undefined : json['VolumeSizes'],
     };
 }
-exports.FiltersSnapshotFromJSONTyped = FiltersSnapshotFromJSONTyped;
-function FiltersSnapshotToJSON(value) {
+export function FiltersSnapshotToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -62,4 +58,3 @@ function FiltersSnapshotToJSON(value) {
         'VolumeSizes': value.volumeSizes,
     };
 }
-exports.FiltersSnapshotToJSON = FiltersSnapshotToJSON;

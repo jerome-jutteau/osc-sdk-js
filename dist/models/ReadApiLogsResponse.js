@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,26 +11,23 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var Log_1 = require("./Log");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function ReadApiLogsResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { LogFromJSON, LogToJSON, } from './Log';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function ReadApiLogsResponseFromJSON(json) {
     return ReadApiLogsResponseFromJSONTyped(json, false);
 }
-exports.ReadApiLogsResponseFromJSON = ReadApiLogsResponseFromJSON;
-function ReadApiLogsResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadApiLogsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'logs': !runtime_1.exists(json, 'Logs') ? undefined : (json['Logs'].map(Log_1.LogFromJSON)),
-        'nextPageToken': !runtime_1.exists(json, 'NextPageToken') ? undefined : json['NextPageToken'],
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'logs': !exists(json, 'Logs') ? undefined : (json['Logs'].map(LogFromJSON)),
+        'nextPageToken': !exists(json, 'NextPageToken') ? undefined : json['NextPageToken'],
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.ReadApiLogsResponseFromJSONTyped = ReadApiLogsResponseFromJSONTyped;
-function ReadApiLogsResponseToJSON(value) {
+export function ReadApiLogsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -39,9 +35,8 @@ function ReadApiLogsResponseToJSON(value) {
         return null;
     }
     return {
-        'Logs': value.logs === undefined ? undefined : (value.logs.map(Log_1.LogToJSON)),
+        'Logs': value.logs === undefined ? undefined : (value.logs.map(LogToJSON)),
         'NextPageToken': value.nextPageToken,
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.ReadApiLogsResponseToJSON = ReadApiLogsResponseToJSON;

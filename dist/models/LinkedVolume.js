@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,26 +11,23 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function LinkedVolumeFromJSON(json) {
+import { exists } from '../runtime';
+export function LinkedVolumeFromJSON(json) {
     return LinkedVolumeFromJSONTyped(json, false);
 }
-exports.LinkedVolumeFromJSON = LinkedVolumeFromJSON;
-function LinkedVolumeFromJSONTyped(json, ignoreDiscriminator) {
+export function LinkedVolumeFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'deleteOnVmDeletion': !runtime_1.exists(json, 'DeleteOnVmDeletion') ? undefined : json['DeleteOnVmDeletion'],
-        'deviceName': !runtime_1.exists(json, 'DeviceName') ? undefined : json['DeviceName'],
-        'state': !runtime_1.exists(json, 'State') ? undefined : json['State'],
-        'vmId': !runtime_1.exists(json, 'VmId') ? undefined : json['VmId'],
-        'volumeId': !runtime_1.exists(json, 'VolumeId') ? undefined : json['VolumeId'],
+        'deleteOnVmDeletion': !exists(json, 'DeleteOnVmDeletion') ? undefined : json['DeleteOnVmDeletion'],
+        'deviceName': !exists(json, 'DeviceName') ? undefined : json['DeviceName'],
+        'state': !exists(json, 'State') ? undefined : json['State'],
+        'vmId': !exists(json, 'VmId') ? undefined : json['VmId'],
+        'volumeId': !exists(json, 'VolumeId') ? undefined : json['VolumeId'],
     };
 }
-exports.LinkedVolumeFromJSONTyped = LinkedVolumeFromJSONTyped;
-function LinkedVolumeToJSON(value) {
+export function LinkedVolumeToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -46,4 +42,3 @@ function LinkedVolumeToJSON(value) {
         'VolumeId': value.volumeId,
     };
 }
-exports.LinkedVolumeToJSON = LinkedVolumeToJSON;

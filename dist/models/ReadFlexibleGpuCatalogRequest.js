@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,22 +11,19 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function ReadFlexibleGpuCatalogRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function ReadFlexibleGpuCatalogRequestFromJSON(json) {
     return ReadFlexibleGpuCatalogRequestFromJSONTyped(json, false);
 }
-exports.ReadFlexibleGpuCatalogRequestFromJSON = ReadFlexibleGpuCatalogRequestFromJSON;
-function ReadFlexibleGpuCatalogRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadFlexibleGpuCatalogRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
     };
 }
-exports.ReadFlexibleGpuCatalogRequestFromJSONTyped = ReadFlexibleGpuCatalogRequestFromJSONTyped;
-function ReadFlexibleGpuCatalogRequestToJSON(value) {
+export function ReadFlexibleGpuCatalogRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,4 +34,3 @@ function ReadFlexibleGpuCatalogRequestToJSON(value) {
         'DryRun': value.dryRun,
     };
 }
-exports.ReadFlexibleGpuCatalogRequestToJSON = ReadFlexibleGpuCatalogRequestToJSON;

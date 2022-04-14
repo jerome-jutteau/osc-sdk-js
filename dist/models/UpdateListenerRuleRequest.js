@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function UpdateListenerRuleRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function UpdateListenerRuleRequestFromJSON(json) {
     return UpdateListenerRuleRequestFromJSONTyped(json, false);
 }
-exports.UpdateListenerRuleRequestFromJSON = UpdateListenerRuleRequestFromJSON;
-function UpdateListenerRuleRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function UpdateListenerRuleRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'hostPattern': !runtime_1.exists(json, 'HostPattern') ? undefined : json['HostPattern'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'hostPattern': !exists(json, 'HostPattern') ? undefined : json['HostPattern'],
         'listenerRuleName': json['ListenerRuleName'],
-        'pathPattern': !runtime_1.exists(json, 'PathPattern') ? undefined : json['PathPattern'],
+        'pathPattern': !exists(json, 'PathPattern') ? undefined : json['PathPattern'],
     };
 }
-exports.UpdateListenerRuleRequestFromJSONTyped = UpdateListenerRuleRequestFromJSONTyped;
-function UpdateListenerRuleRequestToJSON(value) {
+export function UpdateListenerRuleRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,4 +40,3 @@ function UpdateListenerRuleRequestToJSON(value) {
         'PathPattern': value.pathPattern,
     };
 }
-exports.UpdateListenerRuleRequestToJSON = UpdateListenerRuleRequestToJSON;

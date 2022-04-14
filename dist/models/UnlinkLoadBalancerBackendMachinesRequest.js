@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function UnlinkLoadBalancerBackendMachinesRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function UnlinkLoadBalancerBackendMachinesRequestFromJSON(json) {
     return UnlinkLoadBalancerBackendMachinesRequestFromJSONTyped(json, false);
 }
-exports.UnlinkLoadBalancerBackendMachinesRequestFromJSON = UnlinkLoadBalancerBackendMachinesRequestFromJSON;
-function UnlinkLoadBalancerBackendMachinesRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function UnlinkLoadBalancerBackendMachinesRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'backendIps': !runtime_1.exists(json, 'BackendIps') ? undefined : json['BackendIps'],
-        'backendVmIds': !runtime_1.exists(json, 'BackendVmIds') ? undefined : json['BackendVmIds'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'backendIps': !exists(json, 'BackendIps') ? undefined : json['BackendIps'],
+        'backendVmIds': !exists(json, 'BackendVmIds') ? undefined : json['BackendVmIds'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'loadBalancerName': json['LoadBalancerName'],
     };
 }
-exports.UnlinkLoadBalancerBackendMachinesRequestFromJSONTyped = UnlinkLoadBalancerBackendMachinesRequestFromJSONTyped;
-function UnlinkLoadBalancerBackendMachinesRequestToJSON(value) {
+export function UnlinkLoadBalancerBackendMachinesRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,4 +40,3 @@ function UnlinkLoadBalancerBackendMachinesRequestToJSON(value) {
         'LoadBalancerName': value.loadBalancerName,
     };
 }
-exports.UnlinkLoadBalancerBackendMachinesRequestToJSON = UnlinkLoadBalancerBackendMachinesRequestToJSON;

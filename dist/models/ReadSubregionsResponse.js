@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var Subregion_1 = require("./Subregion");
-function ReadSubregionsResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { SubregionFromJSON, SubregionToJSON, } from './Subregion';
+export function ReadSubregionsResponseFromJSON(json) {
     return ReadSubregionsResponseFromJSONTyped(json, false);
 }
-exports.ReadSubregionsResponseFromJSON = ReadSubregionsResponseFromJSON;
-function ReadSubregionsResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadSubregionsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
-        'subregions': !runtime_1.exists(json, 'Subregions') ? undefined : (json['Subregions'].map(Subregion_1.SubregionFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
+        'subregions': !exists(json, 'Subregions') ? undefined : (json['Subregions'].map(SubregionFromJSON)),
     };
 }
-exports.ReadSubregionsResponseFromJSONTyped = ReadSubregionsResponseFromJSONTyped;
-function ReadSubregionsResponseToJSON(value) {
+export function ReadSubregionsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadSubregionsResponseToJSON(value) {
         return null;
     }
     return {
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
-        'Subregions': value.subregions === undefined ? undefined : (value.subregions.map(Subregion_1.SubregionToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
+        'Subregions': value.subregions === undefined ? undefined : (value.subregions.map(SubregionToJSON)),
     };
 }
-exports.ReadSubregionsResponseToJSON = ReadSubregionsResponseToJSON;

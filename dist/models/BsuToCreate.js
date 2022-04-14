@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,26 +11,23 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function BsuToCreateFromJSON(json) {
+import { exists } from '../runtime';
+export function BsuToCreateFromJSON(json) {
     return BsuToCreateFromJSONTyped(json, false);
 }
-exports.BsuToCreateFromJSON = BsuToCreateFromJSON;
-function BsuToCreateFromJSONTyped(json, ignoreDiscriminator) {
+export function BsuToCreateFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'deleteOnVmDeletion': !runtime_1.exists(json, 'DeleteOnVmDeletion') ? undefined : json['DeleteOnVmDeletion'],
-        'iops': !runtime_1.exists(json, 'Iops') ? undefined : json['Iops'],
-        'snapshotId': !runtime_1.exists(json, 'SnapshotId') ? undefined : json['SnapshotId'],
-        'volumeSize': !runtime_1.exists(json, 'VolumeSize') ? undefined : json['VolumeSize'],
-        'volumeType': !runtime_1.exists(json, 'VolumeType') ? undefined : json['VolumeType'],
+        'deleteOnVmDeletion': !exists(json, 'DeleteOnVmDeletion') ? undefined : json['DeleteOnVmDeletion'],
+        'iops': !exists(json, 'Iops') ? undefined : json['Iops'],
+        'snapshotId': !exists(json, 'SnapshotId') ? undefined : json['SnapshotId'],
+        'volumeSize': !exists(json, 'VolumeSize') ? undefined : json['VolumeSize'],
+        'volumeType': !exists(json, 'VolumeType') ? undefined : json['VolumeType'],
     };
 }
-exports.BsuToCreateFromJSONTyped = BsuToCreateFromJSONTyped;
-function BsuToCreateToJSON(value) {
+export function BsuToCreateToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -46,4 +42,3 @@ function BsuToCreateToJSON(value) {
         'VolumeType': value.volumeType,
     };
 }
-exports.BsuToCreateToJSON = BsuToCreateToJSON;

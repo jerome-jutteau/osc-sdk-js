@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,28 +11,25 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ResourceTag_1 = require("./ResourceTag");
-function NetFromJSON(json) {
+import { exists } from '../runtime';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
+export function NetFromJSON(json) {
     return NetFromJSONTyped(json, false);
 }
-exports.NetFromJSON = NetFromJSON;
-function NetFromJSONTyped(json, ignoreDiscriminator) {
+export function NetFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dhcpOptionsSetId': !runtime_1.exists(json, 'DhcpOptionsSetId') ? undefined : json['DhcpOptionsSetId'],
-        'ipRange': !runtime_1.exists(json, 'IpRange') ? undefined : json['IpRange'],
-        'netId': !runtime_1.exists(json, 'NetId') ? undefined : json['NetId'],
-        'state': !runtime_1.exists(json, 'State') ? undefined : json['State'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
-        'tenancy': !runtime_1.exists(json, 'Tenancy') ? undefined : json['Tenancy'],
+        'dhcpOptionsSetId': !exists(json, 'DhcpOptionsSetId') ? undefined : json['DhcpOptionsSetId'],
+        'ipRange': !exists(json, 'IpRange') ? undefined : json['IpRange'],
+        'netId': !exists(json, 'NetId') ? undefined : json['NetId'],
+        'state': !exists(json, 'State') ? undefined : json['State'],
+        'tags': !exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTagFromJSON)),
+        'tenancy': !exists(json, 'Tenancy') ? undefined : json['Tenancy'],
     };
 }
-exports.NetFromJSONTyped = NetFromJSONTyped;
-function NetToJSON(value) {
+export function NetToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -45,8 +41,7 @@ function NetToJSON(value) {
         'IpRange': value.ipRange,
         'NetId': value.netId,
         'State': value.state,
-        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
+        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTagToJSON)),
         'Tenancy': value.tenancy,
     };
 }
-exports.NetToJSON = NetToJSON;

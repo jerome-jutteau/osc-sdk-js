@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ApiAccessRule_1 = require("./ApiAccessRule");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function ReadApiAccessRulesResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ApiAccessRuleFromJSON, ApiAccessRuleToJSON, } from './ApiAccessRule';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function ReadApiAccessRulesResponseFromJSON(json) {
     return ReadApiAccessRulesResponseFromJSONTyped(json, false);
 }
-exports.ReadApiAccessRulesResponseFromJSON = ReadApiAccessRulesResponseFromJSON;
-function ReadApiAccessRulesResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadApiAccessRulesResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'apiAccessRules': !runtime_1.exists(json, 'ApiAccessRules') ? undefined : (json['ApiAccessRules'].map(ApiAccessRule_1.ApiAccessRuleFromJSON)),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'apiAccessRules': !exists(json, 'ApiAccessRules') ? undefined : (json['ApiAccessRules'].map(ApiAccessRuleFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.ReadApiAccessRulesResponseFromJSONTyped = ReadApiAccessRulesResponseFromJSONTyped;
-function ReadApiAccessRulesResponseToJSON(value) {
+export function ReadApiAccessRulesResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadApiAccessRulesResponseToJSON(value) {
         return null;
     }
     return {
-        'ApiAccessRules': value.apiAccessRules === undefined ? undefined : (value.apiAccessRules.map(ApiAccessRule_1.ApiAccessRuleToJSON)),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'ApiAccessRules': value.apiAccessRules === undefined ? undefined : (value.apiAccessRules.map(ApiAccessRuleToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.ReadApiAccessRulesResponseToJSON = ReadApiAccessRulesResponseToJSON;

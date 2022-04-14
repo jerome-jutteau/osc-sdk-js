@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ResourceLoadBalancerTag_1 = require("./ResourceLoadBalancerTag");
-function DeleteLoadBalancerTagsRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { ResourceLoadBalancerTagFromJSON, ResourceLoadBalancerTagToJSON, } from './ResourceLoadBalancerTag';
+export function DeleteLoadBalancerTagsRequestFromJSON(json) {
     return DeleteLoadBalancerTagsRequestFromJSONTyped(json, false);
 }
-exports.DeleteLoadBalancerTagsRequestFromJSON = DeleteLoadBalancerTagsRequestFromJSON;
-function DeleteLoadBalancerTagsRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function DeleteLoadBalancerTagsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'loadBalancerNames': json['LoadBalancerNames'],
-        'tags': (json['Tags'].map(ResourceLoadBalancerTag_1.ResourceLoadBalancerTagFromJSON)),
+        'tags': (json['Tags'].map(ResourceLoadBalancerTagFromJSON)),
     };
 }
-exports.DeleteLoadBalancerTagsRequestFromJSONTyped = DeleteLoadBalancerTagsRequestFromJSONTyped;
-function DeleteLoadBalancerTagsRequestToJSON(value) {
+export function DeleteLoadBalancerTagsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,7 +36,6 @@ function DeleteLoadBalancerTagsRequestToJSON(value) {
     return {
         'DryRun': value.dryRun,
         'LoadBalancerNames': value.loadBalancerNames,
-        'Tags': (value.tags.map(ResourceLoadBalancerTag_1.ResourceLoadBalancerTagToJSON)),
+        'Tags': (value.tags.map(ResourceLoadBalancerTagToJSON)),
     };
 }
-exports.DeleteLoadBalancerTagsRequestToJSON = DeleteLoadBalancerTagsRequestToJSON;

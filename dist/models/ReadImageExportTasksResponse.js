@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ImageExportTask_1 = require("./ImageExportTask");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function ReadImageExportTasksResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ImageExportTaskFromJSON, ImageExportTaskToJSON, } from './ImageExportTask';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function ReadImageExportTasksResponseFromJSON(json) {
     return ReadImageExportTasksResponseFromJSONTyped(json, false);
 }
-exports.ReadImageExportTasksResponseFromJSON = ReadImageExportTasksResponseFromJSON;
-function ReadImageExportTasksResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadImageExportTasksResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'imageExportTasks': !runtime_1.exists(json, 'ImageExportTasks') ? undefined : (json['ImageExportTasks'].map(ImageExportTask_1.ImageExportTaskFromJSON)),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'imageExportTasks': !exists(json, 'ImageExportTasks') ? undefined : (json['ImageExportTasks'].map(ImageExportTaskFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.ReadImageExportTasksResponseFromJSONTyped = ReadImageExportTasksResponseFromJSONTyped;
-function ReadImageExportTasksResponseToJSON(value) {
+export function ReadImageExportTasksResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadImageExportTasksResponseToJSON(value) {
         return null;
     }
     return {
-        'ImageExportTasks': value.imageExportTasks === undefined ? undefined : (value.imageExportTasks.map(ImageExportTask_1.ImageExportTaskToJSON)),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'ImageExportTasks': value.imageExportTasks === undefined ? undefined : (value.imageExportTasks.map(ImageExportTaskToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.ReadImageExportTasksResponseToJSON = ReadImageExportTasksResponseToJSON;

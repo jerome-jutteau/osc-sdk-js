@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function StopVmsRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function StopVmsRequestFromJSON(json) {
     return StopVmsRequestFromJSONTyped(json, false);
 }
-exports.StopVmsRequestFromJSON = StopVmsRequestFromJSON;
-function StopVmsRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function StopVmsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'forceStop': !runtime_1.exists(json, 'ForceStop') ? undefined : json['ForceStop'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'forceStop': !exists(json, 'ForceStop') ? undefined : json['ForceStop'],
         'vmIds': json['VmIds'],
     };
 }
-exports.StopVmsRequestFromJSONTyped = StopVmsRequestFromJSONTyped;
-function StopVmsRequestToJSON(value) {
+export function StopVmsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,4 +38,3 @@ function StopVmsRequestToJSON(value) {
         'VmIds': value.vmIds,
     };
 }
-exports.StopVmsRequestToJSON = StopVmsRequestToJSON;

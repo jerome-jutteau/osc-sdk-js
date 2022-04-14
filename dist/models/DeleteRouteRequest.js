@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function DeleteRouteRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function DeleteRouteRequestFromJSON(json) {
     return DeleteRouteRequestFromJSONTyped(json, false);
 }
-exports.DeleteRouteRequestFromJSON = DeleteRouteRequestFromJSON;
-function DeleteRouteRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function DeleteRouteRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'destinationIpRange': json['DestinationIpRange'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'routeTableId': json['RouteTableId'],
     };
 }
-exports.DeleteRouteRequestFromJSONTyped = DeleteRouteRequestFromJSONTyped;
-function DeleteRouteRequestToJSON(value) {
+export function DeleteRouteRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,4 +38,3 @@ function DeleteRouteRequestToJSON(value) {
         'RouteTableId': value.routeTableId,
     };
 }
-exports.DeleteRouteRequestToJSON = DeleteRouteRequestToJSON;

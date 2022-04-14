@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,30 +11,27 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var PrivateIpLight_1 = require("./PrivateIpLight");
-function NicForVmCreationFromJSON(json) {
+import { exists } from '../runtime';
+import { PrivateIpLightFromJSON, PrivateIpLightToJSON, } from './PrivateIpLight';
+export function NicForVmCreationFromJSON(json) {
     return NicForVmCreationFromJSONTyped(json, false);
 }
-exports.NicForVmCreationFromJSON = NicForVmCreationFromJSON;
-function NicForVmCreationFromJSONTyped(json, ignoreDiscriminator) {
+export function NicForVmCreationFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'deleteOnVmDeletion': !runtime_1.exists(json, 'DeleteOnVmDeletion') ? undefined : json['DeleteOnVmDeletion'],
-        'description': !runtime_1.exists(json, 'Description') ? undefined : json['Description'],
-        'deviceNumber': !runtime_1.exists(json, 'DeviceNumber') ? undefined : json['DeviceNumber'],
-        'nicId': !runtime_1.exists(json, 'NicId') ? undefined : json['NicId'],
-        'privateIps': !runtime_1.exists(json, 'PrivateIps') ? undefined : (json['PrivateIps'].map(PrivateIpLight_1.PrivateIpLightFromJSON)),
-        'secondaryPrivateIpCount': !runtime_1.exists(json, 'SecondaryPrivateIpCount') ? undefined : json['SecondaryPrivateIpCount'],
-        'securityGroupIds': !runtime_1.exists(json, 'SecurityGroupIds') ? undefined : json['SecurityGroupIds'],
-        'subnetId': !runtime_1.exists(json, 'SubnetId') ? undefined : json['SubnetId'],
+        'deleteOnVmDeletion': !exists(json, 'DeleteOnVmDeletion') ? undefined : json['DeleteOnVmDeletion'],
+        'description': !exists(json, 'Description') ? undefined : json['Description'],
+        'deviceNumber': !exists(json, 'DeviceNumber') ? undefined : json['DeviceNumber'],
+        'nicId': !exists(json, 'NicId') ? undefined : json['NicId'],
+        'privateIps': !exists(json, 'PrivateIps') ? undefined : (json['PrivateIps'].map(PrivateIpLightFromJSON)),
+        'secondaryPrivateIpCount': !exists(json, 'SecondaryPrivateIpCount') ? undefined : json['SecondaryPrivateIpCount'],
+        'securityGroupIds': !exists(json, 'SecurityGroupIds') ? undefined : json['SecurityGroupIds'],
+        'subnetId': !exists(json, 'SubnetId') ? undefined : json['SubnetId'],
     };
 }
-exports.NicForVmCreationFromJSONTyped = NicForVmCreationFromJSONTyped;
-function NicForVmCreationToJSON(value) {
+export function NicForVmCreationToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -47,10 +43,9 @@ function NicForVmCreationToJSON(value) {
         'Description': value.description,
         'DeviceNumber': value.deviceNumber,
         'NicId': value.nicId,
-        'PrivateIps': value.privateIps === undefined ? undefined : (value.privateIps.map(PrivateIpLight_1.PrivateIpLightToJSON)),
+        'PrivateIps': value.privateIps === undefined ? undefined : (value.privateIps.map(PrivateIpLightToJSON)),
         'SecondaryPrivateIpCount': value.secondaryPrivateIpCount,
         'SecurityGroupIds': value.securityGroupIds,
         'SubnetId': value.subnetId,
     };
 }
-exports.NicForVmCreationToJSON = NicForVmCreationToJSON;

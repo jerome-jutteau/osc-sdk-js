@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var FiltersFlexibleGpu_1 = require("./FiltersFlexibleGpu");
-function ReadFlexibleGpusRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { FiltersFlexibleGpuFromJSON, FiltersFlexibleGpuToJSON, } from './FiltersFlexibleGpu';
+export function ReadFlexibleGpusRequestFromJSON(json) {
     return ReadFlexibleGpusRequestFromJSONTyped(json, false);
 }
-exports.ReadFlexibleGpusRequestFromJSON = ReadFlexibleGpusRequestFromJSON;
-function ReadFlexibleGpusRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadFlexibleGpusRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'filters': !runtime_1.exists(json, 'Filters') ? undefined : FiltersFlexibleGpu_1.FiltersFlexibleGpuFromJSON(json['Filters']),
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'filters': !exists(json, 'Filters') ? undefined : FiltersFlexibleGpuFromJSON(json['Filters']),
     };
 }
-exports.ReadFlexibleGpusRequestFromJSONTyped = ReadFlexibleGpusRequestFromJSONTyped;
-function ReadFlexibleGpusRequestToJSON(value) {
+export function ReadFlexibleGpusRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,7 +34,6 @@ function ReadFlexibleGpusRequestToJSON(value) {
     }
     return {
         'DryRun': value.dryRun,
-        'Filters': FiltersFlexibleGpu_1.FiltersFlexibleGpuToJSON(value.filters),
+        'Filters': FiltersFlexibleGpuToJSON(value.filters),
     };
 }
-exports.ReadFlexibleGpusRequestToJSON = ReadFlexibleGpusRequestToJSON;

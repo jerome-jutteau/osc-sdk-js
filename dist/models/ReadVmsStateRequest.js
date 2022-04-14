@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var FiltersVmsState_1 = require("./FiltersVmsState");
-function ReadVmsStateRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { FiltersVmsStateFromJSON, FiltersVmsStateToJSON, } from './FiltersVmsState';
+export function ReadVmsStateRequestFromJSON(json) {
     return ReadVmsStateRequestFromJSONTyped(json, false);
 }
-exports.ReadVmsStateRequestFromJSON = ReadVmsStateRequestFromJSON;
-function ReadVmsStateRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadVmsStateRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'allVms': !runtime_1.exists(json, 'AllVms') ? undefined : json['AllVms'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'filters': !runtime_1.exists(json, 'Filters') ? undefined : FiltersVmsState_1.FiltersVmsStateFromJSON(json['Filters']),
+        'allVms': !exists(json, 'AllVms') ? undefined : json['AllVms'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'filters': !exists(json, 'Filters') ? undefined : FiltersVmsStateFromJSON(json['Filters']),
     };
 }
-exports.ReadVmsStateRequestFromJSONTyped = ReadVmsStateRequestFromJSONTyped;
-function ReadVmsStateRequestToJSON(value) {
+export function ReadVmsStateRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,7 +36,6 @@ function ReadVmsStateRequestToJSON(value) {
     return {
         'AllVms': value.allVms,
         'DryRun': value.dryRun,
-        'Filters': FiltersVmsState_1.FiltersVmsStateToJSON(value.filters),
+        'Filters': FiltersVmsStateToJSON(value.filters),
     };
 }
-exports.ReadVmsStateRequestToJSON = ReadVmsStateRequestToJSON;

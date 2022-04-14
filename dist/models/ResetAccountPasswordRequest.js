@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function ResetAccountPasswordRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function ResetAccountPasswordRequestFromJSON(json) {
     return ResetAccountPasswordRequestFromJSONTyped(json, false);
 }
-exports.ResetAccountPasswordRequestFromJSON = ResetAccountPasswordRequestFromJSON;
-function ResetAccountPasswordRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function ResetAccountPasswordRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'password': json['Password'],
         'token': json['Token'],
     };
 }
-exports.ResetAccountPasswordRequestFromJSONTyped = ResetAccountPasswordRequestFromJSONTyped;
-function ResetAccountPasswordRequestToJSON(value) {
+export function ResetAccountPasswordRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,4 +38,3 @@ function ResetAccountPasswordRequestToJSON(value) {
         'Token': value.token,
     };
 }
-exports.ResetAccountPasswordRequestToJSON = ResetAccountPasswordRequestToJSON;

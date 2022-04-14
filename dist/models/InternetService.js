@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,26 +11,23 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ResourceTag_1 = require("./ResourceTag");
-function InternetServiceFromJSON(json) {
+import { exists } from '../runtime';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
+export function InternetServiceFromJSON(json) {
     return InternetServiceFromJSONTyped(json, false);
 }
-exports.InternetServiceFromJSON = InternetServiceFromJSON;
-function InternetServiceFromJSONTyped(json, ignoreDiscriminator) {
+export function InternetServiceFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'internetServiceId': !runtime_1.exists(json, 'InternetServiceId') ? undefined : json['InternetServiceId'],
-        'netId': !runtime_1.exists(json, 'NetId') ? undefined : json['NetId'],
-        'state': !runtime_1.exists(json, 'State') ? undefined : json['State'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
+        'internetServiceId': !exists(json, 'InternetServiceId') ? undefined : json['InternetServiceId'],
+        'netId': !exists(json, 'NetId') ? undefined : json['NetId'],
+        'state': !exists(json, 'State') ? undefined : json['State'],
+        'tags': !exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTagFromJSON)),
     };
 }
-exports.InternetServiceFromJSONTyped = InternetServiceFromJSONTyped;
-function InternetServiceToJSON(value) {
+export function InternetServiceToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,7 +38,6 @@ function InternetServiceToJSON(value) {
         'InternetServiceId': value.internetServiceId,
         'NetId': value.netId,
         'State': value.state,
-        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
+        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTagToJSON)),
     };
 }
-exports.InternetServiceToJSON = InternetServiceToJSON;

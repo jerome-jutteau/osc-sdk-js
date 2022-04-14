@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function MaintenanceEventFromJSON(json) {
+import { exists } from '../runtime';
+export function MaintenanceEventFromJSON(json) {
     return MaintenanceEventFromJSONTyped(json, false);
 }
-exports.MaintenanceEventFromJSON = MaintenanceEventFromJSON;
-function MaintenanceEventFromJSONTyped(json, ignoreDiscriminator) {
+export function MaintenanceEventFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'code': !runtime_1.exists(json, 'Code') ? undefined : json['Code'],
-        'description': !runtime_1.exists(json, 'Description') ? undefined : json['Description'],
-        'notAfter': !runtime_1.exists(json, 'NotAfter') ? undefined : (new Date(json['NotAfter'])),
-        'notBefore': !runtime_1.exists(json, 'NotBefore') ? undefined : (new Date(json['NotBefore'])),
+        'code': !exists(json, 'Code') ? undefined : json['Code'],
+        'description': !exists(json, 'Description') ? undefined : json['Description'],
+        'notAfter': !exists(json, 'NotAfter') ? undefined : (new Date(json['NotAfter'])),
+        'notBefore': !exists(json, 'NotBefore') ? undefined : (new Date(json['NotBefore'])),
     };
 }
-exports.MaintenanceEventFromJSONTyped = MaintenanceEventFromJSONTyped;
-function MaintenanceEventToJSON(value) {
+export function MaintenanceEventToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,4 +40,3 @@ function MaintenanceEventToJSON(value) {
         'NotBefore': value.notBefore === undefined ? undefined : (value.notBefore.toISOString().substr(0, 10)),
     };
 }
-exports.MaintenanceEventToJSON = MaintenanceEventToJSON;

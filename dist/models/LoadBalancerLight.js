@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,12 +11,10 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-function LoadBalancerLightFromJSON(json) {
+export function LoadBalancerLightFromJSON(json) {
     return LoadBalancerLightFromJSONTyped(json, false);
 }
-exports.LoadBalancerLightFromJSON = LoadBalancerLightFromJSON;
-function LoadBalancerLightFromJSONTyped(json, ignoreDiscriminator) {
+export function LoadBalancerLightFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
@@ -26,8 +23,7 @@ function LoadBalancerLightFromJSONTyped(json, ignoreDiscriminator) {
         'loadBalancerPort': json['LoadBalancerPort'],
     };
 }
-exports.LoadBalancerLightFromJSONTyped = LoadBalancerLightFromJSONTyped;
-function LoadBalancerLightToJSON(value) {
+export function LoadBalancerLightToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -39,4 +35,3 @@ function LoadBalancerLightToJSON(value) {
         'LoadBalancerPort': value.loadBalancerPort,
     };
 }
-exports.LoadBalancerLightToJSON = LoadBalancerLightToJSON;

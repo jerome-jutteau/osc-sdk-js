@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function KeypairCreatedFromJSON(json) {
+import { exists } from '../runtime';
+export function KeypairCreatedFromJSON(json) {
     return KeypairCreatedFromJSONTyped(json, false);
 }
-exports.KeypairCreatedFromJSON = KeypairCreatedFromJSON;
-function KeypairCreatedFromJSONTyped(json, ignoreDiscriminator) {
+export function KeypairCreatedFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'keypairFingerprint': !runtime_1.exists(json, 'KeypairFingerprint') ? undefined : json['KeypairFingerprint'],
-        'keypairName': !runtime_1.exists(json, 'KeypairName') ? undefined : json['KeypairName'],
-        'privateKey': !runtime_1.exists(json, 'PrivateKey') ? undefined : json['PrivateKey'],
+        'keypairFingerprint': !exists(json, 'KeypairFingerprint') ? undefined : json['KeypairFingerprint'],
+        'keypairName': !exists(json, 'KeypairName') ? undefined : json['KeypairName'],
+        'privateKey': !exists(json, 'PrivateKey') ? undefined : json['PrivateKey'],
     };
 }
-exports.KeypairCreatedFromJSONTyped = KeypairCreatedFromJSONTyped;
-function KeypairCreatedToJSON(value) {
+export function KeypairCreatedToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,4 +38,3 @@ function KeypairCreatedToJSON(value) {
         'PrivateKey': value.privateKey,
     };
 }
-exports.KeypairCreatedToJSON = KeypairCreatedToJSON;

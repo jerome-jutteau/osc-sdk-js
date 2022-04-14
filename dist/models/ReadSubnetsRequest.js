@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var FiltersSubnet_1 = require("./FiltersSubnet");
-function ReadSubnetsRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { FiltersSubnetFromJSON, FiltersSubnetToJSON, } from './FiltersSubnet';
+export function ReadSubnetsRequestFromJSON(json) {
     return ReadSubnetsRequestFromJSONTyped(json, false);
 }
-exports.ReadSubnetsRequestFromJSON = ReadSubnetsRequestFromJSON;
-function ReadSubnetsRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadSubnetsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'filters': !runtime_1.exists(json, 'Filters') ? undefined : FiltersSubnet_1.FiltersSubnetFromJSON(json['Filters']),
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'filters': !exists(json, 'Filters') ? undefined : FiltersSubnetFromJSON(json['Filters']),
     };
 }
-exports.ReadSubnetsRequestFromJSONTyped = ReadSubnetsRequestFromJSONTyped;
-function ReadSubnetsRequestToJSON(value) {
+export function ReadSubnetsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,7 +34,6 @@ function ReadSubnetsRequestToJSON(value) {
     }
     return {
         'DryRun': value.dryRun,
-        'Filters': FiltersSubnet_1.FiltersSubnetToJSON(value.filters),
+        'Filters': FiltersSubnetToJSON(value.filters),
     };
 }
-exports.ReadSubnetsRequestToJSON = ReadSubnetsRequestToJSON;

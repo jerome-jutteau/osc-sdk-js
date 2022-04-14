@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var VmState_1 = require("./VmState");
-function DeleteVmsResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { VmStateFromJSON, VmStateToJSON, } from './VmState';
+export function DeleteVmsResponseFromJSON(json) {
     return DeleteVmsResponseFromJSONTyped(json, false);
 }
-exports.DeleteVmsResponseFromJSON = DeleteVmsResponseFromJSON;
-function DeleteVmsResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function DeleteVmsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
-        'vms': !runtime_1.exists(json, 'Vms') ? undefined : (json['Vms'].map(VmState_1.VmStateFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
+        'vms': !exists(json, 'Vms') ? undefined : (json['Vms'].map(VmStateFromJSON)),
     };
 }
-exports.DeleteVmsResponseFromJSONTyped = DeleteVmsResponseFromJSONTyped;
-function DeleteVmsResponseToJSON(value) {
+export function DeleteVmsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function DeleteVmsResponseToJSON(value) {
         return null;
     }
     return {
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
-        'Vms': value.vms === undefined ? undefined : (value.vms.map(VmState_1.VmStateToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
+        'Vms': value.vms === undefined ? undefined : (value.vms.map(VmStateToJSON)),
     };
 }
-exports.DeleteVmsResponseToJSON = DeleteVmsResponseToJSON;

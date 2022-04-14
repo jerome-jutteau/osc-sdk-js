@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var InternetService_1 = require("./InternetService");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function ReadInternetServicesResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { InternetServiceFromJSON, InternetServiceToJSON, } from './InternetService';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function ReadInternetServicesResponseFromJSON(json) {
     return ReadInternetServicesResponseFromJSONTyped(json, false);
 }
-exports.ReadInternetServicesResponseFromJSON = ReadInternetServicesResponseFromJSON;
-function ReadInternetServicesResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadInternetServicesResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'internetServices': !runtime_1.exists(json, 'InternetServices') ? undefined : (json['InternetServices'].map(InternetService_1.InternetServiceFromJSON)),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'internetServices': !exists(json, 'InternetServices') ? undefined : (json['InternetServices'].map(InternetServiceFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.ReadInternetServicesResponseFromJSONTyped = ReadInternetServicesResponseFromJSONTyped;
-function ReadInternetServicesResponseToJSON(value) {
+export function ReadInternetServicesResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadInternetServicesResponseToJSON(value) {
         return null;
     }
     return {
-        'InternetServices': value.internetServices === undefined ? undefined : (value.internetServices.map(InternetService_1.InternetServiceToJSON)),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'InternetServices': value.internetServices === undefined ? undefined : (value.internetServices.map(InternetServiceToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.ReadInternetServicesResponseToJSON = ReadInternetServicesResponseToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function LinkNicRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function LinkNicRequestFromJSON(json) {
     return LinkNicRequestFromJSONTyped(json, false);
 }
-exports.LinkNicRequestFromJSON = LinkNicRequestFromJSON;
-function LinkNicRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function LinkNicRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'deviceNumber': json['DeviceNumber'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'nicId': json['NicId'],
         'vmId': json['VmId'],
     };
 }
-exports.LinkNicRequestFromJSONTyped = LinkNicRequestFromJSONTyped;
-function LinkNicRequestToJSON(value) {
+export function LinkNicRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,4 +40,3 @@ function LinkNicRequestToJSON(value) {
         'VmId': value.vmId,
     };
 }
-exports.LinkNicRequestToJSON = LinkNicRequestToJSON;

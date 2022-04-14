@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function LinkPublicIpResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function LinkPublicIpResponseFromJSON(json) {
     return LinkPublicIpResponseFromJSONTyped(json, false);
 }
-exports.LinkPublicIpResponseFromJSON = LinkPublicIpResponseFromJSON;
-function LinkPublicIpResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function LinkPublicIpResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'linkPublicIpId': !runtime_1.exists(json, 'LinkPublicIpId') ? undefined : json['LinkPublicIpId'],
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'linkPublicIpId': !exists(json, 'LinkPublicIpId') ? undefined : json['LinkPublicIpId'],
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.LinkPublicIpResponseFromJSONTyped = LinkPublicIpResponseFromJSONTyped;
-function LinkPublicIpResponseToJSON(value) {
+export function LinkPublicIpResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,7 +34,6 @@ function LinkPublicIpResponseToJSON(value) {
     }
     return {
         'LinkPublicIpId': value.linkPublicIpId,
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.LinkPublicIpResponseToJSON = LinkPublicIpResponseToJSON;

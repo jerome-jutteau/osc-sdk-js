@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,26 +11,23 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersApiAccessRuleFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersApiAccessRuleFromJSON(json) {
     return FiltersApiAccessRuleFromJSONTyped(json, false);
 }
-exports.FiltersApiAccessRuleFromJSON = FiltersApiAccessRuleFromJSON;
-function FiltersApiAccessRuleFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersApiAccessRuleFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'apiAccessRuleIds': !runtime_1.exists(json, 'ApiAccessRuleIds') ? undefined : json['ApiAccessRuleIds'],
-        'caIds': !runtime_1.exists(json, 'CaIds') ? undefined : json['CaIds'],
-        'cns': !runtime_1.exists(json, 'Cns') ? undefined : json['Cns'],
-        'descriptions': !runtime_1.exists(json, 'Descriptions') ? undefined : json['Descriptions'],
-        'ipRanges': !runtime_1.exists(json, 'IpRanges') ? undefined : json['IpRanges'],
+        'apiAccessRuleIds': !exists(json, 'ApiAccessRuleIds') ? undefined : json['ApiAccessRuleIds'],
+        'caIds': !exists(json, 'CaIds') ? undefined : json['CaIds'],
+        'cns': !exists(json, 'Cns') ? undefined : json['Cns'],
+        'descriptions': !exists(json, 'Descriptions') ? undefined : json['Descriptions'],
+        'ipRanges': !exists(json, 'IpRanges') ? undefined : json['IpRanges'],
     };
 }
-exports.FiltersApiAccessRuleFromJSONTyped = FiltersApiAccessRuleFromJSONTyped;
-function FiltersApiAccessRuleToJSON(value) {
+export function FiltersApiAccessRuleToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -46,4 +42,3 @@ function FiltersApiAccessRuleToJSON(value) {
         'IpRanges': value.ipRanges,
     };
 }
-exports.FiltersApiAccessRuleToJSON = FiltersApiAccessRuleToJSON;

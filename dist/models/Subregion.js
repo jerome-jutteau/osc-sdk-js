@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function SubregionFromJSON(json) {
+import { exists } from '../runtime';
+export function SubregionFromJSON(json) {
     return SubregionFromJSONTyped(json, false);
 }
-exports.SubregionFromJSON = SubregionFromJSON;
-function SubregionFromJSONTyped(json, ignoreDiscriminator) {
+export function SubregionFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'regionName': !runtime_1.exists(json, 'RegionName') ? undefined : json['RegionName'],
-        'state': !runtime_1.exists(json, 'State') ? undefined : json['State'],
-        'subregionName': !runtime_1.exists(json, 'SubregionName') ? undefined : json['SubregionName'],
+        'regionName': !exists(json, 'RegionName') ? undefined : json['RegionName'],
+        'state': !exists(json, 'State') ? undefined : json['State'],
+        'subregionName': !exists(json, 'SubregionName') ? undefined : json['SubregionName'],
     };
 }
-exports.SubregionFromJSONTyped = SubregionFromJSONTyped;
-function SubregionToJSON(value) {
+export function SubregionToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,4 +38,3 @@ function SubregionToJSON(value) {
         'SubregionName': value.subregionName,
     };
 }
-exports.SubregionToJSON = SubregionToJSON;

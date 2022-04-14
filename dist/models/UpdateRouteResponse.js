@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var RouteTable_1 = require("./RouteTable");
-function UpdateRouteResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { RouteTableFromJSON, RouteTableToJSON, } from './RouteTable';
+export function UpdateRouteResponseFromJSON(json) {
     return UpdateRouteResponseFromJSONTyped(json, false);
 }
-exports.UpdateRouteResponseFromJSON = UpdateRouteResponseFromJSON;
-function UpdateRouteResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function UpdateRouteResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
-        'routeTable': !runtime_1.exists(json, 'RouteTable') ? undefined : RouteTable_1.RouteTableFromJSON(json['RouteTable']),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
+        'routeTable': !exists(json, 'RouteTable') ? undefined : RouteTableFromJSON(json['RouteTable']),
     };
 }
-exports.UpdateRouteResponseFromJSONTyped = UpdateRouteResponseFromJSONTyped;
-function UpdateRouteResponseToJSON(value) {
+export function UpdateRouteResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function UpdateRouteResponseToJSON(value) {
         return null;
     }
     return {
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
-        'RouteTable': RouteTable_1.RouteTableToJSON(value.routeTable),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
+        'RouteTable': RouteTableToJSON(value.routeTable),
     };
 }
-exports.UpdateRouteResponseToJSON = UpdateRouteResponseToJSON;

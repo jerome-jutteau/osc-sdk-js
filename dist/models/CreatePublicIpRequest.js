@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,22 +11,19 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function CreatePublicIpRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function CreatePublicIpRequestFromJSON(json) {
     return CreatePublicIpRequestFromJSONTyped(json, false);
 }
-exports.CreatePublicIpRequestFromJSON = CreatePublicIpRequestFromJSON;
-function CreatePublicIpRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function CreatePublicIpRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
     };
 }
-exports.CreatePublicIpRequestFromJSONTyped = CreatePublicIpRequestFromJSONTyped;
-function CreatePublicIpRequestToJSON(value) {
+export function CreatePublicIpRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,4 +34,3 @@ function CreatePublicIpRequestToJSON(value) {
         'DryRun': value.dryRun,
     };
 }
-exports.CreatePublicIpRequestToJSON = CreatePublicIpRequestToJSON;

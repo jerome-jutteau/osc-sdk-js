@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var FiltersClientGateway_1 = require("./FiltersClientGateway");
-function ReadClientGatewaysRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { FiltersClientGatewayFromJSON, FiltersClientGatewayToJSON, } from './FiltersClientGateway';
+export function ReadClientGatewaysRequestFromJSON(json) {
     return ReadClientGatewaysRequestFromJSONTyped(json, false);
 }
-exports.ReadClientGatewaysRequestFromJSON = ReadClientGatewaysRequestFromJSON;
-function ReadClientGatewaysRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadClientGatewaysRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'filters': !runtime_1.exists(json, 'Filters') ? undefined : FiltersClientGateway_1.FiltersClientGatewayFromJSON(json['Filters']),
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'filters': !exists(json, 'Filters') ? undefined : FiltersClientGatewayFromJSON(json['Filters']),
     };
 }
-exports.ReadClientGatewaysRequestFromJSONTyped = ReadClientGatewaysRequestFromJSONTyped;
-function ReadClientGatewaysRequestToJSON(value) {
+export function ReadClientGatewaysRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,7 +34,6 @@ function ReadClientGatewaysRequestToJSON(value) {
     }
     return {
         'DryRun': value.dryRun,
-        'Filters': FiltersClientGateway_1.FiltersClientGatewayToJSON(value.filters),
+        'Filters': FiltersClientGatewayToJSON(value.filters),
     };
 }
-exports.ReadClientGatewaysRequestToJSON = ReadClientGatewaysRequestToJSON;

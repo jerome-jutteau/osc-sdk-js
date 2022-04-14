@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,29 +11,26 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersDhcpOptionsFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersDhcpOptionsFromJSON(json) {
     return FiltersDhcpOptionsFromJSONTyped(json, false);
 }
-exports.FiltersDhcpOptionsFromJSON = FiltersDhcpOptionsFromJSON;
-function FiltersDhcpOptionsFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersDhcpOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        '_default': !runtime_1.exists(json, 'Default') ? undefined : json['Default'],
-        'dhcpOptionsSetIds': !runtime_1.exists(json, 'DhcpOptionsSetIds') ? undefined : json['DhcpOptionsSetIds'],
-        'domainNameServers': !runtime_1.exists(json, 'DomainNameServers') ? undefined : json['DomainNameServers'],
-        'domainNames': !runtime_1.exists(json, 'DomainNames') ? undefined : json['DomainNames'],
-        'ntpServers': !runtime_1.exists(json, 'NtpServers') ? undefined : json['NtpServers'],
-        'tagKeys': !runtime_1.exists(json, 'TagKeys') ? undefined : json['TagKeys'],
-        'tagValues': !runtime_1.exists(json, 'TagValues') ? undefined : json['TagValues'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : json['Tags'],
+        '_default': !exists(json, 'Default') ? undefined : json['Default'],
+        'dhcpOptionsSetIds': !exists(json, 'DhcpOptionsSetIds') ? undefined : json['DhcpOptionsSetIds'],
+        'domainNameServers': !exists(json, 'DomainNameServers') ? undefined : json['DomainNameServers'],
+        'domainNames': !exists(json, 'DomainNames') ? undefined : json['DomainNames'],
+        'ntpServers': !exists(json, 'NtpServers') ? undefined : json['NtpServers'],
+        'tagKeys': !exists(json, 'TagKeys') ? undefined : json['TagKeys'],
+        'tagValues': !exists(json, 'TagValues') ? undefined : json['TagValues'],
+        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
     };
 }
-exports.FiltersDhcpOptionsFromJSONTyped = FiltersDhcpOptionsFromJSONTyped;
-function FiltersDhcpOptionsToJSON(value) {
+export function FiltersDhcpOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -52,4 +48,3 @@ function FiltersDhcpOptionsToJSON(value) {
         'Tags': value.tags,
     };
 }
-exports.FiltersDhcpOptionsToJSON = FiltersDhcpOptionsToJSON;

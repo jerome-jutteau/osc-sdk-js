@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var Image_1 = require("./Image");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function ReadImagesResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ImageFromJSON, ImageToJSON, } from './Image';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function ReadImagesResponseFromJSON(json) {
     return ReadImagesResponseFromJSONTyped(json, false);
 }
-exports.ReadImagesResponseFromJSON = ReadImagesResponseFromJSON;
-function ReadImagesResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadImagesResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'images': !runtime_1.exists(json, 'Images') ? undefined : (json['Images'].map(Image_1.ImageFromJSON)),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'images': !exists(json, 'Images') ? undefined : (json['Images'].map(ImageFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.ReadImagesResponseFromJSONTyped = ReadImagesResponseFromJSONTyped;
-function ReadImagesResponseToJSON(value) {
+export function ReadImagesResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadImagesResponseToJSON(value) {
         return null;
     }
     return {
-        'Images': value.images === undefined ? undefined : (value.images.map(Image_1.ImageToJSON)),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'Images': value.images === undefined ? undefined : (value.images.map(ImageToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.ReadImagesResponseToJSON = ReadImagesResponseToJSON;

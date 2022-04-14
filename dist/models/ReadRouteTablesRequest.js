@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var FiltersRouteTable_1 = require("./FiltersRouteTable");
-function ReadRouteTablesRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { FiltersRouteTableFromJSON, FiltersRouteTableToJSON, } from './FiltersRouteTable';
+export function ReadRouteTablesRequestFromJSON(json) {
     return ReadRouteTablesRequestFromJSONTyped(json, false);
 }
-exports.ReadRouteTablesRequestFromJSON = ReadRouteTablesRequestFromJSON;
-function ReadRouteTablesRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadRouteTablesRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'filters': !runtime_1.exists(json, 'Filters') ? undefined : FiltersRouteTable_1.FiltersRouteTableFromJSON(json['Filters']),
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'filters': !exists(json, 'Filters') ? undefined : FiltersRouteTableFromJSON(json['Filters']),
     };
 }
-exports.ReadRouteTablesRequestFromJSONTyped = ReadRouteTablesRequestFromJSONTyped;
-function ReadRouteTablesRequestToJSON(value) {
+export function ReadRouteTablesRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,7 +34,6 @@ function ReadRouteTablesRequestToJSON(value) {
     }
     return {
         'DryRun': value.dryRun,
-        'Filters': FiltersRouteTable_1.FiltersRouteTableToJSON(value.filters),
+        'Filters': FiltersRouteTableToJSON(value.filters),
     };
 }
-exports.ReadRouteTablesRequestToJSON = ReadRouteTablesRequestToJSON;

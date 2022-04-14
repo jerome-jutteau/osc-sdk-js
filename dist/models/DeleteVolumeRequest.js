@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function DeleteVolumeRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function DeleteVolumeRequestFromJSON(json) {
     return DeleteVolumeRequestFromJSONTyped(json, false);
 }
-exports.DeleteVolumeRequestFromJSON = DeleteVolumeRequestFromJSON;
-function DeleteVolumeRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function DeleteVolumeRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'volumeId': json['VolumeId'],
     };
 }
-exports.DeleteVolumeRequestFromJSONTyped = DeleteVolumeRequestFromJSONTyped;
-function DeleteVolumeRequestToJSON(value) {
+export function DeleteVolumeRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function DeleteVolumeRequestToJSON(value) {
         'VolumeId': value.volumeId,
     };
 }
-exports.DeleteVolumeRequestToJSON = DeleteVolumeRequestToJSON;

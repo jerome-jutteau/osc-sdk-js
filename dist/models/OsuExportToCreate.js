@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,27 +11,24 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var OsuApiKey_1 = require("./OsuApiKey");
-function OsuExportToCreateFromJSON(json) {
+import { exists } from '../runtime';
+import { OsuApiKeyFromJSON, OsuApiKeyToJSON, } from './OsuApiKey';
+export function OsuExportToCreateFromJSON(json) {
     return OsuExportToCreateFromJSONTyped(json, false);
 }
-exports.OsuExportToCreateFromJSON = OsuExportToCreateFromJSON;
-function OsuExportToCreateFromJSONTyped(json, ignoreDiscriminator) {
+export function OsuExportToCreateFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'diskImageFormat': json['DiskImageFormat'],
-        'osuApiKey': !runtime_1.exists(json, 'OsuApiKey') ? undefined : OsuApiKey_1.OsuApiKeyFromJSON(json['OsuApiKey']),
+        'osuApiKey': !exists(json, 'OsuApiKey') ? undefined : OsuApiKeyFromJSON(json['OsuApiKey']),
         'osuBucket': json['OsuBucket'],
-        'osuManifestUrl': !runtime_1.exists(json, 'OsuManifestUrl') ? undefined : json['OsuManifestUrl'],
-        'osuPrefix': !runtime_1.exists(json, 'OsuPrefix') ? undefined : json['OsuPrefix'],
+        'osuManifestUrl': !exists(json, 'OsuManifestUrl') ? undefined : json['OsuManifestUrl'],
+        'osuPrefix': !exists(json, 'OsuPrefix') ? undefined : json['OsuPrefix'],
     };
 }
-exports.OsuExportToCreateFromJSONTyped = OsuExportToCreateFromJSONTyped;
-function OsuExportToCreateToJSON(value) {
+export function OsuExportToCreateToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -41,10 +37,9 @@ function OsuExportToCreateToJSON(value) {
     }
     return {
         'DiskImageFormat': value.diskImageFormat,
-        'OsuApiKey': OsuApiKey_1.OsuApiKeyToJSON(value.osuApiKey),
+        'OsuApiKey': OsuApiKeyToJSON(value.osuApiKey),
         'OsuBucket': value.osuBucket,
         'OsuManifestUrl': value.osuManifestUrl,
         'OsuPrefix': value.osuPrefix,
     };
 }
-exports.OsuExportToCreateToJSON = OsuExportToCreateToJSON;

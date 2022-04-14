@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,26 +11,23 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function Phase2OptionsFromJSON(json) {
+import { exists } from '../runtime';
+export function Phase2OptionsFromJSON(json) {
     return Phase2OptionsFromJSONTyped(json, false);
 }
-exports.Phase2OptionsFromJSON = Phase2OptionsFromJSON;
-function Phase2OptionsFromJSONTyped(json, ignoreDiscriminator) {
+export function Phase2OptionsFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'phase2DhGroupNumbers': !runtime_1.exists(json, 'Phase2DhGroupNumbers') ? undefined : json['Phase2DhGroupNumbers'],
-        'phase2EncryptionAlgorithms': !runtime_1.exists(json, 'Phase2EncryptionAlgorithms') ? undefined : json['Phase2EncryptionAlgorithms'],
-        'phase2IntegrityAlgorithms': !runtime_1.exists(json, 'Phase2IntegrityAlgorithms') ? undefined : json['Phase2IntegrityAlgorithms'],
-        'phase2LifetimeSeconds': !runtime_1.exists(json, 'Phase2LifetimeSeconds') ? undefined : json['Phase2LifetimeSeconds'],
-        'preSharedKey': !runtime_1.exists(json, 'PreSharedKey') ? undefined : json['PreSharedKey'],
+        'phase2DhGroupNumbers': !exists(json, 'Phase2DhGroupNumbers') ? undefined : json['Phase2DhGroupNumbers'],
+        'phase2EncryptionAlgorithms': !exists(json, 'Phase2EncryptionAlgorithms') ? undefined : json['Phase2EncryptionAlgorithms'],
+        'phase2IntegrityAlgorithms': !exists(json, 'Phase2IntegrityAlgorithms') ? undefined : json['Phase2IntegrityAlgorithms'],
+        'phase2LifetimeSeconds': !exists(json, 'Phase2LifetimeSeconds') ? undefined : json['Phase2LifetimeSeconds'],
+        'preSharedKey': !exists(json, 'PreSharedKey') ? undefined : json['PreSharedKey'],
     };
 }
-exports.Phase2OptionsFromJSONTyped = Phase2OptionsFromJSONTyped;
-function Phase2OptionsToJSON(value) {
+export function Phase2OptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -46,4 +42,3 @@ function Phase2OptionsToJSON(value) {
         'PreSharedKey': value.preSharedKey,
     };
 }
-exports.Phase2OptionsToJSON = Phase2OptionsToJSON;

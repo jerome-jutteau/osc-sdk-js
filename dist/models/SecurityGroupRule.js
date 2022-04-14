@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,28 +11,25 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var SecurityGroupsMember_1 = require("./SecurityGroupsMember");
-function SecurityGroupRuleFromJSON(json) {
+import { exists } from '../runtime';
+import { SecurityGroupsMemberFromJSON, SecurityGroupsMemberToJSON, } from './SecurityGroupsMember';
+export function SecurityGroupRuleFromJSON(json) {
     return SecurityGroupRuleFromJSONTyped(json, false);
 }
-exports.SecurityGroupRuleFromJSON = SecurityGroupRuleFromJSON;
-function SecurityGroupRuleFromJSONTyped(json, ignoreDiscriminator) {
+export function SecurityGroupRuleFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'fromPortRange': !runtime_1.exists(json, 'FromPortRange') ? undefined : json['FromPortRange'],
-        'ipProtocol': !runtime_1.exists(json, 'IpProtocol') ? undefined : json['IpProtocol'],
-        'ipRanges': !runtime_1.exists(json, 'IpRanges') ? undefined : json['IpRanges'],
-        'securityGroupsMembers': !runtime_1.exists(json, 'SecurityGroupsMembers') ? undefined : (json['SecurityGroupsMembers'].map(SecurityGroupsMember_1.SecurityGroupsMemberFromJSON)),
-        'serviceIds': !runtime_1.exists(json, 'ServiceIds') ? undefined : json['ServiceIds'],
-        'toPortRange': !runtime_1.exists(json, 'ToPortRange') ? undefined : json['ToPortRange'],
+        'fromPortRange': !exists(json, 'FromPortRange') ? undefined : json['FromPortRange'],
+        'ipProtocol': !exists(json, 'IpProtocol') ? undefined : json['IpProtocol'],
+        'ipRanges': !exists(json, 'IpRanges') ? undefined : json['IpRanges'],
+        'securityGroupsMembers': !exists(json, 'SecurityGroupsMembers') ? undefined : (json['SecurityGroupsMembers'].map(SecurityGroupsMemberFromJSON)),
+        'serviceIds': !exists(json, 'ServiceIds') ? undefined : json['ServiceIds'],
+        'toPortRange': !exists(json, 'ToPortRange') ? undefined : json['ToPortRange'],
     };
 }
-exports.SecurityGroupRuleFromJSONTyped = SecurityGroupRuleFromJSONTyped;
-function SecurityGroupRuleToJSON(value) {
+export function SecurityGroupRuleToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,9 +40,8 @@ function SecurityGroupRuleToJSON(value) {
         'FromPortRange': value.fromPortRange,
         'IpProtocol': value.ipProtocol,
         'IpRanges': value.ipRanges,
-        'SecurityGroupsMembers': value.securityGroupsMembers === undefined ? undefined : (value.securityGroupsMembers.map(SecurityGroupsMember_1.SecurityGroupsMemberToJSON)),
+        'SecurityGroupsMembers': value.securityGroupsMembers === undefined ? undefined : (value.securityGroupsMembers.map(SecurityGroupsMemberToJSON)),
         'ServiceIds': value.serviceIds,
         'ToPortRange': value.toPortRange,
     };
 }
-exports.SecurityGroupRuleToJSON = SecurityGroupRuleToJSON;

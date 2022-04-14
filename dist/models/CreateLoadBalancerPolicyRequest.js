@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,27 +11,24 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function CreateLoadBalancerPolicyRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function CreateLoadBalancerPolicyRequestFromJSON(json) {
     return CreateLoadBalancerPolicyRequestFromJSONTyped(json, false);
 }
-exports.CreateLoadBalancerPolicyRequestFromJSON = CreateLoadBalancerPolicyRequestFromJSON;
-function CreateLoadBalancerPolicyRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateLoadBalancerPolicyRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'cookieExpirationPeriod': !runtime_1.exists(json, 'CookieExpirationPeriod') ? undefined : json['CookieExpirationPeriod'],
-        'cookieName': !runtime_1.exists(json, 'CookieName') ? undefined : json['CookieName'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'cookieExpirationPeriod': !exists(json, 'CookieExpirationPeriod') ? undefined : json['CookieExpirationPeriod'],
+        'cookieName': !exists(json, 'CookieName') ? undefined : json['CookieName'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'loadBalancerName': json['LoadBalancerName'],
         'policyName': json['PolicyName'],
         'policyType': json['PolicyType'],
     };
 }
-exports.CreateLoadBalancerPolicyRequestFromJSONTyped = CreateLoadBalancerPolicyRequestFromJSONTyped;
-function CreateLoadBalancerPolicyRequestToJSON(value) {
+export function CreateLoadBalancerPolicyRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -48,4 +44,3 @@ function CreateLoadBalancerPolicyRequestToJSON(value) {
         'PolicyType': value.policyType,
     };
 }
-exports.CreateLoadBalancerPolicyRequestToJSON = CreateLoadBalancerPolicyRequestToJSON;

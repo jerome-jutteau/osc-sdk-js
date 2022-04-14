@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var DirectLink_1 = require("./DirectLink");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function CreateDirectLinkResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { DirectLinkFromJSON, DirectLinkToJSON, } from './DirectLink';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function CreateDirectLinkResponseFromJSON(json) {
     return CreateDirectLinkResponseFromJSONTyped(json, false);
 }
-exports.CreateDirectLinkResponseFromJSON = CreateDirectLinkResponseFromJSON;
-function CreateDirectLinkResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateDirectLinkResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'directLink': !runtime_1.exists(json, 'DirectLink') ? undefined : DirectLink_1.DirectLinkFromJSON(json['DirectLink']),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'directLink': !exists(json, 'DirectLink') ? undefined : DirectLinkFromJSON(json['DirectLink']),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.CreateDirectLinkResponseFromJSONTyped = CreateDirectLinkResponseFromJSONTyped;
-function CreateDirectLinkResponseToJSON(value) {
+export function CreateDirectLinkResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function CreateDirectLinkResponseToJSON(value) {
         return null;
     }
     return {
-        'DirectLink': DirectLink_1.DirectLinkToJSON(value.directLink),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'DirectLink': DirectLinkToJSON(value.directLink),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.CreateDirectLinkResponseToJSON = CreateDirectLinkResponseToJSON;

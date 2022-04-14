@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersVmFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersVmFromJSON(json) {
     return FiltersVmFromJSONTyped(json, false);
 }
-exports.FiltersVmFromJSON = FiltersVmFromJSON;
-function FiltersVmFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersVmFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'tagKeys': !runtime_1.exists(json, 'TagKeys') ? undefined : json['TagKeys'],
-        'tagValues': !runtime_1.exists(json, 'TagValues') ? undefined : json['TagValues'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : json['Tags'],
-        'vmIds': !runtime_1.exists(json, 'VmIds') ? undefined : json['VmIds'],
+        'tagKeys': !exists(json, 'TagKeys') ? undefined : json['TagKeys'],
+        'tagValues': !exists(json, 'TagValues') ? undefined : json['TagValues'],
+        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
+        'vmIds': !exists(json, 'VmIds') ? undefined : json['VmIds'],
     };
 }
-exports.FiltersVmFromJSONTyped = FiltersVmFromJSONTyped;
-function FiltersVmToJSON(value) {
+export function FiltersVmToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,4 +40,3 @@ function FiltersVmToJSON(value) {
         'VmIds': value.vmIds,
     };
 }
-exports.FiltersVmToJSON = FiltersVmToJSON;

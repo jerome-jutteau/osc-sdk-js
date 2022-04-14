@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var InternetService_1 = require("./InternetService");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function CreateInternetServiceResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { InternetServiceFromJSON, InternetServiceToJSON, } from './InternetService';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function CreateInternetServiceResponseFromJSON(json) {
     return CreateInternetServiceResponseFromJSONTyped(json, false);
 }
-exports.CreateInternetServiceResponseFromJSON = CreateInternetServiceResponseFromJSON;
-function CreateInternetServiceResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateInternetServiceResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'internetService': !runtime_1.exists(json, 'InternetService') ? undefined : InternetService_1.InternetServiceFromJSON(json['InternetService']),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'internetService': !exists(json, 'InternetService') ? undefined : InternetServiceFromJSON(json['InternetService']),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.CreateInternetServiceResponseFromJSONTyped = CreateInternetServiceResponseFromJSONTyped;
-function CreateInternetServiceResponseToJSON(value) {
+export function CreateInternetServiceResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function CreateInternetServiceResponseToJSON(value) {
         return null;
     }
     return {
-        'InternetService': InternetService_1.InternetServiceToJSON(value.internetService),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'InternetService': InternetServiceToJSON(value.internetService),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.CreateInternetServiceResponseToJSON = CreateInternetServiceResponseToJSON;

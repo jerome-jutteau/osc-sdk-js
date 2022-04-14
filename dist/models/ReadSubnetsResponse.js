@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var Subnet_1 = require("./Subnet");
-function ReadSubnetsResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { SubnetFromJSON, SubnetToJSON, } from './Subnet';
+export function ReadSubnetsResponseFromJSON(json) {
     return ReadSubnetsResponseFromJSONTyped(json, false);
 }
-exports.ReadSubnetsResponseFromJSON = ReadSubnetsResponseFromJSON;
-function ReadSubnetsResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadSubnetsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
-        'subnets': !runtime_1.exists(json, 'Subnets') ? undefined : (json['Subnets'].map(Subnet_1.SubnetFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
+        'subnets': !exists(json, 'Subnets') ? undefined : (json['Subnets'].map(SubnetFromJSON)),
     };
 }
-exports.ReadSubnetsResponseFromJSONTyped = ReadSubnetsResponseFromJSONTyped;
-function ReadSubnetsResponseToJSON(value) {
+export function ReadSubnetsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadSubnetsResponseToJSON(value) {
         return null;
     }
     return {
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
-        'Subnets': value.subnets === undefined ? undefined : (value.subnets.map(Subnet_1.SubnetToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
+        'Subnets': value.subnets === undefined ? undefined : (value.subnets.map(SubnetToJSON)),
     };
 }
-exports.ReadSubnetsResponseToJSON = ReadSubnetsResponseToJSON;

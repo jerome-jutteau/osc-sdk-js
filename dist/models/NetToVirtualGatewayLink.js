@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function NetToVirtualGatewayLinkFromJSON(json) {
+import { exists } from '../runtime';
+export function NetToVirtualGatewayLinkFromJSON(json) {
     return NetToVirtualGatewayLinkFromJSONTyped(json, false);
 }
-exports.NetToVirtualGatewayLinkFromJSON = NetToVirtualGatewayLinkFromJSON;
-function NetToVirtualGatewayLinkFromJSONTyped(json, ignoreDiscriminator) {
+export function NetToVirtualGatewayLinkFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'netId': !runtime_1.exists(json, 'NetId') ? undefined : json['NetId'],
-        'state': !runtime_1.exists(json, 'State') ? undefined : json['State'],
+        'netId': !exists(json, 'NetId') ? undefined : json['NetId'],
+        'state': !exists(json, 'State') ? undefined : json['State'],
     };
 }
-exports.NetToVirtualGatewayLinkFromJSONTyped = NetToVirtualGatewayLinkFromJSONTyped;
-function NetToVirtualGatewayLinkToJSON(value) {
+export function NetToVirtualGatewayLinkToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function NetToVirtualGatewayLinkToJSON(value) {
         'State': value.state,
     };
 }
-exports.NetToVirtualGatewayLinkToJSON = NetToVirtualGatewayLinkToJSON;

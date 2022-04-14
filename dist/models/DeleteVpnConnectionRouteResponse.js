@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function DeleteVpnConnectionRouteResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function DeleteVpnConnectionRouteResponseFromJSON(json) {
     return DeleteVpnConnectionRouteResponseFromJSONTyped(json, false);
 }
-exports.DeleteVpnConnectionRouteResponseFromJSON = DeleteVpnConnectionRouteResponseFromJSON;
-function DeleteVpnConnectionRouteResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function DeleteVpnConnectionRouteResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.DeleteVpnConnectionRouteResponseFromJSONTyped = DeleteVpnConnectionRouteResponseFromJSONTyped;
-function DeleteVpnConnectionRouteResponseToJSON(value) {
+export function DeleteVpnConnectionRouteResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -36,7 +32,6 @@ function DeleteVpnConnectionRouteResponseToJSON(value) {
         return null;
     }
     return {
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.DeleteVpnConnectionRouteResponseToJSON = DeleteVpnConnectionRouteResponseToJSON;

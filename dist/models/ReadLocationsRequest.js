@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,22 +11,19 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function ReadLocationsRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function ReadLocationsRequestFromJSON(json) {
     return ReadLocationsRequestFromJSONTyped(json, false);
 }
-exports.ReadLocationsRequestFromJSON = ReadLocationsRequestFromJSON;
-function ReadLocationsRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadLocationsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
     };
 }
-exports.ReadLocationsRequestFromJSONTyped = ReadLocationsRequestFromJSONTyped;
-function ReadLocationsRequestToJSON(value) {
+export function ReadLocationsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,4 +34,3 @@ function ReadLocationsRequestToJSON(value) {
         'DryRun': value.dryRun,
     };
 }
-exports.ReadLocationsRequestToJSON = ReadLocationsRequestToJSON;

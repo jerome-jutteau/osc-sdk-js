@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,28 +11,25 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var NetToVirtualGatewayLink_1 = require("./NetToVirtualGatewayLink");
-var ResourceTag_1 = require("./ResourceTag");
-function VirtualGatewayFromJSON(json) {
+import { exists } from '../runtime';
+import { NetToVirtualGatewayLinkFromJSON, NetToVirtualGatewayLinkToJSON, } from './NetToVirtualGatewayLink';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
+export function VirtualGatewayFromJSON(json) {
     return VirtualGatewayFromJSONTyped(json, false);
 }
-exports.VirtualGatewayFromJSON = VirtualGatewayFromJSON;
-function VirtualGatewayFromJSONTyped(json, ignoreDiscriminator) {
+export function VirtualGatewayFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'connectionType': !runtime_1.exists(json, 'ConnectionType') ? undefined : json['ConnectionType'],
-        'netToVirtualGatewayLinks': !runtime_1.exists(json, 'NetToVirtualGatewayLinks') ? undefined : (json['NetToVirtualGatewayLinks'].map(NetToVirtualGatewayLink_1.NetToVirtualGatewayLinkFromJSON)),
-        'state': !runtime_1.exists(json, 'State') ? undefined : json['State'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
-        'virtualGatewayId': !runtime_1.exists(json, 'VirtualGatewayId') ? undefined : json['VirtualGatewayId'],
+        'connectionType': !exists(json, 'ConnectionType') ? undefined : json['ConnectionType'],
+        'netToVirtualGatewayLinks': !exists(json, 'NetToVirtualGatewayLinks') ? undefined : (json['NetToVirtualGatewayLinks'].map(NetToVirtualGatewayLinkFromJSON)),
+        'state': !exists(json, 'State') ? undefined : json['State'],
+        'tags': !exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTagFromJSON)),
+        'virtualGatewayId': !exists(json, 'VirtualGatewayId') ? undefined : json['VirtualGatewayId'],
     };
 }
-exports.VirtualGatewayFromJSONTyped = VirtualGatewayFromJSONTyped;
-function VirtualGatewayToJSON(value) {
+export function VirtualGatewayToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,10 +38,9 @@ function VirtualGatewayToJSON(value) {
     }
     return {
         'ConnectionType': value.connectionType,
-        'NetToVirtualGatewayLinks': value.netToVirtualGatewayLinks === undefined ? undefined : (value.netToVirtualGatewayLinks.map(NetToVirtualGatewayLink_1.NetToVirtualGatewayLinkToJSON)),
+        'NetToVirtualGatewayLinks': value.netToVirtualGatewayLinks === undefined ? undefined : (value.netToVirtualGatewayLinks.map(NetToVirtualGatewayLinkToJSON)),
         'State': value.state,
-        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
+        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTagToJSON)),
         'VirtualGatewayId': value.virtualGatewayId,
     };
 }
-exports.VirtualGatewayToJSON = VirtualGatewayToJSON;

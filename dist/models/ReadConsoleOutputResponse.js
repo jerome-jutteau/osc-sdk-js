@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function ReadConsoleOutputResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function ReadConsoleOutputResponseFromJSON(json) {
     return ReadConsoleOutputResponseFromJSONTyped(json, false);
 }
-exports.ReadConsoleOutputResponseFromJSON = ReadConsoleOutputResponseFromJSON;
-function ReadConsoleOutputResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadConsoleOutputResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'consoleOutput': !runtime_1.exists(json, 'ConsoleOutput') ? undefined : json['ConsoleOutput'],
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
-        'vmId': !runtime_1.exists(json, 'VmId') ? undefined : json['VmId'],
+        'consoleOutput': !exists(json, 'ConsoleOutput') ? undefined : json['ConsoleOutput'],
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
+        'vmId': !exists(json, 'VmId') ? undefined : json['VmId'],
     };
 }
-exports.ReadConsoleOutputResponseFromJSONTyped = ReadConsoleOutputResponseFromJSONTyped;
-function ReadConsoleOutputResponseToJSON(value) {
+export function ReadConsoleOutputResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -39,8 +35,7 @@ function ReadConsoleOutputResponseToJSON(value) {
     }
     return {
         'ConsoleOutput': value.consoleOutput,
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
         'VmId': value.vmId,
     };
 }
-exports.ReadConsoleOutputResponseToJSON = ReadConsoleOutputResponseToJSON;

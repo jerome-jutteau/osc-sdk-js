@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,34 +11,31 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function DirectLinkInterfacesFromJSON(json) {
+import { exists } from '../runtime';
+export function DirectLinkInterfacesFromJSON(json) {
     return DirectLinkInterfacesFromJSONTyped(json, false);
 }
-exports.DirectLinkInterfacesFromJSON = DirectLinkInterfacesFromJSON;
-function DirectLinkInterfacesFromJSONTyped(json, ignoreDiscriminator) {
+export function DirectLinkInterfacesFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'accountId': !runtime_1.exists(json, 'AccountId') ? undefined : json['AccountId'],
-        'bgpAsn': !runtime_1.exists(json, 'BgpAsn') ? undefined : json['BgpAsn'],
-        'bgpKey': !runtime_1.exists(json, 'BgpKey') ? undefined : json['BgpKey'],
-        'clientPrivateIp': !runtime_1.exists(json, 'ClientPrivateIp') ? undefined : json['ClientPrivateIp'],
-        'directLinkId': !runtime_1.exists(json, 'DirectLinkId') ? undefined : json['DirectLinkId'],
-        'directLinkInterfaceId': !runtime_1.exists(json, 'DirectLinkInterfaceId') ? undefined : json['DirectLinkInterfaceId'],
-        'directLinkInterfaceName': !runtime_1.exists(json, 'DirectLinkInterfaceName') ? undefined : json['DirectLinkInterfaceName'],
-        'interfaceType': !runtime_1.exists(json, 'InterfaceType') ? undefined : json['InterfaceType'],
-        'location': !runtime_1.exists(json, 'Location') ? undefined : json['Location'],
-        'outscalePrivateIp': !runtime_1.exists(json, 'OutscalePrivateIp') ? undefined : json['OutscalePrivateIp'],
-        'state': !runtime_1.exists(json, 'State') ? undefined : json['State'],
-        'virtualGatewayId': !runtime_1.exists(json, 'VirtualGatewayId') ? undefined : json['VirtualGatewayId'],
-        'vlan': !runtime_1.exists(json, 'Vlan') ? undefined : json['Vlan'],
+        'accountId': !exists(json, 'AccountId') ? undefined : json['AccountId'],
+        'bgpAsn': !exists(json, 'BgpAsn') ? undefined : json['BgpAsn'],
+        'bgpKey': !exists(json, 'BgpKey') ? undefined : json['BgpKey'],
+        'clientPrivateIp': !exists(json, 'ClientPrivateIp') ? undefined : json['ClientPrivateIp'],
+        'directLinkId': !exists(json, 'DirectLinkId') ? undefined : json['DirectLinkId'],
+        'directLinkInterfaceId': !exists(json, 'DirectLinkInterfaceId') ? undefined : json['DirectLinkInterfaceId'],
+        'directLinkInterfaceName': !exists(json, 'DirectLinkInterfaceName') ? undefined : json['DirectLinkInterfaceName'],
+        'interfaceType': !exists(json, 'InterfaceType') ? undefined : json['InterfaceType'],
+        'location': !exists(json, 'Location') ? undefined : json['Location'],
+        'outscalePrivateIp': !exists(json, 'OutscalePrivateIp') ? undefined : json['OutscalePrivateIp'],
+        'state': !exists(json, 'State') ? undefined : json['State'],
+        'virtualGatewayId': !exists(json, 'VirtualGatewayId') ? undefined : json['VirtualGatewayId'],
+        'vlan': !exists(json, 'Vlan') ? undefined : json['Vlan'],
     };
 }
-exports.DirectLinkInterfacesFromJSONTyped = DirectLinkInterfacesFromJSONTyped;
-function DirectLinkInterfacesToJSON(value) {
+export function DirectLinkInterfacesToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -62,4 +58,3 @@ function DirectLinkInterfacesToJSON(value) {
         'Vlan': value.vlan,
     };
 }
-exports.DirectLinkInterfacesToJSON = DirectLinkInterfacesToJSON;

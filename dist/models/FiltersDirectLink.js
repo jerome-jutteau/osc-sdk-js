@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,22 +11,19 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersDirectLinkFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersDirectLinkFromJSON(json) {
     return FiltersDirectLinkFromJSONTyped(json, false);
 }
-exports.FiltersDirectLinkFromJSON = FiltersDirectLinkFromJSON;
-function FiltersDirectLinkFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersDirectLinkFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'directLinkIds': !runtime_1.exists(json, 'DirectLinkIds') ? undefined : json['DirectLinkIds'],
+        'directLinkIds': !exists(json, 'DirectLinkIds') ? undefined : json['DirectLinkIds'],
     };
 }
-exports.FiltersDirectLinkFromJSONTyped = FiltersDirectLinkFromJSONTyped;
-function FiltersDirectLinkToJSON(value) {
+export function FiltersDirectLinkToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,4 +34,3 @@ function FiltersDirectLinkToJSON(value) {
         'DirectLinkIds': value.directLinkIds,
     };
 }
-exports.FiltersDirectLinkToJSON = FiltersDirectLinkToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var NetToVirtualGatewayLink_1 = require("./NetToVirtualGatewayLink");
-function LinkVirtualGatewayResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { NetToVirtualGatewayLinkFromJSON, NetToVirtualGatewayLinkToJSON, } from './NetToVirtualGatewayLink';
+export function LinkVirtualGatewayResponseFromJSON(json) {
     return LinkVirtualGatewayResponseFromJSONTyped(json, false);
 }
-exports.LinkVirtualGatewayResponseFromJSON = LinkVirtualGatewayResponseFromJSON;
-function LinkVirtualGatewayResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function LinkVirtualGatewayResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'netToVirtualGatewayLink': !runtime_1.exists(json, 'NetToVirtualGatewayLink') ? undefined : NetToVirtualGatewayLink_1.NetToVirtualGatewayLinkFromJSON(json['NetToVirtualGatewayLink']),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'netToVirtualGatewayLink': !exists(json, 'NetToVirtualGatewayLink') ? undefined : NetToVirtualGatewayLinkFromJSON(json['NetToVirtualGatewayLink']),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.LinkVirtualGatewayResponseFromJSONTyped = LinkVirtualGatewayResponseFromJSONTyped;
-function LinkVirtualGatewayResponseToJSON(value) {
+export function LinkVirtualGatewayResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function LinkVirtualGatewayResponseToJSON(value) {
         return null;
     }
     return {
-        'NetToVirtualGatewayLink': NetToVirtualGatewayLink_1.NetToVirtualGatewayLinkToJSON(value.netToVirtualGatewayLink),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'NetToVirtualGatewayLink': NetToVirtualGatewayLinkToJSON(value.netToVirtualGatewayLink),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.LinkVirtualGatewayResponseToJSON = LinkVirtualGatewayResponseToJSON;

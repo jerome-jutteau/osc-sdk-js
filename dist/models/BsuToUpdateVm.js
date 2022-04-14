@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function BsuToUpdateVmFromJSON(json) {
+import { exists } from '../runtime';
+export function BsuToUpdateVmFromJSON(json) {
     return BsuToUpdateVmFromJSONTyped(json, false);
 }
-exports.BsuToUpdateVmFromJSON = BsuToUpdateVmFromJSON;
-function BsuToUpdateVmFromJSONTyped(json, ignoreDiscriminator) {
+export function BsuToUpdateVmFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'deleteOnVmDeletion': !runtime_1.exists(json, 'DeleteOnVmDeletion') ? undefined : json['DeleteOnVmDeletion'],
-        'volumeId': !runtime_1.exists(json, 'VolumeId') ? undefined : json['VolumeId'],
+        'deleteOnVmDeletion': !exists(json, 'DeleteOnVmDeletion') ? undefined : json['DeleteOnVmDeletion'],
+        'volumeId': !exists(json, 'VolumeId') ? undefined : json['VolumeId'],
     };
 }
-exports.BsuToUpdateVmFromJSONTyped = BsuToUpdateVmFromJSONTyped;
-function BsuToUpdateVmToJSON(value) {
+export function BsuToUpdateVmToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function BsuToUpdateVmToJSON(value) {
         'VolumeId': value.volumeId,
     };
 }
-exports.BsuToUpdateVmToJSON = BsuToUpdateVmToJSON;

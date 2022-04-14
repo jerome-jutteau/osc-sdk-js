@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ListenerForCreation_1 = require("./ListenerForCreation");
-function CreateLoadBalancerListenersRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { ListenerForCreationFromJSON, ListenerForCreationToJSON, } from './ListenerForCreation';
+export function CreateLoadBalancerListenersRequestFromJSON(json) {
     return CreateLoadBalancerListenersRequestFromJSONTyped(json, false);
 }
-exports.CreateLoadBalancerListenersRequestFromJSON = CreateLoadBalancerListenersRequestFromJSON;
-function CreateLoadBalancerListenersRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateLoadBalancerListenersRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'listeners': (json['Listeners'].map(ListenerForCreation_1.ListenerForCreationFromJSON)),
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'listeners': (json['Listeners'].map(ListenerForCreationFromJSON)),
         'loadBalancerName': json['LoadBalancerName'],
     };
 }
-exports.CreateLoadBalancerListenersRequestFromJSONTyped = CreateLoadBalancerListenersRequestFromJSONTyped;
-function CreateLoadBalancerListenersRequestToJSON(value) {
+export function CreateLoadBalancerListenersRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -39,8 +35,7 @@ function CreateLoadBalancerListenersRequestToJSON(value) {
     }
     return {
         'DryRun': value.dryRun,
-        'Listeners': (value.listeners.map(ListenerForCreation_1.ListenerForCreationToJSON)),
+        'Listeners': (value.listeners.map(ListenerForCreationToJSON)),
         'LoadBalancerName': value.loadBalancerName,
     };
 }
-exports.CreateLoadBalancerListenersRequestToJSON = CreateLoadBalancerListenersRequestToJSON;

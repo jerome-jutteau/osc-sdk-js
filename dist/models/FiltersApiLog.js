@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,30 +11,27 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersApiLogFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersApiLogFromJSON(json) {
     return FiltersApiLogFromJSONTyped(json, false);
 }
-exports.FiltersApiLogFromJSON = FiltersApiLogFromJSON;
-function FiltersApiLogFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersApiLogFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'queryAccessKeys': !runtime_1.exists(json, 'QueryAccessKeys') ? undefined : json['QueryAccessKeys'],
-        'queryApiNames': !runtime_1.exists(json, 'QueryApiNames') ? undefined : json['QueryApiNames'],
-        'queryCallNames': !runtime_1.exists(json, 'QueryCallNames') ? undefined : json['QueryCallNames'],
-        'queryDateAfter': !runtime_1.exists(json, 'QueryDateAfter') ? undefined : (new Date(json['QueryDateAfter'])),
-        'queryDateBefore': !runtime_1.exists(json, 'QueryDateBefore') ? undefined : (new Date(json['QueryDateBefore'])),
-        'queryIpAddresses': !runtime_1.exists(json, 'QueryIpAddresses') ? undefined : json['QueryIpAddresses'],
-        'queryUserAgents': !runtime_1.exists(json, 'QueryUserAgents') ? undefined : json['QueryUserAgents'],
-        'requestIds': !runtime_1.exists(json, 'RequestIds') ? undefined : json['RequestIds'],
-        'responseStatusCodes': !runtime_1.exists(json, 'ResponseStatusCodes') ? undefined : json['ResponseStatusCodes'],
+        'queryAccessKeys': !exists(json, 'QueryAccessKeys') ? undefined : json['QueryAccessKeys'],
+        'queryApiNames': !exists(json, 'QueryApiNames') ? undefined : json['QueryApiNames'],
+        'queryCallNames': !exists(json, 'QueryCallNames') ? undefined : json['QueryCallNames'],
+        'queryDateAfter': !exists(json, 'QueryDateAfter') ? undefined : (new Date(json['QueryDateAfter'])),
+        'queryDateBefore': !exists(json, 'QueryDateBefore') ? undefined : (new Date(json['QueryDateBefore'])),
+        'queryIpAddresses': !exists(json, 'QueryIpAddresses') ? undefined : json['QueryIpAddresses'],
+        'queryUserAgents': !exists(json, 'QueryUserAgents') ? undefined : json['QueryUserAgents'],
+        'requestIds': !exists(json, 'RequestIds') ? undefined : json['RequestIds'],
+        'responseStatusCodes': !exists(json, 'ResponseStatusCodes') ? undefined : json['ResponseStatusCodes'],
     };
 }
-exports.FiltersApiLogFromJSONTyped = FiltersApiLogFromJSONTyped;
-function FiltersApiLogToJSON(value) {
+export function FiltersApiLogToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -54,4 +50,3 @@ function FiltersApiLogToJSON(value) {
         'ResponseStatusCodes': value.responseStatusCodes,
     };
 }
-exports.FiltersApiLogToJSON = FiltersApiLogToJSON;

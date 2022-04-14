@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var BackendVmHealth_1 = require("./BackendVmHealth");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function ReadVmsHealthResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { BackendVmHealthFromJSON, BackendVmHealthToJSON, } from './BackendVmHealth';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function ReadVmsHealthResponseFromJSON(json) {
     return ReadVmsHealthResponseFromJSONTyped(json, false);
 }
-exports.ReadVmsHealthResponseFromJSON = ReadVmsHealthResponseFromJSON;
-function ReadVmsHealthResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadVmsHealthResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'backendVmHealth': !runtime_1.exists(json, 'BackendVmHealth') ? undefined : (json['BackendVmHealth'].map(BackendVmHealth_1.BackendVmHealthFromJSON)),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'backendVmHealth': !exists(json, 'BackendVmHealth') ? undefined : (json['BackendVmHealth'].map(BackendVmHealthFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.ReadVmsHealthResponseFromJSONTyped = ReadVmsHealthResponseFromJSONTyped;
-function ReadVmsHealthResponseToJSON(value) {
+export function ReadVmsHealthResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadVmsHealthResponseToJSON(value) {
         return null;
     }
     return {
-        'BackendVmHealth': value.backendVmHealth === undefined ? undefined : (value.backendVmHealth.map(BackendVmHealth_1.BackendVmHealthToJSON)),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'BackendVmHealth': value.backendVmHealth === undefined ? undefined : (value.backendVmHealth.map(BackendVmHealthToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.ReadVmsHealthResponseToJSON = ReadVmsHealthResponseToJSON;

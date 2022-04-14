@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function DeleteNetPeeringRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function DeleteNetPeeringRequestFromJSON(json) {
     return DeleteNetPeeringRequestFromJSONTyped(json, false);
 }
-exports.DeleteNetPeeringRequestFromJSON = DeleteNetPeeringRequestFromJSON;
-function DeleteNetPeeringRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function DeleteNetPeeringRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'netPeeringId': json['NetPeeringId'],
     };
 }
-exports.DeleteNetPeeringRequestFromJSONTyped = DeleteNetPeeringRequestFromJSONTyped;
-function DeleteNetPeeringRequestToJSON(value) {
+export function DeleteNetPeeringRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function DeleteNetPeeringRequestToJSON(value) {
         'NetPeeringId': value.netPeeringId,
     };
 }
-exports.DeleteNetPeeringRequestToJSON = DeleteNetPeeringRequestToJSON;

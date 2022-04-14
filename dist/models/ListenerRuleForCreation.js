@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,26 +11,23 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function ListenerRuleForCreationFromJSON(json) {
+import { exists } from '../runtime';
+export function ListenerRuleForCreationFromJSON(json) {
     return ListenerRuleForCreationFromJSONTyped(json, false);
 }
-exports.ListenerRuleForCreationFromJSON = ListenerRuleForCreationFromJSON;
-function ListenerRuleForCreationFromJSONTyped(json, ignoreDiscriminator) {
+export function ListenerRuleForCreationFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'action': !runtime_1.exists(json, 'Action') ? undefined : json['Action'],
-        'hostNamePattern': !runtime_1.exists(json, 'HostNamePattern') ? undefined : json['HostNamePattern'],
+        'action': !exists(json, 'Action') ? undefined : json['Action'],
+        'hostNamePattern': !exists(json, 'HostNamePattern') ? undefined : json['HostNamePattern'],
         'listenerRuleName': json['ListenerRuleName'],
-        'pathPattern': !runtime_1.exists(json, 'PathPattern') ? undefined : json['PathPattern'],
+        'pathPattern': !exists(json, 'PathPattern') ? undefined : json['PathPattern'],
         'priority': json['Priority'],
     };
 }
-exports.ListenerRuleForCreationFromJSONTyped = ListenerRuleForCreationFromJSONTyped;
-function ListenerRuleForCreationToJSON(value) {
+export function ListenerRuleForCreationToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -46,4 +42,3 @@ function ListenerRuleForCreationToJSON(value) {
         'Priority': value.priority,
     };
 }
-exports.ListenerRuleForCreationToJSON = ListenerRuleForCreationToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var Account_1 = require("./Account");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function CreateAccountResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { AccountFromJSON, AccountToJSON, } from './Account';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function CreateAccountResponseFromJSON(json) {
     return CreateAccountResponseFromJSONTyped(json, false);
 }
-exports.CreateAccountResponseFromJSON = CreateAccountResponseFromJSON;
-function CreateAccountResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateAccountResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'account': !runtime_1.exists(json, 'Account') ? undefined : Account_1.AccountFromJSON(json['Account']),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'account': !exists(json, 'Account') ? undefined : AccountFromJSON(json['Account']),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.CreateAccountResponseFromJSONTyped = CreateAccountResponseFromJSONTyped;
-function CreateAccountResponseToJSON(value) {
+export function CreateAccountResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function CreateAccountResponseToJSON(value) {
         return null;
     }
     return {
-        'Account': Account_1.AccountToJSON(value.account),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'Account': AccountToJSON(value.account),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.CreateAccountResponseToJSON = CreateAccountResponseToJSON;

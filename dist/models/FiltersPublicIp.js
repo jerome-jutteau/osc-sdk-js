@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,32 +11,29 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersPublicIpFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersPublicIpFromJSON(json) {
     return FiltersPublicIpFromJSONTyped(json, false);
 }
-exports.FiltersPublicIpFromJSON = FiltersPublicIpFromJSON;
-function FiltersPublicIpFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersPublicIpFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'linkPublicIpIds': !runtime_1.exists(json, 'LinkPublicIpIds') ? undefined : json['LinkPublicIpIds'],
-        'nicAccountIds': !runtime_1.exists(json, 'NicAccountIds') ? undefined : json['NicAccountIds'],
-        'nicIds': !runtime_1.exists(json, 'NicIds') ? undefined : json['NicIds'],
-        'placements': !runtime_1.exists(json, 'Placements') ? undefined : json['Placements'],
-        'privateIps': !runtime_1.exists(json, 'PrivateIps') ? undefined : json['PrivateIps'],
-        'publicIpIds': !runtime_1.exists(json, 'PublicIpIds') ? undefined : json['PublicIpIds'],
-        'publicIps': !runtime_1.exists(json, 'PublicIps') ? undefined : json['PublicIps'],
-        'tagKeys': !runtime_1.exists(json, 'TagKeys') ? undefined : json['TagKeys'],
-        'tagValues': !runtime_1.exists(json, 'TagValues') ? undefined : json['TagValues'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : json['Tags'],
-        'vmIds': !runtime_1.exists(json, 'VmIds') ? undefined : json['VmIds'],
+        'linkPublicIpIds': !exists(json, 'LinkPublicIpIds') ? undefined : json['LinkPublicIpIds'],
+        'nicAccountIds': !exists(json, 'NicAccountIds') ? undefined : json['NicAccountIds'],
+        'nicIds': !exists(json, 'NicIds') ? undefined : json['NicIds'],
+        'placements': !exists(json, 'Placements') ? undefined : json['Placements'],
+        'privateIps': !exists(json, 'PrivateIps') ? undefined : json['PrivateIps'],
+        'publicIpIds': !exists(json, 'PublicIpIds') ? undefined : json['PublicIpIds'],
+        'publicIps': !exists(json, 'PublicIps') ? undefined : json['PublicIps'],
+        'tagKeys': !exists(json, 'TagKeys') ? undefined : json['TagKeys'],
+        'tagValues': !exists(json, 'TagValues') ? undefined : json['TagValues'],
+        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
+        'vmIds': !exists(json, 'VmIds') ? undefined : json['VmIds'],
     };
 }
-exports.FiltersPublicIpFromJSONTyped = FiltersPublicIpFromJSONTyped;
-function FiltersPublicIpToJSON(value) {
+export function FiltersPublicIpToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -58,4 +54,3 @@ function FiltersPublicIpToJSON(value) {
         'VmIds': value.vmIds,
     };
 }
-exports.FiltersPublicIpToJSON = FiltersPublicIpToJSON;

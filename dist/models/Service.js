@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function ServiceFromJSON(json) {
+import { exists } from '../runtime';
+export function ServiceFromJSON(json) {
     return ServiceFromJSONTyped(json, false);
 }
-exports.ServiceFromJSON = ServiceFromJSON;
-function ServiceFromJSONTyped(json, ignoreDiscriminator) {
+export function ServiceFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'ipRanges': !runtime_1.exists(json, 'IpRanges') ? undefined : json['IpRanges'],
-        'serviceId': !runtime_1.exists(json, 'ServiceId') ? undefined : json['ServiceId'],
-        'serviceName': !runtime_1.exists(json, 'ServiceName') ? undefined : json['ServiceName'],
+        'ipRanges': !exists(json, 'IpRanges') ? undefined : json['IpRanges'],
+        'serviceId': !exists(json, 'ServiceId') ? undefined : json['ServiceId'],
+        'serviceName': !exists(json, 'ServiceName') ? undefined : json['ServiceName'],
     };
 }
-exports.ServiceFromJSONTyped = ServiceFromJSONTyped;
-function ServiceToJSON(value) {
+export function ServiceToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,4 +38,3 @@ function ServiceToJSON(value) {
         'ServiceName': value.serviceName,
     };
 }
-exports.ServiceToJSON = ServiceToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function UpdateNetAccessPointRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function UpdateNetAccessPointRequestFromJSON(json) {
     return UpdateNetAccessPointRequestFromJSONTyped(json, false);
 }
-exports.UpdateNetAccessPointRequestFromJSON = UpdateNetAccessPointRequestFromJSON;
-function UpdateNetAccessPointRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function UpdateNetAccessPointRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'addRouteTableIds': !runtime_1.exists(json, 'AddRouteTableIds') ? undefined : json['AddRouteTableIds'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'addRouteTableIds': !exists(json, 'AddRouteTableIds') ? undefined : json['AddRouteTableIds'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'netAccessPointId': json['NetAccessPointId'],
-        'removeRouteTableIds': !runtime_1.exists(json, 'RemoveRouteTableIds') ? undefined : json['RemoveRouteTableIds'],
+        'removeRouteTableIds': !exists(json, 'RemoveRouteTableIds') ? undefined : json['RemoveRouteTableIds'],
     };
 }
-exports.UpdateNetAccessPointRequestFromJSONTyped = UpdateNetAccessPointRequestFromJSONTyped;
-function UpdateNetAccessPointRequestToJSON(value) {
+export function UpdateNetAccessPointRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,4 +40,3 @@ function UpdateNetAccessPointRequestToJSON(value) {
         'RemoveRouteTableIds': value.removeRouteTableIds,
     };
 }
-exports.UpdateNetAccessPointRequestToJSON = UpdateNetAccessPointRequestToJSON;

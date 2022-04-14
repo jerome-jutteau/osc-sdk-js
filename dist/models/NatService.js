@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,29 +11,26 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var PublicIpLight_1 = require("./PublicIpLight");
-var ResourceTag_1 = require("./ResourceTag");
-function NatServiceFromJSON(json) {
+import { exists } from '../runtime';
+import { PublicIpLightFromJSON, PublicIpLightToJSON, } from './PublicIpLight';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
+export function NatServiceFromJSON(json) {
     return NatServiceFromJSONTyped(json, false);
 }
-exports.NatServiceFromJSON = NatServiceFromJSON;
-function NatServiceFromJSONTyped(json, ignoreDiscriminator) {
+export function NatServiceFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'natServiceId': !runtime_1.exists(json, 'NatServiceId') ? undefined : json['NatServiceId'],
-        'netId': !runtime_1.exists(json, 'NetId') ? undefined : json['NetId'],
-        'publicIps': !runtime_1.exists(json, 'PublicIps') ? undefined : (json['PublicIps'].map(PublicIpLight_1.PublicIpLightFromJSON)),
-        'state': !runtime_1.exists(json, 'State') ? undefined : json['State'],
-        'subnetId': !runtime_1.exists(json, 'SubnetId') ? undefined : json['SubnetId'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
+        'natServiceId': !exists(json, 'NatServiceId') ? undefined : json['NatServiceId'],
+        'netId': !exists(json, 'NetId') ? undefined : json['NetId'],
+        'publicIps': !exists(json, 'PublicIps') ? undefined : (json['PublicIps'].map(PublicIpLightFromJSON)),
+        'state': !exists(json, 'State') ? undefined : json['State'],
+        'subnetId': !exists(json, 'SubnetId') ? undefined : json['SubnetId'],
+        'tags': !exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTagFromJSON)),
     };
 }
-exports.NatServiceFromJSONTyped = NatServiceFromJSONTyped;
-function NatServiceToJSON(value) {
+export function NatServiceToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,10 +40,9 @@ function NatServiceToJSON(value) {
     return {
         'NatServiceId': value.natServiceId,
         'NetId': value.netId,
-        'PublicIps': value.publicIps === undefined ? undefined : (value.publicIps.map(PublicIpLight_1.PublicIpLightToJSON)),
+        'PublicIps': value.publicIps === undefined ? undefined : (value.publicIps.map(PublicIpLightToJSON)),
         'State': value.state,
         'SubnetId': value.subnetId,
-        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
+        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTagToJSON)),
     };
 }
-exports.NatServiceToJSON = NatServiceToJSON;

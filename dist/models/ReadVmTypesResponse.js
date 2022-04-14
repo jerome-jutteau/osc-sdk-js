@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var VmType_1 = require("./VmType");
-function ReadVmTypesResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { VmTypeFromJSON, VmTypeToJSON, } from './VmType';
+export function ReadVmTypesResponseFromJSON(json) {
     return ReadVmTypesResponseFromJSONTyped(json, false);
 }
-exports.ReadVmTypesResponseFromJSON = ReadVmTypesResponseFromJSON;
-function ReadVmTypesResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadVmTypesResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
-        'vmTypes': !runtime_1.exists(json, 'VmTypes') ? undefined : (json['VmTypes'].map(VmType_1.VmTypeFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
+        'vmTypes': !exists(json, 'VmTypes') ? undefined : (json['VmTypes'].map(VmTypeFromJSON)),
     };
 }
-exports.ReadVmTypesResponseFromJSONTyped = ReadVmTypesResponseFromJSONTyped;
-function ReadVmTypesResponseToJSON(value) {
+export function ReadVmTypesResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadVmTypesResponseToJSON(value) {
         return null;
     }
     return {
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
-        'VmTypes': value.vmTypes === undefined ? undefined : (value.vmTypes.map(VmType_1.VmTypeToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
+        'VmTypes': value.vmTypes === undefined ? undefined : (value.vmTypes.map(VmTypeToJSON)),
     };
 }
-exports.ReadVmTypesResponseToJSON = ReadVmTypesResponseToJSON;

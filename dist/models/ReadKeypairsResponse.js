@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var Keypair_1 = require("./Keypair");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function ReadKeypairsResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { KeypairFromJSON, KeypairToJSON, } from './Keypair';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function ReadKeypairsResponseFromJSON(json) {
     return ReadKeypairsResponseFromJSONTyped(json, false);
 }
-exports.ReadKeypairsResponseFromJSON = ReadKeypairsResponseFromJSON;
-function ReadKeypairsResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadKeypairsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'keypairs': !runtime_1.exists(json, 'Keypairs') ? undefined : (json['Keypairs'].map(Keypair_1.KeypairFromJSON)),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'keypairs': !exists(json, 'Keypairs') ? undefined : (json['Keypairs'].map(KeypairFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.ReadKeypairsResponseFromJSONTyped = ReadKeypairsResponseFromJSONTyped;
-function ReadKeypairsResponseToJSON(value) {
+export function ReadKeypairsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadKeypairsResponseToJSON(value) {
         return null;
     }
     return {
-        'Keypairs': value.keypairs === undefined ? undefined : (value.keypairs.map(Keypair_1.KeypairToJSON)),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'Keypairs': value.keypairs === undefined ? undefined : (value.keypairs.map(KeypairToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.ReadKeypairsResponseToJSON = ReadKeypairsResponseToJSON;

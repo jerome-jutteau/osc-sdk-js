@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,22 +11,19 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersSubregionFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersSubregionFromJSON(json) {
     return FiltersSubregionFromJSONTyped(json, false);
 }
-exports.FiltersSubregionFromJSON = FiltersSubregionFromJSON;
-function FiltersSubregionFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersSubregionFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'subregionNames': !runtime_1.exists(json, 'SubregionNames') ? undefined : json['SubregionNames'],
+        'subregionNames': !exists(json, 'SubregionNames') ? undefined : json['SubregionNames'],
     };
 }
-exports.FiltersSubregionFromJSONTyped = FiltersSubregionFromJSONTyped;
-function FiltersSubregionToJSON(value) {
+export function FiltersSubregionToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,4 +34,3 @@ function FiltersSubregionToJSON(value) {
         'SubregionNames': value.subregionNames,
     };
 }
-exports.FiltersSubregionToJSON = FiltersSubregionToJSON;

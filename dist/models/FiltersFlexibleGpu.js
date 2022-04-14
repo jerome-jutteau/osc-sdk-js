@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,28 +11,25 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersFlexibleGpuFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersFlexibleGpuFromJSON(json) {
     return FiltersFlexibleGpuFromJSONTyped(json, false);
 }
-exports.FiltersFlexibleGpuFromJSON = FiltersFlexibleGpuFromJSON;
-function FiltersFlexibleGpuFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersFlexibleGpuFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'deleteOnVmDeletion': !runtime_1.exists(json, 'DeleteOnVmDeletion') ? undefined : json['DeleteOnVmDeletion'],
-        'flexibleGpuIds': !runtime_1.exists(json, 'FlexibleGpuIds') ? undefined : json['FlexibleGpuIds'],
-        'generations': !runtime_1.exists(json, 'Generations') ? undefined : json['Generations'],
-        'modelNames': !runtime_1.exists(json, 'ModelNames') ? undefined : json['ModelNames'],
-        'states': !runtime_1.exists(json, 'States') ? undefined : json['States'],
-        'subregionNames': !runtime_1.exists(json, 'SubregionNames') ? undefined : json['SubregionNames'],
-        'vmIds': !runtime_1.exists(json, 'VmIds') ? undefined : json['VmIds'],
+        'deleteOnVmDeletion': !exists(json, 'DeleteOnVmDeletion') ? undefined : json['DeleteOnVmDeletion'],
+        'flexibleGpuIds': !exists(json, 'FlexibleGpuIds') ? undefined : json['FlexibleGpuIds'],
+        'generations': !exists(json, 'Generations') ? undefined : json['Generations'],
+        'modelNames': !exists(json, 'ModelNames') ? undefined : json['ModelNames'],
+        'states': !exists(json, 'States') ? undefined : json['States'],
+        'subregionNames': !exists(json, 'SubregionNames') ? undefined : json['SubregionNames'],
+        'vmIds': !exists(json, 'VmIds') ? undefined : json['VmIds'],
     };
 }
-exports.FiltersFlexibleGpuFromJSONTyped = FiltersFlexibleGpuFromJSONTyped;
-function FiltersFlexibleGpuToJSON(value) {
+export function FiltersFlexibleGpuToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -50,4 +46,3 @@ function FiltersFlexibleGpuToJSON(value) {
         'VmIds': value.vmIds,
     };
 }
-exports.FiltersFlexibleGpuToJSON = FiltersFlexibleGpuToJSON;

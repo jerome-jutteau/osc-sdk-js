@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function LinkRouteTableResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function LinkRouteTableResponseFromJSON(json) {
     return LinkRouteTableResponseFromJSONTyped(json, false);
 }
-exports.LinkRouteTableResponseFromJSON = LinkRouteTableResponseFromJSON;
-function LinkRouteTableResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function LinkRouteTableResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'linkRouteTableId': !runtime_1.exists(json, 'LinkRouteTableId') ? undefined : json['LinkRouteTableId'],
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'linkRouteTableId': !exists(json, 'LinkRouteTableId') ? undefined : json['LinkRouteTableId'],
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.LinkRouteTableResponseFromJSONTyped = LinkRouteTableResponseFromJSONTyped;
-function LinkRouteTableResponseToJSON(value) {
+export function LinkRouteTableResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,7 +34,6 @@ function LinkRouteTableResponseToJSON(value) {
     }
     return {
         'LinkRouteTableId': value.linkRouteTableId,
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.LinkRouteTableResponseToJSON = LinkRouteTableResponseToJSON;

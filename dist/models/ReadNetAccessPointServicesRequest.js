@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var FiltersService_1 = require("./FiltersService");
-function ReadNetAccessPointServicesRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { FiltersServiceFromJSON, FiltersServiceToJSON, } from './FiltersService';
+export function ReadNetAccessPointServicesRequestFromJSON(json) {
     return ReadNetAccessPointServicesRequestFromJSONTyped(json, false);
 }
-exports.ReadNetAccessPointServicesRequestFromJSON = ReadNetAccessPointServicesRequestFromJSON;
-function ReadNetAccessPointServicesRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadNetAccessPointServicesRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'filters': !runtime_1.exists(json, 'Filters') ? undefined : FiltersService_1.FiltersServiceFromJSON(json['Filters']),
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'filters': !exists(json, 'Filters') ? undefined : FiltersServiceFromJSON(json['Filters']),
     };
 }
-exports.ReadNetAccessPointServicesRequestFromJSONTyped = ReadNetAccessPointServicesRequestFromJSONTyped;
-function ReadNetAccessPointServicesRequestToJSON(value) {
+export function ReadNetAccessPointServicesRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,7 +34,6 @@ function ReadNetAccessPointServicesRequestToJSON(value) {
     }
     return {
         'DryRun': value.dryRun,
-        'Filters': FiltersService_1.FiltersServiceToJSON(value.filters),
+        'Filters': FiltersServiceToJSON(value.filters),
     };
 }
-exports.ReadNetAccessPointServicesRequestToJSON = ReadNetAccessPointServicesRequestToJSON;

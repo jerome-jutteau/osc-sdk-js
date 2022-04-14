@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var Snapshot_1 = require("./Snapshot");
-function ReadSnapshotsResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { SnapshotFromJSON, SnapshotToJSON, } from './Snapshot';
+export function ReadSnapshotsResponseFromJSON(json) {
     return ReadSnapshotsResponseFromJSONTyped(json, false);
 }
-exports.ReadSnapshotsResponseFromJSON = ReadSnapshotsResponseFromJSON;
-function ReadSnapshotsResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadSnapshotsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
-        'snapshots': !runtime_1.exists(json, 'Snapshots') ? undefined : (json['Snapshots'].map(Snapshot_1.SnapshotFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
+        'snapshots': !exists(json, 'Snapshots') ? undefined : (json['Snapshots'].map(SnapshotFromJSON)),
     };
 }
-exports.ReadSnapshotsResponseFromJSONTyped = ReadSnapshotsResponseFromJSONTyped;
-function ReadSnapshotsResponseToJSON(value) {
+export function ReadSnapshotsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadSnapshotsResponseToJSON(value) {
         return null;
     }
     return {
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
-        'Snapshots': value.snapshots === undefined ? undefined : (value.snapshots.map(Snapshot_1.SnapshotToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
+        'Snapshots': value.snapshots === undefined ? undefined : (value.snapshots.map(SnapshotToJSON)),
     };
 }
-exports.ReadSnapshotsResponseToJSON = ReadSnapshotsResponseToJSON;

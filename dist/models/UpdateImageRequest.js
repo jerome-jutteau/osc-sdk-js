@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var PermissionsOnResourceCreation_1 = require("./PermissionsOnResourceCreation");
-function UpdateImageRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { PermissionsOnResourceCreationFromJSON, PermissionsOnResourceCreationToJSON, } from './PermissionsOnResourceCreation';
+export function UpdateImageRequestFromJSON(json) {
     return UpdateImageRequestFromJSONTyped(json, false);
 }
-exports.UpdateImageRequestFromJSON = UpdateImageRequestFromJSON;
-function UpdateImageRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function UpdateImageRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'imageId': json['ImageId'],
-        'permissionsToLaunch': PermissionsOnResourceCreation_1.PermissionsOnResourceCreationFromJSON(json['PermissionsToLaunch']),
+        'permissionsToLaunch': PermissionsOnResourceCreationFromJSON(json['PermissionsToLaunch']),
     };
 }
-exports.UpdateImageRequestFromJSONTyped = UpdateImageRequestFromJSONTyped;
-function UpdateImageRequestToJSON(value) {
+export function UpdateImageRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,7 +36,6 @@ function UpdateImageRequestToJSON(value) {
     return {
         'DryRun': value.dryRun,
         'ImageId': value.imageId,
-        'PermissionsToLaunch': PermissionsOnResourceCreation_1.PermissionsOnResourceCreationToJSON(value.permissionsToLaunch),
+        'PermissionsToLaunch': PermissionsOnResourceCreationToJSON(value.permissionsToLaunch),
     };
 }
-exports.UpdateImageRequestToJSON = UpdateImageRequestToJSON;

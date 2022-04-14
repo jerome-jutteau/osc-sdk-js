@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function CreateKeypairRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function CreateKeypairRequestFromJSON(json) {
     return CreateKeypairRequestFromJSONTyped(json, false);
 }
-exports.CreateKeypairRequestFromJSON = CreateKeypairRequestFromJSON;
-function CreateKeypairRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateKeypairRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'keypairName': json['KeypairName'],
-        'publicKey': !runtime_1.exists(json, 'PublicKey') ? undefined : json['PublicKey'],
+        'publicKey': !exists(json, 'PublicKey') ? undefined : json['PublicKey'],
     };
 }
-exports.CreateKeypairRequestFromJSONTyped = CreateKeypairRequestFromJSONTyped;
-function CreateKeypairRequestToJSON(value) {
+export function CreateKeypairRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,4 +38,3 @@ function CreateKeypairRequestToJSON(value) {
         'PublicKey': value.publicKey,
     };
 }
-exports.CreateKeypairRequestToJSON = CreateKeypairRequestToJSON;

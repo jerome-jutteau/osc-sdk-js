@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ResourceTag_1 = require("./ResourceTag");
-function CreateLoadBalancerTagsRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
+export function CreateLoadBalancerTagsRequestFromJSON(json) {
     return CreateLoadBalancerTagsRequestFromJSONTyped(json, false);
 }
-exports.CreateLoadBalancerTagsRequestFromJSON = CreateLoadBalancerTagsRequestFromJSON;
-function CreateLoadBalancerTagsRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateLoadBalancerTagsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'loadBalancerNames': json['LoadBalancerNames'],
-        'tags': (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
+        'tags': (json['Tags'].map(ResourceTagFromJSON)),
     };
 }
-exports.CreateLoadBalancerTagsRequestFromJSONTyped = CreateLoadBalancerTagsRequestFromJSONTyped;
-function CreateLoadBalancerTagsRequestToJSON(value) {
+export function CreateLoadBalancerTagsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,7 +36,6 @@ function CreateLoadBalancerTagsRequestToJSON(value) {
     return {
         'DryRun': value.dryRun,
         'LoadBalancerNames': value.loadBalancerNames,
-        'Tags': (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
+        'Tags': (value.tags.map(ResourceTagToJSON)),
     };
 }
-exports.CreateLoadBalancerTagsRequestToJSON = CreateLoadBalancerTagsRequestToJSON;

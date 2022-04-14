@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function BackendVmHealthFromJSON(json) {
+import { exists } from '../runtime';
+export function BackendVmHealthFromJSON(json) {
     return BackendVmHealthFromJSONTyped(json, false);
 }
-exports.BackendVmHealthFromJSON = BackendVmHealthFromJSON;
-function BackendVmHealthFromJSONTyped(json, ignoreDiscriminator) {
+export function BackendVmHealthFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'description': !runtime_1.exists(json, 'Description') ? undefined : json['Description'],
-        'state': !runtime_1.exists(json, 'State') ? undefined : json['State'],
-        'stateReason': !runtime_1.exists(json, 'StateReason') ? undefined : json['StateReason'],
-        'vmId': !runtime_1.exists(json, 'VmId') ? undefined : json['VmId'],
+        'description': !exists(json, 'Description') ? undefined : json['Description'],
+        'state': !exists(json, 'State') ? undefined : json['State'],
+        'stateReason': !exists(json, 'StateReason') ? undefined : json['StateReason'],
+        'vmId': !exists(json, 'VmId') ? undefined : json['VmId'],
     };
 }
-exports.BackendVmHealthFromJSONTyped = BackendVmHealthFromJSONTyped;
-function BackendVmHealthToJSON(value) {
+export function BackendVmHealthToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,4 +40,3 @@ function BackendVmHealthToJSON(value) {
         'VmId': value.vmId,
     };
 }
-exports.BackendVmHealthToJSON = BackendVmHealthToJSON;

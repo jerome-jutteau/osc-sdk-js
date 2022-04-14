@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var VmStates_1 = require("./VmStates");
-function ReadVmsStateResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { VmStatesFromJSON, VmStatesToJSON, } from './VmStates';
+export function ReadVmsStateResponseFromJSON(json) {
     return ReadVmsStateResponseFromJSONTyped(json, false);
 }
-exports.ReadVmsStateResponseFromJSON = ReadVmsStateResponseFromJSON;
-function ReadVmsStateResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadVmsStateResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
-        'vmStates': !runtime_1.exists(json, 'VmStates') ? undefined : (json['VmStates'].map(VmStates_1.VmStatesFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
+        'vmStates': !exists(json, 'VmStates') ? undefined : (json['VmStates'].map(VmStatesFromJSON)),
     };
 }
-exports.ReadVmsStateResponseFromJSONTyped = ReadVmsStateResponseFromJSONTyped;
-function ReadVmsStateResponseToJSON(value) {
+export function ReadVmsStateResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadVmsStateResponseToJSON(value) {
         return null;
     }
     return {
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
-        'VmStates': value.vmStates === undefined ? undefined : (value.vmStates.map(VmStates_1.VmStatesToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
+        'VmStates': value.vmStates === undefined ? undefined : (value.vmStates.map(VmStatesToJSON)),
     };
 }
-exports.ReadVmsStateResponseToJSON = ReadVmsStateResponseToJSON;

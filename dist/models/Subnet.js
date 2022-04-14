@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,30 +11,27 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ResourceTag_1 = require("./ResourceTag");
-function SubnetFromJSON(json) {
+import { exists } from '../runtime';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
+export function SubnetFromJSON(json) {
     return SubnetFromJSONTyped(json, false);
 }
-exports.SubnetFromJSON = SubnetFromJSON;
-function SubnetFromJSONTyped(json, ignoreDiscriminator) {
+export function SubnetFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'availableIpsCount': !runtime_1.exists(json, 'AvailableIpsCount') ? undefined : json['AvailableIpsCount'],
-        'ipRange': !runtime_1.exists(json, 'IpRange') ? undefined : json['IpRange'],
-        'mapPublicIpOnLaunch': !runtime_1.exists(json, 'MapPublicIpOnLaunch') ? undefined : json['MapPublicIpOnLaunch'],
-        'netId': !runtime_1.exists(json, 'NetId') ? undefined : json['NetId'],
-        'state': !runtime_1.exists(json, 'State') ? undefined : json['State'],
-        'subnetId': !runtime_1.exists(json, 'SubnetId') ? undefined : json['SubnetId'],
-        'subregionName': !runtime_1.exists(json, 'SubregionName') ? undefined : json['SubregionName'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
+        'availableIpsCount': !exists(json, 'AvailableIpsCount') ? undefined : json['AvailableIpsCount'],
+        'ipRange': !exists(json, 'IpRange') ? undefined : json['IpRange'],
+        'mapPublicIpOnLaunch': !exists(json, 'MapPublicIpOnLaunch') ? undefined : json['MapPublicIpOnLaunch'],
+        'netId': !exists(json, 'NetId') ? undefined : json['NetId'],
+        'state': !exists(json, 'State') ? undefined : json['State'],
+        'subnetId': !exists(json, 'SubnetId') ? undefined : json['SubnetId'],
+        'subregionName': !exists(json, 'SubregionName') ? undefined : json['SubregionName'],
+        'tags': !exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTagFromJSON)),
     };
 }
-exports.SubnetFromJSONTyped = SubnetFromJSONTyped;
-function SubnetToJSON(value) {
+export function SubnetToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -50,7 +46,6 @@ function SubnetToJSON(value) {
         'State': value.state,
         'SubnetId': value.subnetId,
         'SubregionName': value.subregionName,
-        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
+        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTagToJSON)),
     };
 }
-exports.SubnetToJSON = SubnetToJSON;

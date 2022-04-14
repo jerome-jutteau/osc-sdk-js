@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var Ca_1 = require("./Ca");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function ReadCasResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { CaFromJSON, CaToJSON, } from './Ca';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function ReadCasResponseFromJSON(json) {
     return ReadCasResponseFromJSONTyped(json, false);
 }
-exports.ReadCasResponseFromJSON = ReadCasResponseFromJSON;
-function ReadCasResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadCasResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'cas': !runtime_1.exists(json, 'Cas') ? undefined : (json['Cas'].map(Ca_1.CaFromJSON)),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'cas': !exists(json, 'Cas') ? undefined : (json['Cas'].map(CaFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.ReadCasResponseFromJSONTyped = ReadCasResponseFromJSONTyped;
-function ReadCasResponseToJSON(value) {
+export function ReadCasResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadCasResponseToJSON(value) {
         return null;
     }
     return {
-        'Cas': value.cas === undefined ? undefined : (value.cas.map(Ca_1.CaToJSON)),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'Cas': value.cas === undefined ? undefined : (value.cas.map(CaToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.ReadCasResponseToJSON = ReadCasResponseToJSON;

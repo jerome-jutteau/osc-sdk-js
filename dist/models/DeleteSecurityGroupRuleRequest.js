@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,32 +11,29 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var SecurityGroupRule_1 = require("./SecurityGroupRule");
-function DeleteSecurityGroupRuleRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { SecurityGroupRuleFromJSON, SecurityGroupRuleToJSON, } from './SecurityGroupRule';
+export function DeleteSecurityGroupRuleRequestFromJSON(json) {
     return DeleteSecurityGroupRuleRequestFromJSONTyped(json, false);
 }
-exports.DeleteSecurityGroupRuleRequestFromJSON = DeleteSecurityGroupRuleRequestFromJSON;
-function DeleteSecurityGroupRuleRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function DeleteSecurityGroupRuleRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'flow': json['Flow'],
-        'fromPortRange': !runtime_1.exists(json, 'FromPortRange') ? undefined : json['FromPortRange'],
-        'ipProtocol': !runtime_1.exists(json, 'IpProtocol') ? undefined : json['IpProtocol'],
-        'ipRange': !runtime_1.exists(json, 'IpRange') ? undefined : json['IpRange'],
-        'rules': !runtime_1.exists(json, 'Rules') ? undefined : (json['Rules'].map(SecurityGroupRule_1.SecurityGroupRuleFromJSON)),
-        'securityGroupAccountIdToUnlink': !runtime_1.exists(json, 'SecurityGroupAccountIdToUnlink') ? undefined : json['SecurityGroupAccountIdToUnlink'],
+        'fromPortRange': !exists(json, 'FromPortRange') ? undefined : json['FromPortRange'],
+        'ipProtocol': !exists(json, 'IpProtocol') ? undefined : json['IpProtocol'],
+        'ipRange': !exists(json, 'IpRange') ? undefined : json['IpRange'],
+        'rules': !exists(json, 'Rules') ? undefined : (json['Rules'].map(SecurityGroupRuleFromJSON)),
+        'securityGroupAccountIdToUnlink': !exists(json, 'SecurityGroupAccountIdToUnlink') ? undefined : json['SecurityGroupAccountIdToUnlink'],
         'securityGroupId': json['SecurityGroupId'],
-        'securityGroupNameToUnlink': !runtime_1.exists(json, 'SecurityGroupNameToUnlink') ? undefined : json['SecurityGroupNameToUnlink'],
-        'toPortRange': !runtime_1.exists(json, 'ToPortRange') ? undefined : json['ToPortRange'],
+        'securityGroupNameToUnlink': !exists(json, 'SecurityGroupNameToUnlink') ? undefined : json['SecurityGroupNameToUnlink'],
+        'toPortRange': !exists(json, 'ToPortRange') ? undefined : json['ToPortRange'],
     };
 }
-exports.DeleteSecurityGroupRuleRequestFromJSONTyped = DeleteSecurityGroupRuleRequestFromJSONTyped;
-function DeleteSecurityGroupRuleRequestToJSON(value) {
+export function DeleteSecurityGroupRuleRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -50,11 +46,10 @@ function DeleteSecurityGroupRuleRequestToJSON(value) {
         'FromPortRange': value.fromPortRange,
         'IpProtocol': value.ipProtocol,
         'IpRange': value.ipRange,
-        'Rules': value.rules === undefined ? undefined : (value.rules.map(SecurityGroupRule_1.SecurityGroupRuleToJSON)),
+        'Rules': value.rules === undefined ? undefined : (value.rules.map(SecurityGroupRuleToJSON)),
         'SecurityGroupAccountIdToUnlink': value.securityGroupAccountIdToUnlink,
         'SecurityGroupId': value.securityGroupId,
         'SecurityGroupNameToUnlink': value.securityGroupNameToUnlink,
         'ToPortRange': value.toPortRange,
     };
 }
-exports.DeleteSecurityGroupRuleRequestToJSON = DeleteSecurityGroupRuleRequestToJSON;

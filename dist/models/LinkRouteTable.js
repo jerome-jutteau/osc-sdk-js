@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function LinkRouteTableFromJSON(json) {
+import { exists } from '../runtime';
+export function LinkRouteTableFromJSON(json) {
     return LinkRouteTableFromJSONTyped(json, false);
 }
-exports.LinkRouteTableFromJSON = LinkRouteTableFromJSON;
-function LinkRouteTableFromJSONTyped(json, ignoreDiscriminator) {
+export function LinkRouteTableFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'linkRouteTableId': !runtime_1.exists(json, 'LinkRouteTableId') ? undefined : json['LinkRouteTableId'],
-        'main': !runtime_1.exists(json, 'Main') ? undefined : json['Main'],
-        'routeTableId': !runtime_1.exists(json, 'RouteTableId') ? undefined : json['RouteTableId'],
-        'subnetId': !runtime_1.exists(json, 'SubnetId') ? undefined : json['SubnetId'],
+        'linkRouteTableId': !exists(json, 'LinkRouteTableId') ? undefined : json['LinkRouteTableId'],
+        'main': !exists(json, 'Main') ? undefined : json['Main'],
+        'routeTableId': !exists(json, 'RouteTableId') ? undefined : json['RouteTableId'],
+        'subnetId': !exists(json, 'SubnetId') ? undefined : json['SubnetId'],
     };
 }
-exports.LinkRouteTableFromJSONTyped = LinkRouteTableFromJSONTyped;
-function LinkRouteTableToJSON(value) {
+export function LinkRouteTableToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,4 +40,3 @@ function LinkRouteTableToJSON(value) {
         'SubnetId': value.subnetId,
     };
 }
-exports.LinkRouteTableToJSON = LinkRouteTableToJSON;

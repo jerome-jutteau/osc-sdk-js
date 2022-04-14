@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var FiltersTag_1 = require("./FiltersTag");
-function ReadTagsRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { FiltersTagFromJSON, FiltersTagToJSON, } from './FiltersTag';
+export function ReadTagsRequestFromJSON(json) {
     return ReadTagsRequestFromJSONTyped(json, false);
 }
-exports.ReadTagsRequestFromJSON = ReadTagsRequestFromJSON;
-function ReadTagsRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadTagsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'filters': !runtime_1.exists(json, 'Filters') ? undefined : FiltersTag_1.FiltersTagFromJSON(json['Filters']),
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'filters': !exists(json, 'Filters') ? undefined : FiltersTagFromJSON(json['Filters']),
     };
 }
-exports.ReadTagsRequestFromJSONTyped = ReadTagsRequestFromJSONTyped;
-function ReadTagsRequestToJSON(value) {
+export function ReadTagsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,7 +34,6 @@ function ReadTagsRequestToJSON(value) {
     }
     return {
         'DryRun': value.dryRun,
-        'Filters': FiltersTag_1.FiltersTagToJSON(value.filters),
+        'Filters': FiltersTagToJSON(value.filters),
     };
 }
-exports.ReadTagsRequestToJSON = ReadTagsRequestToJSON;

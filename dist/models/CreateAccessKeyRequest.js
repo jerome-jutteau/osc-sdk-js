@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function CreateAccessKeyRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function CreateAccessKeyRequestFromJSON(json) {
     return CreateAccessKeyRequestFromJSONTyped(json, false);
 }
-exports.CreateAccessKeyRequestFromJSON = CreateAccessKeyRequestFromJSON;
-function CreateAccessKeyRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateAccessKeyRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'expirationDate': !runtime_1.exists(json, 'ExpirationDate') ? undefined : json['ExpirationDate'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'expirationDate': !exists(json, 'ExpirationDate') ? undefined : json['ExpirationDate'],
     };
 }
-exports.CreateAccessKeyRequestFromJSONTyped = CreateAccessKeyRequestFromJSONTyped;
-function CreateAccessKeyRequestToJSON(value) {
+export function CreateAccessKeyRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function CreateAccessKeyRequestToJSON(value) {
         'ExpirationDate': value.expirationDate,
     };
 }
-exports.CreateAccessKeyRequestToJSON = CreateAccessKeyRequestToJSON;

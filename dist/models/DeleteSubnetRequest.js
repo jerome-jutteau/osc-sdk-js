@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function DeleteSubnetRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function DeleteSubnetRequestFromJSON(json) {
     return DeleteSubnetRequestFromJSONTyped(json, false);
 }
-exports.DeleteSubnetRequestFromJSON = DeleteSubnetRequestFromJSON;
-function DeleteSubnetRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function DeleteSubnetRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'subnetId': json['SubnetId'],
     };
 }
-exports.DeleteSubnetRequestFromJSONTyped = DeleteSubnetRequestFromJSONTyped;
-function DeleteSubnetRequestToJSON(value) {
+export function DeleteSubnetRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function DeleteSubnetRequestToJSON(value) {
         'SubnetId': value.subnetId,
     };
 }
-exports.DeleteSubnetRequestToJSON = DeleteSubnetRequestToJSON;

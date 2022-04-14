@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function CreateNetAccessPointRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function CreateNetAccessPointRequestFromJSON(json) {
     return CreateNetAccessPointRequestFromJSONTyped(json, false);
 }
-exports.CreateNetAccessPointRequestFromJSON = CreateNetAccessPointRequestFromJSON;
-function CreateNetAccessPointRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateNetAccessPointRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'netId': json['NetId'],
-        'routeTableIds': !runtime_1.exists(json, 'RouteTableIds') ? undefined : json['RouteTableIds'],
+        'routeTableIds': !exists(json, 'RouteTableIds') ? undefined : json['RouteTableIds'],
         'serviceName': json['ServiceName'],
     };
 }
-exports.CreateNetAccessPointRequestFromJSONTyped = CreateNetAccessPointRequestFromJSONTyped;
-function CreateNetAccessPointRequestToJSON(value) {
+export function CreateNetAccessPointRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,4 +40,3 @@ function CreateNetAccessPointRequestToJSON(value) {
         'ServiceName': value.serviceName,
     };
 }
-exports.CreateNetAccessPointRequestToJSON = CreateNetAccessPointRequestToJSON;

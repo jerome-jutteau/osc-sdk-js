@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ImageExportTask_1 = require("./ImageExportTask");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function CreateImageExportTaskResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ImageExportTaskFromJSON, ImageExportTaskToJSON, } from './ImageExportTask';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function CreateImageExportTaskResponseFromJSON(json) {
     return CreateImageExportTaskResponseFromJSONTyped(json, false);
 }
-exports.CreateImageExportTaskResponseFromJSON = CreateImageExportTaskResponseFromJSON;
-function CreateImageExportTaskResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateImageExportTaskResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'imageExportTask': !runtime_1.exists(json, 'ImageExportTask') ? undefined : ImageExportTask_1.ImageExportTaskFromJSON(json['ImageExportTask']),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'imageExportTask': !exists(json, 'ImageExportTask') ? undefined : ImageExportTaskFromJSON(json['ImageExportTask']),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.CreateImageExportTaskResponseFromJSONTyped = CreateImageExportTaskResponseFromJSONTyped;
-function CreateImageExportTaskResponseToJSON(value) {
+export function CreateImageExportTaskResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function CreateImageExportTaskResponseToJSON(value) {
         return null;
     }
     return {
-        'ImageExportTask': ImageExportTask_1.ImageExportTaskToJSON(value.imageExportTask),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'ImageExportTask': ImageExportTaskToJSON(value.imageExportTask),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.CreateImageExportTaskResponseToJSON = CreateImageExportTaskResponseToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,28 +11,25 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function HealthCheckFromJSON(json) {
+import { exists } from '../runtime';
+export function HealthCheckFromJSON(json) {
     return HealthCheckFromJSONTyped(json, false);
 }
-exports.HealthCheckFromJSON = HealthCheckFromJSON;
-function HealthCheckFromJSONTyped(json, ignoreDiscriminator) {
+export function HealthCheckFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'checkInterval': json['CheckInterval'],
         'healthyThreshold': json['HealthyThreshold'],
-        'path': !runtime_1.exists(json, 'Path') ? undefined : json['Path'],
+        'path': !exists(json, 'Path') ? undefined : json['Path'],
         'port': json['Port'],
         'protocol': json['Protocol'],
         'timeout': json['Timeout'],
         'unhealthyThreshold': json['UnhealthyThreshold'],
     };
 }
-exports.HealthCheckFromJSONTyped = HealthCheckFromJSONTyped;
-function HealthCheckToJSON(value) {
+export function HealthCheckToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -50,4 +46,3 @@ function HealthCheckToJSON(value) {
         'UnhealthyThreshold': value.unhealthyThreshold,
     };
 }
-exports.HealthCheckToJSON = HealthCheckToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var FlexibleGpu_1 = require("./FlexibleGpu");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function CreateFlexibleGpuResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { FlexibleGpuFromJSON, FlexibleGpuToJSON, } from './FlexibleGpu';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function CreateFlexibleGpuResponseFromJSON(json) {
     return CreateFlexibleGpuResponseFromJSONTyped(json, false);
 }
-exports.CreateFlexibleGpuResponseFromJSON = CreateFlexibleGpuResponseFromJSON;
-function CreateFlexibleGpuResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateFlexibleGpuResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'flexibleGpu': !runtime_1.exists(json, 'FlexibleGpu') ? undefined : FlexibleGpu_1.FlexibleGpuFromJSON(json['FlexibleGpu']),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'flexibleGpu': !exists(json, 'FlexibleGpu') ? undefined : FlexibleGpuFromJSON(json['FlexibleGpu']),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.CreateFlexibleGpuResponseFromJSONTyped = CreateFlexibleGpuResponseFromJSONTyped;
-function CreateFlexibleGpuResponseToJSON(value) {
+export function CreateFlexibleGpuResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function CreateFlexibleGpuResponseToJSON(value) {
         return null;
     }
     return {
-        'FlexibleGpu': FlexibleGpu_1.FlexibleGpuToJSON(value.flexibleGpu),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'FlexibleGpu': FlexibleGpuToJSON(value.flexibleGpu),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.CreateFlexibleGpuResponseToJSON = CreateFlexibleGpuResponseToJSON;

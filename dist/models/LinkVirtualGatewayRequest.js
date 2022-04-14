@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function LinkVirtualGatewayRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function LinkVirtualGatewayRequestFromJSON(json) {
     return LinkVirtualGatewayRequestFromJSONTyped(json, false);
 }
-exports.LinkVirtualGatewayRequestFromJSON = LinkVirtualGatewayRequestFromJSON;
-function LinkVirtualGatewayRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function LinkVirtualGatewayRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'netId': json['NetId'],
         'virtualGatewayId': json['VirtualGatewayId'],
     };
 }
-exports.LinkVirtualGatewayRequestFromJSONTyped = LinkVirtualGatewayRequestFromJSONTyped;
-function LinkVirtualGatewayRequestToJSON(value) {
+export function LinkVirtualGatewayRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,4 +38,3 @@ function LinkVirtualGatewayRequestToJSON(value) {
         'VirtualGatewayId': value.virtualGatewayId,
     };
 }
-exports.LinkVirtualGatewayRequestToJSON = LinkVirtualGatewayRequestToJSON;

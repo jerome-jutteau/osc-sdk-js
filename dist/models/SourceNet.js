@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function SourceNetFromJSON(json) {
+import { exists } from '../runtime';
+export function SourceNetFromJSON(json) {
     return SourceNetFromJSONTyped(json, false);
 }
-exports.SourceNetFromJSON = SourceNetFromJSON;
-function SourceNetFromJSONTyped(json, ignoreDiscriminator) {
+export function SourceNetFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'accountId': !runtime_1.exists(json, 'AccountId') ? undefined : json['AccountId'],
-        'ipRange': !runtime_1.exists(json, 'IpRange') ? undefined : json['IpRange'],
-        'netId': !runtime_1.exists(json, 'NetId') ? undefined : json['NetId'],
+        'accountId': !exists(json, 'AccountId') ? undefined : json['AccountId'],
+        'ipRange': !exists(json, 'IpRange') ? undefined : json['IpRange'],
+        'netId': !exists(json, 'NetId') ? undefined : json['NetId'],
     };
 }
-exports.SourceNetFromJSONTyped = SourceNetFromJSONTyped;
-function SourceNetToJSON(value) {
+export function SourceNetToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,4 +38,3 @@ function SourceNetToJSON(value) {
         'NetId': value.netId,
     };
 }
-exports.SourceNetToJSON = SourceNetToJSON;

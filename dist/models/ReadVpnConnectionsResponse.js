@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var VpnConnection_1 = require("./VpnConnection");
-function ReadVpnConnectionsResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { VpnConnectionFromJSON, VpnConnectionToJSON, } from './VpnConnection';
+export function ReadVpnConnectionsResponseFromJSON(json) {
     return ReadVpnConnectionsResponseFromJSONTyped(json, false);
 }
-exports.ReadVpnConnectionsResponseFromJSON = ReadVpnConnectionsResponseFromJSON;
-function ReadVpnConnectionsResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadVpnConnectionsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
-        'vpnConnections': !runtime_1.exists(json, 'VpnConnections') ? undefined : (json['VpnConnections'].map(VpnConnection_1.VpnConnectionFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
+        'vpnConnections': !exists(json, 'VpnConnections') ? undefined : (json['VpnConnections'].map(VpnConnectionFromJSON)),
     };
 }
-exports.ReadVpnConnectionsResponseFromJSONTyped = ReadVpnConnectionsResponseFromJSONTyped;
-function ReadVpnConnectionsResponseToJSON(value) {
+export function ReadVpnConnectionsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadVpnConnectionsResponseToJSON(value) {
         return null;
     }
     return {
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
-        'VpnConnections': value.vpnConnections === undefined ? undefined : (value.vpnConnections.map(VpnConnection_1.VpnConnectionToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
+        'VpnConnections': value.vpnConnections === undefined ? undefined : (value.vpnConnections.map(VpnConnectionToJSON)),
     };
 }
-exports.ReadVpnConnectionsResponseToJSON = ReadVpnConnectionsResponseToJSON;

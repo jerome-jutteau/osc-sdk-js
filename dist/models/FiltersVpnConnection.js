@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,32 +11,29 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersVpnConnectionFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersVpnConnectionFromJSON(json) {
     return FiltersVpnConnectionFromJSONTyped(json, false);
 }
-exports.FiltersVpnConnectionFromJSON = FiltersVpnConnectionFromJSON;
-function FiltersVpnConnectionFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersVpnConnectionFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'bgpAsns': !runtime_1.exists(json, 'BgpAsns') ? undefined : json['BgpAsns'],
-        'clientGatewayIds': !runtime_1.exists(json, 'ClientGatewayIds') ? undefined : json['ClientGatewayIds'],
-        'connectionTypes': !runtime_1.exists(json, 'ConnectionTypes') ? undefined : json['ConnectionTypes'],
-        'routeDestinationIpRanges': !runtime_1.exists(json, 'RouteDestinationIpRanges') ? undefined : json['RouteDestinationIpRanges'],
-        'states': !runtime_1.exists(json, 'States') ? undefined : json['States'],
-        'staticRoutesOnly': !runtime_1.exists(json, 'StaticRoutesOnly') ? undefined : json['StaticRoutesOnly'],
-        'tagKeys': !runtime_1.exists(json, 'TagKeys') ? undefined : json['TagKeys'],
-        'tagValues': !runtime_1.exists(json, 'TagValues') ? undefined : json['TagValues'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : json['Tags'],
-        'virtualGatewayIds': !runtime_1.exists(json, 'VirtualGatewayIds') ? undefined : json['VirtualGatewayIds'],
-        'vpnConnectionIds': !runtime_1.exists(json, 'VpnConnectionIds') ? undefined : json['VpnConnectionIds'],
+        'bgpAsns': !exists(json, 'BgpAsns') ? undefined : json['BgpAsns'],
+        'clientGatewayIds': !exists(json, 'ClientGatewayIds') ? undefined : json['ClientGatewayIds'],
+        'connectionTypes': !exists(json, 'ConnectionTypes') ? undefined : json['ConnectionTypes'],
+        'routeDestinationIpRanges': !exists(json, 'RouteDestinationIpRanges') ? undefined : json['RouteDestinationIpRanges'],
+        'states': !exists(json, 'States') ? undefined : json['States'],
+        'staticRoutesOnly': !exists(json, 'StaticRoutesOnly') ? undefined : json['StaticRoutesOnly'],
+        'tagKeys': !exists(json, 'TagKeys') ? undefined : json['TagKeys'],
+        'tagValues': !exists(json, 'TagValues') ? undefined : json['TagValues'],
+        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
+        'virtualGatewayIds': !exists(json, 'VirtualGatewayIds') ? undefined : json['VirtualGatewayIds'],
+        'vpnConnectionIds': !exists(json, 'VpnConnectionIds') ? undefined : json['VpnConnectionIds'],
     };
 }
-exports.FiltersVpnConnectionFromJSONTyped = FiltersVpnConnectionFromJSONTyped;
-function FiltersVpnConnectionToJSON(value) {
+export function FiltersVpnConnectionToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -58,4 +54,3 @@ function FiltersVpnConnectionToJSON(value) {
         'VpnConnectionIds': value.vpnConnectionIds,
     };
 }
-exports.FiltersVpnConnectionToJSON = FiltersVpnConnectionToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,27 +11,24 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function CreateServerCertificateRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function CreateServerCertificateRequestFromJSON(json) {
     return CreateServerCertificateRequestFromJSONTyped(json, false);
 }
-exports.CreateServerCertificateRequestFromJSON = CreateServerCertificateRequestFromJSON;
-function CreateServerCertificateRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateServerCertificateRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'body': json['Body'],
-        'chain': !runtime_1.exists(json, 'Chain') ? undefined : json['Chain'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'chain': !exists(json, 'Chain') ? undefined : json['Chain'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'name': json['Name'],
-        'path': !runtime_1.exists(json, 'Path') ? undefined : json['Path'],
+        'path': !exists(json, 'Path') ? undefined : json['Path'],
         'privateKey': json['PrivateKey'],
     };
 }
-exports.CreateServerCertificateRequestFromJSONTyped = CreateServerCertificateRequestFromJSONTyped;
-function CreateServerCertificateRequestToJSON(value) {
+export function CreateServerCertificateRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -48,4 +44,3 @@ function CreateServerCertificateRequestToJSON(value) {
         'PrivateKey': value.privateKey,
     };
 }
-exports.CreateServerCertificateRequestToJSON = CreateServerCertificateRequestToJSON;

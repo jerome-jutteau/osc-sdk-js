@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function OsuExportImageExportTaskFromJSON(json) {
+import { exists } from '../runtime';
+export function OsuExportImageExportTaskFromJSON(json) {
     return OsuExportImageExportTaskFromJSONTyped(json, false);
 }
-exports.OsuExportImageExportTaskFromJSON = OsuExportImageExportTaskFromJSON;
-function OsuExportImageExportTaskFromJSONTyped(json, ignoreDiscriminator) {
+export function OsuExportImageExportTaskFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'diskImageFormat': json['DiskImageFormat'],
         'osuBucket': json['OsuBucket'],
-        'osuManifestUrl': !runtime_1.exists(json, 'OsuManifestUrl') ? undefined : json['OsuManifestUrl'],
-        'osuPrefix': !runtime_1.exists(json, 'OsuPrefix') ? undefined : json['OsuPrefix'],
+        'osuManifestUrl': !exists(json, 'OsuManifestUrl') ? undefined : json['OsuManifestUrl'],
+        'osuPrefix': !exists(json, 'OsuPrefix') ? undefined : json['OsuPrefix'],
     };
 }
-exports.OsuExportImageExportTaskFromJSONTyped = OsuExportImageExportTaskFromJSONTyped;
-function OsuExportImageExportTaskToJSON(value) {
+export function OsuExportImageExportTaskToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,4 +40,3 @@ function OsuExportImageExportTaskToJSON(value) {
         'OsuPrefix': value.osuPrefix,
     };
 }
-exports.OsuExportImageExportTaskToJSON = OsuExportImageExportTaskToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,26 +11,23 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function UpdateVolumeRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function UpdateVolumeRequestFromJSON(json) {
     return UpdateVolumeRequestFromJSONTyped(json, false);
 }
-exports.UpdateVolumeRequestFromJSON = UpdateVolumeRequestFromJSON;
-function UpdateVolumeRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function UpdateVolumeRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'iops': !runtime_1.exists(json, 'Iops') ? undefined : json['Iops'],
-        'size': !runtime_1.exists(json, 'Size') ? undefined : json['Size'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'iops': !exists(json, 'Iops') ? undefined : json['Iops'],
+        'size': !exists(json, 'Size') ? undefined : json['Size'],
         'volumeId': json['VolumeId'],
-        'volumeType': !runtime_1.exists(json, 'VolumeType') ? undefined : json['VolumeType'],
+        'volumeType': !exists(json, 'VolumeType') ? undefined : json['VolumeType'],
     };
 }
-exports.UpdateVolumeRequestFromJSONTyped = UpdateVolumeRequestFromJSONTyped;
-function UpdateVolumeRequestToJSON(value) {
+export function UpdateVolumeRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -46,4 +42,3 @@ function UpdateVolumeRequestToJSON(value) {
         'VolumeType': value.volumeType,
     };
 }
-exports.UpdateVolumeRequestToJSON = UpdateVolumeRequestToJSON;

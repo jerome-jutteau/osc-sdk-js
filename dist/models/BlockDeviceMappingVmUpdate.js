@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,26 +11,23 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var BsuToUpdateVm_1 = require("./BsuToUpdateVm");
-function BlockDeviceMappingVmUpdateFromJSON(json) {
+import { exists } from '../runtime';
+import { BsuToUpdateVmFromJSON, BsuToUpdateVmToJSON, } from './BsuToUpdateVm';
+export function BlockDeviceMappingVmUpdateFromJSON(json) {
     return BlockDeviceMappingVmUpdateFromJSONTyped(json, false);
 }
-exports.BlockDeviceMappingVmUpdateFromJSON = BlockDeviceMappingVmUpdateFromJSON;
-function BlockDeviceMappingVmUpdateFromJSONTyped(json, ignoreDiscriminator) {
+export function BlockDeviceMappingVmUpdateFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'bsu': !runtime_1.exists(json, 'Bsu') ? undefined : BsuToUpdateVm_1.BsuToUpdateVmFromJSON(json['Bsu']),
-        'deviceName': !runtime_1.exists(json, 'DeviceName') ? undefined : json['DeviceName'],
-        'noDevice': !runtime_1.exists(json, 'NoDevice') ? undefined : json['NoDevice'],
-        'virtualDeviceName': !runtime_1.exists(json, 'VirtualDeviceName') ? undefined : json['VirtualDeviceName'],
+        'bsu': !exists(json, 'Bsu') ? undefined : BsuToUpdateVmFromJSON(json['Bsu']),
+        'deviceName': !exists(json, 'DeviceName') ? undefined : json['DeviceName'],
+        'noDevice': !exists(json, 'NoDevice') ? undefined : json['NoDevice'],
+        'virtualDeviceName': !exists(json, 'VirtualDeviceName') ? undefined : json['VirtualDeviceName'],
     };
 }
-exports.BlockDeviceMappingVmUpdateFromJSONTyped = BlockDeviceMappingVmUpdateFromJSONTyped;
-function BlockDeviceMappingVmUpdateToJSON(value) {
+export function BlockDeviceMappingVmUpdateToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -39,10 +35,9 @@ function BlockDeviceMappingVmUpdateToJSON(value) {
         return null;
     }
     return {
-        'Bsu': BsuToUpdateVm_1.BsuToUpdateVmToJSON(value.bsu),
+        'Bsu': BsuToUpdateVmToJSON(value.bsu),
         'DeviceName': value.deviceName,
         'NoDevice': value.noDevice,
         'VirtualDeviceName': value.virtualDeviceName,
     };
 }
-exports.BlockDeviceMappingVmUpdateToJSON = BlockDeviceMappingVmUpdateToJSON;

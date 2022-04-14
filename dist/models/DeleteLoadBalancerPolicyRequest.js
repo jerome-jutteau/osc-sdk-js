@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function DeleteLoadBalancerPolicyRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function DeleteLoadBalancerPolicyRequestFromJSON(json) {
     return DeleteLoadBalancerPolicyRequestFromJSONTyped(json, false);
 }
-exports.DeleteLoadBalancerPolicyRequestFromJSON = DeleteLoadBalancerPolicyRequestFromJSON;
-function DeleteLoadBalancerPolicyRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function DeleteLoadBalancerPolicyRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'loadBalancerName': json['LoadBalancerName'],
         'policyName': json['PolicyName'],
     };
 }
-exports.DeleteLoadBalancerPolicyRequestFromJSONTyped = DeleteLoadBalancerPolicyRequestFromJSONTyped;
-function DeleteLoadBalancerPolicyRequestToJSON(value) {
+export function DeleteLoadBalancerPolicyRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,4 +38,3 @@ function DeleteLoadBalancerPolicyRequestToJSON(value) {
         'PolicyName': value.policyName,
     };
 }
-exports.DeleteLoadBalancerPolicyRequestToJSON = DeleteLoadBalancerPolicyRequestToJSON;

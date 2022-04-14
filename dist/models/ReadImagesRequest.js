@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var FiltersImage_1 = require("./FiltersImage");
-function ReadImagesRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { FiltersImageFromJSON, FiltersImageToJSON, } from './FiltersImage';
+export function ReadImagesRequestFromJSON(json) {
     return ReadImagesRequestFromJSONTyped(json, false);
 }
-exports.ReadImagesRequestFromJSON = ReadImagesRequestFromJSON;
-function ReadImagesRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadImagesRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'filters': !runtime_1.exists(json, 'Filters') ? undefined : FiltersImage_1.FiltersImageFromJSON(json['Filters']),
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'filters': !exists(json, 'Filters') ? undefined : FiltersImageFromJSON(json['Filters']),
     };
 }
-exports.ReadImagesRequestFromJSONTyped = ReadImagesRequestFromJSONTyped;
-function ReadImagesRequestToJSON(value) {
+export function ReadImagesRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,7 +34,6 @@ function ReadImagesRequestToJSON(value) {
     }
     return {
         'DryRun': value.dryRun,
-        'Filters': FiltersImage_1.FiltersImageToJSON(value.filters),
+        'Filters': FiltersImageToJSON(value.filters),
     };
 }
-exports.ReadImagesRequestToJSON = ReadImagesRequestToJSON;

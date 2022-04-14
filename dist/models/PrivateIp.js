@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,26 +11,23 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var LinkPublicIp_1 = require("./LinkPublicIp");
-function PrivateIpFromJSON(json) {
+import { exists } from '../runtime';
+import { LinkPublicIpFromJSON, LinkPublicIpToJSON, } from './LinkPublicIp';
+export function PrivateIpFromJSON(json) {
     return PrivateIpFromJSONTyped(json, false);
 }
-exports.PrivateIpFromJSON = PrivateIpFromJSON;
-function PrivateIpFromJSONTyped(json, ignoreDiscriminator) {
+export function PrivateIpFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'isPrimary': !runtime_1.exists(json, 'IsPrimary') ? undefined : json['IsPrimary'],
-        'linkPublicIp': !runtime_1.exists(json, 'LinkPublicIp') ? undefined : LinkPublicIp_1.LinkPublicIpFromJSON(json['LinkPublicIp']),
-        'privateDnsName': !runtime_1.exists(json, 'PrivateDnsName') ? undefined : json['PrivateDnsName'],
-        'privateIp': !runtime_1.exists(json, 'PrivateIp') ? undefined : json['PrivateIp'],
+        'isPrimary': !exists(json, 'IsPrimary') ? undefined : json['IsPrimary'],
+        'linkPublicIp': !exists(json, 'LinkPublicIp') ? undefined : LinkPublicIpFromJSON(json['LinkPublicIp']),
+        'privateDnsName': !exists(json, 'PrivateDnsName') ? undefined : json['PrivateDnsName'],
+        'privateIp': !exists(json, 'PrivateIp') ? undefined : json['PrivateIp'],
     };
 }
-exports.PrivateIpFromJSONTyped = PrivateIpFromJSONTyped;
-function PrivateIpToJSON(value) {
+export function PrivateIpToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,9 +36,8 @@ function PrivateIpToJSON(value) {
     }
     return {
         'IsPrimary': value.isPrimary,
-        'LinkPublicIp': LinkPublicIp_1.LinkPublicIpToJSON(value.linkPublicIp),
+        'LinkPublicIp': LinkPublicIpToJSON(value.linkPublicIp),
         'PrivateDnsName': value.privateDnsName,
         'PrivateIp': value.privateIp,
     };
 }
-exports.PrivateIpToJSON = PrivateIpToJSON;

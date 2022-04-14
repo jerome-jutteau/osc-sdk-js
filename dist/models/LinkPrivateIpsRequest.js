@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,26 +11,23 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function LinkPrivateIpsRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function LinkPrivateIpsRequestFromJSON(json) {
     return LinkPrivateIpsRequestFromJSONTyped(json, false);
 }
-exports.LinkPrivateIpsRequestFromJSON = LinkPrivateIpsRequestFromJSON;
-function LinkPrivateIpsRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function LinkPrivateIpsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'allowRelink': !runtime_1.exists(json, 'AllowRelink') ? undefined : json['AllowRelink'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'allowRelink': !exists(json, 'AllowRelink') ? undefined : json['AllowRelink'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'nicId': json['NicId'],
-        'privateIps': !runtime_1.exists(json, 'PrivateIps') ? undefined : json['PrivateIps'],
-        'secondaryPrivateIpCount': !runtime_1.exists(json, 'SecondaryPrivateIpCount') ? undefined : json['SecondaryPrivateIpCount'],
+        'privateIps': !exists(json, 'PrivateIps') ? undefined : json['PrivateIps'],
+        'secondaryPrivateIpCount': !exists(json, 'SecondaryPrivateIpCount') ? undefined : json['SecondaryPrivateIpCount'],
     };
 }
-exports.LinkPrivateIpsRequestFromJSONTyped = LinkPrivateIpsRequestFromJSONTyped;
-function LinkPrivateIpsRequestToJSON(value) {
+export function LinkPrivateIpsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -46,4 +42,3 @@ function LinkPrivateIpsRequestToJSON(value) {
         'SecondaryPrivateIpCount': value.secondaryPrivateIpCount,
     };
 }
-exports.LinkPrivateIpsRequestToJSON = LinkPrivateIpsRequestToJSON;

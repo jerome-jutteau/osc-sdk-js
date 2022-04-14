@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var Errors_1 = require("./Errors");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function ErrorResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ErrorsFromJSON, ErrorsToJSON, } from './Errors';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function ErrorResponseFromJSON(json) {
     return ErrorResponseFromJSONTyped(json, false);
 }
-exports.ErrorResponseFromJSON = ErrorResponseFromJSON;
-function ErrorResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ErrorResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'errors': !runtime_1.exists(json, 'Errors') ? undefined : (json['Errors'].map(Errors_1.ErrorsFromJSON)),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'errors': !exists(json, 'Errors') ? undefined : (json['Errors'].map(ErrorsFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.ErrorResponseFromJSONTyped = ErrorResponseFromJSONTyped;
-function ErrorResponseToJSON(value) {
+export function ErrorResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ErrorResponseToJSON(value) {
         return null;
     }
     return {
-        'Errors': value.errors === undefined ? undefined : (value.errors.map(Errors_1.ErrorsToJSON)),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'Errors': value.errors === undefined ? undefined : (value.errors.map(ErrorsToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.ErrorResponseToJSON = ErrorResponseToJSON;

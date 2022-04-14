@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function UnlinkVolumeRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function UnlinkVolumeRequestFromJSON(json) {
     return UnlinkVolumeRequestFromJSONTyped(json, false);
 }
-exports.UnlinkVolumeRequestFromJSON = UnlinkVolumeRequestFromJSON;
-function UnlinkVolumeRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function UnlinkVolumeRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'forceUnlink': !runtime_1.exists(json, 'ForceUnlink') ? undefined : json['ForceUnlink'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'forceUnlink': !exists(json, 'ForceUnlink') ? undefined : json['ForceUnlink'],
         'volumeId': json['VolumeId'],
     };
 }
-exports.UnlinkVolumeRequestFromJSONTyped = UnlinkVolumeRequestFromJSONTyped;
-function UnlinkVolumeRequestToJSON(value) {
+export function UnlinkVolumeRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,4 +38,3 @@ function UnlinkVolumeRequestToJSON(value) {
         'VolumeId': value.volumeId,
     };
 }
-exports.UnlinkVolumeRequestToJSON = UnlinkVolumeRequestToJSON;

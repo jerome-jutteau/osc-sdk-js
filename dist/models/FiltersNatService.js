@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,28 +11,25 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersNatServiceFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersNatServiceFromJSON(json) {
     return FiltersNatServiceFromJSONTyped(json, false);
 }
-exports.FiltersNatServiceFromJSON = FiltersNatServiceFromJSON;
-function FiltersNatServiceFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersNatServiceFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'natServiceIds': !runtime_1.exists(json, 'NatServiceIds') ? undefined : json['NatServiceIds'],
-        'netIds': !runtime_1.exists(json, 'NetIds') ? undefined : json['NetIds'],
-        'states': !runtime_1.exists(json, 'States') ? undefined : json['States'],
-        'subnetIds': !runtime_1.exists(json, 'SubnetIds') ? undefined : json['SubnetIds'],
-        'tagKeys': !runtime_1.exists(json, 'TagKeys') ? undefined : json['TagKeys'],
-        'tagValues': !runtime_1.exists(json, 'TagValues') ? undefined : json['TagValues'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : json['Tags'],
+        'natServiceIds': !exists(json, 'NatServiceIds') ? undefined : json['NatServiceIds'],
+        'netIds': !exists(json, 'NetIds') ? undefined : json['NetIds'],
+        'states': !exists(json, 'States') ? undefined : json['States'],
+        'subnetIds': !exists(json, 'SubnetIds') ? undefined : json['SubnetIds'],
+        'tagKeys': !exists(json, 'TagKeys') ? undefined : json['TagKeys'],
+        'tagValues': !exists(json, 'TagValues') ? undefined : json['TagValues'],
+        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
     };
 }
-exports.FiltersNatServiceFromJSONTyped = FiltersNatServiceFromJSONTyped;
-function FiltersNatServiceToJSON(value) {
+export function FiltersNatServiceToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -50,4 +46,3 @@ function FiltersNatServiceToJSON(value) {
         'Tags': value.tags,
     };
 }
-exports.FiltersNatServiceToJSON = FiltersNatServiceToJSON;

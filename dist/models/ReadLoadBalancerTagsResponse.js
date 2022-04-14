@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var LoadBalancerTag_1 = require("./LoadBalancerTag");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function ReadLoadBalancerTagsResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { LoadBalancerTagFromJSON, LoadBalancerTagToJSON, } from './LoadBalancerTag';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function ReadLoadBalancerTagsResponseFromJSON(json) {
     return ReadLoadBalancerTagsResponseFromJSONTyped(json, false);
 }
-exports.ReadLoadBalancerTagsResponseFromJSON = ReadLoadBalancerTagsResponseFromJSON;
-function ReadLoadBalancerTagsResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadLoadBalancerTagsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : (json['Tags'].map(LoadBalancerTag_1.LoadBalancerTagFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
+        'tags': !exists(json, 'Tags') ? undefined : (json['Tags'].map(LoadBalancerTagFromJSON)),
     };
 }
-exports.ReadLoadBalancerTagsResponseFromJSONTyped = ReadLoadBalancerTagsResponseFromJSONTyped;
-function ReadLoadBalancerTagsResponseToJSON(value) {
+export function ReadLoadBalancerTagsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadLoadBalancerTagsResponseToJSON(value) {
         return null;
     }
     return {
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
-        'Tags': value.tags === undefined ? undefined : (value.tags.map(LoadBalancerTag_1.LoadBalancerTagToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
+        'Tags': value.tags === undefined ? undefined : (value.tags.map(LoadBalancerTagToJSON)),
     };
 }
-exports.ReadLoadBalancerTagsResponseToJSON = ReadLoadBalancerTagsResponseToJSON;

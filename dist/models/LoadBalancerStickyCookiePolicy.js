@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function LoadBalancerStickyCookiePolicyFromJSON(json) {
+import { exists } from '../runtime';
+export function LoadBalancerStickyCookiePolicyFromJSON(json) {
     return LoadBalancerStickyCookiePolicyFromJSONTyped(json, false);
 }
-exports.LoadBalancerStickyCookiePolicyFromJSON = LoadBalancerStickyCookiePolicyFromJSON;
-function LoadBalancerStickyCookiePolicyFromJSONTyped(json, ignoreDiscriminator) {
+export function LoadBalancerStickyCookiePolicyFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'cookieExpirationPeriod': !runtime_1.exists(json, 'CookieExpirationPeriod') ? undefined : json['CookieExpirationPeriod'],
-        'policyName': !runtime_1.exists(json, 'PolicyName') ? undefined : json['PolicyName'],
+        'cookieExpirationPeriod': !exists(json, 'CookieExpirationPeriod') ? undefined : json['CookieExpirationPeriod'],
+        'policyName': !exists(json, 'PolicyName') ? undefined : json['PolicyName'],
     };
 }
-exports.LoadBalancerStickyCookiePolicyFromJSONTyped = LoadBalancerStickyCookiePolicyFromJSONTyped;
-function LoadBalancerStickyCookiePolicyToJSON(value) {
+export function LoadBalancerStickyCookiePolicyToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function LoadBalancerStickyCookiePolicyToJSON(value) {
         'PolicyName': value.policyName,
     };
 }
-exports.LoadBalancerStickyCookiePolicyToJSON = LoadBalancerStickyCookiePolicyToJSON;

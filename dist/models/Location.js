@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function LocationFromJSON(json) {
+import { exists } from '../runtime';
+export function LocationFromJSON(json) {
     return LocationFromJSONTyped(json, false);
 }
-exports.LocationFromJSON = LocationFromJSON;
-function LocationFromJSONTyped(json, ignoreDiscriminator) {
+export function LocationFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'code': !runtime_1.exists(json, 'Code') ? undefined : json['Code'],
-        'name': !runtime_1.exists(json, 'Name') ? undefined : json['Name'],
+        'code': !exists(json, 'Code') ? undefined : json['Code'],
+        'name': !exists(json, 'Name') ? undefined : json['Name'],
     };
 }
-exports.LocationFromJSONTyped = LocationFromJSONTyped;
-function LocationToJSON(value) {
+export function LocationToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function LocationToJSON(value) {
         'Name': value.name,
     };
 }
-exports.LocationToJSON = LocationToJSON;

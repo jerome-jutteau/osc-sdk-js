@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,34 +11,31 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function UpdateAccountRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function UpdateAccountRequestFromJSON(json) {
     return UpdateAccountRequestFromJSONTyped(json, false);
 }
-exports.UpdateAccountRequestFromJSON = UpdateAccountRequestFromJSON;
-function UpdateAccountRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function UpdateAccountRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'city': !runtime_1.exists(json, 'City') ? undefined : json['City'],
-        'companyName': !runtime_1.exists(json, 'CompanyName') ? undefined : json['CompanyName'],
-        'country': !runtime_1.exists(json, 'Country') ? undefined : json['Country'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'email': !runtime_1.exists(json, 'Email') ? undefined : json['Email'],
-        'firstName': !runtime_1.exists(json, 'FirstName') ? undefined : json['FirstName'],
-        'jobTitle': !runtime_1.exists(json, 'JobTitle') ? undefined : json['JobTitle'],
-        'lastName': !runtime_1.exists(json, 'LastName') ? undefined : json['LastName'],
-        'mobileNumber': !runtime_1.exists(json, 'MobileNumber') ? undefined : json['MobileNumber'],
-        'phoneNumber': !runtime_1.exists(json, 'PhoneNumber') ? undefined : json['PhoneNumber'],
-        'stateProvince': !runtime_1.exists(json, 'StateProvince') ? undefined : json['StateProvince'],
-        'vatNumber': !runtime_1.exists(json, 'VatNumber') ? undefined : json['VatNumber'],
-        'zipCode': !runtime_1.exists(json, 'ZipCode') ? undefined : json['ZipCode'],
+        'city': !exists(json, 'City') ? undefined : json['City'],
+        'companyName': !exists(json, 'CompanyName') ? undefined : json['CompanyName'],
+        'country': !exists(json, 'Country') ? undefined : json['Country'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'email': !exists(json, 'Email') ? undefined : json['Email'],
+        'firstName': !exists(json, 'FirstName') ? undefined : json['FirstName'],
+        'jobTitle': !exists(json, 'JobTitle') ? undefined : json['JobTitle'],
+        'lastName': !exists(json, 'LastName') ? undefined : json['LastName'],
+        'mobileNumber': !exists(json, 'MobileNumber') ? undefined : json['MobileNumber'],
+        'phoneNumber': !exists(json, 'PhoneNumber') ? undefined : json['PhoneNumber'],
+        'stateProvince': !exists(json, 'StateProvince') ? undefined : json['StateProvince'],
+        'vatNumber': !exists(json, 'VatNumber') ? undefined : json['VatNumber'],
+        'zipCode': !exists(json, 'ZipCode') ? undefined : json['ZipCode'],
     };
 }
-exports.UpdateAccountRequestFromJSONTyped = UpdateAccountRequestFromJSONTyped;
-function UpdateAccountRequestToJSON(value) {
+export function UpdateAccountRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -62,4 +58,3 @@ function UpdateAccountRequestToJSON(value) {
         'ZipCode': value.zipCode,
     };
 }
-exports.UpdateAccountRequestToJSON = UpdateAccountRequestToJSON;

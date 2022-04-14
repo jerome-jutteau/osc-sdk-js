@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,22 +11,19 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function ResourceLoadBalancerTagFromJSON(json) {
+import { exists } from '../runtime';
+export function ResourceLoadBalancerTagFromJSON(json) {
     return ResourceLoadBalancerTagFromJSONTyped(json, false);
 }
-exports.ResourceLoadBalancerTagFromJSON = ResourceLoadBalancerTagFromJSON;
-function ResourceLoadBalancerTagFromJSONTyped(json, ignoreDiscriminator) {
+export function ResourceLoadBalancerTagFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'key': !runtime_1.exists(json, 'Key') ? undefined : json['Key'],
+        'key': !exists(json, 'Key') ? undefined : json['Key'],
     };
 }
-exports.ResourceLoadBalancerTagFromJSONTyped = ResourceLoadBalancerTagFromJSONTyped;
-function ResourceLoadBalancerTagToJSON(value) {
+export function ResourceLoadBalancerTagToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,4 +34,3 @@ function ResourceLoadBalancerTagToJSON(value) {
         'Key': value.key,
     };
 }
-exports.ResourceLoadBalancerTagToJSON = ResourceLoadBalancerTagToJSON;

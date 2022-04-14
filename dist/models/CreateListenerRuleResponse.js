@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ListenerRule_1 = require("./ListenerRule");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function CreateListenerRuleResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ListenerRuleFromJSON, ListenerRuleToJSON, } from './ListenerRule';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function CreateListenerRuleResponseFromJSON(json) {
     return CreateListenerRuleResponseFromJSONTyped(json, false);
 }
-exports.CreateListenerRuleResponseFromJSON = CreateListenerRuleResponseFromJSON;
-function CreateListenerRuleResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateListenerRuleResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'listenerRule': !runtime_1.exists(json, 'ListenerRule') ? undefined : ListenerRule_1.ListenerRuleFromJSON(json['ListenerRule']),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'listenerRule': !exists(json, 'ListenerRule') ? undefined : ListenerRuleFromJSON(json['ListenerRule']),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.CreateListenerRuleResponseFromJSONTyped = CreateListenerRuleResponseFromJSONTyped;
-function CreateListenerRuleResponseToJSON(value) {
+export function CreateListenerRuleResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function CreateListenerRuleResponseToJSON(value) {
         return null;
     }
     return {
-        'ListenerRule': ListenerRule_1.ListenerRuleToJSON(value.listenerRule),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'ListenerRule': ListenerRuleToJSON(value.listenerRule),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.CreateListenerRuleResponseToJSON = CreateListenerRuleResponseToJSON;

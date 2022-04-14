@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,37 +11,34 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function WithFromJSON(json) {
+import { exists } from '../runtime';
+export function WithFromJSON(json) {
     return WithFromJSONTyped(json, false);
 }
-exports.WithFromJSON = WithFromJSON;
-function WithFromJSONTyped(json, ignoreDiscriminator) {
+export function WithFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'accountId': !runtime_1.exists(json, 'AccountId') ? undefined : json['AccountId'],
-        'callDuration': !runtime_1.exists(json, 'CallDuration') ? undefined : json['CallDuration'],
-        'queryAccessKey': !runtime_1.exists(json, 'QueryAccessKey') ? undefined : json['QueryAccessKey'],
-        'queryApiName': !runtime_1.exists(json, 'QueryApiName') ? undefined : json['QueryApiName'],
-        'queryApiVersion': !runtime_1.exists(json, 'QueryApiVersion') ? undefined : json['QueryApiVersion'],
-        'queryCallName': !runtime_1.exists(json, 'QueryCallName') ? undefined : json['QueryCallName'],
-        'queryDate': !runtime_1.exists(json, 'QueryDate') ? undefined : json['QueryDate'],
-        'queryHeaderRaw': !runtime_1.exists(json, 'QueryHeaderRaw') ? undefined : json['QueryHeaderRaw'],
-        'queryHeaderSize': !runtime_1.exists(json, 'QueryHeaderSize') ? undefined : json['QueryHeaderSize'],
-        'queryIpAddress': !runtime_1.exists(json, 'QueryIpAddress') ? undefined : json['QueryIpAddress'],
-        'queryPayloadRaw': !runtime_1.exists(json, 'QueryPayloadRaw') ? undefined : json['QueryPayloadRaw'],
-        'queryPayloadSize': !runtime_1.exists(json, 'QueryPayloadSize') ? undefined : json['QueryPayloadSize'],
-        'queryUserAgent': !runtime_1.exists(json, 'QueryUserAgent') ? undefined : json['QueryUserAgent'],
-        'requestId': !runtime_1.exists(json, 'RequestId') ? undefined : json['RequestId'],
-        'responseSize': !runtime_1.exists(json, 'ResponseSize') ? undefined : json['ResponseSize'],
-        'responseStatusCode': !runtime_1.exists(json, 'ResponseStatusCode') ? undefined : json['ResponseStatusCode'],
+        'accountId': !exists(json, 'AccountId') ? undefined : json['AccountId'],
+        'callDuration': !exists(json, 'CallDuration') ? undefined : json['CallDuration'],
+        'queryAccessKey': !exists(json, 'QueryAccessKey') ? undefined : json['QueryAccessKey'],
+        'queryApiName': !exists(json, 'QueryApiName') ? undefined : json['QueryApiName'],
+        'queryApiVersion': !exists(json, 'QueryApiVersion') ? undefined : json['QueryApiVersion'],
+        'queryCallName': !exists(json, 'QueryCallName') ? undefined : json['QueryCallName'],
+        'queryDate': !exists(json, 'QueryDate') ? undefined : json['QueryDate'],
+        'queryHeaderRaw': !exists(json, 'QueryHeaderRaw') ? undefined : json['QueryHeaderRaw'],
+        'queryHeaderSize': !exists(json, 'QueryHeaderSize') ? undefined : json['QueryHeaderSize'],
+        'queryIpAddress': !exists(json, 'QueryIpAddress') ? undefined : json['QueryIpAddress'],
+        'queryPayloadRaw': !exists(json, 'QueryPayloadRaw') ? undefined : json['QueryPayloadRaw'],
+        'queryPayloadSize': !exists(json, 'QueryPayloadSize') ? undefined : json['QueryPayloadSize'],
+        'queryUserAgent': !exists(json, 'QueryUserAgent') ? undefined : json['QueryUserAgent'],
+        'requestId': !exists(json, 'RequestId') ? undefined : json['RequestId'],
+        'responseSize': !exists(json, 'ResponseSize') ? undefined : json['ResponseSize'],
+        'responseStatusCode': !exists(json, 'ResponseStatusCode') ? undefined : json['ResponseStatusCode'],
     };
 }
-exports.WithFromJSONTyped = WithFromJSONTyped;
-function WithToJSON(value) {
+export function WithToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -68,4 +64,3 @@ function WithToJSON(value) {
         'ResponseStatusCode': value.responseStatusCode,
     };
 }
-exports.WithToJSON = WithToJSON;

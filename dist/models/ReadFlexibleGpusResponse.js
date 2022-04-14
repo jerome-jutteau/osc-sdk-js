@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var FlexibleGpu_1 = require("./FlexibleGpu");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function ReadFlexibleGpusResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { FlexibleGpuFromJSON, FlexibleGpuToJSON, } from './FlexibleGpu';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function ReadFlexibleGpusResponseFromJSON(json) {
     return ReadFlexibleGpusResponseFromJSONTyped(json, false);
 }
-exports.ReadFlexibleGpusResponseFromJSON = ReadFlexibleGpusResponseFromJSON;
-function ReadFlexibleGpusResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadFlexibleGpusResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'flexibleGpus': !runtime_1.exists(json, 'FlexibleGpus') ? undefined : (json['FlexibleGpus'].map(FlexibleGpu_1.FlexibleGpuFromJSON)),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'flexibleGpus': !exists(json, 'FlexibleGpus') ? undefined : (json['FlexibleGpus'].map(FlexibleGpuFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.ReadFlexibleGpusResponseFromJSONTyped = ReadFlexibleGpusResponseFromJSONTyped;
-function ReadFlexibleGpusResponseToJSON(value) {
+export function ReadFlexibleGpusResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadFlexibleGpusResponseToJSON(value) {
         return null;
     }
     return {
-        'FlexibleGpus': value.flexibleGpus === undefined ? undefined : (value.flexibleGpus.map(FlexibleGpu_1.FlexibleGpuToJSON)),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'FlexibleGpus': value.flexibleGpus === undefined ? undefined : (value.flexibleGpus.map(FlexibleGpuToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.ReadFlexibleGpusResponseToJSON = ReadFlexibleGpusResponseToJSON;

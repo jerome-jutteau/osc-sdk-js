@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersAccessKeysFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersAccessKeysFromJSON(json) {
     return FiltersAccessKeysFromJSONTyped(json, false);
 }
-exports.FiltersAccessKeysFromJSON = FiltersAccessKeysFromJSON;
-function FiltersAccessKeysFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersAccessKeysFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'accessKeyIds': !runtime_1.exists(json, 'AccessKeyIds') ? undefined : json['AccessKeyIds'],
-        'states': !runtime_1.exists(json, 'States') ? undefined : json['States'],
+        'accessKeyIds': !exists(json, 'AccessKeyIds') ? undefined : json['AccessKeyIds'],
+        'states': !exists(json, 'States') ? undefined : json['States'],
     };
 }
-exports.FiltersAccessKeysFromJSONTyped = FiltersAccessKeysFromJSONTyped;
-function FiltersAccessKeysToJSON(value) {
+export function FiltersAccessKeysToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function FiltersAccessKeysToJSON(value) {
         'States': value.states,
     };
 }
-exports.FiltersAccessKeysToJSON = FiltersAccessKeysToJSON;

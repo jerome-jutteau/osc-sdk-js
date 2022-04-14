@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function LoadBalancerTagFromJSON(json) {
+import { exists } from '../runtime';
+export function LoadBalancerTagFromJSON(json) {
     return LoadBalancerTagFromJSONTyped(json, false);
 }
-exports.LoadBalancerTagFromJSON = LoadBalancerTagFromJSON;
-function LoadBalancerTagFromJSONTyped(json, ignoreDiscriminator) {
+export function LoadBalancerTagFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'key': !runtime_1.exists(json, 'Key') ? undefined : json['Key'],
-        'loadBalancerName': !runtime_1.exists(json, 'LoadBalancerName') ? undefined : json['LoadBalancerName'],
-        'value': !runtime_1.exists(json, 'Value') ? undefined : json['Value'],
+        'key': !exists(json, 'Key') ? undefined : json['Key'],
+        'loadBalancerName': !exists(json, 'LoadBalancerName') ? undefined : json['LoadBalancerName'],
+        'value': !exists(json, 'Value') ? undefined : json['Value'],
     };
 }
-exports.LoadBalancerTagFromJSONTyped = LoadBalancerTagFromJSONTyped;
-function LoadBalancerTagToJSON(value) {
+export function LoadBalancerTagToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,4 +38,3 @@ function LoadBalancerTagToJSON(value) {
         'Value': value.value,
     };
 }
-exports.LoadBalancerTagToJSON = LoadBalancerTagToJSON;

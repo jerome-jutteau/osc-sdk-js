@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var RouteTable_1 = require("./RouteTable");
-function ReadRouteTablesResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { RouteTableFromJSON, RouteTableToJSON, } from './RouteTable';
+export function ReadRouteTablesResponseFromJSON(json) {
     return ReadRouteTablesResponseFromJSONTyped(json, false);
 }
-exports.ReadRouteTablesResponseFromJSON = ReadRouteTablesResponseFromJSON;
-function ReadRouteTablesResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadRouteTablesResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
-        'routeTables': !runtime_1.exists(json, 'RouteTables') ? undefined : (json['RouteTables'].map(RouteTable_1.RouteTableFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
+        'routeTables': !exists(json, 'RouteTables') ? undefined : (json['RouteTables'].map(RouteTableFromJSON)),
     };
 }
-exports.ReadRouteTablesResponseFromJSONTyped = ReadRouteTablesResponseFromJSONTyped;
-function ReadRouteTablesResponseToJSON(value) {
+export function ReadRouteTablesResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadRouteTablesResponseToJSON(value) {
         return null;
     }
     return {
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
-        'RouteTables': value.routeTables === undefined ? undefined : (value.routeTables.map(RouteTable_1.RouteTableToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
+        'RouteTables': value.routeTables === undefined ? undefined : (value.routeTables.map(RouteTableToJSON)),
     };
 }
-exports.ReadRouteTablesResponseToJSON = ReadRouteTablesResponseToJSON;

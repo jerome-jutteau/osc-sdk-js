@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function DeleteAccessKeyRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function DeleteAccessKeyRequestFromJSON(json) {
     return DeleteAccessKeyRequestFromJSONTyped(json, false);
 }
-exports.DeleteAccessKeyRequestFromJSON = DeleteAccessKeyRequestFromJSON;
-function DeleteAccessKeyRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function DeleteAccessKeyRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'accessKeyId': json['AccessKeyId'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
     };
 }
-exports.DeleteAccessKeyRequestFromJSONTyped = DeleteAccessKeyRequestFromJSONTyped;
-function DeleteAccessKeyRequestToJSON(value) {
+export function DeleteAccessKeyRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function DeleteAccessKeyRequestToJSON(value) {
         'DryRun': value.dryRun,
     };
 }
-exports.DeleteAccessKeyRequestToJSON = DeleteAccessKeyRequestToJSON;

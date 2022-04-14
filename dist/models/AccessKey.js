@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,26 +11,23 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function AccessKeyFromJSON(json) {
+import { exists } from '../runtime';
+export function AccessKeyFromJSON(json) {
     return AccessKeyFromJSONTyped(json, false);
 }
-exports.AccessKeyFromJSON = AccessKeyFromJSON;
-function AccessKeyFromJSONTyped(json, ignoreDiscriminator) {
+export function AccessKeyFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'accessKeyId': !runtime_1.exists(json, 'AccessKeyId') ? undefined : json['AccessKeyId'],
-        'creationDate': !runtime_1.exists(json, 'CreationDate') ? undefined : json['CreationDate'],
-        'expirationDate': !runtime_1.exists(json, 'ExpirationDate') ? undefined : json['ExpirationDate'],
-        'lastModificationDate': !runtime_1.exists(json, 'LastModificationDate') ? undefined : json['LastModificationDate'],
-        'state': !runtime_1.exists(json, 'State') ? undefined : json['State'],
+        'accessKeyId': !exists(json, 'AccessKeyId') ? undefined : json['AccessKeyId'],
+        'creationDate': !exists(json, 'CreationDate') ? undefined : json['CreationDate'],
+        'expirationDate': !exists(json, 'ExpirationDate') ? undefined : json['ExpirationDate'],
+        'lastModificationDate': !exists(json, 'LastModificationDate') ? undefined : json['LastModificationDate'],
+        'state': !exists(json, 'State') ? undefined : json['State'],
     };
 }
-exports.AccessKeyFromJSONTyped = AccessKeyFromJSONTyped;
-function AccessKeyToJSON(value) {
+export function AccessKeyToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -46,4 +42,3 @@ function AccessKeyToJSON(value) {
         'State': value.state,
     };
 }
-exports.AccessKeyToJSON = AccessKeyToJSON;

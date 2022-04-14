@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function CaFromJSON(json) {
+import { exists } from '../runtime';
+export function CaFromJSON(json) {
     return CaFromJSONTyped(json, false);
 }
-exports.CaFromJSON = CaFromJSON;
-function CaFromJSONTyped(json, ignoreDiscriminator) {
+export function CaFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'caFingerprint': !runtime_1.exists(json, 'CaFingerprint') ? undefined : json['CaFingerprint'],
-        'caId': !runtime_1.exists(json, 'CaId') ? undefined : json['CaId'],
-        'description': !runtime_1.exists(json, 'Description') ? undefined : json['Description'],
+        'caFingerprint': !exists(json, 'CaFingerprint') ? undefined : json['CaFingerprint'],
+        'caId': !exists(json, 'CaId') ? undefined : json['CaId'],
+        'description': !exists(json, 'Description') ? undefined : json['Description'],
     };
 }
-exports.CaFromJSONTyped = CaFromJSONTyped;
-function CaToJSON(value) {
+export function CaToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,4 +38,3 @@ function CaToJSON(value) {
         'Description': value.description,
     };
 }
-exports.CaToJSON = CaToJSON;

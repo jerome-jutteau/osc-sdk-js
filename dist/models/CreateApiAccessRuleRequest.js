@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,26 +11,23 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function CreateApiAccessRuleRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function CreateApiAccessRuleRequestFromJSON(json) {
     return CreateApiAccessRuleRequestFromJSONTyped(json, false);
 }
-exports.CreateApiAccessRuleRequestFromJSON = CreateApiAccessRuleRequestFromJSON;
-function CreateApiAccessRuleRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateApiAccessRuleRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'caIds': !runtime_1.exists(json, 'CaIds') ? undefined : json['CaIds'],
-        'cns': !runtime_1.exists(json, 'Cns') ? undefined : json['Cns'],
-        'description': !runtime_1.exists(json, 'Description') ? undefined : json['Description'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'ipRanges': !runtime_1.exists(json, 'IpRanges') ? undefined : json['IpRanges'],
+        'caIds': !exists(json, 'CaIds') ? undefined : json['CaIds'],
+        'cns': !exists(json, 'Cns') ? undefined : json['Cns'],
+        'description': !exists(json, 'Description') ? undefined : json['Description'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'ipRanges': !exists(json, 'IpRanges') ? undefined : json['IpRanges'],
     };
 }
-exports.CreateApiAccessRuleRequestFromJSONTyped = CreateApiAccessRuleRequestFromJSONTyped;
-function CreateApiAccessRuleRequestToJSON(value) {
+export function CreateApiAccessRuleRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -46,4 +42,3 @@ function CreateApiAccessRuleRequestToJSON(value) {
         'IpRanges': value.ipRanges,
     };
 }
-exports.CreateApiAccessRuleRequestToJSON = CreateApiAccessRuleRequestToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,27 +11,24 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var VpnOptions_1 = require("./VpnOptions");
-function UpdateVpnConnectionRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { VpnOptionsFromJSON, VpnOptionsToJSON, } from './VpnOptions';
+export function UpdateVpnConnectionRequestFromJSON(json) {
     return UpdateVpnConnectionRequestFromJSONTyped(json, false);
 }
-exports.UpdateVpnConnectionRequestFromJSON = UpdateVpnConnectionRequestFromJSON;
-function UpdateVpnConnectionRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function UpdateVpnConnectionRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'clientGatewayId': !runtime_1.exists(json, 'ClientGatewayId') ? undefined : json['ClientGatewayId'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'virtualGatewayId': !runtime_1.exists(json, 'VirtualGatewayId') ? undefined : json['VirtualGatewayId'],
+        'clientGatewayId': !exists(json, 'ClientGatewayId') ? undefined : json['ClientGatewayId'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'virtualGatewayId': !exists(json, 'VirtualGatewayId') ? undefined : json['VirtualGatewayId'],
         'vpnConnectionId': json['VpnConnectionId'],
-        'vpnOptions': !runtime_1.exists(json, 'VpnOptions') ? undefined : VpnOptions_1.VpnOptionsFromJSON(json['VpnOptions']),
+        'vpnOptions': !exists(json, 'VpnOptions') ? undefined : VpnOptionsFromJSON(json['VpnOptions']),
     };
 }
-exports.UpdateVpnConnectionRequestFromJSONTyped = UpdateVpnConnectionRequestFromJSONTyped;
-function UpdateVpnConnectionRequestToJSON(value) {
+export function UpdateVpnConnectionRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,7 +40,6 @@ function UpdateVpnConnectionRequestToJSON(value) {
         'DryRun': value.dryRun,
         'VirtualGatewayId': value.virtualGatewayId,
         'VpnConnectionId': value.vpnConnectionId,
-        'VpnOptions': VpnOptions_1.VpnOptionsToJSON(value.vpnOptions),
+        'VpnOptions': VpnOptionsToJSON(value.vpnOptions),
     };
 }
-exports.UpdateVpnConnectionRequestToJSON = UpdateVpnConnectionRequestToJSON;

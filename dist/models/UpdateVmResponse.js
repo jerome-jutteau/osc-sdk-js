@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var Vm_1 = require("./Vm");
-function UpdateVmResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { VmFromJSON, VmToJSON, } from './Vm';
+export function UpdateVmResponseFromJSON(json) {
     return UpdateVmResponseFromJSONTyped(json, false);
 }
-exports.UpdateVmResponseFromJSON = UpdateVmResponseFromJSON;
-function UpdateVmResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function UpdateVmResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
-        'vm': !runtime_1.exists(json, 'Vm') ? undefined : Vm_1.VmFromJSON(json['Vm']),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
+        'vm': !exists(json, 'Vm') ? undefined : VmFromJSON(json['Vm']),
     };
 }
-exports.UpdateVmResponseFromJSONTyped = UpdateVmResponseFromJSONTyped;
-function UpdateVmResponseToJSON(value) {
+export function UpdateVmResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function UpdateVmResponseToJSON(value) {
         return null;
     }
     return {
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
-        'Vm': Vm_1.VmToJSON(value.vm),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
+        'Vm': VmToJSON(value.vm),
     };
 }
-exports.UpdateVmResponseToJSON = UpdateVmResponseToJSON;

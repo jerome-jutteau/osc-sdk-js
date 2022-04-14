@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function DeleteExportTaskRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function DeleteExportTaskRequestFromJSON(json) {
     return DeleteExportTaskRequestFromJSONTyped(json, false);
 }
-exports.DeleteExportTaskRequestFromJSON = DeleteExportTaskRequestFromJSON;
-function DeleteExportTaskRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function DeleteExportTaskRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'exportTaskId': json['ExportTaskId'],
     };
 }
-exports.DeleteExportTaskRequestFromJSONTyped = DeleteExportTaskRequestFromJSONTyped;
-function DeleteExportTaskRequestToJSON(value) {
+export function DeleteExportTaskRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function DeleteExportTaskRequestToJSON(value) {
         'ExportTaskId': value.exportTaskId,
     };
 }
-exports.DeleteExportTaskRequestToJSON = DeleteExportTaskRequestToJSON;

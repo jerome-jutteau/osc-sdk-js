@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var Net_1 = require("./Net");
-function ReadNetsResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { NetFromJSON, NetToJSON, } from './Net';
+export function ReadNetsResponseFromJSON(json) {
     return ReadNetsResponseFromJSONTyped(json, false);
 }
-exports.ReadNetsResponseFromJSON = ReadNetsResponseFromJSON;
-function ReadNetsResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadNetsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'nets': !runtime_1.exists(json, 'Nets') ? undefined : (json['Nets'].map(Net_1.NetFromJSON)),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'nets': !exists(json, 'Nets') ? undefined : (json['Nets'].map(NetFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.ReadNetsResponseFromJSONTyped = ReadNetsResponseFromJSONTyped;
-function ReadNetsResponseToJSON(value) {
+export function ReadNetsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadNetsResponseToJSON(value) {
         return null;
     }
     return {
-        'Nets': value.nets === undefined ? undefined : (value.nets.map(Net_1.NetToJSON)),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'Nets': value.nets === undefined ? undefined : (value.nets.map(NetToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.ReadNetsResponseToJSON = ReadNetsResponseToJSON;

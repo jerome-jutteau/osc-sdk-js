@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var SecurityGroup_1 = require("./SecurityGroup");
-function ReadSecurityGroupsResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { SecurityGroupFromJSON, SecurityGroupToJSON, } from './SecurityGroup';
+export function ReadSecurityGroupsResponseFromJSON(json) {
     return ReadSecurityGroupsResponseFromJSONTyped(json, false);
 }
-exports.ReadSecurityGroupsResponseFromJSON = ReadSecurityGroupsResponseFromJSON;
-function ReadSecurityGroupsResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadSecurityGroupsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
-        'securityGroups': !runtime_1.exists(json, 'SecurityGroups') ? undefined : (json['SecurityGroups'].map(SecurityGroup_1.SecurityGroupFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
+        'securityGroups': !exists(json, 'SecurityGroups') ? undefined : (json['SecurityGroups'].map(SecurityGroupFromJSON)),
     };
 }
-exports.ReadSecurityGroupsResponseFromJSONTyped = ReadSecurityGroupsResponseFromJSONTyped;
-function ReadSecurityGroupsResponseToJSON(value) {
+export function ReadSecurityGroupsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadSecurityGroupsResponseToJSON(value) {
         return null;
     }
     return {
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
-        'SecurityGroups': value.securityGroups === undefined ? undefined : (value.securityGroups.map(SecurityGroup_1.SecurityGroupToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
+        'SecurityGroups': value.securityGroups === undefined ? undefined : (value.securityGroups.map(SecurityGroupToJSON)),
     };
 }
-exports.ReadSecurityGroupsResponseToJSON = ReadSecurityGroupsResponseToJSON;

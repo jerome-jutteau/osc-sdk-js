@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,26 +11,23 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function CreateFlexibleGpuRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function CreateFlexibleGpuRequestFromJSON(json) {
     return CreateFlexibleGpuRequestFromJSONTyped(json, false);
 }
-exports.CreateFlexibleGpuRequestFromJSON = CreateFlexibleGpuRequestFromJSON;
-function CreateFlexibleGpuRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateFlexibleGpuRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'deleteOnVmDeletion': !runtime_1.exists(json, 'DeleteOnVmDeletion') ? undefined : json['DeleteOnVmDeletion'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'generation': !runtime_1.exists(json, 'Generation') ? undefined : json['Generation'],
+        'deleteOnVmDeletion': !exists(json, 'DeleteOnVmDeletion') ? undefined : json['DeleteOnVmDeletion'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'generation': !exists(json, 'Generation') ? undefined : json['Generation'],
         'modelName': json['ModelName'],
         'subregionName': json['SubregionName'],
     };
 }
-exports.CreateFlexibleGpuRequestFromJSONTyped = CreateFlexibleGpuRequestFromJSONTyped;
-function CreateFlexibleGpuRequestToJSON(value) {
+export function CreateFlexibleGpuRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -46,4 +42,3 @@ function CreateFlexibleGpuRequestToJSON(value) {
         'SubregionName': value.subregionName,
     };
 }
-exports.CreateFlexibleGpuRequestToJSON = CreateFlexibleGpuRequestToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,26 +11,23 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function ServerCertificateFromJSON(json) {
+import { exists } from '../runtime';
+export function ServerCertificateFromJSON(json) {
     return ServerCertificateFromJSONTyped(json, false);
 }
-exports.ServerCertificateFromJSON = ServerCertificateFromJSON;
-function ServerCertificateFromJSONTyped(json, ignoreDiscriminator) {
+export function ServerCertificateFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'expirationDate': !runtime_1.exists(json, 'ExpirationDate') ? undefined : (new Date(json['ExpirationDate'])),
-        'id': !runtime_1.exists(json, 'Id') ? undefined : json['Id'],
-        'name': !runtime_1.exists(json, 'Name') ? undefined : json['Name'],
-        'path': !runtime_1.exists(json, 'Path') ? undefined : json['Path'],
-        'uploadDate': !runtime_1.exists(json, 'UploadDate') ? undefined : (new Date(json['UploadDate'])),
+        'expirationDate': !exists(json, 'ExpirationDate') ? undefined : (new Date(json['ExpirationDate'])),
+        'id': !exists(json, 'Id') ? undefined : json['Id'],
+        'name': !exists(json, 'Name') ? undefined : json['Name'],
+        'path': !exists(json, 'Path') ? undefined : json['Path'],
+        'uploadDate': !exists(json, 'UploadDate') ? undefined : (new Date(json['UploadDate'])),
     };
 }
-exports.ServerCertificateFromJSONTyped = ServerCertificateFromJSONTyped;
-function ServerCertificateToJSON(value) {
+export function ServerCertificateToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -46,4 +42,3 @@ function ServerCertificateToJSON(value) {
         'UploadDate': value.uploadDate === undefined ? undefined : (value.uploadDate.toISOString().substr(0, 10)),
     };
 }
-exports.ServerCertificateToJSON = ServerCertificateToJSON;

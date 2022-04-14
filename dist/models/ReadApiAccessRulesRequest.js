@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var FiltersApiAccessRule_1 = require("./FiltersApiAccessRule");
-function ReadApiAccessRulesRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { FiltersApiAccessRuleFromJSON, FiltersApiAccessRuleToJSON, } from './FiltersApiAccessRule';
+export function ReadApiAccessRulesRequestFromJSON(json) {
     return ReadApiAccessRulesRequestFromJSONTyped(json, false);
 }
-exports.ReadApiAccessRulesRequestFromJSON = ReadApiAccessRulesRequestFromJSON;
-function ReadApiAccessRulesRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadApiAccessRulesRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'filters': !runtime_1.exists(json, 'Filters') ? undefined : FiltersApiAccessRule_1.FiltersApiAccessRuleFromJSON(json['Filters']),
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'filters': !exists(json, 'Filters') ? undefined : FiltersApiAccessRuleFromJSON(json['Filters']),
     };
 }
-exports.ReadApiAccessRulesRequestFromJSONTyped = ReadApiAccessRulesRequestFromJSONTyped;
-function ReadApiAccessRulesRequestToJSON(value) {
+export function ReadApiAccessRulesRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,7 +34,6 @@ function ReadApiAccessRulesRequestToJSON(value) {
     }
     return {
         'DryRun': value.dryRun,
-        'Filters': FiltersApiAccessRule_1.FiltersApiAccessRuleToJSON(value.filters),
+        'Filters': FiltersApiAccessRuleToJSON(value.filters),
     };
 }
-exports.ReadApiAccessRulesRequestToJSON = ReadApiAccessRulesRequestToJSON;

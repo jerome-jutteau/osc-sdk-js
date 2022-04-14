@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,30 +11,27 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var AccepterNet_1 = require("./AccepterNet");
-var NetPeeringState_1 = require("./NetPeeringState");
-var ResourceTag_1 = require("./ResourceTag");
-var SourceNet_1 = require("./SourceNet");
-function NetPeeringFromJSON(json) {
+import { exists } from '../runtime';
+import { AccepterNetFromJSON, AccepterNetToJSON, } from './AccepterNet';
+import { NetPeeringStateFromJSON, NetPeeringStateToJSON, } from './NetPeeringState';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
+import { SourceNetFromJSON, SourceNetToJSON, } from './SourceNet';
+export function NetPeeringFromJSON(json) {
     return NetPeeringFromJSONTyped(json, false);
 }
-exports.NetPeeringFromJSON = NetPeeringFromJSON;
-function NetPeeringFromJSONTyped(json, ignoreDiscriminator) {
+export function NetPeeringFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'accepterNet': !runtime_1.exists(json, 'AccepterNet') ? undefined : AccepterNet_1.AccepterNetFromJSON(json['AccepterNet']),
-        'netPeeringId': !runtime_1.exists(json, 'NetPeeringId') ? undefined : json['NetPeeringId'],
-        'sourceNet': !runtime_1.exists(json, 'SourceNet') ? undefined : SourceNet_1.SourceNetFromJSON(json['SourceNet']),
-        'state': !runtime_1.exists(json, 'State') ? undefined : NetPeeringState_1.NetPeeringStateFromJSON(json['State']),
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
+        'accepterNet': !exists(json, 'AccepterNet') ? undefined : AccepterNetFromJSON(json['AccepterNet']),
+        'netPeeringId': !exists(json, 'NetPeeringId') ? undefined : json['NetPeeringId'],
+        'sourceNet': !exists(json, 'SourceNet') ? undefined : SourceNetFromJSON(json['SourceNet']),
+        'state': !exists(json, 'State') ? undefined : NetPeeringStateFromJSON(json['State']),
+        'tags': !exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTagFromJSON)),
     };
 }
-exports.NetPeeringFromJSONTyped = NetPeeringFromJSONTyped;
-function NetPeeringToJSON(value) {
+export function NetPeeringToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -43,11 +39,10 @@ function NetPeeringToJSON(value) {
         return null;
     }
     return {
-        'AccepterNet': AccepterNet_1.AccepterNetToJSON(value.accepterNet),
+        'AccepterNet': AccepterNetToJSON(value.accepterNet),
         'NetPeeringId': value.netPeeringId,
-        'SourceNet': SourceNet_1.SourceNetToJSON(value.sourceNet),
-        'State': NetPeeringState_1.NetPeeringStateToJSON(value.state),
-        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
+        'SourceNet': SourceNetToJSON(value.sourceNet),
+        'State': NetPeeringStateToJSON(value.state),
+        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTagToJSON)),
     };
 }
-exports.NetPeeringToJSON = NetPeeringToJSON;

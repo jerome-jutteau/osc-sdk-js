@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var AccessKey_1 = require("./AccessKey");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function ReadAccessKeysResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { AccessKeyFromJSON, AccessKeyToJSON, } from './AccessKey';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function ReadAccessKeysResponseFromJSON(json) {
     return ReadAccessKeysResponseFromJSONTyped(json, false);
 }
-exports.ReadAccessKeysResponseFromJSON = ReadAccessKeysResponseFromJSON;
-function ReadAccessKeysResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadAccessKeysResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'accessKeys': !runtime_1.exists(json, 'AccessKeys') ? undefined : (json['AccessKeys'].map(AccessKey_1.AccessKeyFromJSON)),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'accessKeys': !exists(json, 'AccessKeys') ? undefined : (json['AccessKeys'].map(AccessKeyFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.ReadAccessKeysResponseFromJSONTyped = ReadAccessKeysResponseFromJSONTyped;
-function ReadAccessKeysResponseToJSON(value) {
+export function ReadAccessKeysResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadAccessKeysResponseToJSON(value) {
         return null;
     }
     return {
-        'AccessKeys': value.accessKeys === undefined ? undefined : (value.accessKeys.map(AccessKey_1.AccessKeyToJSON)),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'AccessKeys': value.accessKeys === undefined ? undefined : (value.accessKeys.map(AccessKeyToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.ReadAccessKeysResponseToJSON = ReadAccessKeysResponseToJSON;

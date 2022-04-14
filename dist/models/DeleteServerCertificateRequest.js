@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function DeleteServerCertificateRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function DeleteServerCertificateRequestFromJSON(json) {
     return DeleteServerCertificateRequestFromJSONTyped(json, false);
 }
-exports.DeleteServerCertificateRequestFromJSON = DeleteServerCertificateRequestFromJSON;
-function DeleteServerCertificateRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function DeleteServerCertificateRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'name': json['Name'],
     };
 }
-exports.DeleteServerCertificateRequestFromJSONTyped = DeleteServerCertificateRequestFromJSONTyped;
-function DeleteServerCertificateRequestToJSON(value) {
+export function DeleteServerCertificateRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function DeleteServerCertificateRequestToJSON(value) {
         'Name': value.name,
     };
 }
-exports.DeleteServerCertificateRequestToJSON = DeleteServerCertificateRequestToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,27 +11,24 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersInternetServiceFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersInternetServiceFromJSON(json) {
     return FiltersInternetServiceFromJSONTyped(json, false);
 }
-exports.FiltersInternetServiceFromJSON = FiltersInternetServiceFromJSON;
-function FiltersInternetServiceFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersInternetServiceFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'internetServiceIds': !runtime_1.exists(json, 'InternetServiceIds') ? undefined : json['InternetServiceIds'],
-        'linkNetIds': !runtime_1.exists(json, 'LinkNetIds') ? undefined : json['LinkNetIds'],
-        'linkStates': !runtime_1.exists(json, 'LinkStates') ? undefined : json['LinkStates'],
-        'tagKeys': !runtime_1.exists(json, 'TagKeys') ? undefined : json['TagKeys'],
-        'tagValues': !runtime_1.exists(json, 'TagValues') ? undefined : json['TagValues'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : json['Tags'],
+        'internetServiceIds': !exists(json, 'InternetServiceIds') ? undefined : json['InternetServiceIds'],
+        'linkNetIds': !exists(json, 'LinkNetIds') ? undefined : json['LinkNetIds'],
+        'linkStates': !exists(json, 'LinkStates') ? undefined : json['LinkStates'],
+        'tagKeys': !exists(json, 'TagKeys') ? undefined : json['TagKeys'],
+        'tagValues': !exists(json, 'TagValues') ? undefined : json['TagValues'],
+        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
     };
 }
-exports.FiltersInternetServiceFromJSONTyped = FiltersInternetServiceFromJSONTyped;
-function FiltersInternetServiceToJSON(value) {
+export function FiltersInternetServiceToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -48,4 +44,3 @@ function FiltersInternetServiceToJSON(value) {
         'Tags': value.tags,
     };
 }
-exports.FiltersInternetServiceToJSON = FiltersInternetServiceToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function ErrorsFromJSON(json) {
+import { exists } from '../runtime';
+export function ErrorsFromJSON(json) {
     return ErrorsFromJSONTyped(json, false);
 }
-exports.ErrorsFromJSON = ErrorsFromJSON;
-function ErrorsFromJSONTyped(json, ignoreDiscriminator) {
+export function ErrorsFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'code': !runtime_1.exists(json, 'Code') ? undefined : json['Code'],
-        'details': !runtime_1.exists(json, 'Details') ? undefined : json['Details'],
-        'type': !runtime_1.exists(json, 'Type') ? undefined : json['Type'],
+        'code': !exists(json, 'Code') ? undefined : json['Code'],
+        'details': !exists(json, 'Details') ? undefined : json['Details'],
+        'type': !exists(json, 'Type') ? undefined : json['Type'],
     };
 }
-exports.ErrorsFromJSONTyped = ErrorsFromJSONTyped;
-function ErrorsToJSON(value) {
+export function ErrorsToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,4 +38,3 @@ function ErrorsToJSON(value) {
         'Type': value.type,
     };
 }
-exports.ErrorsToJSON = ErrorsToJSON;

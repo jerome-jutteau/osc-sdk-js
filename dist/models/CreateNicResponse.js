@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var Nic_1 = require("./Nic");
-function CreateNicResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { NicFromJSON, NicToJSON, } from './Nic';
+export function CreateNicResponseFromJSON(json) {
     return CreateNicResponseFromJSONTyped(json, false);
 }
-exports.CreateNicResponseFromJSON = CreateNicResponseFromJSON;
-function CreateNicResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateNicResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'nic': !runtime_1.exists(json, 'Nic') ? undefined : Nic_1.NicFromJSON(json['Nic']),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'nic': !exists(json, 'Nic') ? undefined : NicFromJSON(json['Nic']),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.CreateNicResponseFromJSONTyped = CreateNicResponseFromJSONTyped;
-function CreateNicResponseToJSON(value) {
+export function CreateNicResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function CreateNicResponseToJSON(value) {
         return null;
     }
     return {
-        'Nic': Nic_1.NicToJSON(value.nic),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'Nic': NicToJSON(value.nic),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.CreateNicResponseToJSON = CreateNicResponseToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var SnapshotExportTask_1 = require("./SnapshotExportTask");
-function CreateSnapshotExportTaskResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { SnapshotExportTaskFromJSON, SnapshotExportTaskToJSON, } from './SnapshotExportTask';
+export function CreateSnapshotExportTaskResponseFromJSON(json) {
     return CreateSnapshotExportTaskResponseFromJSONTyped(json, false);
 }
-exports.CreateSnapshotExportTaskResponseFromJSON = CreateSnapshotExportTaskResponseFromJSON;
-function CreateSnapshotExportTaskResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateSnapshotExportTaskResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
-        'snapshotExportTask': !runtime_1.exists(json, 'SnapshotExportTask') ? undefined : SnapshotExportTask_1.SnapshotExportTaskFromJSON(json['SnapshotExportTask']),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
+        'snapshotExportTask': !exists(json, 'SnapshotExportTask') ? undefined : SnapshotExportTaskFromJSON(json['SnapshotExportTask']),
     };
 }
-exports.CreateSnapshotExportTaskResponseFromJSONTyped = CreateSnapshotExportTaskResponseFromJSONTyped;
-function CreateSnapshotExportTaskResponseToJSON(value) {
+export function CreateSnapshotExportTaskResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function CreateSnapshotExportTaskResponseToJSON(value) {
         return null;
     }
     return {
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
-        'SnapshotExportTask': SnapshotExportTask_1.SnapshotExportTaskToJSON(value.snapshotExportTask),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
+        'SnapshotExportTask': SnapshotExportTaskToJSON(value.snapshotExportTask),
     };
 }
-exports.CreateSnapshotExportTaskResponseToJSON = CreateSnapshotExportTaskResponseToJSON;

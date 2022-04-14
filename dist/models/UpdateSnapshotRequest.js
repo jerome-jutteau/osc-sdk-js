@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var PermissionsOnResourceCreation_1 = require("./PermissionsOnResourceCreation");
-function UpdateSnapshotRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { PermissionsOnResourceCreationFromJSON, PermissionsOnResourceCreationToJSON, } from './PermissionsOnResourceCreation';
+export function UpdateSnapshotRequestFromJSON(json) {
     return UpdateSnapshotRequestFromJSONTyped(json, false);
 }
-exports.UpdateSnapshotRequestFromJSON = UpdateSnapshotRequestFromJSON;
-function UpdateSnapshotRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function UpdateSnapshotRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'permissionsToCreateVolume': PermissionsOnResourceCreation_1.PermissionsOnResourceCreationFromJSON(json['PermissionsToCreateVolume']),
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'permissionsToCreateVolume': PermissionsOnResourceCreationFromJSON(json['PermissionsToCreateVolume']),
         'snapshotId': json['SnapshotId'],
     };
 }
-exports.UpdateSnapshotRequestFromJSONTyped = UpdateSnapshotRequestFromJSONTyped;
-function UpdateSnapshotRequestToJSON(value) {
+export function UpdateSnapshotRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -39,8 +35,7 @@ function UpdateSnapshotRequestToJSON(value) {
     }
     return {
         'DryRun': value.dryRun,
-        'PermissionsToCreateVolume': PermissionsOnResourceCreation_1.PermissionsOnResourceCreationToJSON(value.permissionsToCreateVolume),
+        'PermissionsToCreateVolume': PermissionsOnResourceCreationToJSON(value.permissionsToCreateVolume),
         'SnapshotId': value.snapshotId,
     };
 }
-exports.UpdateSnapshotRequestToJSON = UpdateSnapshotRequestToJSON;

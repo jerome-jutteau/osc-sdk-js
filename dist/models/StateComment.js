@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function StateCommentFromJSON(json) {
+import { exists } from '../runtime';
+export function StateCommentFromJSON(json) {
     return StateCommentFromJSONTyped(json, false);
 }
-exports.StateCommentFromJSON = StateCommentFromJSON;
-function StateCommentFromJSONTyped(json, ignoreDiscriminator) {
+export function StateCommentFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'stateCode': !runtime_1.exists(json, 'StateCode') ? undefined : json['StateCode'],
-        'stateMessage': !runtime_1.exists(json, 'StateMessage') ? undefined : json['StateMessage'],
+        'stateCode': !exists(json, 'StateCode') ? undefined : json['StateCode'],
+        'stateMessage': !exists(json, 'StateMessage') ? undefined : json['StateMessage'],
     };
 }
-exports.StateCommentFromJSONTyped = StateCommentFromJSONTyped;
-function StateCommentToJSON(value) {
+export function StateCommentToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function StateCommentToJSON(value) {
         'StateMessage': value.stateMessage,
     };
 }
-exports.StateCommentToJSON = StateCommentToJSON;

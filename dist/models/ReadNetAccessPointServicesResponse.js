@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var Service_1 = require("./Service");
-function ReadNetAccessPointServicesResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { ServiceFromJSON, ServiceToJSON, } from './Service';
+export function ReadNetAccessPointServicesResponseFromJSON(json) {
     return ReadNetAccessPointServicesResponseFromJSONTyped(json, false);
 }
-exports.ReadNetAccessPointServicesResponseFromJSON = ReadNetAccessPointServicesResponseFromJSON;
-function ReadNetAccessPointServicesResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadNetAccessPointServicesResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
-        'services': !runtime_1.exists(json, 'Services') ? undefined : (json['Services'].map(Service_1.ServiceFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
+        'services': !exists(json, 'Services') ? undefined : (json['Services'].map(ServiceFromJSON)),
     };
 }
-exports.ReadNetAccessPointServicesResponseFromJSONTyped = ReadNetAccessPointServicesResponseFromJSONTyped;
-function ReadNetAccessPointServicesResponseToJSON(value) {
+export function ReadNetAccessPointServicesResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadNetAccessPointServicesResponseToJSON(value) {
         return null;
     }
     return {
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
-        'Services': value.services === undefined ? undefined : (value.services.map(Service_1.ServiceToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
+        'Services': value.services === undefined ? undefined : (value.services.map(ServiceToJSON)),
     };
 }
-exports.ReadNetAccessPointServicesResponseToJSON = ReadNetAccessPointServicesResponseToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,30 +11,27 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var OsuExportImageExportTask_1 = require("./OsuExportImageExportTask");
-var ResourceTag_1 = require("./ResourceTag");
-function ImageExportTaskFromJSON(json) {
+import { exists } from '../runtime';
+import { OsuExportImageExportTaskFromJSON, OsuExportImageExportTaskToJSON, } from './OsuExportImageExportTask';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
+export function ImageExportTaskFromJSON(json) {
     return ImageExportTaskFromJSONTyped(json, false);
 }
-exports.ImageExportTaskFromJSON = ImageExportTaskFromJSON;
-function ImageExportTaskFromJSONTyped(json, ignoreDiscriminator) {
+export function ImageExportTaskFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'comment': !runtime_1.exists(json, 'Comment') ? undefined : json['Comment'],
-        'imageId': !runtime_1.exists(json, 'ImageId') ? undefined : json['ImageId'],
-        'osuExport': !runtime_1.exists(json, 'OsuExport') ? undefined : OsuExportImageExportTask_1.OsuExportImageExportTaskFromJSON(json['OsuExport']),
-        'progress': !runtime_1.exists(json, 'Progress') ? undefined : json['Progress'],
-        'state': !runtime_1.exists(json, 'State') ? undefined : json['State'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
-        'taskId': !runtime_1.exists(json, 'TaskId') ? undefined : json['TaskId'],
+        'comment': !exists(json, 'Comment') ? undefined : json['Comment'],
+        'imageId': !exists(json, 'ImageId') ? undefined : json['ImageId'],
+        'osuExport': !exists(json, 'OsuExport') ? undefined : OsuExportImageExportTaskFromJSON(json['OsuExport']),
+        'progress': !exists(json, 'Progress') ? undefined : json['Progress'],
+        'state': !exists(json, 'State') ? undefined : json['State'],
+        'tags': !exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTagFromJSON)),
+        'taskId': !exists(json, 'TaskId') ? undefined : json['TaskId'],
     };
 }
-exports.ImageExportTaskFromJSONTyped = ImageExportTaskFromJSONTyped;
-function ImageExportTaskToJSON(value) {
+export function ImageExportTaskToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -45,11 +41,10 @@ function ImageExportTaskToJSON(value) {
     return {
         'Comment': value.comment,
         'ImageId': value.imageId,
-        'OsuExport': OsuExportImageExportTask_1.OsuExportImageExportTaskToJSON(value.osuExport),
+        'OsuExport': OsuExportImageExportTaskToJSON(value.osuExport),
         'Progress': value.progress,
         'State': value.state,
-        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
+        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTagToJSON)),
         'TaskId': value.taskId,
     };
 }
-exports.ImageExportTaskToJSON = ImageExportTaskToJSON;

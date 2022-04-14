@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function UpdateSubnetRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function UpdateSubnetRequestFromJSON(json) {
     return UpdateSubnetRequestFromJSONTyped(json, false);
 }
-exports.UpdateSubnetRequestFromJSON = UpdateSubnetRequestFromJSON;
-function UpdateSubnetRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function UpdateSubnetRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'mapPublicIpOnLaunch': json['MapPublicIpOnLaunch'],
         'subnetId': json['SubnetId'],
     };
 }
-exports.UpdateSubnetRequestFromJSONTyped = UpdateSubnetRequestFromJSONTyped;
-function UpdateSubnetRequestToJSON(value) {
+export function UpdateSubnetRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,4 +38,3 @@ function UpdateSubnetRequestToJSON(value) {
         'SubnetId': value.subnetId,
     };
 }
-exports.UpdateSubnetRequestToJSON = UpdateSubnetRequestToJSON;

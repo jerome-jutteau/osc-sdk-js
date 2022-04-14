@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var BsuCreated_1 = require("./BsuCreated");
-function BlockDeviceMappingCreatedFromJSON(json) {
+import { exists } from '../runtime';
+import { BsuCreatedFromJSON, BsuCreatedToJSON, } from './BsuCreated';
+export function BlockDeviceMappingCreatedFromJSON(json) {
     return BlockDeviceMappingCreatedFromJSONTyped(json, false);
 }
-exports.BlockDeviceMappingCreatedFromJSON = BlockDeviceMappingCreatedFromJSON;
-function BlockDeviceMappingCreatedFromJSONTyped(json, ignoreDiscriminator) {
+export function BlockDeviceMappingCreatedFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'bsu': !runtime_1.exists(json, 'Bsu') ? undefined : BsuCreated_1.BsuCreatedFromJSON(json['Bsu']),
-        'deviceName': !runtime_1.exists(json, 'DeviceName') ? undefined : json['DeviceName'],
+        'bsu': !exists(json, 'Bsu') ? undefined : BsuCreatedFromJSON(json['Bsu']),
+        'deviceName': !exists(json, 'DeviceName') ? undefined : json['DeviceName'],
     };
 }
-exports.BlockDeviceMappingCreatedFromJSONTyped = BlockDeviceMappingCreatedFromJSONTyped;
-function BlockDeviceMappingCreatedToJSON(value) {
+export function BlockDeviceMappingCreatedToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -37,8 +33,7 @@ function BlockDeviceMappingCreatedToJSON(value) {
         return null;
     }
     return {
-        'Bsu': BsuCreated_1.BsuCreatedToJSON(value.bsu),
+        'Bsu': BsuCreatedToJSON(value.bsu),
         'DeviceName': value.deviceName,
     };
 }
-exports.BlockDeviceMappingCreatedToJSON = BlockDeviceMappingCreatedToJSON;

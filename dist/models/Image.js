@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,42 +11,39 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var BlockDeviceMappingImage_1 = require("./BlockDeviceMappingImage");
-var PermissionsOnResource_1 = require("./PermissionsOnResource");
-var ResourceTag_1 = require("./ResourceTag");
-var StateComment_1 = require("./StateComment");
-function ImageFromJSON(json) {
+import { exists } from '../runtime';
+import { BlockDeviceMappingImageFromJSON, BlockDeviceMappingImageToJSON, } from './BlockDeviceMappingImage';
+import { PermissionsOnResourceFromJSON, PermissionsOnResourceToJSON, } from './PermissionsOnResource';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
+import { StateCommentFromJSON, StateCommentToJSON, } from './StateComment';
+export function ImageFromJSON(json) {
     return ImageFromJSONTyped(json, false);
 }
-exports.ImageFromJSON = ImageFromJSON;
-function ImageFromJSONTyped(json, ignoreDiscriminator) {
+export function ImageFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'accountAlias': !runtime_1.exists(json, 'AccountAlias') ? undefined : json['AccountAlias'],
-        'accountId': !runtime_1.exists(json, 'AccountId') ? undefined : json['AccountId'],
-        'architecture': !runtime_1.exists(json, 'Architecture') ? undefined : json['Architecture'],
-        'blockDeviceMappings': !runtime_1.exists(json, 'BlockDeviceMappings') ? undefined : (json['BlockDeviceMappings'].map(BlockDeviceMappingImage_1.BlockDeviceMappingImageFromJSON)),
-        'creationDate': !runtime_1.exists(json, 'CreationDate') ? undefined : (new Date(json['CreationDate'])),
-        'description': !runtime_1.exists(json, 'Description') ? undefined : json['Description'],
-        'fileLocation': !runtime_1.exists(json, 'FileLocation') ? undefined : json['FileLocation'],
-        'imageId': !runtime_1.exists(json, 'ImageId') ? undefined : json['ImageId'],
-        'imageName': !runtime_1.exists(json, 'ImageName') ? undefined : json['ImageName'],
-        'imageType': !runtime_1.exists(json, 'ImageType') ? undefined : json['ImageType'],
-        'permissionsToLaunch': !runtime_1.exists(json, 'PermissionsToLaunch') ? undefined : PermissionsOnResource_1.PermissionsOnResourceFromJSON(json['PermissionsToLaunch']),
-        'productCodes': !runtime_1.exists(json, 'ProductCodes') ? undefined : json['ProductCodes'],
-        'rootDeviceName': !runtime_1.exists(json, 'RootDeviceName') ? undefined : json['RootDeviceName'],
-        'rootDeviceType': !runtime_1.exists(json, 'RootDeviceType') ? undefined : json['RootDeviceType'],
-        'state': !runtime_1.exists(json, 'State') ? undefined : json['State'],
-        'stateComment': !runtime_1.exists(json, 'StateComment') ? undefined : StateComment_1.StateCommentFromJSON(json['StateComment']),
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
+        'accountAlias': !exists(json, 'AccountAlias') ? undefined : json['AccountAlias'],
+        'accountId': !exists(json, 'AccountId') ? undefined : json['AccountId'],
+        'architecture': !exists(json, 'Architecture') ? undefined : json['Architecture'],
+        'blockDeviceMappings': !exists(json, 'BlockDeviceMappings') ? undefined : (json['BlockDeviceMappings'].map(BlockDeviceMappingImageFromJSON)),
+        'creationDate': !exists(json, 'CreationDate') ? undefined : (new Date(json['CreationDate'])),
+        'description': !exists(json, 'Description') ? undefined : json['Description'],
+        'fileLocation': !exists(json, 'FileLocation') ? undefined : json['FileLocation'],
+        'imageId': !exists(json, 'ImageId') ? undefined : json['ImageId'],
+        'imageName': !exists(json, 'ImageName') ? undefined : json['ImageName'],
+        'imageType': !exists(json, 'ImageType') ? undefined : json['ImageType'],
+        'permissionsToLaunch': !exists(json, 'PermissionsToLaunch') ? undefined : PermissionsOnResourceFromJSON(json['PermissionsToLaunch']),
+        'productCodes': !exists(json, 'ProductCodes') ? undefined : json['ProductCodes'],
+        'rootDeviceName': !exists(json, 'RootDeviceName') ? undefined : json['RootDeviceName'],
+        'rootDeviceType': !exists(json, 'RootDeviceType') ? undefined : json['RootDeviceType'],
+        'state': !exists(json, 'State') ? undefined : json['State'],
+        'stateComment': !exists(json, 'StateComment') ? undefined : StateCommentFromJSON(json['StateComment']),
+        'tags': !exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTagFromJSON)),
     };
 }
-exports.ImageFromJSONTyped = ImageFromJSONTyped;
-function ImageToJSON(value) {
+export function ImageToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -58,20 +54,19 @@ function ImageToJSON(value) {
         'AccountAlias': value.accountAlias,
         'AccountId': value.accountId,
         'Architecture': value.architecture,
-        'BlockDeviceMappings': value.blockDeviceMappings === undefined ? undefined : (value.blockDeviceMappings.map(BlockDeviceMappingImage_1.BlockDeviceMappingImageToJSON)),
+        'BlockDeviceMappings': value.blockDeviceMappings === undefined ? undefined : (value.blockDeviceMappings.map(BlockDeviceMappingImageToJSON)),
         'CreationDate': value.creationDate === undefined ? undefined : (value.creationDate.toISOString().substr(0, 10)),
         'Description': value.description,
         'FileLocation': value.fileLocation,
         'ImageId': value.imageId,
         'ImageName': value.imageName,
         'ImageType': value.imageType,
-        'PermissionsToLaunch': PermissionsOnResource_1.PermissionsOnResourceToJSON(value.permissionsToLaunch),
+        'PermissionsToLaunch': PermissionsOnResourceToJSON(value.permissionsToLaunch),
         'ProductCodes': value.productCodes,
         'RootDeviceName': value.rootDeviceName,
         'RootDeviceType': value.rootDeviceType,
         'State': value.state,
-        'StateComment': StateComment_1.StateCommentToJSON(value.stateComment),
-        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
+        'StateComment': StateCommentToJSON(value.stateComment),
+        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTagToJSON)),
     };
 }
-exports.ImageToJSON = ImageToJSON;

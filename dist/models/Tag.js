@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function TagFromJSON(json) {
+import { exists } from '../runtime';
+export function TagFromJSON(json) {
     return TagFromJSONTyped(json, false);
 }
-exports.TagFromJSON = TagFromJSON;
-function TagFromJSONTyped(json, ignoreDiscriminator) {
+export function TagFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'key': !runtime_1.exists(json, 'Key') ? undefined : json['Key'],
-        'resourceId': !runtime_1.exists(json, 'ResourceId') ? undefined : json['ResourceId'],
-        'resourceType': !runtime_1.exists(json, 'ResourceType') ? undefined : json['ResourceType'],
-        'value': !runtime_1.exists(json, 'Value') ? undefined : json['Value'],
+        'key': !exists(json, 'Key') ? undefined : json['Key'],
+        'resourceId': !exists(json, 'ResourceId') ? undefined : json['ResourceId'],
+        'resourceType': !exists(json, 'ResourceType') ? undefined : json['ResourceType'],
+        'value': !exists(json, 'Value') ? undefined : json['Value'],
     };
 }
-exports.TagFromJSONTyped = TagFromJSONTyped;
-function TagToJSON(value) {
+export function TagToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,4 +40,3 @@ function TagToJSON(value) {
         'Value': value.value,
     };
 }
-exports.TagToJSON = TagToJSON;

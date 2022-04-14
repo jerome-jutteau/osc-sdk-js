@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,27 +11,24 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersVmTypeFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersVmTypeFromJSON(json) {
     return FiltersVmTypeFromJSONTyped(json, false);
 }
-exports.FiltersVmTypeFromJSON = FiltersVmTypeFromJSON;
-function FiltersVmTypeFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersVmTypeFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'bsuOptimized': !runtime_1.exists(json, 'BsuOptimized') ? undefined : json['BsuOptimized'],
-        'memorySizes': !runtime_1.exists(json, 'MemorySizes') ? undefined : json['MemorySizes'],
-        'vcoreCounts': !runtime_1.exists(json, 'VcoreCounts') ? undefined : json['VcoreCounts'],
-        'vmTypeNames': !runtime_1.exists(json, 'VmTypeNames') ? undefined : json['VmTypeNames'],
-        'volumeCounts': !runtime_1.exists(json, 'VolumeCounts') ? undefined : json['VolumeCounts'],
-        'volumeSizes': !runtime_1.exists(json, 'VolumeSizes') ? undefined : json['VolumeSizes'],
+        'bsuOptimized': !exists(json, 'BsuOptimized') ? undefined : json['BsuOptimized'],
+        'memorySizes': !exists(json, 'MemorySizes') ? undefined : json['MemorySizes'],
+        'vcoreCounts': !exists(json, 'VcoreCounts') ? undefined : json['VcoreCounts'],
+        'vmTypeNames': !exists(json, 'VmTypeNames') ? undefined : json['VmTypeNames'],
+        'volumeCounts': !exists(json, 'VolumeCounts') ? undefined : json['VolumeCounts'],
+        'volumeSizes': !exists(json, 'VolumeSizes') ? undefined : json['VolumeSizes'],
     };
 }
-exports.FiltersVmTypeFromJSONTyped = FiltersVmTypeFromJSONTyped;
-function FiltersVmTypeToJSON(value) {
+export function FiltersVmTypeToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -48,4 +44,3 @@ function FiltersVmTypeToJSON(value) {
         'VolumeSizes': value.volumeSizes,
     };
 }
-exports.FiltersVmTypeToJSON = FiltersVmTypeToJSON;

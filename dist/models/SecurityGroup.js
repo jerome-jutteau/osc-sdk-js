@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,31 +11,28 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ResourceTag_1 = require("./ResourceTag");
-var SecurityGroupRule_1 = require("./SecurityGroupRule");
-function SecurityGroupFromJSON(json) {
+import { exists } from '../runtime';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
+import { SecurityGroupRuleFromJSON, SecurityGroupRuleToJSON, } from './SecurityGroupRule';
+export function SecurityGroupFromJSON(json) {
     return SecurityGroupFromJSONTyped(json, false);
 }
-exports.SecurityGroupFromJSON = SecurityGroupFromJSON;
-function SecurityGroupFromJSONTyped(json, ignoreDiscriminator) {
+export function SecurityGroupFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'accountId': !runtime_1.exists(json, 'AccountId') ? undefined : json['AccountId'],
-        'description': !runtime_1.exists(json, 'Description') ? undefined : json['Description'],
-        'inboundRules': !runtime_1.exists(json, 'InboundRules') ? undefined : (json['InboundRules'].map(SecurityGroupRule_1.SecurityGroupRuleFromJSON)),
-        'netId': !runtime_1.exists(json, 'NetId') ? undefined : json['NetId'],
-        'outboundRules': !runtime_1.exists(json, 'OutboundRules') ? undefined : (json['OutboundRules'].map(SecurityGroupRule_1.SecurityGroupRuleFromJSON)),
-        'securityGroupId': !runtime_1.exists(json, 'SecurityGroupId') ? undefined : json['SecurityGroupId'],
-        'securityGroupName': !runtime_1.exists(json, 'SecurityGroupName') ? undefined : json['SecurityGroupName'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
+        'accountId': !exists(json, 'AccountId') ? undefined : json['AccountId'],
+        'description': !exists(json, 'Description') ? undefined : json['Description'],
+        'inboundRules': !exists(json, 'InboundRules') ? undefined : (json['InboundRules'].map(SecurityGroupRuleFromJSON)),
+        'netId': !exists(json, 'NetId') ? undefined : json['NetId'],
+        'outboundRules': !exists(json, 'OutboundRules') ? undefined : (json['OutboundRules'].map(SecurityGroupRuleFromJSON)),
+        'securityGroupId': !exists(json, 'SecurityGroupId') ? undefined : json['SecurityGroupId'],
+        'securityGroupName': !exists(json, 'SecurityGroupName') ? undefined : json['SecurityGroupName'],
+        'tags': !exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTagFromJSON)),
     };
 }
-exports.SecurityGroupFromJSONTyped = SecurityGroupFromJSONTyped;
-function SecurityGroupToJSON(value) {
+export function SecurityGroupToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -46,12 +42,11 @@ function SecurityGroupToJSON(value) {
     return {
         'AccountId': value.accountId,
         'Description': value.description,
-        'InboundRules': value.inboundRules === undefined ? undefined : (value.inboundRules.map(SecurityGroupRule_1.SecurityGroupRuleToJSON)),
+        'InboundRules': value.inboundRules === undefined ? undefined : (value.inboundRules.map(SecurityGroupRuleToJSON)),
         'NetId': value.netId,
-        'OutboundRules': value.outboundRules === undefined ? undefined : (value.outboundRules.map(SecurityGroupRule_1.SecurityGroupRuleToJSON)),
+        'OutboundRules': value.outboundRules === undefined ? undefined : (value.outboundRules.map(SecurityGroupRuleToJSON)),
         'SecurityGroupId': value.securityGroupId,
         'SecurityGroupName': value.securityGroupName,
-        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
+        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTagToJSON)),
     };
 }
-exports.SecurityGroupToJSON = SecurityGroupToJSON;

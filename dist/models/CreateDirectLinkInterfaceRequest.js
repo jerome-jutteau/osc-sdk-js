@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var DirectLinkInterface_1 = require("./DirectLinkInterface");
-function CreateDirectLinkInterfaceRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { DirectLinkInterfaceFromJSON, DirectLinkInterfaceToJSON, } from './DirectLinkInterface';
+export function CreateDirectLinkInterfaceRequestFromJSON(json) {
     return CreateDirectLinkInterfaceRequestFromJSONTyped(json, false);
 }
-exports.CreateDirectLinkInterfaceRequestFromJSON = CreateDirectLinkInterfaceRequestFromJSON;
-function CreateDirectLinkInterfaceRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateDirectLinkInterfaceRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'directLinkId': json['DirectLinkId'],
-        'directLinkInterface': DirectLinkInterface_1.DirectLinkInterfaceFromJSON(json['DirectLinkInterface']),
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'directLinkInterface': DirectLinkInterfaceFromJSON(json['DirectLinkInterface']),
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
     };
 }
-exports.CreateDirectLinkInterfaceRequestFromJSONTyped = CreateDirectLinkInterfaceRequestFromJSONTyped;
-function CreateDirectLinkInterfaceRequestToJSON(value) {
+export function CreateDirectLinkInterfaceRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -39,8 +35,7 @@ function CreateDirectLinkInterfaceRequestToJSON(value) {
     }
     return {
         'DirectLinkId': value.directLinkId,
-        'DirectLinkInterface': DirectLinkInterface_1.DirectLinkInterfaceToJSON(value.directLinkInterface),
+        'DirectLinkInterface': DirectLinkInterfaceToJSON(value.directLinkInterface),
         'DryRun': value.dryRun,
     };
 }
-exports.CreateDirectLinkInterfaceRequestToJSON = CreateDirectLinkInterfaceRequestToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,28 +11,25 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ResourceTag_1 = require("./ResourceTag");
-function ClientGatewayFromJSON(json) {
+import { exists } from '../runtime';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
+export function ClientGatewayFromJSON(json) {
     return ClientGatewayFromJSONTyped(json, false);
 }
-exports.ClientGatewayFromJSON = ClientGatewayFromJSON;
-function ClientGatewayFromJSONTyped(json, ignoreDiscriminator) {
+export function ClientGatewayFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'bgpAsn': !runtime_1.exists(json, 'BgpAsn') ? undefined : json['BgpAsn'],
-        'clientGatewayId': !runtime_1.exists(json, 'ClientGatewayId') ? undefined : json['ClientGatewayId'],
-        'connectionType': !runtime_1.exists(json, 'ConnectionType') ? undefined : json['ConnectionType'],
-        'publicIp': !runtime_1.exists(json, 'PublicIp') ? undefined : json['PublicIp'],
-        'state': !runtime_1.exists(json, 'State') ? undefined : json['State'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
+        'bgpAsn': !exists(json, 'BgpAsn') ? undefined : json['BgpAsn'],
+        'clientGatewayId': !exists(json, 'ClientGatewayId') ? undefined : json['ClientGatewayId'],
+        'connectionType': !exists(json, 'ConnectionType') ? undefined : json['ConnectionType'],
+        'publicIp': !exists(json, 'PublicIp') ? undefined : json['PublicIp'],
+        'state': !exists(json, 'State') ? undefined : json['State'],
+        'tags': !exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTagFromJSON)),
     };
 }
-exports.ClientGatewayFromJSONTyped = ClientGatewayFromJSONTyped;
-function ClientGatewayToJSON(value) {
+export function ClientGatewayToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -46,7 +42,6 @@ function ClientGatewayToJSON(value) {
         'ConnectionType': value.connectionType,
         'PublicIp': value.publicIp,
         'State': value.state,
-        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
+        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTagToJSON)),
     };
 }
-exports.ClientGatewayToJSON = ClientGatewayToJSON;

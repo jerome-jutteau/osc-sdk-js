@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function UnlinkInternetServiceResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function UnlinkInternetServiceResponseFromJSON(json) {
     return UnlinkInternetServiceResponseFromJSONTyped(json, false);
 }
-exports.UnlinkInternetServiceResponseFromJSON = UnlinkInternetServiceResponseFromJSON;
-function UnlinkInternetServiceResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function UnlinkInternetServiceResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.UnlinkInternetServiceResponseFromJSONTyped = UnlinkInternetServiceResponseFromJSONTyped;
-function UnlinkInternetServiceResponseToJSON(value) {
+export function UnlinkInternetServiceResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -36,7 +32,6 @@ function UnlinkInternetServiceResponseToJSON(value) {
         return null;
     }
     return {
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.UnlinkInternetServiceResponseToJSON = UnlinkInternetServiceResponseToJSON;

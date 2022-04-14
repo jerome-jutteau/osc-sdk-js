@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var KeypairCreated_1 = require("./KeypairCreated");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function CreateKeypairResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { KeypairCreatedFromJSON, KeypairCreatedToJSON, } from './KeypairCreated';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function CreateKeypairResponseFromJSON(json) {
     return CreateKeypairResponseFromJSONTyped(json, false);
 }
-exports.CreateKeypairResponseFromJSON = CreateKeypairResponseFromJSON;
-function CreateKeypairResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateKeypairResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'keypair': !runtime_1.exists(json, 'Keypair') ? undefined : KeypairCreated_1.KeypairCreatedFromJSON(json['Keypair']),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'keypair': !exists(json, 'Keypair') ? undefined : KeypairCreatedFromJSON(json['Keypair']),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.CreateKeypairResponseFromJSONTyped = CreateKeypairResponseFromJSONTyped;
-function CreateKeypairResponseToJSON(value) {
+export function CreateKeypairResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function CreateKeypairResponseToJSON(value) {
         return null;
     }
     return {
-        'Keypair': KeypairCreated_1.KeypairCreatedToJSON(value.keypair),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'Keypair': KeypairCreatedToJSON(value.keypair),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.CreateKeypairResponseToJSON = CreateKeypairResponseToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var PublicIp_1 = require("./PublicIp");
-function ReadPublicIpsResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { PublicIpFromJSON, PublicIpToJSON, } from './PublicIp';
+export function ReadPublicIpsResponseFromJSON(json) {
     return ReadPublicIpsResponseFromJSONTyped(json, false);
 }
-exports.ReadPublicIpsResponseFromJSON = ReadPublicIpsResponseFromJSON;
-function ReadPublicIpsResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadPublicIpsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'publicIps': !runtime_1.exists(json, 'PublicIps') ? undefined : (json['PublicIps'].map(PublicIp_1.PublicIpFromJSON)),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'publicIps': !exists(json, 'PublicIps') ? undefined : (json['PublicIps'].map(PublicIpFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.ReadPublicIpsResponseFromJSONTyped = ReadPublicIpsResponseFromJSONTyped;
-function ReadPublicIpsResponseToJSON(value) {
+export function ReadPublicIpsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadPublicIpsResponseToJSON(value) {
         return null;
     }
     return {
-        'PublicIps': value.publicIps === undefined ? undefined : (value.publicIps.map(PublicIp_1.PublicIpToJSON)),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'PublicIps': value.publicIps === undefined ? undefined : (value.publicIps.map(PublicIpToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.ReadPublicIpsResponseToJSON = ReadPublicIpsResponseToJSON;

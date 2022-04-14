@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function DeleteInternetServiceRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function DeleteInternetServiceRequestFromJSON(json) {
     return DeleteInternetServiceRequestFromJSONTyped(json, false);
 }
-exports.DeleteInternetServiceRequestFromJSON = DeleteInternetServiceRequestFromJSON;
-function DeleteInternetServiceRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function DeleteInternetServiceRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'internetServiceId': json['InternetServiceId'],
     };
 }
-exports.DeleteInternetServiceRequestFromJSONTyped = DeleteInternetServiceRequestFromJSONTyped;
-function DeleteInternetServiceRequestToJSON(value) {
+export function DeleteInternetServiceRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function DeleteInternetServiceRequestToJSON(value) {
         'InternetServiceId': value.internetServiceId,
     };
 }
-exports.DeleteInternetServiceRequestToJSON = DeleteInternetServiceRequestToJSON;

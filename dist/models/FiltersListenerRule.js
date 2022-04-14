@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,22 +11,19 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersListenerRuleFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersListenerRuleFromJSON(json) {
     return FiltersListenerRuleFromJSONTyped(json, false);
 }
-exports.FiltersListenerRuleFromJSON = FiltersListenerRuleFromJSON;
-function FiltersListenerRuleFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersListenerRuleFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'listenerRuleNames': !runtime_1.exists(json, 'ListenerRuleNames') ? undefined : json['ListenerRuleNames'],
+        'listenerRuleNames': !exists(json, 'ListenerRuleNames') ? undefined : json['ListenerRuleNames'],
     };
 }
-exports.FiltersListenerRuleFromJSONTyped = FiltersListenerRuleFromJSONTyped;
-function FiltersListenerRuleToJSON(value) {
+export function FiltersListenerRuleToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,4 +34,3 @@ function FiltersListenerRuleToJSON(value) {
         'ListenerRuleNames': value.listenerRuleNames,
     };
 }
-exports.FiltersListenerRuleToJSON = FiltersListenerRuleToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,32 +11,29 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var SecurityGroupRule_1 = require("./SecurityGroupRule");
-function CreateSecurityGroupRuleRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { SecurityGroupRuleFromJSON, SecurityGroupRuleToJSON, } from './SecurityGroupRule';
+export function CreateSecurityGroupRuleRequestFromJSON(json) {
     return CreateSecurityGroupRuleRequestFromJSONTyped(json, false);
 }
-exports.CreateSecurityGroupRuleRequestFromJSON = CreateSecurityGroupRuleRequestFromJSON;
-function CreateSecurityGroupRuleRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateSecurityGroupRuleRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'flow': json['Flow'],
-        'fromPortRange': !runtime_1.exists(json, 'FromPortRange') ? undefined : json['FromPortRange'],
-        'ipProtocol': !runtime_1.exists(json, 'IpProtocol') ? undefined : json['IpProtocol'],
-        'ipRange': !runtime_1.exists(json, 'IpRange') ? undefined : json['IpRange'],
-        'rules': !runtime_1.exists(json, 'Rules') ? undefined : (json['Rules'].map(SecurityGroupRule_1.SecurityGroupRuleFromJSON)),
-        'securityGroupAccountIdToLink': !runtime_1.exists(json, 'SecurityGroupAccountIdToLink') ? undefined : json['SecurityGroupAccountIdToLink'],
+        'fromPortRange': !exists(json, 'FromPortRange') ? undefined : json['FromPortRange'],
+        'ipProtocol': !exists(json, 'IpProtocol') ? undefined : json['IpProtocol'],
+        'ipRange': !exists(json, 'IpRange') ? undefined : json['IpRange'],
+        'rules': !exists(json, 'Rules') ? undefined : (json['Rules'].map(SecurityGroupRuleFromJSON)),
+        'securityGroupAccountIdToLink': !exists(json, 'SecurityGroupAccountIdToLink') ? undefined : json['SecurityGroupAccountIdToLink'],
         'securityGroupId': json['SecurityGroupId'],
-        'securityGroupNameToLink': !runtime_1.exists(json, 'SecurityGroupNameToLink') ? undefined : json['SecurityGroupNameToLink'],
-        'toPortRange': !runtime_1.exists(json, 'ToPortRange') ? undefined : json['ToPortRange'],
+        'securityGroupNameToLink': !exists(json, 'SecurityGroupNameToLink') ? undefined : json['SecurityGroupNameToLink'],
+        'toPortRange': !exists(json, 'ToPortRange') ? undefined : json['ToPortRange'],
     };
 }
-exports.CreateSecurityGroupRuleRequestFromJSONTyped = CreateSecurityGroupRuleRequestFromJSONTyped;
-function CreateSecurityGroupRuleRequestToJSON(value) {
+export function CreateSecurityGroupRuleRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -50,11 +46,10 @@ function CreateSecurityGroupRuleRequestToJSON(value) {
         'FromPortRange': value.fromPortRange,
         'IpProtocol': value.ipProtocol,
         'IpRange': value.ipRange,
-        'Rules': value.rules === undefined ? undefined : (value.rules.map(SecurityGroupRule_1.SecurityGroupRuleToJSON)),
+        'Rules': value.rules === undefined ? undefined : (value.rules.map(SecurityGroupRuleToJSON)),
         'SecurityGroupAccountIdToLink': value.securityGroupAccountIdToLink,
         'SecurityGroupId': value.securityGroupId,
         'SecurityGroupNameToLink': value.securityGroupNameToLink,
         'ToPortRange': value.toPortRange,
     };
 }
-exports.CreateSecurityGroupRuleRequestToJSON = CreateSecurityGroupRuleRequestToJSON;

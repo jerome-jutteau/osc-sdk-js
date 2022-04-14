@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var NetPeering_1 = require("./NetPeering");
-function ReadNetPeeringsResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { NetPeeringFromJSON, NetPeeringToJSON, } from './NetPeering';
+export function ReadNetPeeringsResponseFromJSON(json) {
     return ReadNetPeeringsResponseFromJSONTyped(json, false);
 }
-exports.ReadNetPeeringsResponseFromJSON = ReadNetPeeringsResponseFromJSON;
-function ReadNetPeeringsResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadNetPeeringsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'netPeerings': !runtime_1.exists(json, 'NetPeerings') ? undefined : (json['NetPeerings'].map(NetPeering_1.NetPeeringFromJSON)),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'netPeerings': !exists(json, 'NetPeerings') ? undefined : (json['NetPeerings'].map(NetPeeringFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.ReadNetPeeringsResponseFromJSONTyped = ReadNetPeeringsResponseFromJSONTyped;
-function ReadNetPeeringsResponseToJSON(value) {
+export function ReadNetPeeringsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadNetPeeringsResponseToJSON(value) {
         return null;
     }
     return {
-        'NetPeerings': value.netPeerings === undefined ? undefined : (value.netPeerings.map(NetPeering_1.NetPeeringToJSON)),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'NetPeerings': value.netPeerings === undefined ? undefined : (value.netPeerings.map(NetPeeringToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.ReadNetPeeringsResponseToJSON = ReadNetPeeringsResponseToJSON;

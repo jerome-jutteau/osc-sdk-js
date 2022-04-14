@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var FiltersVolume_1 = require("./FiltersVolume");
-function ReadVolumesRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { FiltersVolumeFromJSON, FiltersVolumeToJSON, } from './FiltersVolume';
+export function ReadVolumesRequestFromJSON(json) {
     return ReadVolumesRequestFromJSONTyped(json, false);
 }
-exports.ReadVolumesRequestFromJSON = ReadVolumesRequestFromJSON;
-function ReadVolumesRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadVolumesRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'filters': !runtime_1.exists(json, 'Filters') ? undefined : FiltersVolume_1.FiltersVolumeFromJSON(json['Filters']),
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'filters': !exists(json, 'Filters') ? undefined : FiltersVolumeFromJSON(json['Filters']),
     };
 }
-exports.ReadVolumesRequestFromJSONTyped = ReadVolumesRequestFromJSONTyped;
-function ReadVolumesRequestToJSON(value) {
+export function ReadVolumesRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,7 +34,6 @@ function ReadVolumesRequestToJSON(value) {
     }
     return {
         'DryRun': value.dryRun,
-        'Filters': FiltersVolume_1.FiltersVolumeToJSON(value.filters),
+        'Filters': FiltersVolumeToJSON(value.filters),
     };
 }
-exports.ReadVolumesRequestToJSON = ReadVolumesRequestToJSON;

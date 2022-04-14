@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function UpdateNetRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function UpdateNetRequestFromJSON(json) {
     return UpdateNetRequestFromJSONTyped(json, false);
 }
-exports.UpdateNetRequestFromJSON = UpdateNetRequestFromJSON;
-function UpdateNetRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function UpdateNetRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'dhcpOptionsSetId': json['DhcpOptionsSetId'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'netId': json['NetId'],
     };
 }
-exports.UpdateNetRequestFromJSONTyped = UpdateNetRequestFromJSONTyped;
-function UpdateNetRequestToJSON(value) {
+export function UpdateNetRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,4 +38,3 @@ function UpdateNetRequestToJSON(value) {
         'NetId': value.netId,
     };
 }
-exports.UpdateNetRequestToJSON = UpdateNetRequestToJSON;

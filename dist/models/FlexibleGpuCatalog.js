@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,26 +11,23 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FlexibleGpuCatalogFromJSON(json) {
+import { exists } from '../runtime';
+export function FlexibleGpuCatalogFromJSON(json) {
     return FlexibleGpuCatalogFromJSONTyped(json, false);
 }
-exports.FlexibleGpuCatalogFromJSON = FlexibleGpuCatalogFromJSON;
-function FlexibleGpuCatalogFromJSONTyped(json, ignoreDiscriminator) {
+export function FlexibleGpuCatalogFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'generations': !runtime_1.exists(json, 'Generations') ? undefined : json['Generations'],
-        'maxCpu': !runtime_1.exists(json, 'MaxCpu') ? undefined : json['MaxCpu'],
-        'maxRam': !runtime_1.exists(json, 'MaxRam') ? undefined : json['MaxRam'],
-        'modelName': !runtime_1.exists(json, 'ModelName') ? undefined : json['ModelName'],
-        'vRam': !runtime_1.exists(json, 'VRam') ? undefined : json['VRam'],
+        'generations': !exists(json, 'Generations') ? undefined : json['Generations'],
+        'maxCpu': !exists(json, 'MaxCpu') ? undefined : json['MaxCpu'],
+        'maxRam': !exists(json, 'MaxRam') ? undefined : json['MaxRam'],
+        'modelName': !exists(json, 'ModelName') ? undefined : json['ModelName'],
+        'vRam': !exists(json, 'VRam') ? undefined : json['VRam'],
     };
 }
-exports.FlexibleGpuCatalogFromJSONTyped = FlexibleGpuCatalogFromJSONTyped;
-function FlexibleGpuCatalogToJSON(value) {
+export function FlexibleGpuCatalogToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -46,4 +42,3 @@ function FlexibleGpuCatalogToJSON(value) {
         'VRam': value.vRam,
     };
 }
-exports.FlexibleGpuCatalogToJSON = FlexibleGpuCatalogToJSON;

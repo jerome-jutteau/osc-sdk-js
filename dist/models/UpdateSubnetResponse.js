@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var Subnet_1 = require("./Subnet");
-function UpdateSubnetResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { SubnetFromJSON, SubnetToJSON, } from './Subnet';
+export function UpdateSubnetResponseFromJSON(json) {
     return UpdateSubnetResponseFromJSONTyped(json, false);
 }
-exports.UpdateSubnetResponseFromJSON = UpdateSubnetResponseFromJSON;
-function UpdateSubnetResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function UpdateSubnetResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
-        'subnet': !runtime_1.exists(json, 'Subnet') ? undefined : Subnet_1.SubnetFromJSON(json['Subnet']),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
+        'subnet': !exists(json, 'Subnet') ? undefined : SubnetFromJSON(json['Subnet']),
     };
 }
-exports.UpdateSubnetResponseFromJSONTyped = UpdateSubnetResponseFromJSONTyped;
-function UpdateSubnetResponseToJSON(value) {
+export function UpdateSubnetResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function UpdateSubnetResponseToJSON(value) {
         return null;
     }
     return {
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
-        'Subnet': Subnet_1.SubnetToJSON(value.subnet),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
+        'Subnet': SubnetToJSON(value.subnet),
     };
 }
-exports.UpdateSubnetResponseToJSON = UpdateSubnetResponseToJSON;

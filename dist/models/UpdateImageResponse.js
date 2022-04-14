@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var Image_1 = require("./Image");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function UpdateImageResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ImageFromJSON, ImageToJSON, } from './Image';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function UpdateImageResponseFromJSON(json) {
     return UpdateImageResponseFromJSONTyped(json, false);
 }
-exports.UpdateImageResponseFromJSON = UpdateImageResponseFromJSON;
-function UpdateImageResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function UpdateImageResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'image': !runtime_1.exists(json, 'Image') ? undefined : Image_1.ImageFromJSON(json['Image']),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'image': !exists(json, 'Image') ? undefined : ImageFromJSON(json['Image']),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.UpdateImageResponseFromJSONTyped = UpdateImageResponseFromJSONTyped;
-function UpdateImageResponseToJSON(value) {
+export function UpdateImageResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function UpdateImageResponseToJSON(value) {
         return null;
     }
     return {
-        'Image': Image_1.ImageToJSON(value.image),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'Image': ImageToJSON(value.image),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.UpdateImageResponseToJSON = UpdateImageResponseToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function DeleteClientGatewayRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function DeleteClientGatewayRequestFromJSON(json) {
     return DeleteClientGatewayRequestFromJSONTyped(json, false);
 }
-exports.DeleteClientGatewayRequestFromJSON = DeleteClientGatewayRequestFromJSON;
-function DeleteClientGatewayRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function DeleteClientGatewayRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'clientGatewayId': json['ClientGatewayId'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
     };
 }
-exports.DeleteClientGatewayRequestFromJSONTyped = DeleteClientGatewayRequestFromJSONTyped;
-function DeleteClientGatewayRequestToJSON(value) {
+export function DeleteClientGatewayRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function DeleteClientGatewayRequestToJSON(value) {
         'DryRun': value.dryRun,
     };
 }
-exports.DeleteClientGatewayRequestToJSON = DeleteClientGatewayRequestToJSON;

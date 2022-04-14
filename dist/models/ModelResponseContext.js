@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,22 +11,19 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function ModelResponseContextFromJSON(json) {
+import { exists } from '../runtime';
+export function ModelResponseContextFromJSON(json) {
     return ModelResponseContextFromJSONTyped(json, false);
 }
-exports.ModelResponseContextFromJSON = ModelResponseContextFromJSON;
-function ModelResponseContextFromJSONTyped(json, ignoreDiscriminator) {
+export function ModelResponseContextFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'requestId': !runtime_1.exists(json, 'RequestId') ? undefined : json['RequestId'],
+        'requestId': !exists(json, 'RequestId') ? undefined : json['RequestId'],
     };
 }
-exports.ModelResponseContextFromJSONTyped = ModelResponseContextFromJSONTyped;
-function ModelResponseContextToJSON(value) {
+export function ModelResponseContextToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,4 +34,3 @@ function ModelResponseContextToJSON(value) {
         'RequestId': value.requestId,
     };
 }
-exports.ModelResponseContextToJSON = ModelResponseContextToJSON;

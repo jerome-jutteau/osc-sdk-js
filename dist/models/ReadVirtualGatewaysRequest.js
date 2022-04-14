@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var FiltersVirtualGateway_1 = require("./FiltersVirtualGateway");
-function ReadVirtualGatewaysRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { FiltersVirtualGatewayFromJSON, FiltersVirtualGatewayToJSON, } from './FiltersVirtualGateway';
+export function ReadVirtualGatewaysRequestFromJSON(json) {
     return ReadVirtualGatewaysRequestFromJSONTyped(json, false);
 }
-exports.ReadVirtualGatewaysRequestFromJSON = ReadVirtualGatewaysRequestFromJSON;
-function ReadVirtualGatewaysRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadVirtualGatewaysRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'filters': !runtime_1.exists(json, 'Filters') ? undefined : FiltersVirtualGateway_1.FiltersVirtualGatewayFromJSON(json['Filters']),
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'filters': !exists(json, 'Filters') ? undefined : FiltersVirtualGatewayFromJSON(json['Filters']),
     };
 }
-exports.ReadVirtualGatewaysRequestFromJSONTyped = ReadVirtualGatewaysRequestFromJSONTyped;
-function ReadVirtualGatewaysRequestToJSON(value) {
+export function ReadVirtualGatewaysRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,7 +34,6 @@ function ReadVirtualGatewaysRequestToJSON(value) {
     }
     return {
         'DryRun': value.dryRun,
-        'Filters': FiltersVirtualGateway_1.FiltersVirtualGatewayToJSON(value.filters),
+        'Filters': FiltersVirtualGatewayToJSON(value.filters),
     };
 }
-exports.ReadVirtualGatewaysRequestToJSON = ReadVirtualGatewaysRequestToJSON;

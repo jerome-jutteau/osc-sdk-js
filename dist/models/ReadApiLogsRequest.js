@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,28 +11,25 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var FiltersApiLog_1 = require("./FiltersApiLog");
-var With_1 = require("./With");
-function ReadApiLogsRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { FiltersApiLogFromJSON, FiltersApiLogToJSON, } from './FiltersApiLog';
+import { WithFromJSON, WithToJSON, } from './With';
+export function ReadApiLogsRequestFromJSON(json) {
     return ReadApiLogsRequestFromJSONTyped(json, false);
 }
-exports.ReadApiLogsRequestFromJSON = ReadApiLogsRequestFromJSON;
-function ReadApiLogsRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadApiLogsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'filters': !runtime_1.exists(json, 'Filters') ? undefined : FiltersApiLog_1.FiltersApiLogFromJSON(json['Filters']),
-        'nextPageToken': !runtime_1.exists(json, 'NextPageToken') ? undefined : json['NextPageToken'],
-        'resultsPerPage': !runtime_1.exists(json, 'ResultsPerPage') ? undefined : json['ResultsPerPage'],
-        '_with': !runtime_1.exists(json, 'With') ? undefined : With_1.WithFromJSON(json['With']),
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'filters': !exists(json, 'Filters') ? undefined : FiltersApiLogFromJSON(json['Filters']),
+        'nextPageToken': !exists(json, 'NextPageToken') ? undefined : json['NextPageToken'],
+        'resultsPerPage': !exists(json, 'ResultsPerPage') ? undefined : json['ResultsPerPage'],
+        '_with': !exists(json, 'With') ? undefined : WithFromJSON(json['With']),
     };
 }
-exports.ReadApiLogsRequestFromJSONTyped = ReadApiLogsRequestFromJSONTyped;
-function ReadApiLogsRequestToJSON(value) {
+export function ReadApiLogsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,10 +38,9 @@ function ReadApiLogsRequestToJSON(value) {
     }
     return {
         'DryRun': value.dryRun,
-        'Filters': FiltersApiLog_1.FiltersApiLogToJSON(value.filters),
+        'Filters': FiltersApiLogToJSON(value.filters),
         'NextPageToken': value.nextPageToken,
         'ResultsPerPage': value.resultsPerPage,
-        'With': With_1.WithToJSON(value._with),
+        'With': WithToJSON(value._with),
     };
 }
-exports.ReadApiLogsRequestToJSON = ReadApiLogsRequestToJSON;

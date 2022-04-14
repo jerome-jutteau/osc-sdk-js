@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var NatService_1 = require("./NatService");
-function ReadNatServicesResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { NatServiceFromJSON, NatServiceToJSON, } from './NatService';
+export function ReadNatServicesResponseFromJSON(json) {
     return ReadNatServicesResponseFromJSONTyped(json, false);
 }
-exports.ReadNatServicesResponseFromJSON = ReadNatServicesResponseFromJSON;
-function ReadNatServicesResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadNatServicesResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'natServices': !runtime_1.exists(json, 'NatServices') ? undefined : (json['NatServices'].map(NatService_1.NatServiceFromJSON)),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'natServices': !exists(json, 'NatServices') ? undefined : (json['NatServices'].map(NatServiceFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.ReadNatServicesResponseFromJSONTyped = ReadNatServicesResponseFromJSONTyped;
-function ReadNatServicesResponseToJSON(value) {
+export function ReadNatServicesResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadNatServicesResponseToJSON(value) {
         return null;
     }
     return {
-        'NatServices': value.natServices === undefined ? undefined : (value.natServices.map(NatService_1.NatServiceToJSON)),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'NatServices': value.natServices === undefined ? undefined : (value.natServices.map(NatServiceToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.ReadNatServicesResponseToJSON = ReadNatServicesResponseToJSON;

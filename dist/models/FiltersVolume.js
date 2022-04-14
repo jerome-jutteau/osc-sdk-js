@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,36 +11,33 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersVolumeFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersVolumeFromJSON(json) {
     return FiltersVolumeFromJSONTyped(json, false);
 }
-exports.FiltersVolumeFromJSON = FiltersVolumeFromJSON;
-function FiltersVolumeFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersVolumeFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'creationDates': !runtime_1.exists(json, 'CreationDates') ? undefined : json['CreationDates'],
-        'linkVolumeDeleteOnVmDeletion': !runtime_1.exists(json, 'LinkVolumeDeleteOnVmDeletion') ? undefined : json['LinkVolumeDeleteOnVmDeletion'],
-        'linkVolumeDeviceNames': !runtime_1.exists(json, 'LinkVolumeDeviceNames') ? undefined : json['LinkVolumeDeviceNames'],
-        'linkVolumeLinkDates': !runtime_1.exists(json, 'LinkVolumeLinkDates') ? undefined : json['LinkVolumeLinkDates'],
-        'linkVolumeLinkStates': !runtime_1.exists(json, 'LinkVolumeLinkStates') ? undefined : json['LinkVolumeLinkStates'],
-        'linkVolumeVmIds': !runtime_1.exists(json, 'LinkVolumeVmIds') ? undefined : json['LinkVolumeVmIds'],
-        'snapshotIds': !runtime_1.exists(json, 'SnapshotIds') ? undefined : json['SnapshotIds'],
-        'subregionNames': !runtime_1.exists(json, 'SubregionNames') ? undefined : json['SubregionNames'],
-        'tagKeys': !runtime_1.exists(json, 'TagKeys') ? undefined : json['TagKeys'],
-        'tagValues': !runtime_1.exists(json, 'TagValues') ? undefined : json['TagValues'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : json['Tags'],
-        'volumeIds': !runtime_1.exists(json, 'VolumeIds') ? undefined : json['VolumeIds'],
-        'volumeSizes': !runtime_1.exists(json, 'VolumeSizes') ? undefined : json['VolumeSizes'],
-        'volumeStates': !runtime_1.exists(json, 'VolumeStates') ? undefined : json['VolumeStates'],
-        'volumeTypes': !runtime_1.exists(json, 'VolumeTypes') ? undefined : json['VolumeTypes'],
+        'creationDates': !exists(json, 'CreationDates') ? undefined : json['CreationDates'],
+        'linkVolumeDeleteOnVmDeletion': !exists(json, 'LinkVolumeDeleteOnVmDeletion') ? undefined : json['LinkVolumeDeleteOnVmDeletion'],
+        'linkVolumeDeviceNames': !exists(json, 'LinkVolumeDeviceNames') ? undefined : json['LinkVolumeDeviceNames'],
+        'linkVolumeLinkDates': !exists(json, 'LinkVolumeLinkDates') ? undefined : json['LinkVolumeLinkDates'],
+        'linkVolumeLinkStates': !exists(json, 'LinkVolumeLinkStates') ? undefined : json['LinkVolumeLinkStates'],
+        'linkVolumeVmIds': !exists(json, 'LinkVolumeVmIds') ? undefined : json['LinkVolumeVmIds'],
+        'snapshotIds': !exists(json, 'SnapshotIds') ? undefined : json['SnapshotIds'],
+        'subregionNames': !exists(json, 'SubregionNames') ? undefined : json['SubregionNames'],
+        'tagKeys': !exists(json, 'TagKeys') ? undefined : json['TagKeys'],
+        'tagValues': !exists(json, 'TagValues') ? undefined : json['TagValues'],
+        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
+        'volumeIds': !exists(json, 'VolumeIds') ? undefined : json['VolumeIds'],
+        'volumeSizes': !exists(json, 'VolumeSizes') ? undefined : json['VolumeSizes'],
+        'volumeStates': !exists(json, 'VolumeStates') ? undefined : json['VolumeStates'],
+        'volumeTypes': !exists(json, 'VolumeTypes') ? undefined : json['VolumeTypes'],
     };
 }
-exports.FiltersVolumeFromJSONTyped = FiltersVolumeFromJSONTyped;
-function FiltersVolumeToJSON(value) {
+export function FiltersVolumeToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -66,4 +62,3 @@ function FiltersVolumeToJSON(value) {
         'VolumeTypes': value.volumeTypes,
     };
 }
-exports.FiltersVolumeToJSON = FiltersVolumeToJSON;

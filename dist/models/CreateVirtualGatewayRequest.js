@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function CreateVirtualGatewayRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function CreateVirtualGatewayRequestFromJSON(json) {
     return CreateVirtualGatewayRequestFromJSONTyped(json, false);
 }
-exports.CreateVirtualGatewayRequestFromJSON = CreateVirtualGatewayRequestFromJSON;
-function CreateVirtualGatewayRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateVirtualGatewayRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'connectionType': json['ConnectionType'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
     };
 }
-exports.CreateVirtualGatewayRequestFromJSONTyped = CreateVirtualGatewayRequestFromJSONTyped;
-function CreateVirtualGatewayRequestToJSON(value) {
+export function CreateVirtualGatewayRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function CreateVirtualGatewayRequestToJSON(value) {
         'DryRun': value.dryRun,
     };
 }
-exports.CreateVirtualGatewayRequestToJSON = CreateVirtualGatewayRequestToJSON;

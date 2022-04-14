@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,45 +11,42 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var AccessLog_1 = require("./AccessLog");
-var ApplicationStickyCookiePolicy_1 = require("./ApplicationStickyCookiePolicy");
-var HealthCheck_1 = require("./HealthCheck");
-var Listener_1 = require("./Listener");
-var LoadBalancerStickyCookiePolicy_1 = require("./LoadBalancerStickyCookiePolicy");
-var ResourceTag_1 = require("./ResourceTag");
-var SourceSecurityGroup_1 = require("./SourceSecurityGroup");
-function LoadBalancerFromJSON(json) {
+import { exists } from '../runtime';
+import { AccessLogFromJSON, AccessLogToJSON, } from './AccessLog';
+import { ApplicationStickyCookiePolicyFromJSON, ApplicationStickyCookiePolicyToJSON, } from './ApplicationStickyCookiePolicy';
+import { HealthCheckFromJSON, HealthCheckToJSON, } from './HealthCheck';
+import { ListenerFromJSON, ListenerToJSON, } from './Listener';
+import { LoadBalancerStickyCookiePolicyFromJSON, LoadBalancerStickyCookiePolicyToJSON, } from './LoadBalancerStickyCookiePolicy';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
+import { SourceSecurityGroupFromJSON, SourceSecurityGroupToJSON, } from './SourceSecurityGroup';
+export function LoadBalancerFromJSON(json) {
     return LoadBalancerFromJSONTyped(json, false);
 }
-exports.LoadBalancerFromJSON = LoadBalancerFromJSON;
-function LoadBalancerFromJSONTyped(json, ignoreDiscriminator) {
+export function LoadBalancerFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'accessLog': !runtime_1.exists(json, 'AccessLog') ? undefined : AccessLog_1.AccessLogFromJSON(json['AccessLog']),
-        'applicationStickyCookiePolicies': !runtime_1.exists(json, 'ApplicationStickyCookiePolicies') ? undefined : (json['ApplicationStickyCookiePolicies'].map(ApplicationStickyCookiePolicy_1.ApplicationStickyCookiePolicyFromJSON)),
-        'backendIps': !runtime_1.exists(json, 'BackendIps') ? undefined : json['BackendIps'],
-        'backendVmIds': !runtime_1.exists(json, 'BackendVmIds') ? undefined : json['BackendVmIds'],
-        'dnsName': !runtime_1.exists(json, 'DnsName') ? undefined : json['DnsName'],
-        'healthCheck': !runtime_1.exists(json, 'HealthCheck') ? undefined : HealthCheck_1.HealthCheckFromJSON(json['HealthCheck']),
-        'listeners': !runtime_1.exists(json, 'Listeners') ? undefined : (json['Listeners'].map(Listener_1.ListenerFromJSON)),
-        'loadBalancerName': !runtime_1.exists(json, 'LoadBalancerName') ? undefined : json['LoadBalancerName'],
-        'loadBalancerStickyCookiePolicies': !runtime_1.exists(json, 'LoadBalancerStickyCookiePolicies') ? undefined : (json['LoadBalancerStickyCookiePolicies'].map(LoadBalancerStickyCookiePolicy_1.LoadBalancerStickyCookiePolicyFromJSON)),
-        'loadBalancerType': !runtime_1.exists(json, 'LoadBalancerType') ? undefined : json['LoadBalancerType'],
-        'netId': !runtime_1.exists(json, 'NetId') ? undefined : json['NetId'],
-        'publicIp': !runtime_1.exists(json, 'PublicIp') ? undefined : json['PublicIp'],
-        'securityGroups': !runtime_1.exists(json, 'SecurityGroups') ? undefined : json['SecurityGroups'],
-        'sourceSecurityGroup': !runtime_1.exists(json, 'SourceSecurityGroup') ? undefined : SourceSecurityGroup_1.SourceSecurityGroupFromJSON(json['SourceSecurityGroup']),
-        'subnets': !runtime_1.exists(json, 'Subnets') ? undefined : json['Subnets'],
-        'subregionNames': !runtime_1.exists(json, 'SubregionNames') ? undefined : json['SubregionNames'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
+        'accessLog': !exists(json, 'AccessLog') ? undefined : AccessLogFromJSON(json['AccessLog']),
+        'applicationStickyCookiePolicies': !exists(json, 'ApplicationStickyCookiePolicies') ? undefined : (json['ApplicationStickyCookiePolicies'].map(ApplicationStickyCookiePolicyFromJSON)),
+        'backendIps': !exists(json, 'BackendIps') ? undefined : json['BackendIps'],
+        'backendVmIds': !exists(json, 'BackendVmIds') ? undefined : json['BackendVmIds'],
+        'dnsName': !exists(json, 'DnsName') ? undefined : json['DnsName'],
+        'healthCheck': !exists(json, 'HealthCheck') ? undefined : HealthCheckFromJSON(json['HealthCheck']),
+        'listeners': !exists(json, 'Listeners') ? undefined : (json['Listeners'].map(ListenerFromJSON)),
+        'loadBalancerName': !exists(json, 'LoadBalancerName') ? undefined : json['LoadBalancerName'],
+        'loadBalancerStickyCookiePolicies': !exists(json, 'LoadBalancerStickyCookiePolicies') ? undefined : (json['LoadBalancerStickyCookiePolicies'].map(LoadBalancerStickyCookiePolicyFromJSON)),
+        'loadBalancerType': !exists(json, 'LoadBalancerType') ? undefined : json['LoadBalancerType'],
+        'netId': !exists(json, 'NetId') ? undefined : json['NetId'],
+        'publicIp': !exists(json, 'PublicIp') ? undefined : json['PublicIp'],
+        'securityGroups': !exists(json, 'SecurityGroups') ? undefined : json['SecurityGroups'],
+        'sourceSecurityGroup': !exists(json, 'SourceSecurityGroup') ? undefined : SourceSecurityGroupFromJSON(json['SourceSecurityGroup']),
+        'subnets': !exists(json, 'Subnets') ? undefined : json['Subnets'],
+        'subregionNames': !exists(json, 'SubregionNames') ? undefined : json['SubregionNames'],
+        'tags': !exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTagFromJSON)),
     };
 }
-exports.LoadBalancerFromJSONTyped = LoadBalancerFromJSONTyped;
-function LoadBalancerToJSON(value) {
+export function LoadBalancerToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -58,23 +54,22 @@ function LoadBalancerToJSON(value) {
         return null;
     }
     return {
-        'AccessLog': AccessLog_1.AccessLogToJSON(value.accessLog),
-        'ApplicationStickyCookiePolicies': value.applicationStickyCookiePolicies === undefined ? undefined : (value.applicationStickyCookiePolicies.map(ApplicationStickyCookiePolicy_1.ApplicationStickyCookiePolicyToJSON)),
+        'AccessLog': AccessLogToJSON(value.accessLog),
+        'ApplicationStickyCookiePolicies': value.applicationStickyCookiePolicies === undefined ? undefined : (value.applicationStickyCookiePolicies.map(ApplicationStickyCookiePolicyToJSON)),
         'BackendIps': value.backendIps,
         'BackendVmIds': value.backendVmIds,
         'DnsName': value.dnsName,
-        'HealthCheck': HealthCheck_1.HealthCheckToJSON(value.healthCheck),
-        'Listeners': value.listeners === undefined ? undefined : (value.listeners.map(Listener_1.ListenerToJSON)),
+        'HealthCheck': HealthCheckToJSON(value.healthCheck),
+        'Listeners': value.listeners === undefined ? undefined : (value.listeners.map(ListenerToJSON)),
         'LoadBalancerName': value.loadBalancerName,
-        'LoadBalancerStickyCookiePolicies': value.loadBalancerStickyCookiePolicies === undefined ? undefined : (value.loadBalancerStickyCookiePolicies.map(LoadBalancerStickyCookiePolicy_1.LoadBalancerStickyCookiePolicyToJSON)),
+        'LoadBalancerStickyCookiePolicies': value.loadBalancerStickyCookiePolicies === undefined ? undefined : (value.loadBalancerStickyCookiePolicies.map(LoadBalancerStickyCookiePolicyToJSON)),
         'LoadBalancerType': value.loadBalancerType,
         'NetId': value.netId,
         'PublicIp': value.publicIp,
         'SecurityGroups': value.securityGroups,
-        'SourceSecurityGroup': SourceSecurityGroup_1.SourceSecurityGroupToJSON(value.sourceSecurityGroup),
+        'SourceSecurityGroup': SourceSecurityGroupToJSON(value.sourceSecurityGroup),
         'Subnets': value.subnets,
         'SubregionNames': value.subregionNames,
-        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
+        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTagToJSON)),
     };
 }
-exports.LoadBalancerToJSON = LoadBalancerToJSON;

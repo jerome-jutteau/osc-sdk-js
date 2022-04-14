@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function NetPeeringStateFromJSON(json) {
+import { exists } from '../runtime';
+export function NetPeeringStateFromJSON(json) {
     return NetPeeringStateFromJSONTyped(json, false);
 }
-exports.NetPeeringStateFromJSON = NetPeeringStateFromJSON;
-function NetPeeringStateFromJSONTyped(json, ignoreDiscriminator) {
+export function NetPeeringStateFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'message': !runtime_1.exists(json, 'Message') ? undefined : json['Message'],
-        'name': !runtime_1.exists(json, 'Name') ? undefined : json['Name'],
+        'message': !exists(json, 'Message') ? undefined : json['Message'],
+        'name': !exists(json, 'Name') ? undefined : json['Name'],
     };
 }
-exports.NetPeeringStateFromJSONTyped = NetPeeringStateFromJSONTyped;
-function NetPeeringStateToJSON(value) {
+export function NetPeeringStateToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function NetPeeringStateToJSON(value) {
         'Name': value.name,
     };
 }
-exports.NetPeeringStateToJSON = NetPeeringStateToJSON;

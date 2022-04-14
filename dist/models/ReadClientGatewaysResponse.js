@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ClientGateway_1 = require("./ClientGateway");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function ReadClientGatewaysResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ClientGatewayFromJSON, ClientGatewayToJSON, } from './ClientGateway';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function ReadClientGatewaysResponseFromJSON(json) {
     return ReadClientGatewaysResponseFromJSONTyped(json, false);
 }
-exports.ReadClientGatewaysResponseFromJSON = ReadClientGatewaysResponseFromJSON;
-function ReadClientGatewaysResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadClientGatewaysResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'clientGateways': !runtime_1.exists(json, 'ClientGateways') ? undefined : (json['ClientGateways'].map(ClientGateway_1.ClientGatewayFromJSON)),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'clientGateways': !exists(json, 'ClientGateways') ? undefined : (json['ClientGateways'].map(ClientGatewayFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.ReadClientGatewaysResponseFromJSONTyped = ReadClientGatewaysResponseFromJSONTyped;
-function ReadClientGatewaysResponseToJSON(value) {
+export function ReadClientGatewaysResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadClientGatewaysResponseToJSON(value) {
         return null;
     }
     return {
-        'ClientGateways': value.clientGateways === undefined ? undefined : (value.clientGateways.map(ClientGateway_1.ClientGatewayToJSON)),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'ClientGateways': value.clientGateways === undefined ? undefined : (value.clientGateways.map(ClientGatewayToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.ReadClientGatewaysResponseToJSON = ReadClientGatewaysResponseToJSON;

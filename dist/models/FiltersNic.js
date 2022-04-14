@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,49 +11,46 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersNicFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersNicFromJSON(json) {
     return FiltersNicFromJSONTyped(json, false);
 }
-exports.FiltersNicFromJSON = FiltersNicFromJSON;
-function FiltersNicFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersNicFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'descriptions': !runtime_1.exists(json, 'Descriptions') ? undefined : json['Descriptions'],
-        'isSourceDestCheck': !runtime_1.exists(json, 'IsSourceDestCheck') ? undefined : json['IsSourceDestCheck'],
-        'linkNicDeleteOnVmDeletion': !runtime_1.exists(json, 'LinkNicDeleteOnVmDeletion') ? undefined : json['LinkNicDeleteOnVmDeletion'],
-        'linkNicDeviceNumbers': !runtime_1.exists(json, 'LinkNicDeviceNumbers') ? undefined : json['LinkNicDeviceNumbers'],
-        'linkNicLinkNicIds': !runtime_1.exists(json, 'LinkNicLinkNicIds') ? undefined : json['LinkNicLinkNicIds'],
-        'linkNicStates': !runtime_1.exists(json, 'LinkNicStates') ? undefined : json['LinkNicStates'],
-        'linkNicVmAccountIds': !runtime_1.exists(json, 'LinkNicVmAccountIds') ? undefined : json['LinkNicVmAccountIds'],
-        'linkNicVmIds': !runtime_1.exists(json, 'LinkNicVmIds') ? undefined : json['LinkNicVmIds'],
-        'linkPublicIpAccountIds': !runtime_1.exists(json, 'LinkPublicIpAccountIds') ? undefined : json['LinkPublicIpAccountIds'],
-        'linkPublicIpLinkPublicIpIds': !runtime_1.exists(json, 'LinkPublicIpLinkPublicIpIds') ? undefined : json['LinkPublicIpLinkPublicIpIds'],
-        'linkPublicIpPublicIpIds': !runtime_1.exists(json, 'LinkPublicIpPublicIpIds') ? undefined : json['LinkPublicIpPublicIpIds'],
-        'linkPublicIpPublicIps': !runtime_1.exists(json, 'LinkPublicIpPublicIps') ? undefined : json['LinkPublicIpPublicIps'],
-        'macAddresses': !runtime_1.exists(json, 'MacAddresses') ? undefined : json['MacAddresses'],
-        'netIds': !runtime_1.exists(json, 'NetIds') ? undefined : json['NetIds'],
-        'nicIds': !runtime_1.exists(json, 'NicIds') ? undefined : json['NicIds'],
-        'privateDnsNames': !runtime_1.exists(json, 'PrivateDnsNames') ? undefined : json['PrivateDnsNames'],
-        'privateIpsLinkPublicIpAccountIds': !runtime_1.exists(json, 'PrivateIpsLinkPublicIpAccountIds') ? undefined : json['PrivateIpsLinkPublicIpAccountIds'],
-        'privateIpsLinkPublicIpPublicIps': !runtime_1.exists(json, 'PrivateIpsLinkPublicIpPublicIps') ? undefined : json['PrivateIpsLinkPublicIpPublicIps'],
-        'privateIpsPrimaryIp': !runtime_1.exists(json, 'PrivateIpsPrimaryIp') ? undefined : json['PrivateIpsPrimaryIp'],
-        'privateIpsPrivateIps': !runtime_1.exists(json, 'PrivateIpsPrivateIps') ? undefined : json['PrivateIpsPrivateIps'],
-        'securityGroupIds': !runtime_1.exists(json, 'SecurityGroupIds') ? undefined : json['SecurityGroupIds'],
-        'securityGroupNames': !runtime_1.exists(json, 'SecurityGroupNames') ? undefined : json['SecurityGroupNames'],
-        'states': !runtime_1.exists(json, 'States') ? undefined : json['States'],
-        'subnetIds': !runtime_1.exists(json, 'SubnetIds') ? undefined : json['SubnetIds'],
-        'subregionNames': !runtime_1.exists(json, 'SubregionNames') ? undefined : json['SubregionNames'],
-        'tagKeys': !runtime_1.exists(json, 'TagKeys') ? undefined : json['TagKeys'],
-        'tagValues': !runtime_1.exists(json, 'TagValues') ? undefined : json['TagValues'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : json['Tags'],
+        'descriptions': !exists(json, 'Descriptions') ? undefined : json['Descriptions'],
+        'isSourceDestCheck': !exists(json, 'IsSourceDestCheck') ? undefined : json['IsSourceDestCheck'],
+        'linkNicDeleteOnVmDeletion': !exists(json, 'LinkNicDeleteOnVmDeletion') ? undefined : json['LinkNicDeleteOnVmDeletion'],
+        'linkNicDeviceNumbers': !exists(json, 'LinkNicDeviceNumbers') ? undefined : json['LinkNicDeviceNumbers'],
+        'linkNicLinkNicIds': !exists(json, 'LinkNicLinkNicIds') ? undefined : json['LinkNicLinkNicIds'],
+        'linkNicStates': !exists(json, 'LinkNicStates') ? undefined : json['LinkNicStates'],
+        'linkNicVmAccountIds': !exists(json, 'LinkNicVmAccountIds') ? undefined : json['LinkNicVmAccountIds'],
+        'linkNicVmIds': !exists(json, 'LinkNicVmIds') ? undefined : json['LinkNicVmIds'],
+        'linkPublicIpAccountIds': !exists(json, 'LinkPublicIpAccountIds') ? undefined : json['LinkPublicIpAccountIds'],
+        'linkPublicIpLinkPublicIpIds': !exists(json, 'LinkPublicIpLinkPublicIpIds') ? undefined : json['LinkPublicIpLinkPublicIpIds'],
+        'linkPublicIpPublicIpIds': !exists(json, 'LinkPublicIpPublicIpIds') ? undefined : json['LinkPublicIpPublicIpIds'],
+        'linkPublicIpPublicIps': !exists(json, 'LinkPublicIpPublicIps') ? undefined : json['LinkPublicIpPublicIps'],
+        'macAddresses': !exists(json, 'MacAddresses') ? undefined : json['MacAddresses'],
+        'netIds': !exists(json, 'NetIds') ? undefined : json['NetIds'],
+        'nicIds': !exists(json, 'NicIds') ? undefined : json['NicIds'],
+        'privateDnsNames': !exists(json, 'PrivateDnsNames') ? undefined : json['PrivateDnsNames'],
+        'privateIpsLinkPublicIpAccountIds': !exists(json, 'PrivateIpsLinkPublicIpAccountIds') ? undefined : json['PrivateIpsLinkPublicIpAccountIds'],
+        'privateIpsLinkPublicIpPublicIps': !exists(json, 'PrivateIpsLinkPublicIpPublicIps') ? undefined : json['PrivateIpsLinkPublicIpPublicIps'],
+        'privateIpsPrimaryIp': !exists(json, 'PrivateIpsPrimaryIp') ? undefined : json['PrivateIpsPrimaryIp'],
+        'privateIpsPrivateIps': !exists(json, 'PrivateIpsPrivateIps') ? undefined : json['PrivateIpsPrivateIps'],
+        'securityGroupIds': !exists(json, 'SecurityGroupIds') ? undefined : json['SecurityGroupIds'],
+        'securityGroupNames': !exists(json, 'SecurityGroupNames') ? undefined : json['SecurityGroupNames'],
+        'states': !exists(json, 'States') ? undefined : json['States'],
+        'subnetIds': !exists(json, 'SubnetIds') ? undefined : json['SubnetIds'],
+        'subregionNames': !exists(json, 'SubregionNames') ? undefined : json['SubregionNames'],
+        'tagKeys': !exists(json, 'TagKeys') ? undefined : json['TagKeys'],
+        'tagValues': !exists(json, 'TagValues') ? undefined : json['TagValues'],
+        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
     };
 }
-exports.FiltersNicFromJSONTyped = FiltersNicFromJSONTyped;
-function FiltersNicToJSON(value) {
+export function FiltersNicToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -92,4 +88,3 @@ function FiltersNicToJSON(value) {
         'Tags': value.tags,
     };
 }
-exports.FiltersNicToJSON = FiltersNicToJSON;

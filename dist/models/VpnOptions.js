@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,26 +11,23 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var Phase1Options_1 = require("./Phase1Options");
-var Phase2Options_1 = require("./Phase2Options");
-function VpnOptionsFromJSON(json) {
+import { exists } from '../runtime';
+import { Phase1OptionsFromJSON, Phase1OptionsToJSON, } from './Phase1Options';
+import { Phase2OptionsFromJSON, Phase2OptionsToJSON, } from './Phase2Options';
+export function VpnOptionsFromJSON(json) {
     return VpnOptionsFromJSONTyped(json, false);
 }
-exports.VpnOptionsFromJSON = VpnOptionsFromJSON;
-function VpnOptionsFromJSONTyped(json, ignoreDiscriminator) {
+export function VpnOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'phase1Options': !runtime_1.exists(json, 'Phase1Options') ? undefined : Phase1Options_1.Phase1OptionsFromJSON(json['Phase1Options']),
-        'phase2Options': !runtime_1.exists(json, 'Phase2Options') ? undefined : Phase2Options_1.Phase2OptionsFromJSON(json['Phase2Options']),
-        'tunnelInsideIpRange': !runtime_1.exists(json, 'TunnelInsideIpRange') ? undefined : json['TunnelInsideIpRange'],
+        'phase1Options': !exists(json, 'Phase1Options') ? undefined : Phase1OptionsFromJSON(json['Phase1Options']),
+        'phase2Options': !exists(json, 'Phase2Options') ? undefined : Phase2OptionsFromJSON(json['Phase2Options']),
+        'tunnelInsideIpRange': !exists(json, 'TunnelInsideIpRange') ? undefined : json['TunnelInsideIpRange'],
     };
 }
-exports.VpnOptionsFromJSONTyped = VpnOptionsFromJSONTyped;
-function VpnOptionsToJSON(value) {
+export function VpnOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -39,9 +35,8 @@ function VpnOptionsToJSON(value) {
         return null;
     }
     return {
-        'Phase1Options': Phase1Options_1.Phase1OptionsToJSON(value.phase1Options),
-        'Phase2Options': Phase2Options_1.Phase2OptionsToJSON(value.phase2Options),
+        'Phase1Options': Phase1OptionsToJSON(value.phase1Options),
+        'Phase2Options': Phase2OptionsToJSON(value.phase2Options),
         'TunnelInsideIpRange': value.tunnelInsideIpRange,
     };
 }
-exports.VpnOptionsToJSON = VpnOptionsToJSON;

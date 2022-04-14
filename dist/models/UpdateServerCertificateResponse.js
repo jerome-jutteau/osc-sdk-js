@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var ServerCertificate_1 = require("./ServerCertificate");
-function UpdateServerCertificateResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { ServerCertificateFromJSON, ServerCertificateToJSON, } from './ServerCertificate';
+export function UpdateServerCertificateResponseFromJSON(json) {
     return UpdateServerCertificateResponseFromJSONTyped(json, false);
 }
-exports.UpdateServerCertificateResponseFromJSON = UpdateServerCertificateResponseFromJSON;
-function UpdateServerCertificateResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function UpdateServerCertificateResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
-        'serverCertificate': !runtime_1.exists(json, 'ServerCertificate') ? undefined : ServerCertificate_1.ServerCertificateFromJSON(json['ServerCertificate']),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
+        'serverCertificate': !exists(json, 'ServerCertificate') ? undefined : ServerCertificateFromJSON(json['ServerCertificate']),
     };
 }
-exports.UpdateServerCertificateResponseFromJSONTyped = UpdateServerCertificateResponseFromJSONTyped;
-function UpdateServerCertificateResponseToJSON(value) {
+export function UpdateServerCertificateResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function UpdateServerCertificateResponseToJSON(value) {
         return null;
     }
     return {
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
-        'ServerCertificate': ServerCertificate_1.ServerCertificateToJSON(value.serverCertificate),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
+        'ServerCertificate': ServerCertificateToJSON(value.serverCertificate),
     };
 }
-exports.UpdateServerCertificateResponseToJSON = UpdateServerCertificateResponseToJSON;

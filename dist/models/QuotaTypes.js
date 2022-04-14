@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var Quota_1 = require("./Quota");
-function QuotaTypesFromJSON(json) {
+import { exists } from '../runtime';
+import { QuotaFromJSON, QuotaToJSON, } from './Quota';
+export function QuotaTypesFromJSON(json) {
     return QuotaTypesFromJSONTyped(json, false);
 }
-exports.QuotaTypesFromJSON = QuotaTypesFromJSON;
-function QuotaTypesFromJSONTyped(json, ignoreDiscriminator) {
+export function QuotaTypesFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'quotaType': !runtime_1.exists(json, 'QuotaType') ? undefined : json['QuotaType'],
-        'quotas': !runtime_1.exists(json, 'Quotas') ? undefined : (json['Quotas'].map(Quota_1.QuotaFromJSON)),
+        'quotaType': !exists(json, 'QuotaType') ? undefined : json['QuotaType'],
+        'quotas': !exists(json, 'Quotas') ? undefined : (json['Quotas'].map(QuotaFromJSON)),
     };
 }
-exports.QuotaTypesFromJSONTyped = QuotaTypesFromJSONTyped;
-function QuotaTypesToJSON(value) {
+export function QuotaTypesToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,7 +34,6 @@ function QuotaTypesToJSON(value) {
     }
     return {
         'QuotaType': value.quotaType,
-        'Quotas': value.quotas === undefined ? undefined : (value.quotas.map(Quota_1.QuotaToJSON)),
+        'Quotas': value.quotas === undefined ? undefined : (value.quotas.map(QuotaToJSON)),
     };
 }
-exports.QuotaTypesToJSON = QuotaTypesToJSON;

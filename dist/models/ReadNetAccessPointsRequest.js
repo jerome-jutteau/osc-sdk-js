@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var FiltersNetAccessPoint_1 = require("./FiltersNetAccessPoint");
-function ReadNetAccessPointsRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { FiltersNetAccessPointFromJSON, FiltersNetAccessPointToJSON, } from './FiltersNetAccessPoint';
+export function ReadNetAccessPointsRequestFromJSON(json) {
     return ReadNetAccessPointsRequestFromJSONTyped(json, false);
 }
-exports.ReadNetAccessPointsRequestFromJSON = ReadNetAccessPointsRequestFromJSON;
-function ReadNetAccessPointsRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadNetAccessPointsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'filters': !runtime_1.exists(json, 'Filters') ? undefined : FiltersNetAccessPoint_1.FiltersNetAccessPointFromJSON(json['Filters']),
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'filters': !exists(json, 'Filters') ? undefined : FiltersNetAccessPointFromJSON(json['Filters']),
     };
 }
-exports.ReadNetAccessPointsRequestFromJSONTyped = ReadNetAccessPointsRequestFromJSONTyped;
-function ReadNetAccessPointsRequestToJSON(value) {
+export function ReadNetAccessPointsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,7 +34,6 @@ function ReadNetAccessPointsRequestToJSON(value) {
     }
     return {
         'DryRun': value.dryRun,
-        'Filters': FiltersNetAccessPoint_1.FiltersNetAccessPointToJSON(value.filters),
+        'Filters': FiltersNetAccessPointToJSON(value.filters),
     };
 }
-exports.ReadNetAccessPointsRequestToJSON = ReadNetAccessPointsRequestToJSON;

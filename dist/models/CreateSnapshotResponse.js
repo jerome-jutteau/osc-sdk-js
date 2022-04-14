@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var Snapshot_1 = require("./Snapshot");
-function CreateSnapshotResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { SnapshotFromJSON, SnapshotToJSON, } from './Snapshot';
+export function CreateSnapshotResponseFromJSON(json) {
     return CreateSnapshotResponseFromJSONTyped(json, false);
 }
-exports.CreateSnapshotResponseFromJSON = CreateSnapshotResponseFromJSON;
-function CreateSnapshotResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateSnapshotResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
-        'snapshot': !runtime_1.exists(json, 'Snapshot') ? undefined : Snapshot_1.SnapshotFromJSON(json['Snapshot']),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
+        'snapshot': !exists(json, 'Snapshot') ? undefined : SnapshotFromJSON(json['Snapshot']),
     };
 }
-exports.CreateSnapshotResponseFromJSONTyped = CreateSnapshotResponseFromJSONTyped;
-function CreateSnapshotResponseToJSON(value) {
+export function CreateSnapshotResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function CreateSnapshotResponseToJSON(value) {
         return null;
     }
     return {
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
-        'Snapshot': Snapshot_1.SnapshotToJSON(value.snapshot),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
+        'Snapshot': SnapshotToJSON(value.snapshot),
     };
 }
-exports.CreateSnapshotResponseToJSON = CreateSnapshotResponseToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersCaFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersCaFromJSON(json) {
     return FiltersCaFromJSONTyped(json, false);
 }
-exports.FiltersCaFromJSON = FiltersCaFromJSON;
-function FiltersCaFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersCaFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'caFingerprints': !runtime_1.exists(json, 'CaFingerprints') ? undefined : json['CaFingerprints'],
-        'caIds': !runtime_1.exists(json, 'CaIds') ? undefined : json['CaIds'],
-        'descriptions': !runtime_1.exists(json, 'Descriptions') ? undefined : json['Descriptions'],
+        'caFingerprints': !exists(json, 'CaFingerprints') ? undefined : json['CaFingerprints'],
+        'caIds': !exists(json, 'CaIds') ? undefined : json['CaIds'],
+        'descriptions': !exists(json, 'Descriptions') ? undefined : json['Descriptions'],
     };
 }
-exports.FiltersCaFromJSONTyped = FiltersCaFromJSONTyped;
-function FiltersCaToJSON(value) {
+export function FiltersCaToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,4 +38,3 @@ function FiltersCaToJSON(value) {
         'Descriptions': value.descriptions,
     };
 }
-exports.FiltersCaToJSON = FiltersCaToJSON;

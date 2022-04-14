@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersTagFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersTagFromJSON(json) {
     return FiltersTagFromJSONTyped(json, false);
 }
-exports.FiltersTagFromJSON = FiltersTagFromJSON;
-function FiltersTagFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersTagFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'keys': !runtime_1.exists(json, 'Keys') ? undefined : json['Keys'],
-        'resourceIds': !runtime_1.exists(json, 'ResourceIds') ? undefined : json['ResourceIds'],
-        'resourceTypes': !runtime_1.exists(json, 'ResourceTypes') ? undefined : json['ResourceTypes'],
-        'values': !runtime_1.exists(json, 'Values') ? undefined : json['Values'],
+        'keys': !exists(json, 'Keys') ? undefined : json['Keys'],
+        'resourceIds': !exists(json, 'ResourceIds') ? undefined : json['ResourceIds'],
+        'resourceTypes': !exists(json, 'ResourceTypes') ? undefined : json['ResourceTypes'],
+        'values': !exists(json, 'Values') ? undefined : json['Values'],
     };
 }
-exports.FiltersTagFromJSONTyped = FiltersTagFromJSONTyped;
-function FiltersTagToJSON(value) {
+export function FiltersTagToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,4 +40,3 @@ function FiltersTagToJSON(value) {
         'Values': value.values,
     };
 }
-exports.FiltersTagToJSON = FiltersTagToJSON;

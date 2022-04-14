@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,34 +11,31 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ResourceTag_1 = require("./ResourceTag");
-var RouteLight_1 = require("./RouteLight");
-var VpnOptions_1 = require("./VpnOptions");
-function VpnConnectionFromJSON(json) {
+import { exists } from '../runtime';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
+import { RouteLightFromJSON, RouteLightToJSON, } from './RouteLight';
+import { VpnOptionsFromJSON, VpnOptionsToJSON, } from './VpnOptions';
+export function VpnConnectionFromJSON(json) {
     return VpnConnectionFromJSONTyped(json, false);
 }
-exports.VpnConnectionFromJSON = VpnConnectionFromJSON;
-function VpnConnectionFromJSONTyped(json, ignoreDiscriminator) {
+export function VpnConnectionFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'clientGatewayConfiguration': !runtime_1.exists(json, 'ClientGatewayConfiguration') ? undefined : json['ClientGatewayConfiguration'],
-        'clientGatewayId': !runtime_1.exists(json, 'ClientGatewayId') ? undefined : json['ClientGatewayId'],
-        'connectionType': !runtime_1.exists(json, 'ConnectionType') ? undefined : json['ConnectionType'],
-        'routes': !runtime_1.exists(json, 'Routes') ? undefined : (json['Routes'].map(RouteLight_1.RouteLightFromJSON)),
-        'state': !runtime_1.exists(json, 'State') ? undefined : json['State'],
-        'staticRoutesOnly': !runtime_1.exists(json, 'StaticRoutesOnly') ? undefined : json['StaticRoutesOnly'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
-        'virtualGatewayId': !runtime_1.exists(json, 'VirtualGatewayId') ? undefined : json['VirtualGatewayId'],
-        'vpnConnectionId': !runtime_1.exists(json, 'VpnConnectionId') ? undefined : json['VpnConnectionId'],
-        'vpnOptions': !runtime_1.exists(json, 'VpnOptions') ? undefined : VpnOptions_1.VpnOptionsFromJSON(json['VpnOptions']),
+        'clientGatewayConfiguration': !exists(json, 'ClientGatewayConfiguration') ? undefined : json['ClientGatewayConfiguration'],
+        'clientGatewayId': !exists(json, 'ClientGatewayId') ? undefined : json['ClientGatewayId'],
+        'connectionType': !exists(json, 'ConnectionType') ? undefined : json['ConnectionType'],
+        'routes': !exists(json, 'Routes') ? undefined : (json['Routes'].map(RouteLightFromJSON)),
+        'state': !exists(json, 'State') ? undefined : json['State'],
+        'staticRoutesOnly': !exists(json, 'StaticRoutesOnly') ? undefined : json['StaticRoutesOnly'],
+        'tags': !exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTagFromJSON)),
+        'virtualGatewayId': !exists(json, 'VirtualGatewayId') ? undefined : json['VirtualGatewayId'],
+        'vpnConnectionId': !exists(json, 'VpnConnectionId') ? undefined : json['VpnConnectionId'],
+        'vpnOptions': !exists(json, 'VpnOptions') ? undefined : VpnOptionsFromJSON(json['VpnOptions']),
     };
 }
-exports.VpnConnectionFromJSONTyped = VpnConnectionFromJSONTyped;
-function VpnConnectionToJSON(value) {
+export function VpnConnectionToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -50,13 +46,12 @@ function VpnConnectionToJSON(value) {
         'ClientGatewayConfiguration': value.clientGatewayConfiguration,
         'ClientGatewayId': value.clientGatewayId,
         'ConnectionType': value.connectionType,
-        'Routes': value.routes === undefined ? undefined : (value.routes.map(RouteLight_1.RouteLightToJSON)),
+        'Routes': value.routes === undefined ? undefined : (value.routes.map(RouteLightToJSON)),
         'State': value.state,
         'StaticRoutesOnly': value.staticRoutesOnly,
-        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
+        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTagToJSON)),
         'VirtualGatewayId': value.virtualGatewayId,
         'VpnConnectionId': value.vpnConnectionId,
-        'VpnOptions': VpnOptions_1.VpnOptionsToJSON(value.vpnOptions),
+        'VpnOptions': VpnOptionsToJSON(value.vpnOptions),
     };
 }
-exports.VpnConnectionToJSON = VpnConnectionToJSON;

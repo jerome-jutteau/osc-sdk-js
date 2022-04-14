@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var BsuToCreate_1 = require("./BsuToCreate");
-function BlockDeviceMappingImageFromJSON(json) {
+import { exists } from '../runtime';
+import { BsuToCreateFromJSON, BsuToCreateToJSON, } from './BsuToCreate';
+export function BlockDeviceMappingImageFromJSON(json) {
     return BlockDeviceMappingImageFromJSONTyped(json, false);
 }
-exports.BlockDeviceMappingImageFromJSON = BlockDeviceMappingImageFromJSON;
-function BlockDeviceMappingImageFromJSONTyped(json, ignoreDiscriminator) {
+export function BlockDeviceMappingImageFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'bsu': !runtime_1.exists(json, 'Bsu') ? undefined : BsuToCreate_1.BsuToCreateFromJSON(json['Bsu']),
-        'deviceName': !runtime_1.exists(json, 'DeviceName') ? undefined : json['DeviceName'],
-        'virtualDeviceName': !runtime_1.exists(json, 'VirtualDeviceName') ? undefined : json['VirtualDeviceName'],
+        'bsu': !exists(json, 'Bsu') ? undefined : BsuToCreateFromJSON(json['Bsu']),
+        'deviceName': !exists(json, 'DeviceName') ? undefined : json['DeviceName'],
+        'virtualDeviceName': !exists(json, 'VirtualDeviceName') ? undefined : json['VirtualDeviceName'],
     };
 }
-exports.BlockDeviceMappingImageFromJSONTyped = BlockDeviceMappingImageFromJSONTyped;
-function BlockDeviceMappingImageToJSON(value) {
+export function BlockDeviceMappingImageToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,9 +34,8 @@ function BlockDeviceMappingImageToJSON(value) {
         return null;
     }
     return {
-        'Bsu': BsuToCreate_1.BsuToCreateToJSON(value.bsu),
+        'Bsu': BsuToCreateToJSON(value.bsu),
         'DeviceName': value.deviceName,
         'VirtualDeviceName': value.virtualDeviceName,
     };
 }
-exports.BlockDeviceMappingImageToJSON = BlockDeviceMappingImageToJSON;

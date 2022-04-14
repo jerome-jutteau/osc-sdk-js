@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function CreateTagsResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function CreateTagsResponseFromJSON(json) {
     return CreateTagsResponseFromJSONTyped(json, false);
 }
-exports.CreateTagsResponseFromJSON = CreateTagsResponseFromJSON;
-function CreateTagsResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateTagsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.CreateTagsResponseFromJSONTyped = CreateTagsResponseFromJSONTyped;
-function CreateTagsResponseToJSON(value) {
+export function CreateTagsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -36,7 +32,6 @@ function CreateTagsResponseToJSON(value) {
         return null;
     }
     return {
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.CreateTagsResponseToJSON = CreateTagsResponseToJSON;

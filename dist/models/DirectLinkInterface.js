@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,28 +11,25 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function DirectLinkInterfaceFromJSON(json) {
+import { exists } from '../runtime';
+export function DirectLinkInterfaceFromJSON(json) {
     return DirectLinkInterfaceFromJSONTyped(json, false);
 }
-exports.DirectLinkInterfaceFromJSON = DirectLinkInterfaceFromJSON;
-function DirectLinkInterfaceFromJSONTyped(json, ignoreDiscriminator) {
+export function DirectLinkInterfaceFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'bgpAsn': json['BgpAsn'],
-        'bgpKey': !runtime_1.exists(json, 'BgpKey') ? undefined : json['BgpKey'],
-        'clientPrivateIp': !runtime_1.exists(json, 'ClientPrivateIp') ? undefined : json['ClientPrivateIp'],
+        'bgpKey': !exists(json, 'BgpKey') ? undefined : json['BgpKey'],
+        'clientPrivateIp': !exists(json, 'ClientPrivateIp') ? undefined : json['ClientPrivateIp'],
         'directLinkInterfaceName': json['DirectLinkInterfaceName'],
-        'outscalePrivateIp': !runtime_1.exists(json, 'OutscalePrivateIp') ? undefined : json['OutscalePrivateIp'],
+        'outscalePrivateIp': !exists(json, 'OutscalePrivateIp') ? undefined : json['OutscalePrivateIp'],
         'virtualGatewayId': json['VirtualGatewayId'],
         'vlan': json['Vlan'],
     };
 }
-exports.DirectLinkInterfaceFromJSONTyped = DirectLinkInterfaceFromJSONTyped;
-function DirectLinkInterfaceToJSON(value) {
+export function DirectLinkInterfaceToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -50,4 +46,3 @@ function DirectLinkInterfaceToJSON(value) {
         'Vlan': value.vlan,
     };
 }
-exports.DirectLinkInterfaceToJSON = DirectLinkInterfaceToJSON;

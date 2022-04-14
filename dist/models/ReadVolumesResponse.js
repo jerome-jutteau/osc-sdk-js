@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var Volume_1 = require("./Volume");
-function ReadVolumesResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { VolumeFromJSON, VolumeToJSON, } from './Volume';
+export function ReadVolumesResponseFromJSON(json) {
     return ReadVolumesResponseFromJSONTyped(json, false);
 }
-exports.ReadVolumesResponseFromJSON = ReadVolumesResponseFromJSON;
-function ReadVolumesResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadVolumesResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
-        'volumes': !runtime_1.exists(json, 'Volumes') ? undefined : (json['Volumes'].map(Volume_1.VolumeFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
+        'volumes': !exists(json, 'Volumes') ? undefined : (json['Volumes'].map(VolumeFromJSON)),
     };
 }
-exports.ReadVolumesResponseFromJSONTyped = ReadVolumesResponseFromJSONTyped;
-function ReadVolumesResponseToJSON(value) {
+export function ReadVolumesResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadVolumesResponseToJSON(value) {
         return null;
     }
     return {
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
-        'Volumes': value.volumes === undefined ? undefined : (value.volumes.map(Volume_1.VolumeToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
+        'Volumes': value.volumes === undefined ? undefined : (value.volumes.map(VolumeToJSON)),
     };
 }
-exports.ReadVolumesResponseToJSON = ReadVolumesResponseToJSON;

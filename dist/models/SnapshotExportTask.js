@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,30 +11,27 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var OsuExportSnapshotExportTask_1 = require("./OsuExportSnapshotExportTask");
-var ResourceTag_1 = require("./ResourceTag");
-function SnapshotExportTaskFromJSON(json) {
+import { exists } from '../runtime';
+import { OsuExportSnapshotExportTaskFromJSON, OsuExportSnapshotExportTaskToJSON, } from './OsuExportSnapshotExportTask';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
+export function SnapshotExportTaskFromJSON(json) {
     return SnapshotExportTaskFromJSONTyped(json, false);
 }
-exports.SnapshotExportTaskFromJSON = SnapshotExportTaskFromJSON;
-function SnapshotExportTaskFromJSONTyped(json, ignoreDiscriminator) {
+export function SnapshotExportTaskFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'comment': !runtime_1.exists(json, 'Comment') ? undefined : json['Comment'],
-        'osuExport': !runtime_1.exists(json, 'OsuExport') ? undefined : OsuExportSnapshotExportTask_1.OsuExportSnapshotExportTaskFromJSON(json['OsuExport']),
-        'progress': !runtime_1.exists(json, 'Progress') ? undefined : json['Progress'],
-        'snapshotId': !runtime_1.exists(json, 'SnapshotId') ? undefined : json['SnapshotId'],
-        'state': !runtime_1.exists(json, 'State') ? undefined : json['State'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
-        'taskId': !runtime_1.exists(json, 'TaskId') ? undefined : json['TaskId'],
+        'comment': !exists(json, 'Comment') ? undefined : json['Comment'],
+        'osuExport': !exists(json, 'OsuExport') ? undefined : OsuExportSnapshotExportTaskFromJSON(json['OsuExport']),
+        'progress': !exists(json, 'Progress') ? undefined : json['Progress'],
+        'snapshotId': !exists(json, 'SnapshotId') ? undefined : json['SnapshotId'],
+        'state': !exists(json, 'State') ? undefined : json['State'],
+        'tags': !exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTagFromJSON)),
+        'taskId': !exists(json, 'TaskId') ? undefined : json['TaskId'],
     };
 }
-exports.SnapshotExportTaskFromJSONTyped = SnapshotExportTaskFromJSONTyped;
-function SnapshotExportTaskToJSON(value) {
+export function SnapshotExportTaskToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,12 +40,11 @@ function SnapshotExportTaskToJSON(value) {
     }
     return {
         'Comment': value.comment,
-        'OsuExport': OsuExportSnapshotExportTask_1.OsuExportSnapshotExportTaskToJSON(value.osuExport),
+        'OsuExport': OsuExportSnapshotExportTaskToJSON(value.osuExport),
         'Progress': value.progress,
         'SnapshotId': value.snapshotId,
         'State': value.state,
-        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
+        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTagToJSON)),
         'TaskId': value.taskId,
     };
 }
-exports.SnapshotExportTaskToJSON = SnapshotExportTaskToJSON;

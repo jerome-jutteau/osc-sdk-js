@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function UpdateServerCertificateRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function UpdateServerCertificateRequestFromJSON(json) {
     return UpdateServerCertificateRequestFromJSONTyped(json, false);
 }
-exports.UpdateServerCertificateRequestFromJSON = UpdateServerCertificateRequestFromJSON;
-function UpdateServerCertificateRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function UpdateServerCertificateRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'name': json['Name'],
-        'newName': !runtime_1.exists(json, 'NewName') ? undefined : json['NewName'],
-        'newPath': !runtime_1.exists(json, 'NewPath') ? undefined : json['NewPath'],
+        'newName': !exists(json, 'NewName') ? undefined : json['NewName'],
+        'newPath': !exists(json, 'NewPath') ? undefined : json['NewPath'],
     };
 }
-exports.UpdateServerCertificateRequestFromJSONTyped = UpdateServerCertificateRequestFromJSONTyped;
-function UpdateServerCertificateRequestToJSON(value) {
+export function UpdateServerCertificateRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,4 +40,3 @@ function UpdateServerCertificateRequestToJSON(value) {
         'NewPath': value.newPath,
     };
 }
-exports.UpdateServerCertificateRequestToJSON = UpdateServerCertificateRequestToJSON;

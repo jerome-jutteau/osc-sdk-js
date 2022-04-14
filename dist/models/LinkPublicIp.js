@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,26 +11,23 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function LinkPublicIpFromJSON(json) {
+import { exists } from '../runtime';
+export function LinkPublicIpFromJSON(json) {
     return LinkPublicIpFromJSONTyped(json, false);
 }
-exports.LinkPublicIpFromJSON = LinkPublicIpFromJSON;
-function LinkPublicIpFromJSONTyped(json, ignoreDiscriminator) {
+export function LinkPublicIpFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'linkPublicIpId': !runtime_1.exists(json, 'LinkPublicIpId') ? undefined : json['LinkPublicIpId'],
-        'publicDnsName': !runtime_1.exists(json, 'PublicDnsName') ? undefined : json['PublicDnsName'],
-        'publicIp': !runtime_1.exists(json, 'PublicIp') ? undefined : json['PublicIp'],
-        'publicIpAccountId': !runtime_1.exists(json, 'PublicIpAccountId') ? undefined : json['PublicIpAccountId'],
-        'publicIpId': !runtime_1.exists(json, 'PublicIpId') ? undefined : json['PublicIpId'],
+        'linkPublicIpId': !exists(json, 'LinkPublicIpId') ? undefined : json['LinkPublicIpId'],
+        'publicDnsName': !exists(json, 'PublicDnsName') ? undefined : json['PublicDnsName'],
+        'publicIp': !exists(json, 'PublicIp') ? undefined : json['PublicIp'],
+        'publicIpAccountId': !exists(json, 'PublicIpAccountId') ? undefined : json['PublicIpAccountId'],
+        'publicIpId': !exists(json, 'PublicIpId') ? undefined : json['PublicIpId'],
     };
 }
-exports.LinkPublicIpFromJSONTyped = LinkPublicIpFromJSONTyped;
-function LinkPublicIpToJSON(value) {
+export function LinkPublicIpToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -46,4 +42,3 @@ function LinkPublicIpToJSON(value) {
         'PublicIpId': value.publicIpId,
     };
 }
-exports.LinkPublicIpToJSON = LinkPublicIpToJSON;

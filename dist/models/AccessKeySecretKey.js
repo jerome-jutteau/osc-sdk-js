@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,27 +11,24 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function AccessKeySecretKeyFromJSON(json) {
+import { exists } from '../runtime';
+export function AccessKeySecretKeyFromJSON(json) {
     return AccessKeySecretKeyFromJSONTyped(json, false);
 }
-exports.AccessKeySecretKeyFromJSON = AccessKeySecretKeyFromJSON;
-function AccessKeySecretKeyFromJSONTyped(json, ignoreDiscriminator) {
+export function AccessKeySecretKeyFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'accessKeyId': !runtime_1.exists(json, 'AccessKeyId') ? undefined : json['AccessKeyId'],
-        'creationDate': !runtime_1.exists(json, 'CreationDate') ? undefined : json['CreationDate'],
-        'expirationDate': !runtime_1.exists(json, 'ExpirationDate') ? undefined : json['ExpirationDate'],
-        'lastModificationDate': !runtime_1.exists(json, 'LastModificationDate') ? undefined : json['LastModificationDate'],
-        'secretKey': !runtime_1.exists(json, 'SecretKey') ? undefined : json['SecretKey'],
-        'state': !runtime_1.exists(json, 'State') ? undefined : json['State'],
+        'accessKeyId': !exists(json, 'AccessKeyId') ? undefined : json['AccessKeyId'],
+        'creationDate': !exists(json, 'CreationDate') ? undefined : json['CreationDate'],
+        'expirationDate': !exists(json, 'ExpirationDate') ? undefined : json['ExpirationDate'],
+        'lastModificationDate': !exists(json, 'LastModificationDate') ? undefined : json['LastModificationDate'],
+        'secretKey': !exists(json, 'SecretKey') ? undefined : json['SecretKey'],
+        'state': !exists(json, 'State') ? undefined : json['State'],
     };
 }
-exports.AccessKeySecretKeyFromJSONTyped = AccessKeySecretKeyFromJSONTyped;
-function AccessKeySecretKeyToJSON(value) {
+export function AccessKeySecretKeyToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -48,4 +44,3 @@ function AccessKeySecretKeyToJSON(value) {
         'State': value.state,
     };
 }
-exports.AccessKeySecretKeyToJSON = AccessKeySecretKeyToJSON;

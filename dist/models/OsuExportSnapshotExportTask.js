@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function OsuExportSnapshotExportTaskFromJSON(json) {
+import { exists } from '../runtime';
+export function OsuExportSnapshotExportTaskFromJSON(json) {
     return OsuExportSnapshotExportTaskFromJSONTyped(json, false);
 }
-exports.OsuExportSnapshotExportTaskFromJSON = OsuExportSnapshotExportTaskFromJSON;
-function OsuExportSnapshotExportTaskFromJSONTyped(json, ignoreDiscriminator) {
+export function OsuExportSnapshotExportTaskFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'diskImageFormat': json['DiskImageFormat'],
         'osuBucket': json['OsuBucket'],
-        'osuPrefix': !runtime_1.exists(json, 'OsuPrefix') ? undefined : json['OsuPrefix'],
+        'osuPrefix': !exists(json, 'OsuPrefix') ? undefined : json['OsuPrefix'],
     };
 }
-exports.OsuExportSnapshotExportTaskFromJSONTyped = OsuExportSnapshotExportTaskFromJSONTyped;
-function OsuExportSnapshotExportTaskToJSON(value) {
+export function OsuExportSnapshotExportTaskToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,4 +38,3 @@ function OsuExportSnapshotExportTaskToJSON(value) {
         'OsuPrefix': value.osuPrefix,
     };
 }
-exports.OsuExportSnapshotExportTaskToJSON = OsuExportSnapshotExportTaskToJSON;

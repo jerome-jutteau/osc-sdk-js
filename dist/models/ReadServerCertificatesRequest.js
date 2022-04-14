@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var FiltersServerCertificate_1 = require("./FiltersServerCertificate");
-function ReadServerCertificatesRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { FiltersServerCertificateFromJSON, FiltersServerCertificateToJSON, } from './FiltersServerCertificate';
+export function ReadServerCertificatesRequestFromJSON(json) {
     return ReadServerCertificatesRequestFromJSONTyped(json, false);
 }
-exports.ReadServerCertificatesRequestFromJSON = ReadServerCertificatesRequestFromJSON;
-function ReadServerCertificatesRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadServerCertificatesRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'filters': !runtime_1.exists(json, 'Filters') ? undefined : FiltersServerCertificate_1.FiltersServerCertificateFromJSON(json['Filters']),
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'filters': !exists(json, 'Filters') ? undefined : FiltersServerCertificateFromJSON(json['Filters']),
     };
 }
-exports.ReadServerCertificatesRequestFromJSONTyped = ReadServerCertificatesRequestFromJSONTyped;
-function ReadServerCertificatesRequestToJSON(value) {
+export function ReadServerCertificatesRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,7 +34,6 @@ function ReadServerCertificatesRequestToJSON(value) {
     }
     return {
         'DryRun': value.dryRun,
-        'Filters': FiltersServerCertificate_1.FiltersServerCertificateToJSON(value.filters),
+        'Filters': FiltersServerCertificateToJSON(value.filters),
     };
 }
-exports.ReadServerCertificatesRequestToJSON = ReadServerCertificatesRequestToJSON;

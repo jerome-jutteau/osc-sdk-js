@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,27 +11,24 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var PrivateIpLight_1 = require("./PrivateIpLight");
-function CreateNicRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { PrivateIpLightFromJSON, PrivateIpLightToJSON, } from './PrivateIpLight';
+export function CreateNicRequestFromJSON(json) {
     return CreateNicRequestFromJSONTyped(json, false);
 }
-exports.CreateNicRequestFromJSON = CreateNicRequestFromJSON;
-function CreateNicRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateNicRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'description': !runtime_1.exists(json, 'Description') ? undefined : json['Description'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'privateIps': !runtime_1.exists(json, 'PrivateIps') ? undefined : (json['PrivateIps'].map(PrivateIpLight_1.PrivateIpLightFromJSON)),
-        'securityGroupIds': !runtime_1.exists(json, 'SecurityGroupIds') ? undefined : json['SecurityGroupIds'],
+        'description': !exists(json, 'Description') ? undefined : json['Description'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'privateIps': !exists(json, 'PrivateIps') ? undefined : (json['PrivateIps'].map(PrivateIpLightFromJSON)),
+        'securityGroupIds': !exists(json, 'SecurityGroupIds') ? undefined : json['SecurityGroupIds'],
         'subnetId': json['SubnetId'],
     };
 }
-exports.CreateNicRequestFromJSONTyped = CreateNicRequestFromJSONTyped;
-function CreateNicRequestToJSON(value) {
+export function CreateNicRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,9 +38,8 @@ function CreateNicRequestToJSON(value) {
     return {
         'Description': value.description,
         'DryRun': value.dryRun,
-        'PrivateIps': value.privateIps === undefined ? undefined : (value.privateIps.map(PrivateIpLight_1.PrivateIpLightToJSON)),
+        'PrivateIps': value.privateIps === undefined ? undefined : (value.privateIps.map(PrivateIpLightToJSON)),
         'SecurityGroupIds': value.securityGroupIds,
         'SubnetId': value.subnetId,
     };
 }
-exports.CreateNicRequestToJSON = CreateNicRequestToJSON;

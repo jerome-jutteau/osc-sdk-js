@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,29 +11,26 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersVirtualGatewayFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersVirtualGatewayFromJSON(json) {
     return FiltersVirtualGatewayFromJSONTyped(json, false);
 }
-exports.FiltersVirtualGatewayFromJSON = FiltersVirtualGatewayFromJSON;
-function FiltersVirtualGatewayFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersVirtualGatewayFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'connectionTypes': !runtime_1.exists(json, 'ConnectionTypes') ? undefined : json['ConnectionTypes'],
-        'linkNetIds': !runtime_1.exists(json, 'LinkNetIds') ? undefined : json['LinkNetIds'],
-        'linkStates': !runtime_1.exists(json, 'LinkStates') ? undefined : json['LinkStates'],
-        'states': !runtime_1.exists(json, 'States') ? undefined : json['States'],
-        'tagKeys': !runtime_1.exists(json, 'TagKeys') ? undefined : json['TagKeys'],
-        'tagValues': !runtime_1.exists(json, 'TagValues') ? undefined : json['TagValues'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : json['Tags'],
-        'virtualGatewayIds': !runtime_1.exists(json, 'VirtualGatewayIds') ? undefined : json['VirtualGatewayIds'],
+        'connectionTypes': !exists(json, 'ConnectionTypes') ? undefined : json['ConnectionTypes'],
+        'linkNetIds': !exists(json, 'LinkNetIds') ? undefined : json['LinkNetIds'],
+        'linkStates': !exists(json, 'LinkStates') ? undefined : json['LinkStates'],
+        'states': !exists(json, 'States') ? undefined : json['States'],
+        'tagKeys': !exists(json, 'TagKeys') ? undefined : json['TagKeys'],
+        'tagValues': !exists(json, 'TagValues') ? undefined : json['TagValues'],
+        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
+        'virtualGatewayIds': !exists(json, 'VirtualGatewayIds') ? undefined : json['VirtualGatewayIds'],
     };
 }
-exports.FiltersVirtualGatewayFromJSONTyped = FiltersVirtualGatewayFromJSONTyped;
-function FiltersVirtualGatewayToJSON(value) {
+export function FiltersVirtualGatewayToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -52,4 +48,3 @@ function FiltersVirtualGatewayToJSON(value) {
         'VirtualGatewayIds': value.virtualGatewayIds,
     };
 }
-exports.FiltersVirtualGatewayToJSON = FiltersVirtualGatewayToJSON;

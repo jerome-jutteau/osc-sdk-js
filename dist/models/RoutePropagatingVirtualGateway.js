@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,22 +11,19 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function RoutePropagatingVirtualGatewayFromJSON(json) {
+import { exists } from '../runtime';
+export function RoutePropagatingVirtualGatewayFromJSON(json) {
     return RoutePropagatingVirtualGatewayFromJSONTyped(json, false);
 }
-exports.RoutePropagatingVirtualGatewayFromJSON = RoutePropagatingVirtualGatewayFromJSON;
-function RoutePropagatingVirtualGatewayFromJSONTyped(json, ignoreDiscriminator) {
+export function RoutePropagatingVirtualGatewayFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'virtualGatewayId': !runtime_1.exists(json, 'VirtualGatewayId') ? undefined : json['VirtualGatewayId'],
+        'virtualGatewayId': !exists(json, 'VirtualGatewayId') ? undefined : json['VirtualGatewayId'],
     };
 }
-exports.RoutePropagatingVirtualGatewayFromJSONTyped = RoutePropagatingVirtualGatewayFromJSONTyped;
-function RoutePropagatingVirtualGatewayToJSON(value) {
+export function RoutePropagatingVirtualGatewayToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,4 +34,3 @@ function RoutePropagatingVirtualGatewayToJSON(value) {
         'VirtualGatewayId': value.virtualGatewayId,
     };
 }
-exports.RoutePropagatingVirtualGatewayToJSON = RoutePropagatingVirtualGatewayToJSON;

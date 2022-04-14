@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var Region_1 = require("./Region");
-function ReadRegionsResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { RegionFromJSON, RegionToJSON, } from './Region';
+export function ReadRegionsResponseFromJSON(json) {
     return ReadRegionsResponseFromJSONTyped(json, false);
 }
-exports.ReadRegionsResponseFromJSON = ReadRegionsResponseFromJSON;
-function ReadRegionsResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadRegionsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'regions': !runtime_1.exists(json, 'Regions') ? undefined : (json['Regions'].map(Region_1.RegionFromJSON)),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'regions': !exists(json, 'Regions') ? undefined : (json['Regions'].map(RegionFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.ReadRegionsResponseFromJSONTyped = ReadRegionsResponseFromJSONTyped;
-function ReadRegionsResponseToJSON(value) {
+export function ReadRegionsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadRegionsResponseToJSON(value) {
         return null;
     }
     return {
-        'Regions': value.regions === undefined ? undefined : (value.regions.map(Region_1.RegionToJSON)),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'Regions': value.regions === undefined ? undefined : (value.regions.map(RegionToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.ReadRegionsResponseToJSON = ReadRegionsResponseToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersKeypairFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersKeypairFromJSON(json) {
     return FiltersKeypairFromJSONTyped(json, false);
 }
-exports.FiltersKeypairFromJSON = FiltersKeypairFromJSON;
-function FiltersKeypairFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersKeypairFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'keypairFingerprints': !runtime_1.exists(json, 'KeypairFingerprints') ? undefined : json['KeypairFingerprints'],
-        'keypairNames': !runtime_1.exists(json, 'KeypairNames') ? undefined : json['KeypairNames'],
+        'keypairFingerprints': !exists(json, 'KeypairFingerprints') ? undefined : json['KeypairFingerprints'],
+        'keypairNames': !exists(json, 'KeypairNames') ? undefined : json['KeypairNames'],
     };
 }
-exports.FiltersKeypairFromJSONTyped = FiltersKeypairFromJSONTyped;
-function FiltersKeypairToJSON(value) {
+export function FiltersKeypairToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function FiltersKeypairToJSON(value) {
         'KeypairNames': value.keypairNames,
     };
 }
-exports.FiltersKeypairToJSON = FiltersKeypairToJSON;

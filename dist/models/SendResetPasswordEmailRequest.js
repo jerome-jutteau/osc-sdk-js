@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function SendResetPasswordEmailRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function SendResetPasswordEmailRequestFromJSON(json) {
     return SendResetPasswordEmailRequestFromJSONTyped(json, false);
 }
-exports.SendResetPasswordEmailRequestFromJSON = SendResetPasswordEmailRequestFromJSON;
-function SendResetPasswordEmailRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function SendResetPasswordEmailRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'email': json['Email'],
     };
 }
-exports.SendResetPasswordEmailRequestFromJSONTyped = SendResetPasswordEmailRequestFromJSONTyped;
-function SendResetPasswordEmailRequestToJSON(value) {
+export function SendResetPasswordEmailRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function SendResetPasswordEmailRequestToJSON(value) {
         'Email': value.email,
     };
 }
-exports.SendResetPasswordEmailRequestToJSON = SendResetPasswordEmailRequestToJSON;

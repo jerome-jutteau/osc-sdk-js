@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var VpnConnection_1 = require("./VpnConnection");
-function UpdateVpnConnectionResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { VpnConnectionFromJSON, VpnConnectionToJSON, } from './VpnConnection';
+export function UpdateVpnConnectionResponseFromJSON(json) {
     return UpdateVpnConnectionResponseFromJSONTyped(json, false);
 }
-exports.UpdateVpnConnectionResponseFromJSON = UpdateVpnConnectionResponseFromJSON;
-function UpdateVpnConnectionResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function UpdateVpnConnectionResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
-        'vpnConnection': !runtime_1.exists(json, 'VpnConnection') ? undefined : VpnConnection_1.VpnConnectionFromJSON(json['VpnConnection']),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
+        'vpnConnection': !exists(json, 'VpnConnection') ? undefined : VpnConnectionFromJSON(json['VpnConnection']),
     };
 }
-exports.UpdateVpnConnectionResponseFromJSONTyped = UpdateVpnConnectionResponseFromJSONTyped;
-function UpdateVpnConnectionResponseToJSON(value) {
+export function UpdateVpnConnectionResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function UpdateVpnConnectionResponseToJSON(value) {
         return null;
     }
     return {
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
-        'VpnConnection': VpnConnection_1.VpnConnectionToJSON(value.vpnConnection),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
+        'VpnConnection': VpnConnectionToJSON(value.vpnConnection),
     };
 }
-exports.UpdateVpnConnectionResponseToJSON = UpdateVpnConnectionResponseToJSON;

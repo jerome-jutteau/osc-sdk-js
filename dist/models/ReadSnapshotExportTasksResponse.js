@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var SnapshotExportTask_1 = require("./SnapshotExportTask");
-function ReadSnapshotExportTasksResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { SnapshotExportTaskFromJSON, SnapshotExportTaskToJSON, } from './SnapshotExportTask';
+export function ReadSnapshotExportTasksResponseFromJSON(json) {
     return ReadSnapshotExportTasksResponseFromJSONTyped(json, false);
 }
-exports.ReadSnapshotExportTasksResponseFromJSON = ReadSnapshotExportTasksResponseFromJSON;
-function ReadSnapshotExportTasksResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadSnapshotExportTasksResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
-        'snapshotExportTasks': !runtime_1.exists(json, 'SnapshotExportTasks') ? undefined : (json['SnapshotExportTasks'].map(SnapshotExportTask_1.SnapshotExportTaskFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
+        'snapshotExportTasks': !exists(json, 'SnapshotExportTasks') ? undefined : (json['SnapshotExportTasks'].map(SnapshotExportTaskFromJSON)),
     };
 }
-exports.ReadSnapshotExportTasksResponseFromJSONTyped = ReadSnapshotExportTasksResponseFromJSONTyped;
-function ReadSnapshotExportTasksResponseToJSON(value) {
+export function ReadSnapshotExportTasksResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadSnapshotExportTasksResponseToJSON(value) {
         return null;
     }
     return {
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
-        'SnapshotExportTasks': value.snapshotExportTasks === undefined ? undefined : (value.snapshotExportTasks.map(SnapshotExportTask_1.SnapshotExportTaskToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
+        'SnapshotExportTasks': value.snapshotExportTasks === undefined ? undefined : (value.snapshotExportTasks.map(SnapshotExportTaskToJSON)),
     };
 }
-exports.ReadSnapshotExportTasksResponseToJSON = ReadSnapshotExportTasksResponseToJSON;

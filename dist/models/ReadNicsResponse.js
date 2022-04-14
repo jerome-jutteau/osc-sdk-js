@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var Nic_1 = require("./Nic");
-function ReadNicsResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { NicFromJSON, NicToJSON, } from './Nic';
+export function ReadNicsResponseFromJSON(json) {
     return ReadNicsResponseFromJSONTyped(json, false);
 }
-exports.ReadNicsResponseFromJSON = ReadNicsResponseFromJSON;
-function ReadNicsResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadNicsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'nics': !runtime_1.exists(json, 'Nics') ? undefined : (json['Nics'].map(Nic_1.NicFromJSON)),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'nics': !exists(json, 'Nics') ? undefined : (json['Nics'].map(NicFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.ReadNicsResponseFromJSONTyped = ReadNicsResponseFromJSONTyped;
-function ReadNicsResponseToJSON(value) {
+export function ReadNicsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadNicsResponseToJSON(value) {
         return null;
     }
     return {
-        'Nics': value.nics === undefined ? undefined : (value.nics.map(Nic_1.NicToJSON)),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'Nics': value.nics === undefined ? undefined : (value.nics.map(NicToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.ReadNicsResponseToJSON = ReadNicsResponseToJSON;

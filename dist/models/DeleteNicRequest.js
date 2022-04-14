@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function DeleteNicRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function DeleteNicRequestFromJSON(json) {
     return DeleteNicRequestFromJSONTyped(json, false);
 }
-exports.DeleteNicRequestFromJSON = DeleteNicRequestFromJSON;
-function DeleteNicRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function DeleteNicRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'nicId': json['NicId'],
     };
 }
-exports.DeleteNicRequestFromJSONTyped = DeleteNicRequestFromJSONTyped;
-function DeleteNicRequestToJSON(value) {
+export function DeleteNicRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function DeleteNicRequestToJSON(value) {
         'NicId': value.nicId,
     };
 }
-exports.DeleteNicRequestToJSON = DeleteNicRequestToJSON;

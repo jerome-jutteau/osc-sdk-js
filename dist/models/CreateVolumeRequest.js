@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,27 +11,24 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function CreateVolumeRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function CreateVolumeRequestFromJSON(json) {
     return CreateVolumeRequestFromJSONTyped(json, false);
 }
-exports.CreateVolumeRequestFromJSON = CreateVolumeRequestFromJSON;
-function CreateVolumeRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateVolumeRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'iops': !runtime_1.exists(json, 'Iops') ? undefined : json['Iops'],
-        'size': !runtime_1.exists(json, 'Size') ? undefined : json['Size'],
-        'snapshotId': !runtime_1.exists(json, 'SnapshotId') ? undefined : json['SnapshotId'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'iops': !exists(json, 'Iops') ? undefined : json['Iops'],
+        'size': !exists(json, 'Size') ? undefined : json['Size'],
+        'snapshotId': !exists(json, 'SnapshotId') ? undefined : json['SnapshotId'],
         'subregionName': json['SubregionName'],
-        'volumeType': !runtime_1.exists(json, 'VolumeType') ? undefined : json['VolumeType'],
+        'volumeType': !exists(json, 'VolumeType') ? undefined : json['VolumeType'],
     };
 }
-exports.CreateVolumeRequestFromJSONTyped = CreateVolumeRequestFromJSONTyped;
-function CreateVolumeRequestToJSON(value) {
+export function CreateVolumeRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -48,4 +44,3 @@ function CreateVolumeRequestToJSON(value) {
         'VolumeType': value.volumeType,
     };
 }
-exports.CreateVolumeRequestToJSON = CreateVolumeRequestToJSON;

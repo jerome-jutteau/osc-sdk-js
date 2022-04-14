@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function CreateDhcpOptionsRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function CreateDhcpOptionsRequestFromJSON(json) {
     return CreateDhcpOptionsRequestFromJSONTyped(json, false);
 }
-exports.CreateDhcpOptionsRequestFromJSON = CreateDhcpOptionsRequestFromJSON;
-function CreateDhcpOptionsRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateDhcpOptionsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'domainName': !runtime_1.exists(json, 'DomainName') ? undefined : json['DomainName'],
-        'domainNameServers': !runtime_1.exists(json, 'DomainNameServers') ? undefined : json['DomainNameServers'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'ntpServers': !runtime_1.exists(json, 'NtpServers') ? undefined : json['NtpServers'],
+        'domainName': !exists(json, 'DomainName') ? undefined : json['DomainName'],
+        'domainNameServers': !exists(json, 'DomainNameServers') ? undefined : json['DomainNameServers'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'ntpServers': !exists(json, 'NtpServers') ? undefined : json['NtpServers'],
     };
 }
-exports.CreateDhcpOptionsRequestFromJSONTyped = CreateDhcpOptionsRequestFromJSONTyped;
-function CreateDhcpOptionsRequestToJSON(value) {
+export function CreateDhcpOptionsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,4 +40,3 @@ function CreateDhcpOptionsRequestToJSON(value) {
         'NtpServers': value.ntpServers,
     };
 }
-exports.CreateDhcpOptionsRequestToJSON = CreateDhcpOptionsRequestToJSON;

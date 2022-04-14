@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,44 +11,41 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersImageFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersImageFromJSON(json) {
     return FiltersImageFromJSONTyped(json, false);
 }
-exports.FiltersImageFromJSON = FiltersImageFromJSON;
-function FiltersImageFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersImageFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'accountAliases': !runtime_1.exists(json, 'AccountAliases') ? undefined : json['AccountAliases'],
-        'accountIds': !runtime_1.exists(json, 'AccountIds') ? undefined : json['AccountIds'],
-        'architectures': !runtime_1.exists(json, 'Architectures') ? undefined : json['Architectures'],
-        'blockDeviceMappingDeleteOnVmDeletion': !runtime_1.exists(json, 'BlockDeviceMappingDeleteOnVmDeletion') ? undefined : json['BlockDeviceMappingDeleteOnVmDeletion'],
-        'blockDeviceMappingDeviceNames': !runtime_1.exists(json, 'BlockDeviceMappingDeviceNames') ? undefined : json['BlockDeviceMappingDeviceNames'],
-        'blockDeviceMappingSnapshotIds': !runtime_1.exists(json, 'BlockDeviceMappingSnapshotIds') ? undefined : json['BlockDeviceMappingSnapshotIds'],
-        'blockDeviceMappingVolumeSizes': !runtime_1.exists(json, 'BlockDeviceMappingVolumeSizes') ? undefined : json['BlockDeviceMappingVolumeSizes'],
-        'blockDeviceMappingVolumeTypes': !runtime_1.exists(json, 'BlockDeviceMappingVolumeTypes') ? undefined : json['BlockDeviceMappingVolumeTypes'],
-        'descriptions': !runtime_1.exists(json, 'Descriptions') ? undefined : json['Descriptions'],
-        'fileLocations': !runtime_1.exists(json, 'FileLocations') ? undefined : json['FileLocations'],
-        'hypervisors': !runtime_1.exists(json, 'Hypervisors') ? undefined : json['Hypervisors'],
-        'imageIds': !runtime_1.exists(json, 'ImageIds') ? undefined : json['ImageIds'],
-        'imageNames': !runtime_1.exists(json, 'ImageNames') ? undefined : json['ImageNames'],
-        'permissionsToLaunchAccountIds': !runtime_1.exists(json, 'PermissionsToLaunchAccountIds') ? undefined : json['PermissionsToLaunchAccountIds'],
-        'permissionsToLaunchGlobalPermission': !runtime_1.exists(json, 'PermissionsToLaunchGlobalPermission') ? undefined : json['PermissionsToLaunchGlobalPermission'],
-        'productCodes': !runtime_1.exists(json, 'ProductCodes') ? undefined : json['ProductCodes'],
-        'rootDeviceNames': !runtime_1.exists(json, 'RootDeviceNames') ? undefined : json['RootDeviceNames'],
-        'rootDeviceTypes': !runtime_1.exists(json, 'RootDeviceTypes') ? undefined : json['RootDeviceTypes'],
-        'states': !runtime_1.exists(json, 'States') ? undefined : json['States'],
-        'tagKeys': !runtime_1.exists(json, 'TagKeys') ? undefined : json['TagKeys'],
-        'tagValues': !runtime_1.exists(json, 'TagValues') ? undefined : json['TagValues'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : json['Tags'],
-        'virtualizationTypes': !runtime_1.exists(json, 'VirtualizationTypes') ? undefined : json['VirtualizationTypes'],
+        'accountAliases': !exists(json, 'AccountAliases') ? undefined : json['AccountAliases'],
+        'accountIds': !exists(json, 'AccountIds') ? undefined : json['AccountIds'],
+        'architectures': !exists(json, 'Architectures') ? undefined : json['Architectures'],
+        'blockDeviceMappingDeleteOnVmDeletion': !exists(json, 'BlockDeviceMappingDeleteOnVmDeletion') ? undefined : json['BlockDeviceMappingDeleteOnVmDeletion'],
+        'blockDeviceMappingDeviceNames': !exists(json, 'BlockDeviceMappingDeviceNames') ? undefined : json['BlockDeviceMappingDeviceNames'],
+        'blockDeviceMappingSnapshotIds': !exists(json, 'BlockDeviceMappingSnapshotIds') ? undefined : json['BlockDeviceMappingSnapshotIds'],
+        'blockDeviceMappingVolumeSizes': !exists(json, 'BlockDeviceMappingVolumeSizes') ? undefined : json['BlockDeviceMappingVolumeSizes'],
+        'blockDeviceMappingVolumeTypes': !exists(json, 'BlockDeviceMappingVolumeTypes') ? undefined : json['BlockDeviceMappingVolumeTypes'],
+        'descriptions': !exists(json, 'Descriptions') ? undefined : json['Descriptions'],
+        'fileLocations': !exists(json, 'FileLocations') ? undefined : json['FileLocations'],
+        'hypervisors': !exists(json, 'Hypervisors') ? undefined : json['Hypervisors'],
+        'imageIds': !exists(json, 'ImageIds') ? undefined : json['ImageIds'],
+        'imageNames': !exists(json, 'ImageNames') ? undefined : json['ImageNames'],
+        'permissionsToLaunchAccountIds': !exists(json, 'PermissionsToLaunchAccountIds') ? undefined : json['PermissionsToLaunchAccountIds'],
+        'permissionsToLaunchGlobalPermission': !exists(json, 'PermissionsToLaunchGlobalPermission') ? undefined : json['PermissionsToLaunchGlobalPermission'],
+        'productCodes': !exists(json, 'ProductCodes') ? undefined : json['ProductCodes'],
+        'rootDeviceNames': !exists(json, 'RootDeviceNames') ? undefined : json['RootDeviceNames'],
+        'rootDeviceTypes': !exists(json, 'RootDeviceTypes') ? undefined : json['RootDeviceTypes'],
+        'states': !exists(json, 'States') ? undefined : json['States'],
+        'tagKeys': !exists(json, 'TagKeys') ? undefined : json['TagKeys'],
+        'tagValues': !exists(json, 'TagValues') ? undefined : json['TagValues'],
+        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
+        'virtualizationTypes': !exists(json, 'VirtualizationTypes') ? undefined : json['VirtualizationTypes'],
     };
 }
-exports.FiltersImageFromJSONTyped = FiltersImageFromJSONTyped;
-function FiltersImageToJSON(value) {
+export function FiltersImageToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -82,4 +78,3 @@ function FiltersImageToJSON(value) {
         'VirtualizationTypes': value.virtualizationTypes,
     };
 }
-exports.FiltersImageToJSON = FiltersImageToJSON;

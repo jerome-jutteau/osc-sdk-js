@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,22 +11,19 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersLoadBalancerFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersLoadBalancerFromJSON(json) {
     return FiltersLoadBalancerFromJSONTyped(json, false);
 }
-exports.FiltersLoadBalancerFromJSON = FiltersLoadBalancerFromJSON;
-function FiltersLoadBalancerFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersLoadBalancerFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'loadBalancerNames': !runtime_1.exists(json, 'LoadBalancerNames') ? undefined : json['LoadBalancerNames'],
+        'loadBalancerNames': !exists(json, 'LoadBalancerNames') ? undefined : json['LoadBalancerNames'],
     };
 }
-exports.FiltersLoadBalancerFromJSONTyped = FiltersLoadBalancerFromJSONTyped;
-function FiltersLoadBalancerToJSON(value) {
+export function FiltersLoadBalancerToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,4 +34,3 @@ function FiltersLoadBalancerToJSON(value) {
         'LoadBalancerNames': value.loadBalancerNames,
     };
 }
-exports.FiltersLoadBalancerToJSON = FiltersLoadBalancerToJSON;

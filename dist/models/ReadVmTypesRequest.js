@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var FiltersVmType_1 = require("./FiltersVmType");
-function ReadVmTypesRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { FiltersVmTypeFromJSON, FiltersVmTypeToJSON, } from './FiltersVmType';
+export function ReadVmTypesRequestFromJSON(json) {
     return ReadVmTypesRequestFromJSONTyped(json, false);
 }
-exports.ReadVmTypesRequestFromJSON = ReadVmTypesRequestFromJSON;
-function ReadVmTypesRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadVmTypesRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'filters': !runtime_1.exists(json, 'Filters') ? undefined : FiltersVmType_1.FiltersVmTypeFromJSON(json['Filters']),
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'filters': !exists(json, 'Filters') ? undefined : FiltersVmTypeFromJSON(json['Filters']),
     };
 }
-exports.ReadVmTypesRequestFromJSONTyped = ReadVmTypesRequestFromJSONTyped;
-function ReadVmTypesRequestToJSON(value) {
+export function ReadVmTypesRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,7 +34,6 @@ function ReadVmTypesRequestToJSON(value) {
     }
     return {
         'DryRun': value.dryRun,
-        'Filters': FiltersVmType_1.FiltersVmTypeToJSON(value.filters),
+        'Filters': FiltersVmTypeToJSON(value.filters),
     };
 }
-exports.ReadVmTypesRequestToJSON = ReadVmTypesRequestToJSON;

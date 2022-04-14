@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function DeleteApiAccessRuleRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function DeleteApiAccessRuleRequestFromJSON(json) {
     return DeleteApiAccessRuleRequestFromJSONTyped(json, false);
 }
-exports.DeleteApiAccessRuleRequestFromJSON = DeleteApiAccessRuleRequestFromJSON;
-function DeleteApiAccessRuleRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function DeleteApiAccessRuleRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'apiAccessRuleId': json['ApiAccessRuleId'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
     };
 }
-exports.DeleteApiAccessRuleRequestFromJSONTyped = DeleteApiAccessRuleRequestFromJSONTyped;
-function DeleteApiAccessRuleRequestToJSON(value) {
+export function DeleteApiAccessRuleRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function DeleteApiAccessRuleRequestToJSON(value) {
         'DryRun': value.dryRun,
     };
 }
-exports.DeleteApiAccessRuleRequestToJSON = DeleteApiAccessRuleRequestToJSON;

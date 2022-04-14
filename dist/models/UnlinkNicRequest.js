@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function UnlinkNicRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function UnlinkNicRequestFromJSON(json) {
     return UnlinkNicRequestFromJSONTyped(json, false);
 }
-exports.UnlinkNicRequestFromJSON = UnlinkNicRequestFromJSON;
-function UnlinkNicRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function UnlinkNicRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'linkNicId': json['LinkNicId'],
     };
 }
-exports.UnlinkNicRequestFromJSONTyped = UnlinkNicRequestFromJSONTyped;
-function UnlinkNicRequestToJSON(value) {
+export function UnlinkNicRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function UnlinkNicRequestToJSON(value) {
         'LinkNicId': value.linkNicId,
     };
 }
-exports.UnlinkNicRequestToJSON = UnlinkNicRequestToJSON;

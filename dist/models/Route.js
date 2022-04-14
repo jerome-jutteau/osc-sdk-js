@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,32 +11,29 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function RouteFromJSON(json) {
+import { exists } from '../runtime';
+export function RouteFromJSON(json) {
     return RouteFromJSONTyped(json, false);
 }
-exports.RouteFromJSON = RouteFromJSON;
-function RouteFromJSONTyped(json, ignoreDiscriminator) {
+export function RouteFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'creationMethod': !runtime_1.exists(json, 'CreationMethod') ? undefined : json['CreationMethod'],
-        'destinationIpRange': !runtime_1.exists(json, 'DestinationIpRange') ? undefined : json['DestinationIpRange'],
-        'destinationServiceId': !runtime_1.exists(json, 'DestinationServiceId') ? undefined : json['DestinationServiceId'],
-        'gatewayId': !runtime_1.exists(json, 'GatewayId') ? undefined : json['GatewayId'],
-        'natServiceId': !runtime_1.exists(json, 'NatServiceId') ? undefined : json['NatServiceId'],
-        'netAccessPointId': !runtime_1.exists(json, 'NetAccessPointId') ? undefined : json['NetAccessPointId'],
-        'netPeeringId': !runtime_1.exists(json, 'NetPeeringId') ? undefined : json['NetPeeringId'],
-        'nicId': !runtime_1.exists(json, 'NicId') ? undefined : json['NicId'],
-        'state': !runtime_1.exists(json, 'State') ? undefined : json['State'],
-        'vmAccountId': !runtime_1.exists(json, 'VmAccountId') ? undefined : json['VmAccountId'],
-        'vmId': !runtime_1.exists(json, 'VmId') ? undefined : json['VmId'],
+        'creationMethod': !exists(json, 'CreationMethod') ? undefined : json['CreationMethod'],
+        'destinationIpRange': !exists(json, 'DestinationIpRange') ? undefined : json['DestinationIpRange'],
+        'destinationServiceId': !exists(json, 'DestinationServiceId') ? undefined : json['DestinationServiceId'],
+        'gatewayId': !exists(json, 'GatewayId') ? undefined : json['GatewayId'],
+        'natServiceId': !exists(json, 'NatServiceId') ? undefined : json['NatServiceId'],
+        'netAccessPointId': !exists(json, 'NetAccessPointId') ? undefined : json['NetAccessPointId'],
+        'netPeeringId': !exists(json, 'NetPeeringId') ? undefined : json['NetPeeringId'],
+        'nicId': !exists(json, 'NicId') ? undefined : json['NicId'],
+        'state': !exists(json, 'State') ? undefined : json['State'],
+        'vmAccountId': !exists(json, 'VmAccountId') ? undefined : json['VmAccountId'],
+        'vmId': !exists(json, 'VmId') ? undefined : json['VmId'],
     };
 }
-exports.RouteFromJSONTyped = RouteFromJSONTyped;
-function RouteToJSON(value) {
+export function RouteToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -58,4 +54,3 @@ function RouteToJSON(value) {
         'VmId': value.vmId,
     };
 }
-exports.RouteToJSON = RouteToJSON;

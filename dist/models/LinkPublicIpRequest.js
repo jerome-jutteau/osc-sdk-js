@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,28 +11,25 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function LinkPublicIpRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function LinkPublicIpRequestFromJSON(json) {
     return LinkPublicIpRequestFromJSONTyped(json, false);
 }
-exports.LinkPublicIpRequestFromJSON = LinkPublicIpRequestFromJSON;
-function LinkPublicIpRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function LinkPublicIpRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'allowRelink': !runtime_1.exists(json, 'AllowRelink') ? undefined : json['AllowRelink'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'nicId': !runtime_1.exists(json, 'NicId') ? undefined : json['NicId'],
-        'privateIp': !runtime_1.exists(json, 'PrivateIp') ? undefined : json['PrivateIp'],
-        'publicIp': !runtime_1.exists(json, 'PublicIp') ? undefined : json['PublicIp'],
-        'publicIpId': !runtime_1.exists(json, 'PublicIpId') ? undefined : json['PublicIpId'],
-        'vmId': !runtime_1.exists(json, 'VmId') ? undefined : json['VmId'],
+        'allowRelink': !exists(json, 'AllowRelink') ? undefined : json['AllowRelink'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'nicId': !exists(json, 'NicId') ? undefined : json['NicId'],
+        'privateIp': !exists(json, 'PrivateIp') ? undefined : json['PrivateIp'],
+        'publicIp': !exists(json, 'PublicIp') ? undefined : json['PublicIp'],
+        'publicIpId': !exists(json, 'PublicIpId') ? undefined : json['PublicIpId'],
+        'vmId': !exists(json, 'VmId') ? undefined : json['VmId'],
     };
 }
-exports.LinkPublicIpRequestFromJSONTyped = LinkPublicIpRequestFromJSONTyped;
-function LinkPublicIpRequestToJSON(value) {
+export function LinkPublicIpRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -50,4 +46,3 @@ function LinkPublicIpRequestToJSON(value) {
         'VmId': value.vmId,
     };
 }
-exports.LinkPublicIpRequestToJSON = LinkPublicIpRequestToJSON;

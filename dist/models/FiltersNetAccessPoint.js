@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,28 +11,25 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersNetAccessPointFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersNetAccessPointFromJSON(json) {
     return FiltersNetAccessPointFromJSONTyped(json, false);
 }
-exports.FiltersNetAccessPointFromJSON = FiltersNetAccessPointFromJSON;
-function FiltersNetAccessPointFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersNetAccessPointFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'netAccessPointIds': !runtime_1.exists(json, 'NetAccessPointIds') ? undefined : json['NetAccessPointIds'],
-        'netIds': !runtime_1.exists(json, 'NetIds') ? undefined : json['NetIds'],
-        'serviceNames': !runtime_1.exists(json, 'ServiceNames') ? undefined : json['ServiceNames'],
-        'states': !runtime_1.exists(json, 'States') ? undefined : json['States'],
-        'tagKeys': !runtime_1.exists(json, 'TagKeys') ? undefined : json['TagKeys'],
-        'tagValues': !runtime_1.exists(json, 'TagValues') ? undefined : json['TagValues'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : json['Tags'],
+        'netAccessPointIds': !exists(json, 'NetAccessPointIds') ? undefined : json['NetAccessPointIds'],
+        'netIds': !exists(json, 'NetIds') ? undefined : json['NetIds'],
+        'serviceNames': !exists(json, 'ServiceNames') ? undefined : json['ServiceNames'],
+        'states': !exists(json, 'States') ? undefined : json['States'],
+        'tagKeys': !exists(json, 'TagKeys') ? undefined : json['TagKeys'],
+        'tagValues': !exists(json, 'TagValues') ? undefined : json['TagValues'],
+        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
     };
 }
-exports.FiltersNetAccessPointFromJSONTyped = FiltersNetAccessPointFromJSONTyped;
-function FiltersNetAccessPointToJSON(value) {
+export function FiltersNetAccessPointToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -50,4 +46,3 @@ function FiltersNetAccessPointToJSON(value) {
         'Tags': value.tags,
     };
 }
-exports.FiltersNetAccessPointToJSON = FiltersNetAccessPointToJSON;

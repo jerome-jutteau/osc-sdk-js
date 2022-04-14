@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var Volume_1 = require("./Volume");
-function CreateVolumeResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { VolumeFromJSON, VolumeToJSON, } from './Volume';
+export function CreateVolumeResponseFromJSON(json) {
     return CreateVolumeResponseFromJSONTyped(json, false);
 }
-exports.CreateVolumeResponseFromJSON = CreateVolumeResponseFromJSON;
-function CreateVolumeResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateVolumeResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
-        'volume': !runtime_1.exists(json, 'Volume') ? undefined : Volume_1.VolumeFromJSON(json['Volume']),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
+        'volume': !exists(json, 'Volume') ? undefined : VolumeFromJSON(json['Volume']),
     };
 }
-exports.CreateVolumeResponseFromJSONTyped = CreateVolumeResponseFromJSONTyped;
-function CreateVolumeResponseToJSON(value) {
+export function CreateVolumeResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function CreateVolumeResponseToJSON(value) {
         return null;
     }
     return {
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
-        'Volume': Volume_1.VolumeToJSON(value.volume),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
+        'Volume': VolumeToJSON(value.volume),
     };
 }
-exports.CreateVolumeResponseToJSON = CreateVolumeResponseToJSON;

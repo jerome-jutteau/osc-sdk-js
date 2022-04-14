@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,27 +11,24 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function LinkNicFromJSON(json) {
+import { exists } from '../runtime';
+export function LinkNicFromJSON(json) {
     return LinkNicFromJSONTyped(json, false);
 }
-exports.LinkNicFromJSON = LinkNicFromJSON;
-function LinkNicFromJSONTyped(json, ignoreDiscriminator) {
+export function LinkNicFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'deleteOnVmDeletion': !runtime_1.exists(json, 'DeleteOnVmDeletion') ? undefined : json['DeleteOnVmDeletion'],
-        'deviceNumber': !runtime_1.exists(json, 'DeviceNumber') ? undefined : json['DeviceNumber'],
-        'linkNicId': !runtime_1.exists(json, 'LinkNicId') ? undefined : json['LinkNicId'],
-        'state': !runtime_1.exists(json, 'State') ? undefined : json['State'],
-        'vmAccountId': !runtime_1.exists(json, 'VmAccountId') ? undefined : json['VmAccountId'],
-        'vmId': !runtime_1.exists(json, 'VmId') ? undefined : json['VmId'],
+        'deleteOnVmDeletion': !exists(json, 'DeleteOnVmDeletion') ? undefined : json['DeleteOnVmDeletion'],
+        'deviceNumber': !exists(json, 'DeviceNumber') ? undefined : json['DeviceNumber'],
+        'linkNicId': !exists(json, 'LinkNicId') ? undefined : json['LinkNicId'],
+        'state': !exists(json, 'State') ? undefined : json['State'],
+        'vmAccountId': !exists(json, 'VmAccountId') ? undefined : json['VmAccountId'],
+        'vmId': !exists(json, 'VmId') ? undefined : json['VmId'],
     };
 }
-exports.LinkNicFromJSONTyped = LinkNicFromJSONTyped;
-function LinkNicToJSON(value) {
+export function LinkNicToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -48,4 +44,3 @@ function LinkNicToJSON(value) {
         'VmId': value.vmId,
     };
 }
-exports.LinkNicToJSON = LinkNicToJSON;

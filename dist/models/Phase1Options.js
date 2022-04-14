@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,30 +11,27 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function Phase1OptionsFromJSON(json) {
+import { exists } from '../runtime';
+export function Phase1OptionsFromJSON(json) {
     return Phase1OptionsFromJSONTyped(json, false);
 }
-exports.Phase1OptionsFromJSON = Phase1OptionsFromJSON;
-function Phase1OptionsFromJSONTyped(json, ignoreDiscriminator) {
+export function Phase1OptionsFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dpdTimeoutAction': !runtime_1.exists(json, 'DpdTimeoutAction') ? undefined : json['DpdTimeoutAction'],
-        'dpdTimeoutSeconds': !runtime_1.exists(json, 'DpdTimeoutSeconds') ? undefined : json['DpdTimeoutSeconds'],
-        'ikeVersions': !runtime_1.exists(json, 'IkeVersions') ? undefined : json['IkeVersions'],
-        'phase1DhGroupNumbers': !runtime_1.exists(json, 'Phase1DhGroupNumbers') ? undefined : json['Phase1DhGroupNumbers'],
-        'phase1EncryptionAlgorithms': !runtime_1.exists(json, 'Phase1EncryptionAlgorithms') ? undefined : json['Phase1EncryptionAlgorithms'],
-        'phase1IntegrityAlgorithms': !runtime_1.exists(json, 'Phase1IntegrityAlgorithms') ? undefined : json['Phase1IntegrityAlgorithms'],
-        'phase1LifetimeSeconds': !runtime_1.exists(json, 'Phase1LifetimeSeconds') ? undefined : json['Phase1LifetimeSeconds'],
-        'replayWindowSize': !runtime_1.exists(json, 'ReplayWindowSize') ? undefined : json['ReplayWindowSize'],
-        'startupAction': !runtime_1.exists(json, 'StartupAction') ? undefined : json['StartupAction'],
+        'dpdTimeoutAction': !exists(json, 'DpdTimeoutAction') ? undefined : json['DpdTimeoutAction'],
+        'dpdTimeoutSeconds': !exists(json, 'DpdTimeoutSeconds') ? undefined : json['DpdTimeoutSeconds'],
+        'ikeVersions': !exists(json, 'IkeVersions') ? undefined : json['IkeVersions'],
+        'phase1DhGroupNumbers': !exists(json, 'Phase1DhGroupNumbers') ? undefined : json['Phase1DhGroupNumbers'],
+        'phase1EncryptionAlgorithms': !exists(json, 'Phase1EncryptionAlgorithms') ? undefined : json['Phase1EncryptionAlgorithms'],
+        'phase1IntegrityAlgorithms': !exists(json, 'Phase1IntegrityAlgorithms') ? undefined : json['Phase1IntegrityAlgorithms'],
+        'phase1LifetimeSeconds': !exists(json, 'Phase1LifetimeSeconds') ? undefined : json['Phase1LifetimeSeconds'],
+        'replayWindowSize': !exists(json, 'ReplayWindowSize') ? undefined : json['ReplayWindowSize'],
+        'startupAction': !exists(json, 'StartupAction') ? undefined : json['StartupAction'],
     };
 }
-exports.Phase1OptionsFromJSONTyped = Phase1OptionsFromJSONTyped;
-function Phase1OptionsToJSON(value) {
+export function Phase1OptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -54,4 +50,3 @@ function Phase1OptionsToJSON(value) {
         'StartupAction': value.startupAction,
     };
 }
-exports.Phase1OptionsToJSON = Phase1OptionsToJSON;

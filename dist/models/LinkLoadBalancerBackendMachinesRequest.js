@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function LinkLoadBalancerBackendMachinesRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function LinkLoadBalancerBackendMachinesRequestFromJSON(json) {
     return LinkLoadBalancerBackendMachinesRequestFromJSONTyped(json, false);
 }
-exports.LinkLoadBalancerBackendMachinesRequestFromJSON = LinkLoadBalancerBackendMachinesRequestFromJSON;
-function LinkLoadBalancerBackendMachinesRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function LinkLoadBalancerBackendMachinesRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'backendIps': !runtime_1.exists(json, 'BackendIps') ? undefined : json['BackendIps'],
-        'backendVmIds': !runtime_1.exists(json, 'BackendVmIds') ? undefined : json['BackendVmIds'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'backendIps': !exists(json, 'BackendIps') ? undefined : json['BackendIps'],
+        'backendVmIds': !exists(json, 'BackendVmIds') ? undefined : json['BackendVmIds'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'loadBalancerName': json['LoadBalancerName'],
     };
 }
-exports.LinkLoadBalancerBackendMachinesRequestFromJSONTyped = LinkLoadBalancerBackendMachinesRequestFromJSONTyped;
-function LinkLoadBalancerBackendMachinesRequestToJSON(value) {
+export function LinkLoadBalancerBackendMachinesRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,4 +40,3 @@ function LinkLoadBalancerBackendMachinesRequestToJSON(value) {
         'LoadBalancerName': value.loadBalancerName,
     };
 }
-exports.LinkLoadBalancerBackendMachinesRequestToJSON = LinkLoadBalancerBackendMachinesRequestToJSON;

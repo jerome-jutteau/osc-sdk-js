@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var FiltersDirectLinkInterface_1 = require("./FiltersDirectLinkInterface");
-function ReadDirectLinkInterfacesRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { FiltersDirectLinkInterfaceFromJSON, FiltersDirectLinkInterfaceToJSON, } from './FiltersDirectLinkInterface';
+export function ReadDirectLinkInterfacesRequestFromJSON(json) {
     return ReadDirectLinkInterfacesRequestFromJSONTyped(json, false);
 }
-exports.ReadDirectLinkInterfacesRequestFromJSON = ReadDirectLinkInterfacesRequestFromJSON;
-function ReadDirectLinkInterfacesRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadDirectLinkInterfacesRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'filters': !runtime_1.exists(json, 'Filters') ? undefined : FiltersDirectLinkInterface_1.FiltersDirectLinkInterfaceFromJSON(json['Filters']),
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'filters': !exists(json, 'Filters') ? undefined : FiltersDirectLinkInterfaceFromJSON(json['Filters']),
     };
 }
-exports.ReadDirectLinkInterfacesRequestFromJSONTyped = ReadDirectLinkInterfacesRequestFromJSONTyped;
-function ReadDirectLinkInterfacesRequestToJSON(value) {
+export function ReadDirectLinkInterfacesRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,7 +34,6 @@ function ReadDirectLinkInterfacesRequestToJSON(value) {
     }
     return {
         'DryRun': value.dryRun,
-        'Filters': FiltersDirectLinkInterface_1.FiltersDirectLinkInterfaceToJSON(value.filters),
+        'Filters': FiltersDirectLinkInterfaceToJSON(value.filters),
     };
 }
-exports.ReadDirectLinkInterfacesRequestToJSON = ReadDirectLinkInterfacesRequestToJSON;

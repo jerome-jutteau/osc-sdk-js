@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,26 +11,23 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var LinkPublicIpLightForVm_1 = require("./LinkPublicIpLightForVm");
-function PrivateIpLightForVmFromJSON(json) {
+import { exists } from '../runtime';
+import { LinkPublicIpLightForVmFromJSON, LinkPublicIpLightForVmToJSON, } from './LinkPublicIpLightForVm';
+export function PrivateIpLightForVmFromJSON(json) {
     return PrivateIpLightForVmFromJSONTyped(json, false);
 }
-exports.PrivateIpLightForVmFromJSON = PrivateIpLightForVmFromJSON;
-function PrivateIpLightForVmFromJSONTyped(json, ignoreDiscriminator) {
+export function PrivateIpLightForVmFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'isPrimary': !runtime_1.exists(json, 'IsPrimary') ? undefined : json['IsPrimary'],
-        'linkPublicIp': !runtime_1.exists(json, 'LinkPublicIp') ? undefined : LinkPublicIpLightForVm_1.LinkPublicIpLightForVmFromJSON(json['LinkPublicIp']),
-        'privateDnsName': !runtime_1.exists(json, 'PrivateDnsName') ? undefined : json['PrivateDnsName'],
-        'privateIp': !runtime_1.exists(json, 'PrivateIp') ? undefined : json['PrivateIp'],
+        'isPrimary': !exists(json, 'IsPrimary') ? undefined : json['IsPrimary'],
+        'linkPublicIp': !exists(json, 'LinkPublicIp') ? undefined : LinkPublicIpLightForVmFromJSON(json['LinkPublicIp']),
+        'privateDnsName': !exists(json, 'PrivateDnsName') ? undefined : json['PrivateDnsName'],
+        'privateIp': !exists(json, 'PrivateIp') ? undefined : json['PrivateIp'],
     };
 }
-exports.PrivateIpLightForVmFromJSONTyped = PrivateIpLightForVmFromJSONTyped;
-function PrivateIpLightForVmToJSON(value) {
+export function PrivateIpLightForVmToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,9 +36,8 @@ function PrivateIpLightForVmToJSON(value) {
     }
     return {
         'IsPrimary': value.isPrimary,
-        'LinkPublicIp': LinkPublicIpLightForVm_1.LinkPublicIpLightForVmToJSON(value.linkPublicIp),
+        'LinkPublicIp': LinkPublicIpLightForVmToJSON(value.linkPublicIp),
         'PrivateDnsName': value.privateDnsName,
         'PrivateIp': value.privateIp,
     };
 }
-exports.PrivateIpLightForVmToJSON = PrivateIpLightForVmToJSON;

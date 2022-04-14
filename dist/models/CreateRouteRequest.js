@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,29 +11,26 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function CreateRouteRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function CreateRouteRequestFromJSON(json) {
     return CreateRouteRequestFromJSONTyped(json, false);
 }
-exports.CreateRouteRequestFromJSON = CreateRouteRequestFromJSON;
-function CreateRouteRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateRouteRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'destinationIpRange': json['DestinationIpRange'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'gatewayId': !runtime_1.exists(json, 'GatewayId') ? undefined : json['GatewayId'],
-        'natServiceId': !runtime_1.exists(json, 'NatServiceId') ? undefined : json['NatServiceId'],
-        'netPeeringId': !runtime_1.exists(json, 'NetPeeringId') ? undefined : json['NetPeeringId'],
-        'nicId': !runtime_1.exists(json, 'NicId') ? undefined : json['NicId'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'gatewayId': !exists(json, 'GatewayId') ? undefined : json['GatewayId'],
+        'natServiceId': !exists(json, 'NatServiceId') ? undefined : json['NatServiceId'],
+        'netPeeringId': !exists(json, 'NetPeeringId') ? undefined : json['NetPeeringId'],
+        'nicId': !exists(json, 'NicId') ? undefined : json['NicId'],
         'routeTableId': json['RouteTableId'],
-        'vmId': !runtime_1.exists(json, 'VmId') ? undefined : json['VmId'],
+        'vmId': !exists(json, 'VmId') ? undefined : json['VmId'],
     };
 }
-exports.CreateRouteRequestFromJSONTyped = CreateRouteRequestFromJSONTyped;
-function CreateRouteRequestToJSON(value) {
+export function CreateRouteRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -52,4 +48,3 @@ function CreateRouteRequestToJSON(value) {
         'VmId': value.vmId,
     };
 }
-exports.CreateRouteRequestToJSON = CreateRouteRequestToJSON;

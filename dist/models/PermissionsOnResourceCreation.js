@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var PermissionsOnResource_1 = require("./PermissionsOnResource");
-function PermissionsOnResourceCreationFromJSON(json) {
+import { exists } from '../runtime';
+import { PermissionsOnResourceFromJSON, PermissionsOnResourceToJSON, } from './PermissionsOnResource';
+export function PermissionsOnResourceCreationFromJSON(json) {
     return PermissionsOnResourceCreationFromJSONTyped(json, false);
 }
-exports.PermissionsOnResourceCreationFromJSON = PermissionsOnResourceCreationFromJSON;
-function PermissionsOnResourceCreationFromJSONTyped(json, ignoreDiscriminator) {
+export function PermissionsOnResourceCreationFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'additions': !runtime_1.exists(json, 'Additions') ? undefined : PermissionsOnResource_1.PermissionsOnResourceFromJSON(json['Additions']),
-        'removals': !runtime_1.exists(json, 'Removals') ? undefined : PermissionsOnResource_1.PermissionsOnResourceFromJSON(json['Removals']),
+        'additions': !exists(json, 'Additions') ? undefined : PermissionsOnResourceFromJSON(json['Additions']),
+        'removals': !exists(json, 'Removals') ? undefined : PermissionsOnResourceFromJSON(json['Removals']),
     };
 }
-exports.PermissionsOnResourceCreationFromJSONTyped = PermissionsOnResourceCreationFromJSONTyped;
-function PermissionsOnResourceCreationToJSON(value) {
+export function PermissionsOnResourceCreationToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -37,8 +33,7 @@ function PermissionsOnResourceCreationToJSON(value) {
         return null;
     }
     return {
-        'Additions': PermissionsOnResource_1.PermissionsOnResourceToJSON(value.additions),
-        'Removals': PermissionsOnResource_1.PermissionsOnResourceToJSON(value.removals),
+        'Additions': PermissionsOnResourceToJSON(value.additions),
+        'Removals': PermissionsOnResourceToJSON(value.removals),
     };
 }
-exports.PermissionsOnResourceCreationToJSON = PermissionsOnResourceCreationToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var NetPeering_1 = require("./NetPeering");
-function CreateNetPeeringResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { NetPeeringFromJSON, NetPeeringToJSON, } from './NetPeering';
+export function CreateNetPeeringResponseFromJSON(json) {
     return CreateNetPeeringResponseFromJSONTyped(json, false);
 }
-exports.CreateNetPeeringResponseFromJSON = CreateNetPeeringResponseFromJSON;
-function CreateNetPeeringResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateNetPeeringResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'netPeering': !runtime_1.exists(json, 'NetPeering') ? undefined : NetPeering_1.NetPeeringFromJSON(json['NetPeering']),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'netPeering': !exists(json, 'NetPeering') ? undefined : NetPeeringFromJSON(json['NetPeering']),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.CreateNetPeeringResponseFromJSONTyped = CreateNetPeeringResponseFromJSONTyped;
-function CreateNetPeeringResponseToJSON(value) {
+export function CreateNetPeeringResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function CreateNetPeeringResponseToJSON(value) {
         return null;
     }
     return {
-        'NetPeering': NetPeering_1.NetPeeringToJSON(value.netPeering),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'NetPeering': NetPeeringToJSON(value.netPeering),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.CreateNetPeeringResponseToJSON = CreateNetPeeringResponseToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,22 +11,19 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function CreateInternetServiceRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function CreateInternetServiceRequestFromJSON(json) {
     return CreateInternetServiceRequestFromJSONTyped(json, false);
 }
-exports.CreateInternetServiceRequestFromJSON = CreateInternetServiceRequestFromJSON;
-function CreateInternetServiceRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateInternetServiceRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
     };
 }
-exports.CreateInternetServiceRequestFromJSONTyped = CreateInternetServiceRequestFromJSONTyped;
-function CreateInternetServiceRequestToJSON(value) {
+export function CreateInternetServiceRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,4 +34,3 @@ function CreateInternetServiceRequestToJSON(value) {
         'DryRun': value.dryRun,
     };
 }
-exports.CreateInternetServiceRequestToJSON = CreateInternetServiceRequestToJSON;

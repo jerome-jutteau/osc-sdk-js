@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function UnlinkVolumeResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function UnlinkVolumeResponseFromJSON(json) {
     return UnlinkVolumeResponseFromJSONTyped(json, false);
 }
-exports.UnlinkVolumeResponseFromJSON = UnlinkVolumeResponseFromJSON;
-function UnlinkVolumeResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function UnlinkVolumeResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.UnlinkVolumeResponseFromJSONTyped = UnlinkVolumeResponseFromJSONTyped;
-function UnlinkVolumeResponseToJSON(value) {
+export function UnlinkVolumeResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -36,7 +32,6 @@ function UnlinkVolumeResponseToJSON(value) {
         return null;
     }
     return {
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.UnlinkVolumeResponseToJSON = UnlinkVolumeResponseToJSON;

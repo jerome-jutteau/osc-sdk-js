@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function CreateNetRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function CreateNetRequestFromJSON(json) {
     return CreateNetRequestFromJSONTyped(json, false);
 }
-exports.CreateNetRequestFromJSON = CreateNetRequestFromJSON;
-function CreateNetRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateNetRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'ipRange': json['IpRange'],
-        'tenancy': !runtime_1.exists(json, 'Tenancy') ? undefined : json['Tenancy'],
+        'tenancy': !exists(json, 'Tenancy') ? undefined : json['Tenancy'],
     };
 }
-exports.CreateNetRequestFromJSONTyped = CreateNetRequestFromJSONTyped;
-function CreateNetRequestToJSON(value) {
+export function CreateNetRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,4 +38,3 @@ function CreateNetRequestToJSON(value) {
         'Tenancy': value.tenancy,
     };
 }
-exports.CreateNetRequestToJSON = CreateNetRequestToJSON;

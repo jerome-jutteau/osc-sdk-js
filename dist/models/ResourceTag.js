@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,12 +11,10 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-function ResourceTagFromJSON(json) {
+export function ResourceTagFromJSON(json) {
     return ResourceTagFromJSONTyped(json, false);
 }
-exports.ResourceTagFromJSON = ResourceTagFromJSON;
-function ResourceTagFromJSONTyped(json, ignoreDiscriminator) {
+export function ResourceTagFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
@@ -26,8 +23,7 @@ function ResourceTagFromJSONTyped(json, ignoreDiscriminator) {
         'value': json['Value'],
     };
 }
-exports.ResourceTagFromJSONTyped = ResourceTagFromJSONTyped;
-function ResourceTagToJSON(value) {
+export function ResourceTagToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -39,4 +35,3 @@ function ResourceTagToJSON(value) {
         'Value': value.value,
     };
 }
-exports.ResourceTagToJSON = ResourceTagToJSON;

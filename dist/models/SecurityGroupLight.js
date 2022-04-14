@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function SecurityGroupLightFromJSON(json) {
+import { exists } from '../runtime';
+export function SecurityGroupLightFromJSON(json) {
     return SecurityGroupLightFromJSONTyped(json, false);
 }
-exports.SecurityGroupLightFromJSON = SecurityGroupLightFromJSON;
-function SecurityGroupLightFromJSONTyped(json, ignoreDiscriminator) {
+export function SecurityGroupLightFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'securityGroupId': !runtime_1.exists(json, 'SecurityGroupId') ? undefined : json['SecurityGroupId'],
-        'securityGroupName': !runtime_1.exists(json, 'SecurityGroupName') ? undefined : json['SecurityGroupName'],
+        'securityGroupId': !exists(json, 'SecurityGroupId') ? undefined : json['SecurityGroupId'],
+        'securityGroupName': !exists(json, 'SecurityGroupName') ? undefined : json['SecurityGroupName'],
     };
 }
-exports.SecurityGroupLightFromJSONTyped = SecurityGroupLightFromJSONTyped;
-function SecurityGroupLightToJSON(value) {
+export function SecurityGroupLightToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function SecurityGroupLightToJSON(value) {
         'SecurityGroupName': value.securityGroupName,
     };
 }
-exports.SecurityGroupLightToJSON = SecurityGroupLightToJSON;

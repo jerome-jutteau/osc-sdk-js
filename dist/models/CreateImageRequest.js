@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,33 +11,30 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var BlockDeviceMappingImage_1 = require("./BlockDeviceMappingImage");
-function CreateImageRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { BlockDeviceMappingImageFromJSON, BlockDeviceMappingImageToJSON, } from './BlockDeviceMappingImage';
+export function CreateImageRequestFromJSON(json) {
     return CreateImageRequestFromJSONTyped(json, false);
 }
-exports.CreateImageRequestFromJSON = CreateImageRequestFromJSON;
-function CreateImageRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateImageRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'architecture': !runtime_1.exists(json, 'Architecture') ? undefined : json['Architecture'],
-        'blockDeviceMappings': !runtime_1.exists(json, 'BlockDeviceMappings') ? undefined : (json['BlockDeviceMappings'].map(BlockDeviceMappingImage_1.BlockDeviceMappingImageFromJSON)),
-        'description': !runtime_1.exists(json, 'Description') ? undefined : json['Description'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'fileLocation': !runtime_1.exists(json, 'FileLocation') ? undefined : json['FileLocation'],
-        'imageName': !runtime_1.exists(json, 'ImageName') ? undefined : json['ImageName'],
-        'noReboot': !runtime_1.exists(json, 'NoReboot') ? undefined : json['NoReboot'],
-        'rootDeviceName': !runtime_1.exists(json, 'RootDeviceName') ? undefined : json['RootDeviceName'],
-        'sourceImageId': !runtime_1.exists(json, 'SourceImageId') ? undefined : json['SourceImageId'],
-        'sourceRegionName': !runtime_1.exists(json, 'SourceRegionName') ? undefined : json['SourceRegionName'],
-        'vmId': !runtime_1.exists(json, 'VmId') ? undefined : json['VmId'],
+        'architecture': !exists(json, 'Architecture') ? undefined : json['Architecture'],
+        'blockDeviceMappings': !exists(json, 'BlockDeviceMappings') ? undefined : (json['BlockDeviceMappings'].map(BlockDeviceMappingImageFromJSON)),
+        'description': !exists(json, 'Description') ? undefined : json['Description'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'fileLocation': !exists(json, 'FileLocation') ? undefined : json['FileLocation'],
+        'imageName': !exists(json, 'ImageName') ? undefined : json['ImageName'],
+        'noReboot': !exists(json, 'NoReboot') ? undefined : json['NoReboot'],
+        'rootDeviceName': !exists(json, 'RootDeviceName') ? undefined : json['RootDeviceName'],
+        'sourceImageId': !exists(json, 'SourceImageId') ? undefined : json['SourceImageId'],
+        'sourceRegionName': !exists(json, 'SourceRegionName') ? undefined : json['SourceRegionName'],
+        'vmId': !exists(json, 'VmId') ? undefined : json['VmId'],
     };
 }
-exports.CreateImageRequestFromJSONTyped = CreateImageRequestFromJSONTyped;
-function CreateImageRequestToJSON(value) {
+export function CreateImageRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -47,7 +43,7 @@ function CreateImageRequestToJSON(value) {
     }
     return {
         'Architecture': value.architecture,
-        'BlockDeviceMappings': value.blockDeviceMappings === undefined ? undefined : (value.blockDeviceMappings.map(BlockDeviceMappingImage_1.BlockDeviceMappingImageToJSON)),
+        'BlockDeviceMappings': value.blockDeviceMappings === undefined ? undefined : (value.blockDeviceMappings.map(BlockDeviceMappingImageToJSON)),
         'Description': value.description,
         'DryRun': value.dryRun,
         'FileLocation': value.fileLocation,
@@ -59,4 +55,3 @@ function CreateImageRequestToJSON(value) {
         'VmId': value.vmId,
     };
 }
-exports.CreateImageRequestToJSON = CreateImageRequestToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,27 +11,24 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ListenerRuleForCreation_1 = require("./ListenerRuleForCreation");
-var LoadBalancerLight_1 = require("./LoadBalancerLight");
-function CreateListenerRuleRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { ListenerRuleForCreationFromJSON, ListenerRuleForCreationToJSON, } from './ListenerRuleForCreation';
+import { LoadBalancerLightFromJSON, LoadBalancerLightToJSON, } from './LoadBalancerLight';
+export function CreateListenerRuleRequestFromJSON(json) {
     return CreateListenerRuleRequestFromJSONTyped(json, false);
 }
-exports.CreateListenerRuleRequestFromJSON = CreateListenerRuleRequestFromJSON;
-function CreateListenerRuleRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateListenerRuleRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'listener': LoadBalancerLight_1.LoadBalancerLightFromJSON(json['Listener']),
-        'listenerRule': ListenerRuleForCreation_1.ListenerRuleForCreationFromJSON(json['ListenerRule']),
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'listener': LoadBalancerLightFromJSON(json['Listener']),
+        'listenerRule': ListenerRuleForCreationFromJSON(json['ListenerRule']),
         'vmIds': json['VmIds'],
     };
 }
-exports.CreateListenerRuleRequestFromJSONTyped = CreateListenerRuleRequestFromJSONTyped;
-function CreateListenerRuleRequestToJSON(value) {
+export function CreateListenerRuleRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -41,9 +37,8 @@ function CreateListenerRuleRequestToJSON(value) {
     }
     return {
         'DryRun': value.dryRun,
-        'Listener': LoadBalancerLight_1.LoadBalancerLightToJSON(value.listener),
-        'ListenerRule': ListenerRuleForCreation_1.ListenerRuleForCreationToJSON(value.listenerRule),
+        'Listener': LoadBalancerLightToJSON(value.listener),
+        'ListenerRule': ListenerRuleForCreationToJSON(value.listenerRule),
         'VmIds': value.vmIds,
     };
 }
-exports.CreateListenerRuleRequestToJSON = CreateListenerRuleRequestToJSON;

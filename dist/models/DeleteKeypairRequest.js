@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function DeleteKeypairRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function DeleteKeypairRequestFromJSON(json) {
     return DeleteKeypairRequestFromJSONTyped(json, false);
 }
-exports.DeleteKeypairRequestFromJSON = DeleteKeypairRequestFromJSON;
-function DeleteKeypairRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function DeleteKeypairRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'keypairName': json['KeypairName'],
     };
 }
-exports.DeleteKeypairRequestFromJSONTyped = DeleteKeypairRequestFromJSONTyped;
-function DeleteKeypairRequestToJSON(value) {
+export function DeleteKeypairRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function DeleteKeypairRequestToJSON(value) {
         'KeypairName': value.keypairName,
     };
 }
-exports.DeleteKeypairRequestToJSON = DeleteKeypairRequestToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,26 +11,23 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function ApiAccessRuleFromJSON(json) {
+import { exists } from '../runtime';
+export function ApiAccessRuleFromJSON(json) {
     return ApiAccessRuleFromJSONTyped(json, false);
 }
-exports.ApiAccessRuleFromJSON = ApiAccessRuleFromJSON;
-function ApiAccessRuleFromJSONTyped(json, ignoreDiscriminator) {
+export function ApiAccessRuleFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'apiAccessRuleId': !runtime_1.exists(json, 'ApiAccessRuleId') ? undefined : json['ApiAccessRuleId'],
-        'caIds': !runtime_1.exists(json, 'CaIds') ? undefined : json['CaIds'],
-        'cns': !runtime_1.exists(json, 'Cns') ? undefined : json['Cns'],
-        'description': !runtime_1.exists(json, 'Description') ? undefined : json['Description'],
-        'ipRanges': !runtime_1.exists(json, 'IpRanges') ? undefined : json['IpRanges'],
+        'apiAccessRuleId': !exists(json, 'ApiAccessRuleId') ? undefined : json['ApiAccessRuleId'],
+        'caIds': !exists(json, 'CaIds') ? undefined : json['CaIds'],
+        'cns': !exists(json, 'Cns') ? undefined : json['Cns'],
+        'description': !exists(json, 'Description') ? undefined : json['Description'],
+        'ipRanges': !exists(json, 'IpRanges') ? undefined : json['IpRanges'],
     };
 }
-exports.ApiAccessRuleFromJSONTyped = ApiAccessRuleFromJSONTyped;
-function ApiAccessRuleToJSON(value) {
+export function ApiAccessRuleToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -46,4 +42,3 @@ function ApiAccessRuleToJSON(value) {
         'IpRanges': value.ipRanges,
     };
 }
-exports.ApiAccessRuleToJSON = ApiAccessRuleToJSON;

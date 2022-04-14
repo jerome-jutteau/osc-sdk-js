@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,54 +11,51 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var BlockDeviceMappingVmCreation_1 = require("./BlockDeviceMappingVmCreation");
-var NicForVmCreation_1 = require("./NicForVmCreation");
-var Placement_1 = require("./Placement");
+import { exists } from '../runtime';
+import { BlockDeviceMappingVmCreationFromJSON, BlockDeviceMappingVmCreationToJSON, } from './BlockDeviceMappingVmCreation';
+import { NicForVmCreationFromJSON, NicForVmCreationToJSON, } from './NicForVmCreation';
+import { PlacementFromJSON, PlacementToJSON, } from './Placement';
 /**
 * @export
 * @enum {string}
 */
-var CreateVmsRequestPerformanceEnum;
+export var CreateVmsRequestPerformanceEnum;
 (function (CreateVmsRequestPerformanceEnum) {
     CreateVmsRequestPerformanceEnum["Medium"] = "medium";
     CreateVmsRequestPerformanceEnum["High"] = "high";
     CreateVmsRequestPerformanceEnum["Highest"] = "highest";
-})(CreateVmsRequestPerformanceEnum = exports.CreateVmsRequestPerformanceEnum || (exports.CreateVmsRequestPerformanceEnum = {}));
-function CreateVmsRequestFromJSON(json) {
+})(CreateVmsRequestPerformanceEnum || (CreateVmsRequestPerformanceEnum = {}));
+export function CreateVmsRequestFromJSON(json) {
     return CreateVmsRequestFromJSONTyped(json, false);
 }
-exports.CreateVmsRequestFromJSON = CreateVmsRequestFromJSON;
-function CreateVmsRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateVmsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'blockDeviceMappings': !runtime_1.exists(json, 'BlockDeviceMappings') ? undefined : (json['BlockDeviceMappings'].map(BlockDeviceMappingVmCreation_1.BlockDeviceMappingVmCreationFromJSON)),
-        'bootOnCreation': !runtime_1.exists(json, 'BootOnCreation') ? undefined : json['BootOnCreation'],
-        'bsuOptimized': !runtime_1.exists(json, 'BsuOptimized') ? undefined : json['BsuOptimized'],
-        'clientToken': !runtime_1.exists(json, 'ClientToken') ? undefined : json['ClientToken'],
-        'deletionProtection': !runtime_1.exists(json, 'DeletionProtection') ? undefined : json['DeletionProtection'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'blockDeviceMappings': !exists(json, 'BlockDeviceMappings') ? undefined : (json['BlockDeviceMappings'].map(BlockDeviceMappingVmCreationFromJSON)),
+        'bootOnCreation': !exists(json, 'BootOnCreation') ? undefined : json['BootOnCreation'],
+        'bsuOptimized': !exists(json, 'BsuOptimized') ? undefined : json['BsuOptimized'],
+        'clientToken': !exists(json, 'ClientToken') ? undefined : json['ClientToken'],
+        'deletionProtection': !exists(json, 'DeletionProtection') ? undefined : json['DeletionProtection'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'imageId': json['ImageId'],
-        'keypairName': !runtime_1.exists(json, 'KeypairName') ? undefined : json['KeypairName'],
-        'maxVmsCount': !runtime_1.exists(json, 'MaxVmsCount') ? undefined : json['MaxVmsCount'],
-        'minVmsCount': !runtime_1.exists(json, 'MinVmsCount') ? undefined : json['MinVmsCount'],
-        'nics': !runtime_1.exists(json, 'Nics') ? undefined : (json['Nics'].map(NicForVmCreation_1.NicForVmCreationFromJSON)),
-        'performance': !runtime_1.exists(json, 'Performance') ? undefined : json['Performance'],
-        'placement': !runtime_1.exists(json, 'Placement') ? undefined : Placement_1.PlacementFromJSON(json['Placement']),
-        'privateIps': !runtime_1.exists(json, 'PrivateIps') ? undefined : json['PrivateIps'],
-        'securityGroupIds': !runtime_1.exists(json, 'SecurityGroupIds') ? undefined : json['SecurityGroupIds'],
-        'securityGroups': !runtime_1.exists(json, 'SecurityGroups') ? undefined : json['SecurityGroups'],
-        'subnetId': !runtime_1.exists(json, 'SubnetId') ? undefined : json['SubnetId'],
-        'userData': !runtime_1.exists(json, 'UserData') ? undefined : json['UserData'],
-        'vmInitiatedShutdownBehavior': !runtime_1.exists(json, 'VmInitiatedShutdownBehavior') ? undefined : json['VmInitiatedShutdownBehavior'],
-        'vmType': !runtime_1.exists(json, 'VmType') ? undefined : json['VmType'],
+        'keypairName': !exists(json, 'KeypairName') ? undefined : json['KeypairName'],
+        'maxVmsCount': !exists(json, 'MaxVmsCount') ? undefined : json['MaxVmsCount'],
+        'minVmsCount': !exists(json, 'MinVmsCount') ? undefined : json['MinVmsCount'],
+        'nics': !exists(json, 'Nics') ? undefined : (json['Nics'].map(NicForVmCreationFromJSON)),
+        'performance': !exists(json, 'Performance') ? undefined : json['Performance'],
+        'placement': !exists(json, 'Placement') ? undefined : PlacementFromJSON(json['Placement']),
+        'privateIps': !exists(json, 'PrivateIps') ? undefined : json['PrivateIps'],
+        'securityGroupIds': !exists(json, 'SecurityGroupIds') ? undefined : json['SecurityGroupIds'],
+        'securityGroups': !exists(json, 'SecurityGroups') ? undefined : json['SecurityGroups'],
+        'subnetId': !exists(json, 'SubnetId') ? undefined : json['SubnetId'],
+        'userData': !exists(json, 'UserData') ? undefined : json['UserData'],
+        'vmInitiatedShutdownBehavior': !exists(json, 'VmInitiatedShutdownBehavior') ? undefined : json['VmInitiatedShutdownBehavior'],
+        'vmType': !exists(json, 'VmType') ? undefined : json['VmType'],
     };
 }
-exports.CreateVmsRequestFromJSONTyped = CreateVmsRequestFromJSONTyped;
-function CreateVmsRequestToJSON(value) {
+export function CreateVmsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -67,7 +63,7 @@ function CreateVmsRequestToJSON(value) {
         return null;
     }
     return {
-        'BlockDeviceMappings': value.blockDeviceMappings === undefined ? undefined : (value.blockDeviceMappings.map(BlockDeviceMappingVmCreation_1.BlockDeviceMappingVmCreationToJSON)),
+        'BlockDeviceMappings': value.blockDeviceMappings === undefined ? undefined : (value.blockDeviceMappings.map(BlockDeviceMappingVmCreationToJSON)),
         'BootOnCreation': value.bootOnCreation,
         'BsuOptimized': value.bsuOptimized,
         'ClientToken': value.clientToken,
@@ -77,9 +73,9 @@ function CreateVmsRequestToJSON(value) {
         'KeypairName': value.keypairName,
         'MaxVmsCount': value.maxVmsCount,
         'MinVmsCount': value.minVmsCount,
-        'Nics': value.nics === undefined ? undefined : (value.nics.map(NicForVmCreation_1.NicForVmCreationToJSON)),
+        'Nics': value.nics === undefined ? undefined : (value.nics.map(NicForVmCreationToJSON)),
         'Performance': value.performance,
-        'Placement': Placement_1.PlacementToJSON(value.placement),
+        'Placement': PlacementToJSON(value.placement),
         'PrivateIps': value.privateIps,
         'SecurityGroupIds': value.securityGroupIds,
         'SecurityGroups': value.securityGroups,
@@ -89,4 +85,3 @@ function CreateVmsRequestToJSON(value) {
         'VmType': value.vmType,
     };
 }
-exports.CreateVmsRequestToJSON = CreateVmsRequestToJSON;

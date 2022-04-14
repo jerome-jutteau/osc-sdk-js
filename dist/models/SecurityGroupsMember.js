@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function SecurityGroupsMemberFromJSON(json) {
+import { exists } from '../runtime';
+export function SecurityGroupsMemberFromJSON(json) {
     return SecurityGroupsMemberFromJSONTyped(json, false);
 }
-exports.SecurityGroupsMemberFromJSON = SecurityGroupsMemberFromJSON;
-function SecurityGroupsMemberFromJSONTyped(json, ignoreDiscriminator) {
+export function SecurityGroupsMemberFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'accountId': !runtime_1.exists(json, 'AccountId') ? undefined : json['AccountId'],
-        'securityGroupId': !runtime_1.exists(json, 'SecurityGroupId') ? undefined : json['SecurityGroupId'],
-        'securityGroupName': !runtime_1.exists(json, 'SecurityGroupName') ? undefined : json['SecurityGroupName'],
+        'accountId': !exists(json, 'AccountId') ? undefined : json['AccountId'],
+        'securityGroupId': !exists(json, 'SecurityGroupId') ? undefined : json['SecurityGroupId'],
+        'securityGroupName': !exists(json, 'SecurityGroupName') ? undefined : json['SecurityGroupName'],
     };
 }
-exports.SecurityGroupsMemberFromJSONTyped = SecurityGroupsMemberFromJSONTyped;
-function SecurityGroupsMemberToJSON(value) {
+export function SecurityGroupsMemberToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,4 +38,3 @@ function SecurityGroupsMemberToJSON(value) {
         'SecurityGroupName': value.securityGroupName,
     };
 }
-exports.SecurityGroupsMemberToJSON = SecurityGroupsMemberToJSON;

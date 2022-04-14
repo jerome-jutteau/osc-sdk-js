@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,26 +11,23 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function ListenerForCreationFromJSON(json) {
+import { exists } from '../runtime';
+export function ListenerForCreationFromJSON(json) {
     return ListenerForCreationFromJSONTyped(json, false);
 }
-exports.ListenerForCreationFromJSON = ListenerForCreationFromJSON;
-function ListenerForCreationFromJSONTyped(json, ignoreDiscriminator) {
+export function ListenerForCreationFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'backendPort': json['BackendPort'],
-        'backendProtocol': !runtime_1.exists(json, 'BackendProtocol') ? undefined : json['BackendProtocol'],
+        'backendProtocol': !exists(json, 'BackendProtocol') ? undefined : json['BackendProtocol'],
         'loadBalancerPort': json['LoadBalancerPort'],
         'loadBalancerProtocol': json['LoadBalancerProtocol'],
-        'serverCertificateId': !runtime_1.exists(json, 'ServerCertificateId') ? undefined : json['ServerCertificateId'],
+        'serverCertificateId': !exists(json, 'ServerCertificateId') ? undefined : json['ServerCertificateId'],
     };
 }
-exports.ListenerForCreationFromJSONTyped = ListenerForCreationFromJSONTyped;
-function ListenerForCreationToJSON(value) {
+export function ListenerForCreationToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -46,4 +42,3 @@ function ListenerForCreationToJSON(value) {
         'ServerCertificateId': value.serverCertificateId,
     };
 }
-exports.ListenerForCreationToJSON = ListenerForCreationToJSON;

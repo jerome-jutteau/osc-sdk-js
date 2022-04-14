@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var FiltersExportTask_1 = require("./FiltersExportTask");
-function ReadSnapshotExportTasksRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { FiltersExportTaskFromJSON, FiltersExportTaskToJSON, } from './FiltersExportTask';
+export function ReadSnapshotExportTasksRequestFromJSON(json) {
     return ReadSnapshotExportTasksRequestFromJSONTyped(json, false);
 }
-exports.ReadSnapshotExportTasksRequestFromJSON = ReadSnapshotExportTasksRequestFromJSON;
-function ReadSnapshotExportTasksRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadSnapshotExportTasksRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'filters': !runtime_1.exists(json, 'Filters') ? undefined : FiltersExportTask_1.FiltersExportTaskFromJSON(json['Filters']),
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'filters': !exists(json, 'Filters') ? undefined : FiltersExportTaskFromJSON(json['Filters']),
     };
 }
-exports.ReadSnapshotExportTasksRequestFromJSONTyped = ReadSnapshotExportTasksRequestFromJSONTyped;
-function ReadSnapshotExportTasksRequestToJSON(value) {
+export function ReadSnapshotExportTasksRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,7 +34,6 @@ function ReadSnapshotExportTasksRequestToJSON(value) {
     }
     return {
         'DryRun': value.dryRun,
-        'Filters': FiltersExportTask_1.FiltersExportTaskToJSON(value.filters),
+        'Filters': FiltersExportTaskToJSON(value.filters),
     };
 }
-exports.ReadSnapshotExportTasksRequestToJSON = ReadSnapshotExportTasksRequestToJSON;

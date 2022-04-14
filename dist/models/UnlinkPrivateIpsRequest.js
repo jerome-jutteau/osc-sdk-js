@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function UnlinkPrivateIpsRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function UnlinkPrivateIpsRequestFromJSON(json) {
     return UnlinkPrivateIpsRequestFromJSONTyped(json, false);
 }
-exports.UnlinkPrivateIpsRequestFromJSON = UnlinkPrivateIpsRequestFromJSON;
-function UnlinkPrivateIpsRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function UnlinkPrivateIpsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'nicId': json['NicId'],
         'privateIps': json['PrivateIps'],
     };
 }
-exports.UnlinkPrivateIpsRequestFromJSONTyped = UnlinkPrivateIpsRequestFromJSONTyped;
-function UnlinkPrivateIpsRequestToJSON(value) {
+export function UnlinkPrivateIpsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,4 +38,3 @@ function UnlinkPrivateIpsRequestToJSON(value) {
         'PrivateIps': value.privateIps,
     };
 }
-exports.UnlinkPrivateIpsRequestToJSON = UnlinkPrivateIpsRequestToJSON;

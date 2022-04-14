@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function LinkNicToUpdateFromJSON(json) {
+import { exists } from '../runtime';
+export function LinkNicToUpdateFromJSON(json) {
     return LinkNicToUpdateFromJSONTyped(json, false);
 }
-exports.LinkNicToUpdateFromJSON = LinkNicToUpdateFromJSON;
-function LinkNicToUpdateFromJSONTyped(json, ignoreDiscriminator) {
+export function LinkNicToUpdateFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'deleteOnVmDeletion': !runtime_1.exists(json, 'DeleteOnVmDeletion') ? undefined : json['DeleteOnVmDeletion'],
-        'linkNicId': !runtime_1.exists(json, 'LinkNicId') ? undefined : json['LinkNicId'],
+        'deleteOnVmDeletion': !exists(json, 'DeleteOnVmDeletion') ? undefined : json['DeleteOnVmDeletion'],
+        'linkNicId': !exists(json, 'LinkNicId') ? undefined : json['LinkNicId'],
     };
 }
-exports.LinkNicToUpdateFromJSONTyped = LinkNicToUpdateFromJSONTyped;
-function LinkNicToUpdateToJSON(value) {
+export function LinkNicToUpdateToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function LinkNicToUpdateToJSON(value) {
         'LinkNicId': value.linkNicId,
     };
 }
-exports.LinkNicToUpdateToJSON = LinkNicToUpdateToJSON;

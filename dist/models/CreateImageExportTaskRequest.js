@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var OsuExportToCreate_1 = require("./OsuExportToCreate");
-function CreateImageExportTaskRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { OsuExportToCreateFromJSON, OsuExportToCreateToJSON, } from './OsuExportToCreate';
+export function CreateImageExportTaskRequestFromJSON(json) {
     return CreateImageExportTaskRequestFromJSONTyped(json, false);
 }
-exports.CreateImageExportTaskRequestFromJSON = CreateImageExportTaskRequestFromJSON;
-function CreateImageExportTaskRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateImageExportTaskRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'imageId': json['ImageId'],
-        'osuExport': OsuExportToCreate_1.OsuExportToCreateFromJSON(json['OsuExport']),
+        'osuExport': OsuExportToCreateFromJSON(json['OsuExport']),
     };
 }
-exports.CreateImageExportTaskRequestFromJSONTyped = CreateImageExportTaskRequestFromJSONTyped;
-function CreateImageExportTaskRequestToJSON(value) {
+export function CreateImageExportTaskRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,7 +36,6 @@ function CreateImageExportTaskRequestToJSON(value) {
     return {
         'DryRun': value.dryRun,
         'ImageId': value.imageId,
-        'OsuExport': OsuExportToCreate_1.OsuExportToCreateToJSON(value.osuExport),
+        'OsuExport': OsuExportToCreateToJSON(value.osuExport),
     };
 }
-exports.CreateImageExportTaskRequestToJSON = CreateImageExportTaskRequestToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function PrivateIpLightFromJSON(json) {
+import { exists } from '../runtime';
+export function PrivateIpLightFromJSON(json) {
     return PrivateIpLightFromJSONTyped(json, false);
 }
-exports.PrivateIpLightFromJSON = PrivateIpLightFromJSON;
-function PrivateIpLightFromJSONTyped(json, ignoreDiscriminator) {
+export function PrivateIpLightFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'isPrimary': !runtime_1.exists(json, 'IsPrimary') ? undefined : json['IsPrimary'],
-        'privateIp': !runtime_1.exists(json, 'PrivateIp') ? undefined : json['PrivateIp'],
+        'isPrimary': !exists(json, 'IsPrimary') ? undefined : json['IsPrimary'],
+        'privateIp': !exists(json, 'PrivateIp') ? undefined : json['PrivateIp'],
     };
 }
-exports.PrivateIpLightFromJSONTyped = PrivateIpLightFromJSONTyped;
-function PrivateIpLightToJSON(value) {
+export function PrivateIpLightToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function PrivateIpLightToJSON(value) {
         'PrivateIp': value.privateIp,
     };
 }
-exports.PrivateIpLightToJSON = PrivateIpLightToJSON;

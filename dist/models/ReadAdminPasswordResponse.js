@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function ReadAdminPasswordResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function ReadAdminPasswordResponseFromJSON(json) {
     return ReadAdminPasswordResponseFromJSONTyped(json, false);
 }
-exports.ReadAdminPasswordResponseFromJSON = ReadAdminPasswordResponseFromJSON;
-function ReadAdminPasswordResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadAdminPasswordResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'adminPassword': !runtime_1.exists(json, 'AdminPassword') ? undefined : json['AdminPassword'],
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
-        'vmId': !runtime_1.exists(json, 'VmId') ? undefined : json['VmId'],
+        'adminPassword': !exists(json, 'AdminPassword') ? undefined : json['AdminPassword'],
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
+        'vmId': !exists(json, 'VmId') ? undefined : json['VmId'],
     };
 }
-exports.ReadAdminPasswordResponseFromJSONTyped = ReadAdminPasswordResponseFromJSONTyped;
-function ReadAdminPasswordResponseToJSON(value) {
+export function ReadAdminPasswordResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -39,8 +35,7 @@ function ReadAdminPasswordResponseToJSON(value) {
     }
     return {
         'AdminPassword': value.adminPassword,
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
         'VmId': value.vmId,
     };
 }
-exports.ReadAdminPasswordResponseToJSON = ReadAdminPasswordResponseToJSON;

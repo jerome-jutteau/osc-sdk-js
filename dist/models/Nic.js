@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,41 +11,38 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var LinkNic_1 = require("./LinkNic");
-var LinkPublicIp_1 = require("./LinkPublicIp");
-var PrivateIp_1 = require("./PrivateIp");
-var ResourceTag_1 = require("./ResourceTag");
-var SecurityGroupLight_1 = require("./SecurityGroupLight");
-function NicFromJSON(json) {
+import { exists } from '../runtime';
+import { LinkNicFromJSON, LinkNicToJSON, } from './LinkNic';
+import { LinkPublicIpFromJSON, LinkPublicIpToJSON, } from './LinkPublicIp';
+import { PrivateIpFromJSON, PrivateIpToJSON, } from './PrivateIp';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
+import { SecurityGroupLightFromJSON, SecurityGroupLightToJSON, } from './SecurityGroupLight';
+export function NicFromJSON(json) {
     return NicFromJSONTyped(json, false);
 }
-exports.NicFromJSON = NicFromJSON;
-function NicFromJSONTyped(json, ignoreDiscriminator) {
+export function NicFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'accountId': !runtime_1.exists(json, 'AccountId') ? undefined : json['AccountId'],
-        'description': !runtime_1.exists(json, 'Description') ? undefined : json['Description'],
-        'isSourceDestChecked': !runtime_1.exists(json, 'IsSourceDestChecked') ? undefined : json['IsSourceDestChecked'],
-        'linkNic': !runtime_1.exists(json, 'LinkNic') ? undefined : LinkNic_1.LinkNicFromJSON(json['LinkNic']),
-        'linkPublicIp': !runtime_1.exists(json, 'LinkPublicIp') ? undefined : LinkPublicIp_1.LinkPublicIpFromJSON(json['LinkPublicIp']),
-        'macAddress': !runtime_1.exists(json, 'MacAddress') ? undefined : json['MacAddress'],
-        'netId': !runtime_1.exists(json, 'NetId') ? undefined : json['NetId'],
-        'nicId': !runtime_1.exists(json, 'NicId') ? undefined : json['NicId'],
-        'privateDnsName': !runtime_1.exists(json, 'PrivateDnsName') ? undefined : json['PrivateDnsName'],
-        'privateIps': !runtime_1.exists(json, 'PrivateIps') ? undefined : (json['PrivateIps'].map(PrivateIp_1.PrivateIpFromJSON)),
-        'securityGroups': !runtime_1.exists(json, 'SecurityGroups') ? undefined : (json['SecurityGroups'].map(SecurityGroupLight_1.SecurityGroupLightFromJSON)),
-        'state': !runtime_1.exists(json, 'State') ? undefined : json['State'],
-        'subnetId': !runtime_1.exists(json, 'SubnetId') ? undefined : json['SubnetId'],
-        'subregionName': !runtime_1.exists(json, 'SubregionName') ? undefined : json['SubregionName'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
+        'accountId': !exists(json, 'AccountId') ? undefined : json['AccountId'],
+        'description': !exists(json, 'Description') ? undefined : json['Description'],
+        'isSourceDestChecked': !exists(json, 'IsSourceDestChecked') ? undefined : json['IsSourceDestChecked'],
+        'linkNic': !exists(json, 'LinkNic') ? undefined : LinkNicFromJSON(json['LinkNic']),
+        'linkPublicIp': !exists(json, 'LinkPublicIp') ? undefined : LinkPublicIpFromJSON(json['LinkPublicIp']),
+        'macAddress': !exists(json, 'MacAddress') ? undefined : json['MacAddress'],
+        'netId': !exists(json, 'NetId') ? undefined : json['NetId'],
+        'nicId': !exists(json, 'NicId') ? undefined : json['NicId'],
+        'privateDnsName': !exists(json, 'PrivateDnsName') ? undefined : json['PrivateDnsName'],
+        'privateIps': !exists(json, 'PrivateIps') ? undefined : (json['PrivateIps'].map(PrivateIpFromJSON)),
+        'securityGroups': !exists(json, 'SecurityGroups') ? undefined : (json['SecurityGroups'].map(SecurityGroupLightFromJSON)),
+        'state': !exists(json, 'State') ? undefined : json['State'],
+        'subnetId': !exists(json, 'SubnetId') ? undefined : json['SubnetId'],
+        'subregionName': !exists(json, 'SubregionName') ? undefined : json['SubregionName'],
+        'tags': !exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTagFromJSON)),
     };
 }
-exports.NicFromJSONTyped = NicFromJSONTyped;
-function NicToJSON(value) {
+export function NicToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -57,18 +53,17 @@ function NicToJSON(value) {
         'AccountId': value.accountId,
         'Description': value.description,
         'IsSourceDestChecked': value.isSourceDestChecked,
-        'LinkNic': LinkNic_1.LinkNicToJSON(value.linkNic),
-        'LinkPublicIp': LinkPublicIp_1.LinkPublicIpToJSON(value.linkPublicIp),
+        'LinkNic': LinkNicToJSON(value.linkNic),
+        'LinkPublicIp': LinkPublicIpToJSON(value.linkPublicIp),
         'MacAddress': value.macAddress,
         'NetId': value.netId,
         'NicId': value.nicId,
         'PrivateDnsName': value.privateDnsName,
-        'PrivateIps': value.privateIps === undefined ? undefined : (value.privateIps.map(PrivateIp_1.PrivateIpToJSON)),
-        'SecurityGroups': value.securityGroups === undefined ? undefined : (value.securityGroups.map(SecurityGroupLight_1.SecurityGroupLightToJSON)),
+        'PrivateIps': value.privateIps === undefined ? undefined : (value.privateIps.map(PrivateIpToJSON)),
+        'SecurityGroups': value.securityGroups === undefined ? undefined : (value.securityGroups.map(SecurityGroupLightToJSON)),
         'State': value.state,
         'SubnetId': value.subnetId,
         'SubregionName': value.subregionName,
-        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
+        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTagToJSON)),
     };
 }
-exports.NicToJSON = NicToJSON;

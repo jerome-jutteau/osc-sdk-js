@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function RouteLightFromJSON(json) {
+import { exists } from '../runtime';
+export function RouteLightFromJSON(json) {
     return RouteLightFromJSONTyped(json, false);
 }
-exports.RouteLightFromJSON = RouteLightFromJSON;
-function RouteLightFromJSONTyped(json, ignoreDiscriminator) {
+export function RouteLightFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'destinationIpRange': !runtime_1.exists(json, 'DestinationIpRange') ? undefined : json['DestinationIpRange'],
-        'routeType': !runtime_1.exists(json, 'RouteType') ? undefined : json['RouteType'],
-        'state': !runtime_1.exists(json, 'State') ? undefined : json['State'],
+        'destinationIpRange': !exists(json, 'DestinationIpRange') ? undefined : json['DestinationIpRange'],
+        'routeType': !exists(json, 'RouteType') ? undefined : json['RouteType'],
+        'state': !exists(json, 'State') ? undefined : json['State'],
     };
 }
-exports.RouteLightFromJSONTyped = RouteLightFromJSONTyped;
-function RouteLightToJSON(value) {
+export function RouteLightToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,4 +38,3 @@ function RouteLightToJSON(value) {
         'State': value.state,
     };
 }
-exports.RouteLightToJSON = RouteLightToJSON;

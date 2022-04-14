@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var AccessKey_1 = require("./AccessKey");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function UpdateAccessKeyResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { AccessKeyFromJSON, AccessKeyToJSON, } from './AccessKey';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function UpdateAccessKeyResponseFromJSON(json) {
     return UpdateAccessKeyResponseFromJSONTyped(json, false);
 }
-exports.UpdateAccessKeyResponseFromJSON = UpdateAccessKeyResponseFromJSON;
-function UpdateAccessKeyResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function UpdateAccessKeyResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'accessKey': !runtime_1.exists(json, 'AccessKey') ? undefined : AccessKey_1.AccessKeyFromJSON(json['AccessKey']),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'accessKey': !exists(json, 'AccessKey') ? undefined : AccessKeyFromJSON(json['AccessKey']),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.UpdateAccessKeyResponseFromJSONTyped = UpdateAccessKeyResponseFromJSONTyped;
-function UpdateAccessKeyResponseToJSON(value) {
+export function UpdateAccessKeyResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function UpdateAccessKeyResponseToJSON(value) {
         return null;
     }
     return {
-        'AccessKey': AccessKey_1.AccessKeyToJSON(value.accessKey),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'AccessKey': AccessKeyToJSON(value.accessKey),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.UpdateAccessKeyResponseToJSON = UpdateAccessKeyResponseToJSON;

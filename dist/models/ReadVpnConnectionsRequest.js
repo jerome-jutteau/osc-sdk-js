@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var FiltersVpnConnection_1 = require("./FiltersVpnConnection");
-function ReadVpnConnectionsRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { FiltersVpnConnectionFromJSON, FiltersVpnConnectionToJSON, } from './FiltersVpnConnection';
+export function ReadVpnConnectionsRequestFromJSON(json) {
     return ReadVpnConnectionsRequestFromJSONTyped(json, false);
 }
-exports.ReadVpnConnectionsRequestFromJSON = ReadVpnConnectionsRequestFromJSON;
-function ReadVpnConnectionsRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadVpnConnectionsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'filters': !runtime_1.exists(json, 'Filters') ? undefined : FiltersVpnConnection_1.FiltersVpnConnectionFromJSON(json['Filters']),
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'filters': !exists(json, 'Filters') ? undefined : FiltersVpnConnectionFromJSON(json['Filters']),
     };
 }
-exports.ReadVpnConnectionsRequestFromJSONTyped = ReadVpnConnectionsRequestFromJSONTyped;
-function ReadVpnConnectionsRequestToJSON(value) {
+export function ReadVpnConnectionsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,7 +34,6 @@ function ReadVpnConnectionsRequestToJSON(value) {
     }
     return {
         'DryRun': value.dryRun,
-        'Filters': FiltersVpnConnection_1.FiltersVpnConnectionToJSON(value.filters),
+        'Filters': FiltersVpnConnectionToJSON(value.filters),
     };
 }
-exports.ReadVpnConnectionsRequestToJSON = ReadVpnConnectionsRequestToJSON;

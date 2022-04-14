@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,33 +11,30 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersNetPeeringFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersNetPeeringFromJSON(json) {
     return FiltersNetPeeringFromJSONTyped(json, false);
 }
-exports.FiltersNetPeeringFromJSON = FiltersNetPeeringFromJSON;
-function FiltersNetPeeringFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersNetPeeringFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'accepterNetAccountIds': !runtime_1.exists(json, 'AccepterNetAccountIds') ? undefined : json['AccepterNetAccountIds'],
-        'accepterNetIpRanges': !runtime_1.exists(json, 'AccepterNetIpRanges') ? undefined : json['AccepterNetIpRanges'],
-        'accepterNetNetIds': !runtime_1.exists(json, 'AccepterNetNetIds') ? undefined : json['AccepterNetNetIds'],
-        'netPeeringIds': !runtime_1.exists(json, 'NetPeeringIds') ? undefined : json['NetPeeringIds'],
-        'sourceNetAccountIds': !runtime_1.exists(json, 'SourceNetAccountIds') ? undefined : json['SourceNetAccountIds'],
-        'sourceNetIpRanges': !runtime_1.exists(json, 'SourceNetIpRanges') ? undefined : json['SourceNetIpRanges'],
-        'sourceNetNetIds': !runtime_1.exists(json, 'SourceNetNetIds') ? undefined : json['SourceNetNetIds'],
-        'stateMessages': !runtime_1.exists(json, 'StateMessages') ? undefined : json['StateMessages'],
-        'stateNames': !runtime_1.exists(json, 'StateNames') ? undefined : json['StateNames'],
-        'tagKeys': !runtime_1.exists(json, 'TagKeys') ? undefined : json['TagKeys'],
-        'tagValues': !runtime_1.exists(json, 'TagValues') ? undefined : json['TagValues'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : json['Tags'],
+        'accepterNetAccountIds': !exists(json, 'AccepterNetAccountIds') ? undefined : json['AccepterNetAccountIds'],
+        'accepterNetIpRanges': !exists(json, 'AccepterNetIpRanges') ? undefined : json['AccepterNetIpRanges'],
+        'accepterNetNetIds': !exists(json, 'AccepterNetNetIds') ? undefined : json['AccepterNetNetIds'],
+        'netPeeringIds': !exists(json, 'NetPeeringIds') ? undefined : json['NetPeeringIds'],
+        'sourceNetAccountIds': !exists(json, 'SourceNetAccountIds') ? undefined : json['SourceNetAccountIds'],
+        'sourceNetIpRanges': !exists(json, 'SourceNetIpRanges') ? undefined : json['SourceNetIpRanges'],
+        'sourceNetNetIds': !exists(json, 'SourceNetNetIds') ? undefined : json['SourceNetNetIds'],
+        'stateMessages': !exists(json, 'StateMessages') ? undefined : json['StateMessages'],
+        'stateNames': !exists(json, 'StateNames') ? undefined : json['StateNames'],
+        'tagKeys': !exists(json, 'TagKeys') ? undefined : json['TagKeys'],
+        'tagValues': !exists(json, 'TagValues') ? undefined : json['TagValues'],
+        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
     };
 }
-exports.FiltersNetPeeringFromJSONTyped = FiltersNetPeeringFromJSONTyped;
-function FiltersNetPeeringToJSON(value) {
+export function FiltersNetPeeringToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -60,4 +56,3 @@ function FiltersNetPeeringToJSON(value) {
         'Tags': value.tags,
     };
 }
-exports.FiltersNetPeeringToJSON = FiltersNetPeeringToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ConsumptionEntry_1 = require("./ConsumptionEntry");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function ReadConsumptionAccountResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ConsumptionEntryFromJSON, ConsumptionEntryToJSON, } from './ConsumptionEntry';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function ReadConsumptionAccountResponseFromJSON(json) {
     return ReadConsumptionAccountResponseFromJSONTyped(json, false);
 }
-exports.ReadConsumptionAccountResponseFromJSON = ReadConsumptionAccountResponseFromJSON;
-function ReadConsumptionAccountResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadConsumptionAccountResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'consumptionEntries': !runtime_1.exists(json, 'ConsumptionEntries') ? undefined : (json['ConsumptionEntries'].map(ConsumptionEntry_1.ConsumptionEntryFromJSON)),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'consumptionEntries': !exists(json, 'ConsumptionEntries') ? undefined : (json['ConsumptionEntries'].map(ConsumptionEntryFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.ReadConsumptionAccountResponseFromJSONTyped = ReadConsumptionAccountResponseFromJSONTyped;
-function ReadConsumptionAccountResponseToJSON(value) {
+export function ReadConsumptionAccountResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadConsumptionAccountResponseToJSON(value) {
         return null;
     }
     return {
-        'ConsumptionEntries': value.consumptionEntries === undefined ? undefined : (value.consumptionEntries.map(ConsumptionEntry_1.ConsumptionEntryToJSON)),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'ConsumptionEntries': value.consumptionEntries === undefined ? undefined : (value.consumptionEntries.map(ConsumptionEntryToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.ReadConsumptionAccountResponseToJSON = ReadConsumptionAccountResponseToJSON;

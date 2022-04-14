@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,38 +11,35 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var LinkNicLight_1 = require("./LinkNicLight");
-var LinkPublicIpLightForVm_1 = require("./LinkPublicIpLightForVm");
-var PrivateIpLightForVm_1 = require("./PrivateIpLightForVm");
-var SecurityGroupLight_1 = require("./SecurityGroupLight");
-function NicLightFromJSON(json) {
+import { exists } from '../runtime';
+import { LinkNicLightFromJSON, LinkNicLightToJSON, } from './LinkNicLight';
+import { LinkPublicIpLightForVmFromJSON, LinkPublicIpLightForVmToJSON, } from './LinkPublicIpLightForVm';
+import { PrivateIpLightForVmFromJSON, PrivateIpLightForVmToJSON, } from './PrivateIpLightForVm';
+import { SecurityGroupLightFromJSON, SecurityGroupLightToJSON, } from './SecurityGroupLight';
+export function NicLightFromJSON(json) {
     return NicLightFromJSONTyped(json, false);
 }
-exports.NicLightFromJSON = NicLightFromJSON;
-function NicLightFromJSONTyped(json, ignoreDiscriminator) {
+export function NicLightFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'accountId': !runtime_1.exists(json, 'AccountId') ? undefined : json['AccountId'],
-        'description': !runtime_1.exists(json, 'Description') ? undefined : json['Description'],
-        'isSourceDestChecked': !runtime_1.exists(json, 'IsSourceDestChecked') ? undefined : json['IsSourceDestChecked'],
-        'linkNic': !runtime_1.exists(json, 'LinkNic') ? undefined : LinkNicLight_1.LinkNicLightFromJSON(json['LinkNic']),
-        'linkPublicIp': !runtime_1.exists(json, 'LinkPublicIp') ? undefined : LinkPublicIpLightForVm_1.LinkPublicIpLightForVmFromJSON(json['LinkPublicIp']),
-        'macAddress': !runtime_1.exists(json, 'MacAddress') ? undefined : json['MacAddress'],
-        'netId': !runtime_1.exists(json, 'NetId') ? undefined : json['NetId'],
-        'nicId': !runtime_1.exists(json, 'NicId') ? undefined : json['NicId'],
-        'privateDnsName': !runtime_1.exists(json, 'PrivateDnsName') ? undefined : json['PrivateDnsName'],
-        'privateIps': !runtime_1.exists(json, 'PrivateIps') ? undefined : (json['PrivateIps'].map(PrivateIpLightForVm_1.PrivateIpLightForVmFromJSON)),
-        'securityGroups': !runtime_1.exists(json, 'SecurityGroups') ? undefined : (json['SecurityGroups'].map(SecurityGroupLight_1.SecurityGroupLightFromJSON)),
-        'state': !runtime_1.exists(json, 'State') ? undefined : json['State'],
-        'subnetId': !runtime_1.exists(json, 'SubnetId') ? undefined : json['SubnetId'],
+        'accountId': !exists(json, 'AccountId') ? undefined : json['AccountId'],
+        'description': !exists(json, 'Description') ? undefined : json['Description'],
+        'isSourceDestChecked': !exists(json, 'IsSourceDestChecked') ? undefined : json['IsSourceDestChecked'],
+        'linkNic': !exists(json, 'LinkNic') ? undefined : LinkNicLightFromJSON(json['LinkNic']),
+        'linkPublicIp': !exists(json, 'LinkPublicIp') ? undefined : LinkPublicIpLightForVmFromJSON(json['LinkPublicIp']),
+        'macAddress': !exists(json, 'MacAddress') ? undefined : json['MacAddress'],
+        'netId': !exists(json, 'NetId') ? undefined : json['NetId'],
+        'nicId': !exists(json, 'NicId') ? undefined : json['NicId'],
+        'privateDnsName': !exists(json, 'PrivateDnsName') ? undefined : json['PrivateDnsName'],
+        'privateIps': !exists(json, 'PrivateIps') ? undefined : (json['PrivateIps'].map(PrivateIpLightForVmFromJSON)),
+        'securityGroups': !exists(json, 'SecurityGroups') ? undefined : (json['SecurityGroups'].map(SecurityGroupLightFromJSON)),
+        'state': !exists(json, 'State') ? undefined : json['State'],
+        'subnetId': !exists(json, 'SubnetId') ? undefined : json['SubnetId'],
     };
 }
-exports.NicLightFromJSONTyped = NicLightFromJSONTyped;
-function NicLightToJSON(value) {
+export function NicLightToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -54,16 +50,15 @@ function NicLightToJSON(value) {
         'AccountId': value.accountId,
         'Description': value.description,
         'IsSourceDestChecked': value.isSourceDestChecked,
-        'LinkNic': LinkNicLight_1.LinkNicLightToJSON(value.linkNic),
-        'LinkPublicIp': LinkPublicIpLightForVm_1.LinkPublicIpLightForVmToJSON(value.linkPublicIp),
+        'LinkNic': LinkNicLightToJSON(value.linkNic),
+        'LinkPublicIp': LinkPublicIpLightForVmToJSON(value.linkPublicIp),
         'MacAddress': value.macAddress,
         'NetId': value.netId,
         'NicId': value.nicId,
         'PrivateDnsName': value.privateDnsName,
-        'PrivateIps': value.privateIps === undefined ? undefined : (value.privateIps.map(PrivateIpLightForVm_1.PrivateIpLightForVmToJSON)),
-        'SecurityGroups': value.securityGroups === undefined ? undefined : (value.securityGroups.map(SecurityGroupLight_1.SecurityGroupLightToJSON)),
+        'PrivateIps': value.privateIps === undefined ? undefined : (value.privateIps.map(PrivateIpLightForVmToJSON)),
+        'SecurityGroups': value.securityGroups === undefined ? undefined : (value.securityGroups.map(SecurityGroupLightToJSON)),
         'State': value.state,
         'SubnetId': value.subnetId,
     };
 }
-exports.NicLightToJSON = NicLightToJSON;

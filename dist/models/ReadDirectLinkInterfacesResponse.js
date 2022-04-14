@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var DirectLinkInterfaces_1 = require("./DirectLinkInterfaces");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function ReadDirectLinkInterfacesResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { DirectLinkInterfacesFromJSON, DirectLinkInterfacesToJSON, } from './DirectLinkInterfaces';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function ReadDirectLinkInterfacesResponseFromJSON(json) {
     return ReadDirectLinkInterfacesResponseFromJSONTyped(json, false);
 }
-exports.ReadDirectLinkInterfacesResponseFromJSON = ReadDirectLinkInterfacesResponseFromJSON;
-function ReadDirectLinkInterfacesResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadDirectLinkInterfacesResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'directLinkInterfaces': !runtime_1.exists(json, 'DirectLinkInterfaces') ? undefined : (json['DirectLinkInterfaces'].map(DirectLinkInterfaces_1.DirectLinkInterfacesFromJSON)),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'directLinkInterfaces': !exists(json, 'DirectLinkInterfaces') ? undefined : (json['DirectLinkInterfaces'].map(DirectLinkInterfacesFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.ReadDirectLinkInterfacesResponseFromJSONTyped = ReadDirectLinkInterfacesResponseFromJSONTyped;
-function ReadDirectLinkInterfacesResponseToJSON(value) {
+export function ReadDirectLinkInterfacesResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadDirectLinkInterfacesResponseToJSON(value) {
         return null;
     }
     return {
-        'DirectLinkInterfaces': value.directLinkInterfaces === undefined ? undefined : (value.directLinkInterfaces.map(DirectLinkInterfaces_1.DirectLinkInterfacesToJSON)),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'DirectLinkInterfaces': value.directLinkInterfaces === undefined ? undefined : (value.directLinkInterfaces.map(DirectLinkInterfacesToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.ReadDirectLinkInterfacesResponseToJSON = ReadDirectLinkInterfacesResponseToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var FiltersPublicIp_1 = require("./FiltersPublicIp");
-function ReadPublicIpsRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { FiltersPublicIpFromJSON, FiltersPublicIpToJSON, } from './FiltersPublicIp';
+export function ReadPublicIpsRequestFromJSON(json) {
     return ReadPublicIpsRequestFromJSONTyped(json, false);
 }
-exports.ReadPublicIpsRequestFromJSON = ReadPublicIpsRequestFromJSON;
-function ReadPublicIpsRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadPublicIpsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'filters': !runtime_1.exists(json, 'Filters') ? undefined : FiltersPublicIp_1.FiltersPublicIpFromJSON(json['Filters']),
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'filters': !exists(json, 'Filters') ? undefined : FiltersPublicIpFromJSON(json['Filters']),
     };
 }
-exports.ReadPublicIpsRequestFromJSONTyped = ReadPublicIpsRequestFromJSONTyped;
-function ReadPublicIpsRequestToJSON(value) {
+export function ReadPublicIpsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,7 +34,6 @@ function ReadPublicIpsRequestToJSON(value) {
     }
     return {
         'DryRun': value.dryRun,
-        'Filters': FiltersPublicIp_1.FiltersPublicIpToJSON(value.filters),
+        'Filters': FiltersPublicIpToJSON(value.filters),
     };
 }
-exports.ReadPublicIpsRequestToJSON = ReadPublicIpsRequestToJSON;

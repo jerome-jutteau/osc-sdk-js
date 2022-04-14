@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,34 +11,31 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var PermissionsOnResource_1 = require("./PermissionsOnResource");
-var ResourceTag_1 = require("./ResourceTag");
-function SnapshotFromJSON(json) {
+import { exists } from '../runtime';
+import { PermissionsOnResourceFromJSON, PermissionsOnResourceToJSON, } from './PermissionsOnResource';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
+export function SnapshotFromJSON(json) {
     return SnapshotFromJSONTyped(json, false);
 }
-exports.SnapshotFromJSON = SnapshotFromJSON;
-function SnapshotFromJSONTyped(json, ignoreDiscriminator) {
+export function SnapshotFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'accountAlias': !runtime_1.exists(json, 'AccountAlias') ? undefined : json['AccountAlias'],
-        'accountId': !runtime_1.exists(json, 'AccountId') ? undefined : json['AccountId'],
-        'creationDate': !runtime_1.exists(json, 'CreationDate') ? undefined : json['CreationDate'],
-        'description': !runtime_1.exists(json, 'Description') ? undefined : json['Description'],
-        'permissionsToCreateVolume': !runtime_1.exists(json, 'PermissionsToCreateVolume') ? undefined : PermissionsOnResource_1.PermissionsOnResourceFromJSON(json['PermissionsToCreateVolume']),
-        'progress': !runtime_1.exists(json, 'Progress') ? undefined : json['Progress'],
-        'snapshotId': !runtime_1.exists(json, 'SnapshotId') ? undefined : json['SnapshotId'],
-        'state': !runtime_1.exists(json, 'State') ? undefined : json['State'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
-        'volumeId': !runtime_1.exists(json, 'VolumeId') ? undefined : json['VolumeId'],
-        'volumeSize': !runtime_1.exists(json, 'VolumeSize') ? undefined : json['VolumeSize'],
+        'accountAlias': !exists(json, 'AccountAlias') ? undefined : json['AccountAlias'],
+        'accountId': !exists(json, 'AccountId') ? undefined : json['AccountId'],
+        'creationDate': !exists(json, 'CreationDate') ? undefined : json['CreationDate'],
+        'description': !exists(json, 'Description') ? undefined : json['Description'],
+        'permissionsToCreateVolume': !exists(json, 'PermissionsToCreateVolume') ? undefined : PermissionsOnResourceFromJSON(json['PermissionsToCreateVolume']),
+        'progress': !exists(json, 'Progress') ? undefined : json['Progress'],
+        'snapshotId': !exists(json, 'SnapshotId') ? undefined : json['SnapshotId'],
+        'state': !exists(json, 'State') ? undefined : json['State'],
+        'tags': !exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTagFromJSON)),
+        'volumeId': !exists(json, 'VolumeId') ? undefined : json['VolumeId'],
+        'volumeSize': !exists(json, 'VolumeSize') ? undefined : json['VolumeSize'],
     };
 }
-exports.SnapshotFromJSONTyped = SnapshotFromJSONTyped;
-function SnapshotToJSON(value) {
+export function SnapshotToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -51,13 +47,12 @@ function SnapshotToJSON(value) {
         'AccountId': value.accountId,
         'CreationDate': value.creationDate,
         'Description': value.description,
-        'PermissionsToCreateVolume': PermissionsOnResource_1.PermissionsOnResourceToJSON(value.permissionsToCreateVolume),
+        'PermissionsToCreateVolume': PermissionsOnResourceToJSON(value.permissionsToCreateVolume),
         'Progress': value.progress,
         'SnapshotId': value.snapshotId,
         'State': value.state,
-        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
+        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTagToJSON)),
         'VolumeId': value.volumeId,
         'VolumeSize': value.volumeSize,
     };
 }
-exports.SnapshotToJSON = SnapshotToJSON;

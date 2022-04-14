@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,26 +11,23 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function CreateVpnConnectionRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function CreateVpnConnectionRequestFromJSON(json) {
     return CreateVpnConnectionRequestFromJSONTyped(json, false);
 }
-exports.CreateVpnConnectionRequestFromJSON = CreateVpnConnectionRequestFromJSON;
-function CreateVpnConnectionRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateVpnConnectionRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'clientGatewayId': json['ClientGatewayId'],
         'connectionType': json['ConnectionType'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'staticRoutesOnly': !runtime_1.exists(json, 'StaticRoutesOnly') ? undefined : json['StaticRoutesOnly'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'staticRoutesOnly': !exists(json, 'StaticRoutesOnly') ? undefined : json['StaticRoutesOnly'],
         'virtualGatewayId': json['VirtualGatewayId'],
     };
 }
-exports.CreateVpnConnectionRequestFromJSONTyped = CreateVpnConnectionRequestFromJSONTyped;
-function CreateVpnConnectionRequestToJSON(value) {
+export function CreateVpnConnectionRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -46,4 +42,3 @@ function CreateVpnConnectionRequestToJSON(value) {
         'VirtualGatewayId': value.virtualGatewayId,
     };
 }
-exports.CreateVpnConnectionRequestToJSON = CreateVpnConnectionRequestToJSON;

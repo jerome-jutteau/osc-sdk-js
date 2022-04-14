@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,33 +11,30 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var LinkedVolume_1 = require("./LinkedVolume");
-var ResourceTag_1 = require("./ResourceTag");
-function VolumeFromJSON(json) {
+import { exists } from '../runtime';
+import { LinkedVolumeFromJSON, LinkedVolumeToJSON, } from './LinkedVolume';
+import { ResourceTagFromJSON, ResourceTagToJSON, } from './ResourceTag';
+export function VolumeFromJSON(json) {
     return VolumeFromJSONTyped(json, false);
 }
-exports.VolumeFromJSON = VolumeFromJSON;
-function VolumeFromJSONTyped(json, ignoreDiscriminator) {
+export function VolumeFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'creationDate': !runtime_1.exists(json, 'CreationDate') ? undefined : json['CreationDate'],
-        'iops': !runtime_1.exists(json, 'Iops') ? undefined : json['Iops'],
-        'linkedVolumes': !runtime_1.exists(json, 'LinkedVolumes') ? undefined : (json['LinkedVolumes'].map(LinkedVolume_1.LinkedVolumeFromJSON)),
-        'size': !runtime_1.exists(json, 'Size') ? undefined : json['Size'],
-        'snapshotId': !runtime_1.exists(json, 'SnapshotId') ? undefined : json['SnapshotId'],
-        'state': !runtime_1.exists(json, 'State') ? undefined : json['State'],
-        'subregionName': !runtime_1.exists(json, 'SubregionName') ? undefined : json['SubregionName'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
-        'volumeId': !runtime_1.exists(json, 'VolumeId') ? undefined : json['VolumeId'],
-        'volumeType': !runtime_1.exists(json, 'VolumeType') ? undefined : json['VolumeType'],
+        'creationDate': !exists(json, 'CreationDate') ? undefined : json['CreationDate'],
+        'iops': !exists(json, 'Iops') ? undefined : json['Iops'],
+        'linkedVolumes': !exists(json, 'LinkedVolumes') ? undefined : (json['LinkedVolumes'].map(LinkedVolumeFromJSON)),
+        'size': !exists(json, 'Size') ? undefined : json['Size'],
+        'snapshotId': !exists(json, 'SnapshotId') ? undefined : json['SnapshotId'],
+        'state': !exists(json, 'State') ? undefined : json['State'],
+        'subregionName': !exists(json, 'SubregionName') ? undefined : json['SubregionName'],
+        'tags': !exists(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTagFromJSON)),
+        'volumeId': !exists(json, 'VolumeId') ? undefined : json['VolumeId'],
+        'volumeType': !exists(json, 'VolumeType') ? undefined : json['VolumeType'],
     };
 }
-exports.VolumeFromJSONTyped = VolumeFromJSONTyped;
-function VolumeToJSON(value) {
+export function VolumeToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -48,14 +44,13 @@ function VolumeToJSON(value) {
     return {
         'CreationDate': value.creationDate,
         'Iops': value.iops,
-        'LinkedVolumes': value.linkedVolumes === undefined ? undefined : (value.linkedVolumes.map(LinkedVolume_1.LinkedVolumeToJSON)),
+        'LinkedVolumes': value.linkedVolumes === undefined ? undefined : (value.linkedVolumes.map(LinkedVolumeToJSON)),
         'Size': value.size,
         'SnapshotId': value.snapshotId,
         'State': value.state,
         'SubregionName': value.subregionName,
-        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
+        'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTagToJSON)),
         'VolumeId': value.volumeId,
         'VolumeType': value.volumeType,
     };
 }
-exports.VolumeToJSON = VolumeToJSON;

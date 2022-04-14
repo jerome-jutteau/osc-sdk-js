@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-var VirtualGateway_1 = require("./VirtualGateway");
-function ReadVirtualGatewaysResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+import { VirtualGatewayFromJSON, VirtualGatewayToJSON, } from './VirtualGateway';
+export function ReadVirtualGatewaysResponseFromJSON(json) {
     return ReadVirtualGatewaysResponseFromJSONTyped(json, false);
 }
-exports.ReadVirtualGatewaysResponseFromJSON = ReadVirtualGatewaysResponseFromJSON;
-function ReadVirtualGatewaysResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadVirtualGatewaysResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
-        'virtualGateways': !runtime_1.exists(json, 'VirtualGateways') ? undefined : (json['VirtualGateways'].map(VirtualGateway_1.VirtualGatewayFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
+        'virtualGateways': !exists(json, 'VirtualGateways') ? undefined : (json['VirtualGateways'].map(VirtualGatewayFromJSON)),
     };
 }
-exports.ReadVirtualGatewaysResponseFromJSONTyped = ReadVirtualGatewaysResponseFromJSONTyped;
-function ReadVirtualGatewaysResponseToJSON(value) {
+export function ReadVirtualGatewaysResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadVirtualGatewaysResponseToJSON(value) {
         return null;
     }
     return {
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
-        'VirtualGateways': value.virtualGateways === undefined ? undefined : (value.virtualGateways.map(VirtualGateway_1.VirtualGatewayToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
+        'VirtualGateways': value.virtualGateways === undefined ? undefined : (value.virtualGateways.map(VirtualGatewayToJSON)),
     };
 }
-exports.ReadVirtualGatewaysResponseToJSON = ReadVirtualGatewaysResponseToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,22 +11,19 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersProductTypeFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersProductTypeFromJSON(json) {
     return FiltersProductTypeFromJSONTyped(json, false);
 }
-exports.FiltersProductTypeFromJSON = FiltersProductTypeFromJSON;
-function FiltersProductTypeFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersProductTypeFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'productTypeIds': !runtime_1.exists(json, 'ProductTypeIds') ? undefined : json['ProductTypeIds'],
+        'productTypeIds': !exists(json, 'ProductTypeIds') ? undefined : json['ProductTypeIds'],
     };
 }
-exports.FiltersProductTypeFromJSONTyped = FiltersProductTypeFromJSONTyped;
-function FiltersProductTypeToJSON(value) {
+export function FiltersProductTypeToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,4 +34,3 @@ function FiltersProductTypeToJSON(value) {
         'ProductTypeIds': value.productTypeIds,
     };
 }
-exports.FiltersProductTypeToJSON = FiltersProductTypeToJSON;

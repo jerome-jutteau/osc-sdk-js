@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,28 +11,25 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function QuotaFromJSON(json) {
+import { exists } from '../runtime';
+export function QuotaFromJSON(json) {
     return QuotaFromJSONTyped(json, false);
 }
-exports.QuotaFromJSON = QuotaFromJSON;
-function QuotaFromJSONTyped(json, ignoreDiscriminator) {
+export function QuotaFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'accountId': !runtime_1.exists(json, 'AccountId') ? undefined : json['AccountId'],
-        'description': !runtime_1.exists(json, 'Description') ? undefined : json['Description'],
-        'maxValue': !runtime_1.exists(json, 'MaxValue') ? undefined : json['MaxValue'],
-        'name': !runtime_1.exists(json, 'Name') ? undefined : json['Name'],
-        'quotaCollection': !runtime_1.exists(json, 'QuotaCollection') ? undefined : json['QuotaCollection'],
-        'shortDescription': !runtime_1.exists(json, 'ShortDescription') ? undefined : json['ShortDescription'],
-        'usedValue': !runtime_1.exists(json, 'UsedValue') ? undefined : json['UsedValue'],
+        'accountId': !exists(json, 'AccountId') ? undefined : json['AccountId'],
+        'description': !exists(json, 'Description') ? undefined : json['Description'],
+        'maxValue': !exists(json, 'MaxValue') ? undefined : json['MaxValue'],
+        'name': !exists(json, 'Name') ? undefined : json['Name'],
+        'quotaCollection': !exists(json, 'QuotaCollection') ? undefined : json['QuotaCollection'],
+        'shortDescription': !exists(json, 'ShortDescription') ? undefined : json['ShortDescription'],
+        'usedValue': !exists(json, 'UsedValue') ? undefined : json['UsedValue'],
     };
 }
-exports.QuotaFromJSONTyped = QuotaFromJSONTyped;
-function QuotaToJSON(value) {
+export function QuotaToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -50,4 +46,3 @@ function QuotaToJSON(value) {
         'UsedValue': value.usedValue,
     };
 }
-exports.QuotaToJSON = QuotaToJSON;

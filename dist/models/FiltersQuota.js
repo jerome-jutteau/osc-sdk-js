@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersQuotaFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersQuotaFromJSON(json) {
     return FiltersQuotaFromJSONTyped(json, false);
 }
-exports.FiltersQuotaFromJSON = FiltersQuotaFromJSON;
-function FiltersQuotaFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersQuotaFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'collections': !runtime_1.exists(json, 'Collections') ? undefined : json['Collections'],
-        'quotaNames': !runtime_1.exists(json, 'QuotaNames') ? undefined : json['QuotaNames'],
-        'quotaTypes': !runtime_1.exists(json, 'QuotaTypes') ? undefined : json['QuotaTypes'],
-        'shortDescriptions': !runtime_1.exists(json, 'ShortDescriptions') ? undefined : json['ShortDescriptions'],
+        'collections': !exists(json, 'Collections') ? undefined : json['Collections'],
+        'quotaNames': !exists(json, 'QuotaNames') ? undefined : json['QuotaNames'],
+        'quotaTypes': !exists(json, 'QuotaTypes') ? undefined : json['QuotaTypes'],
+        'shortDescriptions': !exists(json, 'ShortDescriptions') ? undefined : json['ShortDescriptions'],
     };
 }
-exports.FiltersQuotaFromJSONTyped = FiltersQuotaFromJSONTyped;
-function FiltersQuotaToJSON(value) {
+export function FiltersQuotaToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,4 +40,3 @@ function FiltersQuotaToJSON(value) {
         'ShortDescriptions': value.shortDescriptions,
     };
 }
-exports.FiltersQuotaToJSON = FiltersQuotaToJSON;

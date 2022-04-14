@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,27 +11,24 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var LinkNicToUpdate_1 = require("./LinkNicToUpdate");
-function UpdateNicRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { LinkNicToUpdateFromJSON, LinkNicToUpdateToJSON, } from './LinkNicToUpdate';
+export function UpdateNicRequestFromJSON(json) {
     return UpdateNicRequestFromJSONTyped(json, false);
 }
-exports.UpdateNicRequestFromJSON = UpdateNicRequestFromJSON;
-function UpdateNicRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function UpdateNicRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'description': !runtime_1.exists(json, 'Description') ? undefined : json['Description'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'linkNic': !runtime_1.exists(json, 'LinkNic') ? undefined : LinkNicToUpdate_1.LinkNicToUpdateFromJSON(json['LinkNic']),
+        'description': !exists(json, 'Description') ? undefined : json['Description'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'linkNic': !exists(json, 'LinkNic') ? undefined : LinkNicToUpdateFromJSON(json['LinkNic']),
         'nicId': json['NicId'],
-        'securityGroupIds': !runtime_1.exists(json, 'SecurityGroupIds') ? undefined : json['SecurityGroupIds'],
+        'securityGroupIds': !exists(json, 'SecurityGroupIds') ? undefined : json['SecurityGroupIds'],
     };
 }
-exports.UpdateNicRequestFromJSONTyped = UpdateNicRequestFromJSONTyped;
-function UpdateNicRequestToJSON(value) {
+export function UpdateNicRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,9 +38,8 @@ function UpdateNicRequestToJSON(value) {
     return {
         'Description': value.description,
         'DryRun': value.dryRun,
-        'LinkNic': LinkNicToUpdate_1.LinkNicToUpdateToJSON(value.linkNic),
+        'LinkNic': LinkNicToUpdateToJSON(value.linkNic),
         'NicId': value.nicId,
         'SecurityGroupIds': value.securityGroupIds,
     };
 }
-exports.UpdateNicRequestToJSON = UpdateNicRequestToJSON;

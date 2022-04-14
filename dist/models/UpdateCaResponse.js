@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var Ca_1 = require("./Ca");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function UpdateCaResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { CaFromJSON, CaToJSON, } from './Ca';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function UpdateCaResponseFromJSON(json) {
     return UpdateCaResponseFromJSONTyped(json, false);
 }
-exports.UpdateCaResponseFromJSON = UpdateCaResponseFromJSON;
-function UpdateCaResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function UpdateCaResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'ca': !runtime_1.exists(json, 'Ca') ? undefined : Ca_1.CaFromJSON(json['Ca']),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'ca': !exists(json, 'Ca') ? undefined : CaFromJSON(json['Ca']),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.UpdateCaResponseFromJSONTyped = UpdateCaResponseFromJSONTyped;
-function UpdateCaResponseToJSON(value) {
+export function UpdateCaResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function UpdateCaResponseToJSON(value) {
         return null;
     }
     return {
-        'Ca': Ca_1.CaToJSON(value.ca),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'Ca': CaToJSON(value.ca),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.UpdateCaResponseToJSON = UpdateCaResponseToJSON;

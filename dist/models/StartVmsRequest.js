@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function StartVmsRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function StartVmsRequestFromJSON(json) {
     return StartVmsRequestFromJSONTyped(json, false);
 }
-exports.StartVmsRequestFromJSON = StartVmsRequestFromJSON;
-function StartVmsRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function StartVmsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'vmIds': json['VmIds'],
     };
 }
-exports.StartVmsRequestFromJSONTyped = StartVmsRequestFromJSONTyped;
-function StartVmsRequestToJSON(value) {
+export function StartVmsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function StartVmsRequestToJSON(value) {
         'VmIds': value.vmIds,
     };
 }
-exports.StartVmsRequestToJSON = StartVmsRequestToJSON;

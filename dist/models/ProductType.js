@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function ProductTypeFromJSON(json) {
+import { exists } from '../runtime';
+export function ProductTypeFromJSON(json) {
     return ProductTypeFromJSONTyped(json, false);
 }
-exports.ProductTypeFromJSON = ProductTypeFromJSON;
-function ProductTypeFromJSONTyped(json, ignoreDiscriminator) {
+export function ProductTypeFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'description': !runtime_1.exists(json, 'Description') ? undefined : json['Description'],
-        'productTypeId': !runtime_1.exists(json, 'ProductTypeId') ? undefined : json['ProductTypeId'],
-        'vendor': !runtime_1.exists(json, 'Vendor') ? undefined : json['Vendor'],
+        'description': !exists(json, 'Description') ? undefined : json['Description'],
+        'productTypeId': !exists(json, 'ProductTypeId') ? undefined : json['ProductTypeId'],
+        'vendor': !exists(json, 'Vendor') ? undefined : json['Vendor'],
     };
 }
-exports.ProductTypeFromJSONTyped = ProductTypeFromJSONTyped;
-function ProductTypeToJSON(value) {
+export function ProductTypeToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,4 +38,3 @@ function ProductTypeToJSON(value) {
         'Vendor': value.vendor,
     };
 }
-exports.ProductTypeToJSON = ProductTypeToJSON;

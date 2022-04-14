@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function UpdateAccessKeyRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function UpdateAccessKeyRequestFromJSON(json) {
     return UpdateAccessKeyRequestFromJSONTyped(json, false);
 }
-exports.UpdateAccessKeyRequestFromJSON = UpdateAccessKeyRequestFromJSON;
-function UpdateAccessKeyRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function UpdateAccessKeyRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'accessKeyId': json['AccessKeyId'],
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'expirationDate': !runtime_1.exists(json, 'ExpirationDate') ? undefined : json['ExpirationDate'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'expirationDate': !exists(json, 'ExpirationDate') ? undefined : json['ExpirationDate'],
         'state': json['State'],
     };
 }
-exports.UpdateAccessKeyRequestFromJSONTyped = UpdateAccessKeyRequestFromJSONTyped;
-function UpdateAccessKeyRequestToJSON(value) {
+export function UpdateAccessKeyRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,4 +40,3 @@ function UpdateAccessKeyRequestToJSON(value) {
         'State': value.state,
     };
 }
-exports.UpdateAccessKeyRequestToJSON = UpdateAccessKeyRequestToJSON;

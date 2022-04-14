@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,16 +11,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -30,584 +19,346 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime = require("../runtime");
-var models_1 = require("../models");
+import * as runtime from '../runtime';
+import { CreateLoadBalancerRequestToJSON, CreateLoadBalancerResponseFromJSON, CreateLoadBalancerTagsRequestToJSON, CreateLoadBalancerTagsResponseFromJSON, DeleteLoadBalancerRequestToJSON, DeleteLoadBalancerResponseFromJSON, DeleteLoadBalancerTagsRequestToJSON, DeleteLoadBalancerTagsResponseFromJSON, DeregisterVmsInLoadBalancerRequestToJSON, DeregisterVmsInLoadBalancerResponseFromJSON, LinkLoadBalancerBackendMachinesRequestToJSON, LinkLoadBalancerBackendMachinesResponseFromJSON, ReadLoadBalancerTagsRequestToJSON, ReadLoadBalancerTagsResponseFromJSON, ReadLoadBalancersRequestToJSON, ReadLoadBalancersResponseFromJSON, ReadVmsHealthRequestToJSON, ReadVmsHealthResponseFromJSON, RegisterVmsInLoadBalancerRequestToJSON, RegisterVmsInLoadBalancerResponseFromJSON, UnlinkLoadBalancerBackendMachinesRequestToJSON, UnlinkLoadBalancerBackendMachinesResponseFromJSON, UpdateLoadBalancerRequestToJSON, UpdateLoadBalancerResponseFromJSON, } from '../models';
 /**
  *
  */
-var LoadBalancerApi = /** @class */ (function (_super) {
-    __extends(LoadBalancerApi, _super);
-    function LoadBalancerApi() {
-        return _super !== null && _super.apply(this, arguments) || this;
+export class LoadBalancerApi extends runtime.BaseAPI {
+    /**
+     */
+    createLoadBalancerRaw(requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const queryParameters = {};
+            const headerParameters = {};
+            headerParameters['Content-Type'] = 'application/json';
+            if (this.configuration && this.configuration.apiKey) {
+                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+            }
+            const response = yield this.request({
+                path: `/CreateLoadBalancer`,
+                method: 'POST',
+                headers: headerParameters,
+                query: queryParameters,
+                body: CreateLoadBalancerRequestToJSON(requestParameters.createLoadBalancerRequest),
+            }, initOverrides);
+            return new runtime.JSONApiResponse(response, (jsonValue) => CreateLoadBalancerResponseFromJSON(jsonValue));
+        });
     }
     /**
      */
-    LoadBalancerApi.prototype.createLoadBalancerRaw = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        queryParameters = {};
-                        headerParameters = {};
-                        headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/CreateLoadBalancer",
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: models_1.CreateLoadBalancerRequestToJSON(requestParameters.createLoadBalancerRequest),
-                            }, initOverrides)];
-                    case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return models_1.CreateLoadBalancerResponseFromJSON(jsonValue); })];
-                }
-            });
+    createLoadBalancer(requestParameters = {}, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const response = yield this.createLoadBalancerRaw(requestParameters, initOverrides);
+            return yield response.value();
         });
-    };
+    }
     /**
      */
-    LoadBalancerApi.prototype.createLoadBalancer = function (requestParameters, initOverrides) {
-        if (requestParameters === void 0) { requestParameters = {}; }
-        return __awaiter(this, void 0, void 0, function () {
-            var response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.createLoadBalancerRaw(requestParameters, initOverrides)];
-                    case 1:
-                        response = _a.sent();
-                        return [4 /*yield*/, response.value()];
-                    case 2: return [2 /*return*/, _a.sent()];
-                }
-            });
+    createLoadBalancerTagsRaw(requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const queryParameters = {};
+            const headerParameters = {};
+            headerParameters['Content-Type'] = 'application/json';
+            if (this.configuration && this.configuration.apiKey) {
+                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+            }
+            const response = yield this.request({
+                path: `/CreateLoadBalancerTags`,
+                method: 'POST',
+                headers: headerParameters,
+                query: queryParameters,
+                body: CreateLoadBalancerTagsRequestToJSON(requestParameters.createLoadBalancerTagsRequest),
+            }, initOverrides);
+            return new runtime.JSONApiResponse(response, (jsonValue) => CreateLoadBalancerTagsResponseFromJSON(jsonValue));
         });
-    };
+    }
     /**
      */
-    LoadBalancerApi.prototype.createLoadBalancerTagsRaw = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        queryParameters = {};
-                        headerParameters = {};
-                        headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/CreateLoadBalancerTags",
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: models_1.CreateLoadBalancerTagsRequestToJSON(requestParameters.createLoadBalancerTagsRequest),
-                            }, initOverrides)];
-                    case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return models_1.CreateLoadBalancerTagsResponseFromJSON(jsonValue); })];
-                }
-            });
+    createLoadBalancerTags(requestParameters = {}, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const response = yield this.createLoadBalancerTagsRaw(requestParameters, initOverrides);
+            return yield response.value();
         });
-    };
+    }
     /**
      */
-    LoadBalancerApi.prototype.createLoadBalancerTags = function (requestParameters, initOverrides) {
-        if (requestParameters === void 0) { requestParameters = {}; }
-        return __awaiter(this, void 0, void 0, function () {
-            var response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.createLoadBalancerTagsRaw(requestParameters, initOverrides)];
-                    case 1:
-                        response = _a.sent();
-                        return [4 /*yield*/, response.value()];
-                    case 2: return [2 /*return*/, _a.sent()];
-                }
-            });
+    deleteLoadBalancerRaw(requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const queryParameters = {};
+            const headerParameters = {};
+            headerParameters['Content-Type'] = 'application/json';
+            if (this.configuration && this.configuration.apiKey) {
+                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+            }
+            const response = yield this.request({
+                path: `/DeleteLoadBalancer`,
+                method: 'POST',
+                headers: headerParameters,
+                query: queryParameters,
+                body: DeleteLoadBalancerRequestToJSON(requestParameters.deleteLoadBalancerRequest),
+            }, initOverrides);
+            return new runtime.JSONApiResponse(response, (jsonValue) => DeleteLoadBalancerResponseFromJSON(jsonValue));
         });
-    };
+    }
     /**
      */
-    LoadBalancerApi.prototype.deleteLoadBalancerRaw = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        queryParameters = {};
-                        headerParameters = {};
-                        headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/DeleteLoadBalancer",
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: models_1.DeleteLoadBalancerRequestToJSON(requestParameters.deleteLoadBalancerRequest),
-                            }, initOverrides)];
-                    case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return models_1.DeleteLoadBalancerResponseFromJSON(jsonValue); })];
-                }
-            });
+    deleteLoadBalancer(requestParameters = {}, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const response = yield this.deleteLoadBalancerRaw(requestParameters, initOverrides);
+            return yield response.value();
         });
-    };
+    }
     /**
      */
-    LoadBalancerApi.prototype.deleteLoadBalancer = function (requestParameters, initOverrides) {
-        if (requestParameters === void 0) { requestParameters = {}; }
-        return __awaiter(this, void 0, void 0, function () {
-            var response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.deleteLoadBalancerRaw(requestParameters, initOverrides)];
-                    case 1:
-                        response = _a.sent();
-                        return [4 /*yield*/, response.value()];
-                    case 2: return [2 /*return*/, _a.sent()];
-                }
-            });
+    deleteLoadBalancerTagsRaw(requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const queryParameters = {};
+            const headerParameters = {};
+            headerParameters['Content-Type'] = 'application/json';
+            if (this.configuration && this.configuration.apiKey) {
+                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+            }
+            const response = yield this.request({
+                path: `/DeleteLoadBalancerTags`,
+                method: 'POST',
+                headers: headerParameters,
+                query: queryParameters,
+                body: DeleteLoadBalancerTagsRequestToJSON(requestParameters.deleteLoadBalancerTagsRequest),
+            }, initOverrides);
+            return new runtime.JSONApiResponse(response, (jsonValue) => DeleteLoadBalancerTagsResponseFromJSON(jsonValue));
         });
-    };
+    }
     /**
      */
-    LoadBalancerApi.prototype.deleteLoadBalancerTagsRaw = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        queryParameters = {};
-                        headerParameters = {};
-                        headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/DeleteLoadBalancerTags",
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: models_1.DeleteLoadBalancerTagsRequestToJSON(requestParameters.deleteLoadBalancerTagsRequest),
-                            }, initOverrides)];
-                    case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return models_1.DeleteLoadBalancerTagsResponseFromJSON(jsonValue); })];
-                }
-            });
+    deleteLoadBalancerTags(requestParameters = {}, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const response = yield this.deleteLoadBalancerTagsRaw(requestParameters, initOverrides);
+            return yield response.value();
         });
-    };
+    }
     /**
      */
-    LoadBalancerApi.prototype.deleteLoadBalancerTags = function (requestParameters, initOverrides) {
-        if (requestParameters === void 0) { requestParameters = {}; }
-        return __awaiter(this, void 0, void 0, function () {
-            var response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.deleteLoadBalancerTagsRaw(requestParameters, initOverrides)];
-                    case 1:
-                        response = _a.sent();
-                        return [4 /*yield*/, response.value()];
-                    case 2: return [2 /*return*/, _a.sent()];
-                }
-            });
+    deregisterVmsInLoadBalancerRaw(requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const queryParameters = {};
+            const headerParameters = {};
+            headerParameters['Content-Type'] = 'application/json';
+            if (this.configuration && this.configuration.apiKey) {
+                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+            }
+            const response = yield this.request({
+                path: `/DeregisterVmsInLoadBalancer`,
+                method: 'POST',
+                headers: headerParameters,
+                query: queryParameters,
+                body: DeregisterVmsInLoadBalancerRequestToJSON(requestParameters.deregisterVmsInLoadBalancerRequest),
+            }, initOverrides);
+            return new runtime.JSONApiResponse(response, (jsonValue) => DeregisterVmsInLoadBalancerResponseFromJSON(jsonValue));
         });
-    };
+    }
     /**
      */
-    LoadBalancerApi.prototype.deregisterVmsInLoadBalancerRaw = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        queryParameters = {};
-                        headerParameters = {};
-                        headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/DeregisterVmsInLoadBalancer",
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: models_1.DeregisterVmsInLoadBalancerRequestToJSON(requestParameters.deregisterVmsInLoadBalancerRequest),
-                            }, initOverrides)];
-                    case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return models_1.DeregisterVmsInLoadBalancerResponseFromJSON(jsonValue); })];
-                }
-            });
+    deregisterVmsInLoadBalancer(requestParameters = {}, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const response = yield this.deregisterVmsInLoadBalancerRaw(requestParameters, initOverrides);
+            return yield response.value();
         });
-    };
+    }
     /**
      */
-    LoadBalancerApi.prototype.deregisterVmsInLoadBalancer = function (requestParameters, initOverrides) {
-        if (requestParameters === void 0) { requestParameters = {}; }
-        return __awaiter(this, void 0, void 0, function () {
-            var response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.deregisterVmsInLoadBalancerRaw(requestParameters, initOverrides)];
-                    case 1:
-                        response = _a.sent();
-                        return [4 /*yield*/, response.value()];
-                    case 2: return [2 /*return*/, _a.sent()];
-                }
-            });
+    linkLoadBalancerBackendMachinesRaw(requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const queryParameters = {};
+            const headerParameters = {};
+            headerParameters['Content-Type'] = 'application/json';
+            if (this.configuration && this.configuration.apiKey) {
+                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+            }
+            const response = yield this.request({
+                path: `/LinkLoadBalancerBackendMachines`,
+                method: 'POST',
+                headers: headerParameters,
+                query: queryParameters,
+                body: LinkLoadBalancerBackendMachinesRequestToJSON(requestParameters.linkLoadBalancerBackendMachinesRequest),
+            }, initOverrides);
+            return new runtime.JSONApiResponse(response, (jsonValue) => LinkLoadBalancerBackendMachinesResponseFromJSON(jsonValue));
         });
-    };
+    }
     /**
      */
-    LoadBalancerApi.prototype.linkLoadBalancerBackendMachinesRaw = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        queryParameters = {};
-                        headerParameters = {};
-                        headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/LinkLoadBalancerBackendMachines",
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: models_1.LinkLoadBalancerBackendMachinesRequestToJSON(requestParameters.linkLoadBalancerBackendMachinesRequest),
-                            }, initOverrides)];
-                    case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return models_1.LinkLoadBalancerBackendMachinesResponseFromJSON(jsonValue); })];
-                }
-            });
+    linkLoadBalancerBackendMachines(requestParameters = {}, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const response = yield this.linkLoadBalancerBackendMachinesRaw(requestParameters, initOverrides);
+            return yield response.value();
         });
-    };
+    }
     /**
      */
-    LoadBalancerApi.prototype.linkLoadBalancerBackendMachines = function (requestParameters, initOverrides) {
-        if (requestParameters === void 0) { requestParameters = {}; }
-        return __awaiter(this, void 0, void 0, function () {
-            var response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.linkLoadBalancerBackendMachinesRaw(requestParameters, initOverrides)];
-                    case 1:
-                        response = _a.sent();
-                        return [4 /*yield*/, response.value()];
-                    case 2: return [2 /*return*/, _a.sent()];
-                }
-            });
+    readLoadBalancerTagsRaw(requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const queryParameters = {};
+            const headerParameters = {};
+            headerParameters['Content-Type'] = 'application/json';
+            if (this.configuration && this.configuration.apiKey) {
+                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+            }
+            const response = yield this.request({
+                path: `/ReadLoadBalancerTags`,
+                method: 'POST',
+                headers: headerParameters,
+                query: queryParameters,
+                body: ReadLoadBalancerTagsRequestToJSON(requestParameters.readLoadBalancerTagsRequest),
+            }, initOverrides);
+            return new runtime.JSONApiResponse(response, (jsonValue) => ReadLoadBalancerTagsResponseFromJSON(jsonValue));
         });
-    };
+    }
     /**
      */
-    LoadBalancerApi.prototype.readLoadBalancerTagsRaw = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        queryParameters = {};
-                        headerParameters = {};
-                        headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/ReadLoadBalancerTags",
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: models_1.ReadLoadBalancerTagsRequestToJSON(requestParameters.readLoadBalancerTagsRequest),
-                            }, initOverrides)];
-                    case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return models_1.ReadLoadBalancerTagsResponseFromJSON(jsonValue); })];
-                }
-            });
+    readLoadBalancerTags(requestParameters = {}, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const response = yield this.readLoadBalancerTagsRaw(requestParameters, initOverrides);
+            return yield response.value();
         });
-    };
+    }
     /**
      */
-    LoadBalancerApi.prototype.readLoadBalancerTags = function (requestParameters, initOverrides) {
-        if (requestParameters === void 0) { requestParameters = {}; }
-        return __awaiter(this, void 0, void 0, function () {
-            var response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.readLoadBalancerTagsRaw(requestParameters, initOverrides)];
-                    case 1:
-                        response = _a.sent();
-                        return [4 /*yield*/, response.value()];
-                    case 2: return [2 /*return*/, _a.sent()];
-                }
-            });
+    readLoadBalancersRaw(requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const queryParameters = {};
+            const headerParameters = {};
+            headerParameters['Content-Type'] = 'application/json';
+            if (this.configuration && this.configuration.apiKey) {
+                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+            }
+            const response = yield this.request({
+                path: `/ReadLoadBalancers`,
+                method: 'POST',
+                headers: headerParameters,
+                query: queryParameters,
+                body: ReadLoadBalancersRequestToJSON(requestParameters.readLoadBalancersRequest),
+            }, initOverrides);
+            return new runtime.JSONApiResponse(response, (jsonValue) => ReadLoadBalancersResponseFromJSON(jsonValue));
         });
-    };
+    }
     /**
      */
-    LoadBalancerApi.prototype.readLoadBalancersRaw = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        queryParameters = {};
-                        headerParameters = {};
-                        headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/ReadLoadBalancers",
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: models_1.ReadLoadBalancersRequestToJSON(requestParameters.readLoadBalancersRequest),
-                            }, initOverrides)];
-                    case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return models_1.ReadLoadBalancersResponseFromJSON(jsonValue); })];
-                }
-            });
+    readLoadBalancers(requestParameters = {}, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const response = yield this.readLoadBalancersRaw(requestParameters, initOverrides);
+            return yield response.value();
         });
-    };
+    }
     /**
      */
-    LoadBalancerApi.prototype.readLoadBalancers = function (requestParameters, initOverrides) {
-        if (requestParameters === void 0) { requestParameters = {}; }
-        return __awaiter(this, void 0, void 0, function () {
-            var response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.readLoadBalancersRaw(requestParameters, initOverrides)];
-                    case 1:
-                        response = _a.sent();
-                        return [4 /*yield*/, response.value()];
-                    case 2: return [2 /*return*/, _a.sent()];
-                }
-            });
+    readVmsHealthRaw(requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const queryParameters = {};
+            const headerParameters = {};
+            headerParameters['Content-Type'] = 'application/json';
+            if (this.configuration && this.configuration.apiKey) {
+                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+            }
+            const response = yield this.request({
+                path: `/ReadVmsHealth`,
+                method: 'POST',
+                headers: headerParameters,
+                query: queryParameters,
+                body: ReadVmsHealthRequestToJSON(requestParameters.readVmsHealthRequest),
+            }, initOverrides);
+            return new runtime.JSONApiResponse(response, (jsonValue) => ReadVmsHealthResponseFromJSON(jsonValue));
         });
-    };
+    }
     /**
      */
-    LoadBalancerApi.prototype.readVmsHealthRaw = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        queryParameters = {};
-                        headerParameters = {};
-                        headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/ReadVmsHealth",
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: models_1.ReadVmsHealthRequestToJSON(requestParameters.readVmsHealthRequest),
-                            }, initOverrides)];
-                    case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return models_1.ReadVmsHealthResponseFromJSON(jsonValue); })];
-                }
-            });
+    readVmsHealth(requestParameters = {}, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const response = yield this.readVmsHealthRaw(requestParameters, initOverrides);
+            return yield response.value();
         });
-    };
+    }
     /**
      */
-    LoadBalancerApi.prototype.readVmsHealth = function (requestParameters, initOverrides) {
-        if (requestParameters === void 0) { requestParameters = {}; }
-        return __awaiter(this, void 0, void 0, function () {
-            var response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.readVmsHealthRaw(requestParameters, initOverrides)];
-                    case 1:
-                        response = _a.sent();
-                        return [4 /*yield*/, response.value()];
-                    case 2: return [2 /*return*/, _a.sent()];
-                }
-            });
+    registerVmsInLoadBalancerRaw(requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const queryParameters = {};
+            const headerParameters = {};
+            headerParameters['Content-Type'] = 'application/json';
+            if (this.configuration && this.configuration.apiKey) {
+                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+            }
+            const response = yield this.request({
+                path: `/RegisterVmsInLoadBalancer`,
+                method: 'POST',
+                headers: headerParameters,
+                query: queryParameters,
+                body: RegisterVmsInLoadBalancerRequestToJSON(requestParameters.registerVmsInLoadBalancerRequest),
+            }, initOverrides);
+            return new runtime.JSONApiResponse(response, (jsonValue) => RegisterVmsInLoadBalancerResponseFromJSON(jsonValue));
         });
-    };
+    }
     /**
      */
-    LoadBalancerApi.prototype.registerVmsInLoadBalancerRaw = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        queryParameters = {};
-                        headerParameters = {};
-                        headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/RegisterVmsInLoadBalancer",
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: models_1.RegisterVmsInLoadBalancerRequestToJSON(requestParameters.registerVmsInLoadBalancerRequest),
-                            }, initOverrides)];
-                    case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return models_1.RegisterVmsInLoadBalancerResponseFromJSON(jsonValue); })];
-                }
-            });
+    registerVmsInLoadBalancer(requestParameters = {}, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const response = yield this.registerVmsInLoadBalancerRaw(requestParameters, initOverrides);
+            return yield response.value();
         });
-    };
+    }
     /**
      */
-    LoadBalancerApi.prototype.registerVmsInLoadBalancer = function (requestParameters, initOverrides) {
-        if (requestParameters === void 0) { requestParameters = {}; }
-        return __awaiter(this, void 0, void 0, function () {
-            var response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.registerVmsInLoadBalancerRaw(requestParameters, initOverrides)];
-                    case 1:
-                        response = _a.sent();
-                        return [4 /*yield*/, response.value()];
-                    case 2: return [2 /*return*/, _a.sent()];
-                }
-            });
+    unlinkLoadBalancerBackendMachinesRaw(requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const queryParameters = {};
+            const headerParameters = {};
+            headerParameters['Content-Type'] = 'application/json';
+            if (this.configuration && this.configuration.apiKey) {
+                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+            }
+            const response = yield this.request({
+                path: `/UnlinkLoadBalancerBackendMachines`,
+                method: 'POST',
+                headers: headerParameters,
+                query: queryParameters,
+                body: UnlinkLoadBalancerBackendMachinesRequestToJSON(requestParameters.unlinkLoadBalancerBackendMachinesRequest),
+            }, initOverrides);
+            return new runtime.JSONApiResponse(response, (jsonValue) => UnlinkLoadBalancerBackendMachinesResponseFromJSON(jsonValue));
         });
-    };
+    }
     /**
      */
-    LoadBalancerApi.prototype.unlinkLoadBalancerBackendMachinesRaw = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        queryParameters = {};
-                        headerParameters = {};
-                        headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/UnlinkLoadBalancerBackendMachines",
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: models_1.UnlinkLoadBalancerBackendMachinesRequestToJSON(requestParameters.unlinkLoadBalancerBackendMachinesRequest),
-                            }, initOverrides)];
-                    case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return models_1.UnlinkLoadBalancerBackendMachinesResponseFromJSON(jsonValue); })];
-                }
-            });
+    unlinkLoadBalancerBackendMachines(requestParameters = {}, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const response = yield this.unlinkLoadBalancerBackendMachinesRaw(requestParameters, initOverrides);
+            return yield response.value();
         });
-    };
+    }
     /**
      */
-    LoadBalancerApi.prototype.unlinkLoadBalancerBackendMachines = function (requestParameters, initOverrides) {
-        if (requestParameters === void 0) { requestParameters = {}; }
-        return __awaiter(this, void 0, void 0, function () {
-            var response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.unlinkLoadBalancerBackendMachinesRaw(requestParameters, initOverrides)];
-                    case 1:
-                        response = _a.sent();
-                        return [4 /*yield*/, response.value()];
-                    case 2: return [2 /*return*/, _a.sent()];
-                }
-            });
+    updateLoadBalancerRaw(requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const queryParameters = {};
+            const headerParameters = {};
+            headerParameters['Content-Type'] = 'application/json';
+            if (this.configuration && this.configuration.apiKey) {
+                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+            }
+            const response = yield this.request({
+                path: `/UpdateLoadBalancer`,
+                method: 'POST',
+                headers: headerParameters,
+                query: queryParameters,
+                body: UpdateLoadBalancerRequestToJSON(requestParameters.updateLoadBalancerRequest),
+            }, initOverrides);
+            return new runtime.JSONApiResponse(response, (jsonValue) => UpdateLoadBalancerResponseFromJSON(jsonValue));
         });
-    };
+    }
     /**
      */
-    LoadBalancerApi.prototype.updateLoadBalancerRaw = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        queryParameters = {};
-                        headerParameters = {};
-                        headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/UpdateLoadBalancer",
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: models_1.UpdateLoadBalancerRequestToJSON(requestParameters.updateLoadBalancerRequest),
-                            }, initOverrides)];
-                    case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return models_1.UpdateLoadBalancerResponseFromJSON(jsonValue); })];
-                }
-            });
+    updateLoadBalancer(requestParameters = {}, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const response = yield this.updateLoadBalancerRaw(requestParameters, initOverrides);
+            return yield response.value();
         });
-    };
-    /**
-     */
-    LoadBalancerApi.prototype.updateLoadBalancer = function (requestParameters, initOverrides) {
-        if (requestParameters === void 0) { requestParameters = {}; }
-        return __awaiter(this, void 0, void 0, function () {
-            var response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.updateLoadBalancerRaw(requestParameters, initOverrides)];
-                    case 1:
-                        response = _a.sent();
-                        return [4 /*yield*/, response.value()];
-                    case 2: return [2 /*return*/, _a.sent()];
-                }
-            });
-        });
-    };
-    return LoadBalancerApi;
-}(runtime.BaseAPI));
-exports.LoadBalancerApi = LoadBalancerApi;
+    }
+}

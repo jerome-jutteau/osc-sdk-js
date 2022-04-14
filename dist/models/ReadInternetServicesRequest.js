@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var FiltersInternetService_1 = require("./FiltersInternetService");
-function ReadInternetServicesRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { FiltersInternetServiceFromJSON, FiltersInternetServiceToJSON, } from './FiltersInternetService';
+export function ReadInternetServicesRequestFromJSON(json) {
     return ReadInternetServicesRequestFromJSONTyped(json, false);
 }
-exports.ReadInternetServicesRequestFromJSON = ReadInternetServicesRequestFromJSON;
-function ReadInternetServicesRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadInternetServicesRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'filters': !runtime_1.exists(json, 'Filters') ? undefined : FiltersInternetService_1.FiltersInternetServiceFromJSON(json['Filters']),
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'filters': !exists(json, 'Filters') ? undefined : FiltersInternetServiceFromJSON(json['Filters']),
     };
 }
-exports.ReadInternetServicesRequestFromJSONTyped = ReadInternetServicesRequestFromJSONTyped;
-function ReadInternetServicesRequestToJSON(value) {
+export function ReadInternetServicesRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,7 +34,6 @@ function ReadInternetServicesRequestToJSON(value) {
     }
     return {
         'DryRun': value.dryRun,
-        'Filters': FiltersInternetService_1.FiltersInternetServiceToJSON(value.filters),
+        'Filters': FiltersInternetServiceToJSON(value.filters),
     };
 }
-exports.ReadInternetServicesRequestToJSON = ReadInternetServicesRequestToJSON;

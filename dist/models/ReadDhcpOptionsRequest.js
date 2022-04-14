@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var FiltersDhcpOptions_1 = require("./FiltersDhcpOptions");
-function ReadDhcpOptionsRequestFromJSON(json) {
+import { exists } from '../runtime';
+import { FiltersDhcpOptionsFromJSON, FiltersDhcpOptionsToJSON, } from './FiltersDhcpOptions';
+export function ReadDhcpOptionsRequestFromJSON(json) {
     return ReadDhcpOptionsRequestFromJSONTyped(json, false);
 }
-exports.ReadDhcpOptionsRequestFromJSON = ReadDhcpOptionsRequestFromJSON;
-function ReadDhcpOptionsRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadDhcpOptionsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
-        'filters': !runtime_1.exists(json, 'Filters') ? undefined : FiltersDhcpOptions_1.FiltersDhcpOptionsFromJSON(json['Filters']),
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'filters': !exists(json, 'Filters') ? undefined : FiltersDhcpOptionsFromJSON(json['Filters']),
     };
 }
-exports.ReadDhcpOptionsRequestFromJSONTyped = ReadDhcpOptionsRequestFromJSONTyped;
-function ReadDhcpOptionsRequestToJSON(value) {
+export function ReadDhcpOptionsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,7 +34,6 @@ function ReadDhcpOptionsRequestToJSON(value) {
     }
     return {
         'DryRun': value.dryRun,
-        'Filters': FiltersDhcpOptions_1.FiltersDhcpOptionsToJSON(value.filters),
+        'Filters': FiltersDhcpOptionsToJSON(value.filters),
     };
 }
-exports.ReadDhcpOptionsRequestToJSON = ReadDhcpOptionsRequestToJSON;

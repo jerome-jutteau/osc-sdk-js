@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,43 +11,40 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersSecurityGroupFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersSecurityGroupFromJSON(json) {
     return FiltersSecurityGroupFromJSONTyped(json, false);
 }
-exports.FiltersSecurityGroupFromJSON = FiltersSecurityGroupFromJSON;
-function FiltersSecurityGroupFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersSecurityGroupFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'accountIds': !runtime_1.exists(json, 'AccountIds') ? undefined : json['AccountIds'],
-        'descriptions': !runtime_1.exists(json, 'Descriptions') ? undefined : json['Descriptions'],
-        'inboundRuleAccountIds': !runtime_1.exists(json, 'InboundRuleAccountIds') ? undefined : json['InboundRuleAccountIds'],
-        'inboundRuleFromPortRanges': !runtime_1.exists(json, 'InboundRuleFromPortRanges') ? undefined : json['InboundRuleFromPortRanges'],
-        'inboundRuleIpRanges': !runtime_1.exists(json, 'InboundRuleIpRanges') ? undefined : json['InboundRuleIpRanges'],
-        'inboundRuleProtocols': !runtime_1.exists(json, 'InboundRuleProtocols') ? undefined : json['InboundRuleProtocols'],
-        'inboundRuleSecurityGroupIds': !runtime_1.exists(json, 'InboundRuleSecurityGroupIds') ? undefined : json['InboundRuleSecurityGroupIds'],
-        'inboundRuleSecurityGroupNames': !runtime_1.exists(json, 'InboundRuleSecurityGroupNames') ? undefined : json['InboundRuleSecurityGroupNames'],
-        'inboundRuleToPortRanges': !runtime_1.exists(json, 'InboundRuleToPortRanges') ? undefined : json['InboundRuleToPortRanges'],
-        'netIds': !runtime_1.exists(json, 'NetIds') ? undefined : json['NetIds'],
-        'outboundRuleAccountIds': !runtime_1.exists(json, 'OutboundRuleAccountIds') ? undefined : json['OutboundRuleAccountIds'],
-        'outboundRuleFromPortRanges': !runtime_1.exists(json, 'OutboundRuleFromPortRanges') ? undefined : json['OutboundRuleFromPortRanges'],
-        'outboundRuleIpRanges': !runtime_1.exists(json, 'OutboundRuleIpRanges') ? undefined : json['OutboundRuleIpRanges'],
-        'outboundRuleProtocols': !runtime_1.exists(json, 'OutboundRuleProtocols') ? undefined : json['OutboundRuleProtocols'],
-        'outboundRuleSecurityGroupIds': !runtime_1.exists(json, 'OutboundRuleSecurityGroupIds') ? undefined : json['OutboundRuleSecurityGroupIds'],
-        'outboundRuleSecurityGroupNames': !runtime_1.exists(json, 'OutboundRuleSecurityGroupNames') ? undefined : json['OutboundRuleSecurityGroupNames'],
-        'outboundRuleToPortRanges': !runtime_1.exists(json, 'OutboundRuleToPortRanges') ? undefined : json['OutboundRuleToPortRanges'],
-        'securityGroupIds': !runtime_1.exists(json, 'SecurityGroupIds') ? undefined : json['SecurityGroupIds'],
-        'securityGroupNames': !runtime_1.exists(json, 'SecurityGroupNames') ? undefined : json['SecurityGroupNames'],
-        'tagKeys': !runtime_1.exists(json, 'TagKeys') ? undefined : json['TagKeys'],
-        'tagValues': !runtime_1.exists(json, 'TagValues') ? undefined : json['TagValues'],
-        'tags': !runtime_1.exists(json, 'Tags') ? undefined : json['Tags'],
+        'accountIds': !exists(json, 'AccountIds') ? undefined : json['AccountIds'],
+        'descriptions': !exists(json, 'Descriptions') ? undefined : json['Descriptions'],
+        'inboundRuleAccountIds': !exists(json, 'InboundRuleAccountIds') ? undefined : json['InboundRuleAccountIds'],
+        'inboundRuleFromPortRanges': !exists(json, 'InboundRuleFromPortRanges') ? undefined : json['InboundRuleFromPortRanges'],
+        'inboundRuleIpRanges': !exists(json, 'InboundRuleIpRanges') ? undefined : json['InboundRuleIpRanges'],
+        'inboundRuleProtocols': !exists(json, 'InboundRuleProtocols') ? undefined : json['InboundRuleProtocols'],
+        'inboundRuleSecurityGroupIds': !exists(json, 'InboundRuleSecurityGroupIds') ? undefined : json['InboundRuleSecurityGroupIds'],
+        'inboundRuleSecurityGroupNames': !exists(json, 'InboundRuleSecurityGroupNames') ? undefined : json['InboundRuleSecurityGroupNames'],
+        'inboundRuleToPortRanges': !exists(json, 'InboundRuleToPortRanges') ? undefined : json['InboundRuleToPortRanges'],
+        'netIds': !exists(json, 'NetIds') ? undefined : json['NetIds'],
+        'outboundRuleAccountIds': !exists(json, 'OutboundRuleAccountIds') ? undefined : json['OutboundRuleAccountIds'],
+        'outboundRuleFromPortRanges': !exists(json, 'OutboundRuleFromPortRanges') ? undefined : json['OutboundRuleFromPortRanges'],
+        'outboundRuleIpRanges': !exists(json, 'OutboundRuleIpRanges') ? undefined : json['OutboundRuleIpRanges'],
+        'outboundRuleProtocols': !exists(json, 'OutboundRuleProtocols') ? undefined : json['OutboundRuleProtocols'],
+        'outboundRuleSecurityGroupIds': !exists(json, 'OutboundRuleSecurityGroupIds') ? undefined : json['OutboundRuleSecurityGroupIds'],
+        'outboundRuleSecurityGroupNames': !exists(json, 'OutboundRuleSecurityGroupNames') ? undefined : json['OutboundRuleSecurityGroupNames'],
+        'outboundRuleToPortRanges': !exists(json, 'OutboundRuleToPortRanges') ? undefined : json['OutboundRuleToPortRanges'],
+        'securityGroupIds': !exists(json, 'SecurityGroupIds') ? undefined : json['SecurityGroupIds'],
+        'securityGroupNames': !exists(json, 'SecurityGroupNames') ? undefined : json['SecurityGroupNames'],
+        'tagKeys': !exists(json, 'TagKeys') ? undefined : json['TagKeys'],
+        'tagValues': !exists(json, 'TagValues') ? undefined : json['TagValues'],
+        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
     };
 }
-exports.FiltersSecurityGroupFromJSONTyped = FiltersSecurityGroupFromJSONTyped;
-function FiltersSecurityGroupToJSON(value) {
+export function FiltersSecurityGroupToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -80,4 +76,3 @@ function FiltersSecurityGroupToJSON(value) {
         'Tags': value.tags,
     };
 }
-exports.FiltersSecurityGroupToJSON = FiltersSecurityGroupToJSON;

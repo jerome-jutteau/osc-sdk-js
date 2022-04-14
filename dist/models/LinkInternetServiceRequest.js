@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,24 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function LinkInternetServiceRequestFromJSON(json) {
+import { exists } from '../runtime';
+export function LinkInternetServiceRequestFromJSON(json) {
     return LinkInternetServiceRequestFromJSONTyped(json, false);
 }
-exports.LinkInternetServiceRequestFromJSON = LinkInternetServiceRequestFromJSON;
-function LinkInternetServiceRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function LinkInternetServiceRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dryRun': !runtime_1.exists(json, 'DryRun') ? undefined : json['DryRun'],
+        'dryRun': !exists(json, 'DryRun') ? undefined : json['DryRun'],
         'internetServiceId': json['InternetServiceId'],
         'netId': json['NetId'],
     };
 }
-exports.LinkInternetServiceRequestFromJSONTyped = LinkInternetServiceRequestFromJSONTyped;
-function LinkInternetServiceRequestToJSON(value) {
+export function LinkInternetServiceRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,4 +38,3 @@ function LinkInternetServiceRequestToJSON(value) {
         'NetId': value.netId,
     };
 }
-exports.LinkInternetServiceRequestToJSON = LinkInternetServiceRequestToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var LoadBalancer_1 = require("./LoadBalancer");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function CreateLoadBalancerPolicyResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { LoadBalancerFromJSON, LoadBalancerToJSON, } from './LoadBalancer';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function CreateLoadBalancerPolicyResponseFromJSON(json) {
     return CreateLoadBalancerPolicyResponseFromJSONTyped(json, false);
 }
-exports.CreateLoadBalancerPolicyResponseFromJSON = CreateLoadBalancerPolicyResponseFromJSON;
-function CreateLoadBalancerPolicyResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function CreateLoadBalancerPolicyResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'loadBalancer': !runtime_1.exists(json, 'LoadBalancer') ? undefined : LoadBalancer_1.LoadBalancerFromJSON(json['LoadBalancer']),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'loadBalancer': !exists(json, 'LoadBalancer') ? undefined : LoadBalancerFromJSON(json['LoadBalancer']),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.CreateLoadBalancerPolicyResponseFromJSONTyped = CreateLoadBalancerPolicyResponseFromJSONTyped;
-function CreateLoadBalancerPolicyResponseToJSON(value) {
+export function CreateLoadBalancerPolicyResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function CreateLoadBalancerPolicyResponseToJSON(value) {
         return null;
     }
     return {
-        'LoadBalancer': LoadBalancer_1.LoadBalancerToJSON(value.loadBalancer),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'LoadBalancer': LoadBalancerToJSON(value.loadBalancer),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.CreateLoadBalancerPolicyResponseToJSON = CreateLoadBalancerPolicyResponseToJSON;

@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,25 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var Location_1 = require("./Location");
-var ModelResponseContext_1 = require("./ModelResponseContext");
-function ReadLocationsResponseFromJSON(json) {
+import { exists } from '../runtime';
+import { LocationFromJSON, LocationToJSON, } from './Location';
+import { ModelResponseContextFromJSON, ModelResponseContextToJSON, } from './ModelResponseContext';
+export function ReadLocationsResponseFromJSON(json) {
     return ReadLocationsResponseFromJSONTyped(json, false);
 }
-exports.ReadLocationsResponseFromJSON = ReadLocationsResponseFromJSON;
-function ReadLocationsResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function ReadLocationsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'locations': !runtime_1.exists(json, 'Locations') ? undefined : (json['Locations'].map(Location_1.LocationFromJSON)),
-        'responseContext': !runtime_1.exists(json, 'ResponseContext') ? undefined : ModelResponseContext_1.ModelResponseContextFromJSON(json['ResponseContext']),
+        'locations': !exists(json, 'Locations') ? undefined : (json['Locations'].map(LocationFromJSON)),
+        'responseContext': !exists(json, 'ResponseContext') ? undefined : ModelResponseContextFromJSON(json['ResponseContext']),
     };
 }
-exports.ReadLocationsResponseFromJSONTyped = ReadLocationsResponseFromJSONTyped;
-function ReadLocationsResponseToJSON(value) {
+export function ReadLocationsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,8 +34,7 @@ function ReadLocationsResponseToJSON(value) {
         return null;
     }
     return {
-        'Locations': value.locations === undefined ? undefined : (value.locations.map(Location_1.LocationToJSON)),
-        'ResponseContext': ModelResponseContext_1.ModelResponseContextToJSON(value.responseContext),
+        'Locations': value.locations === undefined ? undefined : (value.locations.map(LocationToJSON)),
+        'ResponseContext': ModelResponseContextToJSON(value.responseContext),
     };
 }
-exports.ReadLocationsResponseToJSON = ReadLocationsResponseToJSON;

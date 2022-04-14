@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,22 +11,19 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function FiltersServerCertificateFromJSON(json) {
+import { exists } from '../runtime';
+export function FiltersServerCertificateFromJSON(json) {
     return FiltersServerCertificateFromJSONTyped(json, false);
 }
-exports.FiltersServerCertificateFromJSON = FiltersServerCertificateFromJSON;
-function FiltersServerCertificateFromJSONTyped(json, ignoreDiscriminator) {
+export function FiltersServerCertificateFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'paths': !runtime_1.exists(json, 'Paths') ? undefined : json['Paths'],
+        'paths': !exists(json, 'Paths') ? undefined : json['Paths'],
     };
 }
-exports.FiltersServerCertificateFromJSONTyped = FiltersServerCertificateFromJSONTyped;
-function FiltersServerCertificateToJSON(value) {
+export function FiltersServerCertificateToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -38,4 +34,3 @@ function FiltersServerCertificateToJSON(value) {
         'Paths': value.paths,
     };
 }
-exports.FiltersServerCertificateToJSON = FiltersServerCertificateToJSON;

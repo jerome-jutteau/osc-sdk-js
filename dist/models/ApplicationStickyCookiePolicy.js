@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,23 +11,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-function ApplicationStickyCookiePolicyFromJSON(json) {
+import { exists } from '../runtime';
+export function ApplicationStickyCookiePolicyFromJSON(json) {
     return ApplicationStickyCookiePolicyFromJSONTyped(json, false);
 }
-exports.ApplicationStickyCookiePolicyFromJSON = ApplicationStickyCookiePolicyFromJSON;
-function ApplicationStickyCookiePolicyFromJSONTyped(json, ignoreDiscriminator) {
+export function ApplicationStickyCookiePolicyFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'cookieName': !runtime_1.exists(json, 'CookieName') ? undefined : json['CookieName'],
-        'policyName': !runtime_1.exists(json, 'PolicyName') ? undefined : json['PolicyName'],
+        'cookieName': !exists(json, 'CookieName') ? undefined : json['CookieName'],
+        'policyName': !exists(json, 'PolicyName') ? undefined : json['PolicyName'],
     };
 }
-exports.ApplicationStickyCookiePolicyFromJSONTyped = ApplicationStickyCookiePolicyFromJSONTyped;
-function ApplicationStickyCookiePolicyToJSON(value) {
+export function ApplicationStickyCookiePolicyToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,4 +36,3 @@ function ApplicationStickyCookiePolicyToJSON(value) {
         'PolicyName': value.policyName,
     };
 }
-exports.ApplicationStickyCookiePolicyToJSON = ApplicationStickyCookiePolicyToJSON;
