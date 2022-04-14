@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
-    "declaration": true,
+    "declaration": false,
     "target": "es6",
     "module": "es6",
     "moduleResolution": "node",
-    "outDir": "dist",
+    "outDir": "src",
     "lib": [
       "es6",
       "dom"
