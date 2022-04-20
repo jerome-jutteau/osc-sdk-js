@@ -12,6 +12,7 @@
  * Do not edit the class manually.
  */
 
+import { AwsV4Signer } from 'aws4fetch'
 
 export const BASE_PATH = "https://api.eu-west-2.outscale.com/api/v1".replace(/\/+$/, "");
 
@@ -137,9 +138,43 @@ export interface ConfigurationParameters {
     password?: string; // parameter for basic security
     apiKey?: string | ((name: string) => string); // parameter for apiKey security
     accessToken?: string | Promise<string> | ((name?: string, scopes?: string[]) => string | Promise<string>); // parameter for oauth2 security
+    awsV4SignParameters?: AwsV4SignParameters; // parameter for aws v4 signature security
     headers?: HTTPHeaders; //header params we want to use on every request
     credentials?: RequestCredentials; //value for the credentials param we want to use on each request
 }
+
+export interface AwsV4SignParameters {
+    method?: string;
+    url: string;
+    accessKeyId: string;
+    secretAccessKey: string;
+    sessionToken?: string;
+    service?: string;
+    region?: string;
+    allHeaders?: boolean;}
+
+export function AwsV4SignHeader(awsV4SignParameters: AwsV4SignParameters, headers: HTTPHeaders, body: any, method: string, url: string) {
+    const signer = new AwsV4Signer({
+        method: method,
+        url: url,
+        accessKeyId: awsV4SignParameters.accessKeyId,
+        secretAccessKey: awsV4SignParameters.secretAccessKey,
+        sessionToken: awsV4SignParameters.sessionToken,
+        service: awsV4SignParameters.service,
+        region: awsV4SignParameters.region,
+        allHeaders: awsV4SignParameters.allHeaders,
+    });
+    return signer.authHeader();
+}
+
+/*
+export class AwsV4Signer {
+    constructor(private params: AwsV4SignParameters) {}
+    sign(headers: HTTPHeaders, body: any) {
+
+    }
+} 
+*/ 
 
 export class Configuration {
     constructor(private configuration: ConfigurationParameters = {}) {}
@@ -183,6 +218,10 @@ export class Configuration {
         }
         return undefined;
     }
+
+    get awsV4SignParameters(): AwsV4SignParameters | undefined {
+        return this.configuration.awsV4SignParameters;
+    }  
 
     get headers(): HTTPHeaders | undefined {
         return this.configuration.headers;
