@@ -11,15 +11,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import * as runtime from '../runtime';
 import { CreateVpnConnectionRequestToJSON, CreateVpnConnectionResponseFromJSON, CreateVpnConnectionRouteRequestToJSON, CreateVpnConnectionRouteResponseFromJSON, DeleteVpnConnectionRequestToJSON, DeleteVpnConnectionResponseFromJSON, DeleteVpnConnectionRouteRequestToJSON, DeleteVpnConnectionRouteResponseFromJSON, ReadVpnConnectionsRequestToJSON, ReadVpnConnectionsResponseFromJSON, UpdateVpnConnectionRequestToJSON, UpdateVpnConnectionResponseFromJSON, } from '../models';
 /**
@@ -28,170 +19,146 @@ import { CreateVpnConnectionRequestToJSON, CreateVpnConnectionResponseFromJSON, 
 export class VpnConnectionApi extends runtime.BaseAPI {
     /**
      */
-    createVpnConnectionRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/CreateVpnConnection`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: CreateVpnConnectionRequestToJSON(requestParameters.createVpnConnectionRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => CreateVpnConnectionResponseFromJSON(jsonValue));
-        });
+    async createVpnConnectionRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/CreateVpnConnection`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateVpnConnectionRequestToJSON(requestParameters.createVpnConnectionRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateVpnConnectionResponseFromJSON(jsonValue));
     }
     /**
      */
-    createVpnConnection(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.createVpnConnectionRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async createVpnConnection(requestParameters = {}, initOverrides) {
+        const response = await this.createVpnConnectionRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    createVpnConnectionRouteRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/CreateVpnConnectionRoute`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: CreateVpnConnectionRouteRequestToJSON(requestParameters.createVpnConnectionRouteRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => CreateVpnConnectionRouteResponseFromJSON(jsonValue));
-        });
+    async createVpnConnectionRouteRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/CreateVpnConnectionRoute`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateVpnConnectionRouteRequestToJSON(requestParameters.createVpnConnectionRouteRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateVpnConnectionRouteResponseFromJSON(jsonValue));
     }
     /**
      */
-    createVpnConnectionRoute(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.createVpnConnectionRouteRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async createVpnConnectionRoute(requestParameters = {}, initOverrides) {
+        const response = await this.createVpnConnectionRouteRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    deleteVpnConnectionRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/DeleteVpnConnection`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: DeleteVpnConnectionRequestToJSON(requestParameters.deleteVpnConnectionRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => DeleteVpnConnectionResponseFromJSON(jsonValue));
-        });
+    async deleteVpnConnectionRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/DeleteVpnConnection`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: DeleteVpnConnectionRequestToJSON(requestParameters.deleteVpnConnectionRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => DeleteVpnConnectionResponseFromJSON(jsonValue));
     }
     /**
      */
-    deleteVpnConnection(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.deleteVpnConnectionRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async deleteVpnConnection(requestParameters = {}, initOverrides) {
+        const response = await this.deleteVpnConnectionRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    deleteVpnConnectionRouteRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/DeleteVpnConnectionRoute`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: DeleteVpnConnectionRouteRequestToJSON(requestParameters.deleteVpnConnectionRouteRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => DeleteVpnConnectionRouteResponseFromJSON(jsonValue));
-        });
+    async deleteVpnConnectionRouteRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/DeleteVpnConnectionRoute`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: DeleteVpnConnectionRouteRequestToJSON(requestParameters.deleteVpnConnectionRouteRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => DeleteVpnConnectionRouteResponseFromJSON(jsonValue));
     }
     /**
      */
-    deleteVpnConnectionRoute(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.deleteVpnConnectionRouteRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async deleteVpnConnectionRoute(requestParameters = {}, initOverrides) {
+        const response = await this.deleteVpnConnectionRouteRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    readVpnConnectionsRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/ReadVpnConnections`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadVpnConnectionsRequestToJSON(requestParameters.readVpnConnectionsRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadVpnConnectionsResponseFromJSON(jsonValue));
-        });
+    async readVpnConnectionsRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/ReadVpnConnections`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadVpnConnectionsRequestToJSON(requestParameters.readVpnConnectionsRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadVpnConnectionsResponseFromJSON(jsonValue));
     }
     /**
      */
-    readVpnConnections(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readVpnConnectionsRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readVpnConnections(requestParameters = {}, initOverrides) {
+        const response = await this.readVpnConnectionsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    updateVpnConnectionRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/UpdateVpnConnection`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: UpdateVpnConnectionRequestToJSON(requestParameters.updateVpnConnectionRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => UpdateVpnConnectionResponseFromJSON(jsonValue));
-        });
+    async updateVpnConnectionRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/UpdateVpnConnection`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateVpnConnectionRequestToJSON(requestParameters.updateVpnConnectionRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateVpnConnectionResponseFromJSON(jsonValue));
     }
     /**
      */
-    updateVpnConnection(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.updateVpnConnectionRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async updateVpnConnection(requestParameters = {}, initOverrides) {
+        const response = await this.updateVpnConnectionRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 }

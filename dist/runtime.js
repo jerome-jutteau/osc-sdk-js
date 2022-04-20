@@ -11,15 +11,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 export const BASE_PATH = "https://api.eu-west-2.outscale.com/api/v1".replace(/\/+$/, "");
 const isBlob = (value) => typeof Blob !== 'undefined' && value instanceof Blob;
 /**
@@ -28,26 +19,29 @@ const isBlob = (value) => typeof Blob !== 'undefined' && value instanceof Blob;
 export class BaseAPI {
     constructor(configuration = new Configuration()) {
         this.configuration = configuration;
-        this.fetchApi = (url, init) => __awaiter(this, void 0, void 0, function* () {
+        this.fetchApi = async (url, init) => {
             let fetchParams = { url, init };
             for (const middleware of this.middleware) {
                 if (middleware.pre) {
-                    fetchParams = (yield middleware.pre(Object.assign({ fetch: this.fetchApi }, fetchParams))) || fetchParams;
+                    fetchParams = await middleware.pre({
+                        fetch: this.fetchApi,
+                        ...fetchParams,
+                    }) || fetchParams;
                 }
             }
-            let response = yield (this.configuration.fetchApi || fetch)(fetchParams.url, fetchParams.init);
+            let response = await (this.configuration.fetchApi || fetch)(fetchParams.url, fetchParams.init);
             for (const middleware of this.middleware) {
                 if (middleware.post) {
-                    response = (yield middleware.post({
+                    response = await middleware.post({
                         fetch: this.fetchApi,
                         url: fetchParams.url,
                         init: fetchParams.init,
                         response: response.clone(),
-                    })) || response;
+                    }) || response;
                 }
             }
             return response;
-        });
+        };
         this.middleware = configuration.middleware;
     }
     withMiddleware(...middlewares) {
@@ -63,15 +57,13 @@ export class BaseAPI {
         const middlewares = postMiddlewares.map((post) => ({ post }));
         return this.withMiddleware(...middlewares);
     }
-    request(context, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { url, init } = this.createFetchParams(context, initOverrides);
-            const response = yield this.fetchApi(url, init);
-            if (response.status >= 200 && response.status < 300) {
-                return response;
-            }
-            throw response;
-        });
+    async request(context, initOverrides) {
+        const { url, init } = this.createFetchParams(context, initOverrides);
+        const response = await this.fetchApi(url, init);
+        if (response.status >= 200 && response.status < 300) {
+            return response;
+        }
+        throw response;
     }
     createFetchParams(context, initOverrides) {
         let url = this.configuration.basePath + context.path;
@@ -85,7 +77,13 @@ export class BaseAPI {
             ? context.body
             : JSON.stringify(context.body);
         const headers = Object.assign({}, this.configuration.headers, context.headers);
-        const init = Object.assign({ method: context.method, headers: headers, body, credentials: this.configuration.credentials }, initOverrides);
+        const init = {
+            method: context.method,
+            headers: headers,
+            body,
+            credentials: this.configuration.credentials,
+            ...initOverrides
+        };
         return { url, init };
     }
     /**
@@ -145,7 +143,7 @@ export class Configuration {
     get accessToken() {
         const accessToken = this.configuration.accessToken;
         if (accessToken) {
-            return typeof accessToken === 'function' ? accessToken : () => __awaiter(this, void 0, void 0, function* () { return accessToken; });
+            return typeof accessToken === 'function' ? accessToken : async () => accessToken;
         }
         return undefined;
     }
@@ -182,7 +180,7 @@ export function querystring(params, prefix = '') {
         .join('&');
 }
 export function mapValues(data, fn) {
-    return Object.keys(data).reduce((acc, key) => (Object.assign(Object.assign({}, acc), { [key]: fn(data[key]) })), {});
+    return Object.keys(data).reduce((acc, key) => ({ ...acc, [key]: fn(data[key]) }), {});
 }
 export function canConsumeForm(consumes) {
     for (const consume of consumes) {
@@ -197,30 +195,24 @@ export class JSONApiResponse {
         this.raw = raw;
         this.transformer = transformer;
     }
-    value() {
-        return __awaiter(this, void 0, void 0, function* () {
-            return this.transformer(yield this.raw.json());
-        });
+    async value() {
+        return this.transformer(await this.raw.json());
     }
 }
 export class VoidApiResponse {
     constructor(raw) {
         this.raw = raw;
     }
-    value() {
-        return __awaiter(this, void 0, void 0, function* () {
-            return undefined;
-        });
+    async value() {
+        return undefined;
     }
 }
 export class BlobApiResponse {
     constructor(raw) {
         this.raw = raw;
     }
-    value() {
-        return __awaiter(this, void 0, void 0, function* () {
-            return yield this.raw.blob();
-        });
+    async value() {
+        return await this.raw.blob();
     }
     ;
 }
@@ -228,10 +220,8 @@ export class TextApiResponse {
     constructor(raw) {
         this.raw = raw;
     }
-    value() {
-        return __awaiter(this, void 0, void 0, function* () {
-            return yield this.raw.text();
-        });
+    async value() {
+        return await this.raw.text();
     }
     ;
 }

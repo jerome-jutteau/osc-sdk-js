@@ -11,15 +11,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import * as runtime from '../runtime';
 import { CreateVirtualGatewayRequestToJSON, CreateVirtualGatewayResponseFromJSON, DeleteVirtualGatewayRequestToJSON, DeleteVirtualGatewayResponseFromJSON, LinkVirtualGatewayRequestToJSON, LinkVirtualGatewayResponseFromJSON, ReadVirtualGatewaysRequestToJSON, ReadVirtualGatewaysResponseFromJSON, UnlinkVirtualGatewayRequestToJSON, UnlinkVirtualGatewayResponseFromJSON, UpdateRoutePropagationRequestToJSON, UpdateRoutePropagationResponseFromJSON, } from '../models';
 /**
@@ -28,170 +19,146 @@ import { CreateVirtualGatewayRequestToJSON, CreateVirtualGatewayResponseFromJSON
 export class VirtualGatewayApi extends runtime.BaseAPI {
     /**
      */
-    createVirtualGatewayRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/CreateVirtualGateway`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: CreateVirtualGatewayRequestToJSON(requestParameters.createVirtualGatewayRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => CreateVirtualGatewayResponseFromJSON(jsonValue));
-        });
+    async createVirtualGatewayRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/CreateVirtualGateway`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateVirtualGatewayRequestToJSON(requestParameters.createVirtualGatewayRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateVirtualGatewayResponseFromJSON(jsonValue));
     }
     /**
      */
-    createVirtualGateway(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.createVirtualGatewayRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async createVirtualGateway(requestParameters = {}, initOverrides) {
+        const response = await this.createVirtualGatewayRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    deleteVirtualGatewayRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/DeleteVirtualGateway`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: DeleteVirtualGatewayRequestToJSON(requestParameters.deleteVirtualGatewayRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => DeleteVirtualGatewayResponseFromJSON(jsonValue));
-        });
+    async deleteVirtualGatewayRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/DeleteVirtualGateway`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: DeleteVirtualGatewayRequestToJSON(requestParameters.deleteVirtualGatewayRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => DeleteVirtualGatewayResponseFromJSON(jsonValue));
     }
     /**
      */
-    deleteVirtualGateway(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.deleteVirtualGatewayRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async deleteVirtualGateway(requestParameters = {}, initOverrides) {
+        const response = await this.deleteVirtualGatewayRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    linkVirtualGatewayRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/LinkVirtualGateway`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: LinkVirtualGatewayRequestToJSON(requestParameters.linkVirtualGatewayRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => LinkVirtualGatewayResponseFromJSON(jsonValue));
-        });
+    async linkVirtualGatewayRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/LinkVirtualGateway`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: LinkVirtualGatewayRequestToJSON(requestParameters.linkVirtualGatewayRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => LinkVirtualGatewayResponseFromJSON(jsonValue));
     }
     /**
      */
-    linkVirtualGateway(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.linkVirtualGatewayRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async linkVirtualGateway(requestParameters = {}, initOverrides) {
+        const response = await this.linkVirtualGatewayRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    readVirtualGatewaysRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/ReadVirtualGateways`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadVirtualGatewaysRequestToJSON(requestParameters.readVirtualGatewaysRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadVirtualGatewaysResponseFromJSON(jsonValue));
-        });
+    async readVirtualGatewaysRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/ReadVirtualGateways`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadVirtualGatewaysRequestToJSON(requestParameters.readVirtualGatewaysRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadVirtualGatewaysResponseFromJSON(jsonValue));
     }
     /**
      */
-    readVirtualGateways(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readVirtualGatewaysRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readVirtualGateways(requestParameters = {}, initOverrides) {
+        const response = await this.readVirtualGatewaysRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    unlinkVirtualGatewayRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/UnlinkVirtualGateway`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: UnlinkVirtualGatewayRequestToJSON(requestParameters.unlinkVirtualGatewayRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => UnlinkVirtualGatewayResponseFromJSON(jsonValue));
-        });
+    async unlinkVirtualGatewayRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/UnlinkVirtualGateway`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UnlinkVirtualGatewayRequestToJSON(requestParameters.unlinkVirtualGatewayRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => UnlinkVirtualGatewayResponseFromJSON(jsonValue));
     }
     /**
      */
-    unlinkVirtualGateway(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.unlinkVirtualGatewayRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async unlinkVirtualGateway(requestParameters = {}, initOverrides) {
+        const response = await this.unlinkVirtualGatewayRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    updateRoutePropagationRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/UpdateRoutePropagation`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: UpdateRoutePropagationRequestToJSON(requestParameters.updateRoutePropagationRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => UpdateRoutePropagationResponseFromJSON(jsonValue));
-        });
+    async updateRoutePropagationRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/UpdateRoutePropagation`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateRoutePropagationRequestToJSON(requestParameters.updateRoutePropagationRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateRoutePropagationResponseFromJSON(jsonValue));
     }
     /**
      */
-    updateRoutePropagation(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.updateRoutePropagationRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async updateRoutePropagation(requestParameters = {}, initOverrides) {
+        const response = await this.updateRoutePropagationRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 }

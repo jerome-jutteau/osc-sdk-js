@@ -28,8 +28,8 @@ osc-generate: osc-api/outscale.yaml
 	#docker run -v $(PWD):/sdk --rm $(OPENAPI_IMG) sed -i "s/ *UserAgent:.*/                UserAgent:     \"osc-sdk-go\/$(SDK_VERSION)\",/" /sdk/.sdk/configuration.go
 	docker run -v $(PWD):/sdk --rm $(OPENAPI_IMG) chown -R $(USER_ID).$(GROUP_ID) /sdk/.sdk
 	mv .sdk/src ./
-	rm -rf .sdk
-	npm install
+	#rm -rf .sdk
+	npm run tsc
 
 osc-api/outscale.yaml:
 	git clone https://github.com/outscale/osc-api.git && cd osc-api && git checkout -b $(API_VERSION) $(API_VERSION)

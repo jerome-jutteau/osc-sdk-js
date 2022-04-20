@@ -11,15 +11,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import * as runtime from '../runtime';
 import { ReadSubregionsRequestToJSON, ReadSubregionsResponseFromJSON, } from '../models';
 /**
@@ -28,30 +19,26 @@ import { ReadSubregionsRequestToJSON, ReadSubregionsResponseFromJSON, } from '..
 export class SubregionApi extends runtime.BaseAPI {
     /**
      */
-    readSubregionsRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/ReadSubregions`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadSubregionsRequestToJSON(requestParameters.readSubregionsRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadSubregionsResponseFromJSON(jsonValue));
-        });
+    async readSubregionsRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/ReadSubregions`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadSubregionsRequestToJSON(requestParameters.readSubregionsRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadSubregionsResponseFromJSON(jsonValue));
     }
     /**
      */
-    readSubregions(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readSubregionsRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readSubregions(requestParameters = {}, initOverrides) {
+        const response = await this.readSubregionsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 }

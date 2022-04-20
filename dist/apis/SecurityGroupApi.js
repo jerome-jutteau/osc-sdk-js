@@ -11,15 +11,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import * as runtime from '../runtime';
 import { CreateSecurityGroupRequestToJSON, CreateSecurityGroupResponseFromJSON, DeleteSecurityGroupRequestToJSON, DeleteSecurityGroupResponseFromJSON, ReadSecurityGroupsRequestToJSON, ReadSecurityGroupsResponseFromJSON, } from '../models';
 /**
@@ -28,86 +19,74 @@ import { CreateSecurityGroupRequestToJSON, CreateSecurityGroupResponseFromJSON, 
 export class SecurityGroupApi extends runtime.BaseAPI {
     /**
      */
-    createSecurityGroupRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/CreateSecurityGroup`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: CreateSecurityGroupRequestToJSON(requestParameters.createSecurityGroupRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => CreateSecurityGroupResponseFromJSON(jsonValue));
-        });
+    async createSecurityGroupRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/CreateSecurityGroup`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateSecurityGroupRequestToJSON(requestParameters.createSecurityGroupRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateSecurityGroupResponseFromJSON(jsonValue));
     }
     /**
      */
-    createSecurityGroup(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.createSecurityGroupRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async createSecurityGroup(requestParameters = {}, initOverrides) {
+        const response = await this.createSecurityGroupRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    deleteSecurityGroupRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/DeleteSecurityGroup`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: DeleteSecurityGroupRequestToJSON(requestParameters.deleteSecurityGroupRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => DeleteSecurityGroupResponseFromJSON(jsonValue));
-        });
+    async deleteSecurityGroupRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/DeleteSecurityGroup`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: DeleteSecurityGroupRequestToJSON(requestParameters.deleteSecurityGroupRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => DeleteSecurityGroupResponseFromJSON(jsonValue));
     }
     /**
      */
-    deleteSecurityGroup(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.deleteSecurityGroupRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async deleteSecurityGroup(requestParameters = {}, initOverrides) {
+        const response = await this.deleteSecurityGroupRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    readSecurityGroupsRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/ReadSecurityGroups`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadSecurityGroupsRequestToJSON(requestParameters.readSecurityGroupsRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadSecurityGroupsResponseFromJSON(jsonValue));
-        });
+    async readSecurityGroupsRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/ReadSecurityGroups`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadSecurityGroupsRequestToJSON(requestParameters.readSecurityGroupsRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadSecurityGroupsResponseFromJSON(jsonValue));
     }
     /**
      */
-    readSecurityGroups(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readSecurityGroupsRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readSecurityGroups(requestParameters = {}, initOverrides) {
+        const response = await this.readSecurityGroupsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 }

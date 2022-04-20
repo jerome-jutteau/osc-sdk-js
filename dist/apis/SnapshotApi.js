@@ -11,15 +11,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import * as runtime from '../runtime';
 import { CreateSnapshotExportTaskRequestToJSON, CreateSnapshotExportTaskResponseFromJSON, CreateSnapshotRequestToJSON, CreateSnapshotResponseFromJSON, DeleteSnapshotRequestToJSON, DeleteSnapshotResponseFromJSON, ReadSnapshotExportTasksRequestToJSON, ReadSnapshotExportTasksResponseFromJSON, ReadSnapshotsRequestToJSON, ReadSnapshotsResponseFromJSON, UpdateSnapshotRequestToJSON, UpdateSnapshotResponseFromJSON, } from '../models';
 /**
@@ -28,170 +19,146 @@ import { CreateSnapshotExportTaskRequestToJSON, CreateSnapshotExportTaskResponse
 export class SnapshotApi extends runtime.BaseAPI {
     /**
      */
-    createSnapshotRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/CreateSnapshot`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: CreateSnapshotRequestToJSON(requestParameters.createSnapshotRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => CreateSnapshotResponseFromJSON(jsonValue));
-        });
+    async createSnapshotRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/CreateSnapshot`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateSnapshotRequestToJSON(requestParameters.createSnapshotRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateSnapshotResponseFromJSON(jsonValue));
     }
     /**
      */
-    createSnapshot(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.createSnapshotRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async createSnapshot(requestParameters = {}, initOverrides) {
+        const response = await this.createSnapshotRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    createSnapshotExportTaskRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/CreateSnapshotExportTask`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: CreateSnapshotExportTaskRequestToJSON(requestParameters.createSnapshotExportTaskRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => CreateSnapshotExportTaskResponseFromJSON(jsonValue));
-        });
+    async createSnapshotExportTaskRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/CreateSnapshotExportTask`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateSnapshotExportTaskRequestToJSON(requestParameters.createSnapshotExportTaskRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateSnapshotExportTaskResponseFromJSON(jsonValue));
     }
     /**
      */
-    createSnapshotExportTask(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.createSnapshotExportTaskRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async createSnapshotExportTask(requestParameters = {}, initOverrides) {
+        const response = await this.createSnapshotExportTaskRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    deleteSnapshotRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/DeleteSnapshot`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: DeleteSnapshotRequestToJSON(requestParameters.deleteSnapshotRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => DeleteSnapshotResponseFromJSON(jsonValue));
-        });
+    async deleteSnapshotRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/DeleteSnapshot`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: DeleteSnapshotRequestToJSON(requestParameters.deleteSnapshotRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => DeleteSnapshotResponseFromJSON(jsonValue));
     }
     /**
      */
-    deleteSnapshot(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.deleteSnapshotRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async deleteSnapshot(requestParameters = {}, initOverrides) {
+        const response = await this.deleteSnapshotRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    readSnapshotExportTasksRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/ReadSnapshotExportTasks`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadSnapshotExportTasksRequestToJSON(requestParameters.readSnapshotExportTasksRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadSnapshotExportTasksResponseFromJSON(jsonValue));
-        });
+    async readSnapshotExportTasksRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/ReadSnapshotExportTasks`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadSnapshotExportTasksRequestToJSON(requestParameters.readSnapshotExportTasksRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadSnapshotExportTasksResponseFromJSON(jsonValue));
     }
     /**
      */
-    readSnapshotExportTasks(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readSnapshotExportTasksRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readSnapshotExportTasks(requestParameters = {}, initOverrides) {
+        const response = await this.readSnapshotExportTasksRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    readSnapshotsRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/ReadSnapshots`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadSnapshotsRequestToJSON(requestParameters.readSnapshotsRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadSnapshotsResponseFromJSON(jsonValue));
-        });
+    async readSnapshotsRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/ReadSnapshots`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadSnapshotsRequestToJSON(requestParameters.readSnapshotsRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadSnapshotsResponseFromJSON(jsonValue));
     }
     /**
      */
-    readSnapshots(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readSnapshotsRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readSnapshots(requestParameters = {}, initOverrides) {
+        const response = await this.readSnapshotsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    updateSnapshotRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/UpdateSnapshot`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: UpdateSnapshotRequestToJSON(requestParameters.updateSnapshotRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => UpdateSnapshotResponseFromJSON(jsonValue));
-        });
+    async updateSnapshotRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/UpdateSnapshot`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateSnapshotRequestToJSON(requestParameters.updateSnapshotRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateSnapshotResponseFromJSON(jsonValue));
     }
     /**
      */
-    updateSnapshot(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.updateSnapshotRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async updateSnapshot(requestParameters = {}, initOverrides) {
+        const response = await this.updateSnapshotRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 }

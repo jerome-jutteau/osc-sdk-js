@@ -11,15 +11,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import * as runtime from '../runtime';
 import { CreateNetAccessPointRequestToJSON, CreateNetAccessPointResponseFromJSON, DeleteNetAccessPointRequestToJSON, DeleteNetAccessPointResponseFromJSON, ReadNetAccessPointServicesRequestToJSON, ReadNetAccessPointServicesResponseFromJSON, ReadNetAccessPointsRequestToJSON, ReadNetAccessPointsResponseFromJSON, UpdateNetAccessPointRequestToJSON, UpdateNetAccessPointResponseFromJSON, } from '../models';
 /**
@@ -28,139 +19,119 @@ import { CreateNetAccessPointRequestToJSON, CreateNetAccessPointResponseFromJSON
 export class NetAccessPointApi extends runtime.BaseAPI {
     /**
      */
-    createNetAccessPointRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/CreateNetAccessPoint`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: CreateNetAccessPointRequestToJSON(requestParameters.createNetAccessPointRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => CreateNetAccessPointResponseFromJSON(jsonValue));
-        });
+    async createNetAccessPointRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/CreateNetAccessPoint`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateNetAccessPointRequestToJSON(requestParameters.createNetAccessPointRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateNetAccessPointResponseFromJSON(jsonValue));
     }
     /**
      */
-    createNetAccessPoint(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.createNetAccessPointRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async createNetAccessPoint(requestParameters = {}, initOverrides) {
+        const response = await this.createNetAccessPointRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    deleteNetAccessPointRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/DeleteNetAccessPoint`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: DeleteNetAccessPointRequestToJSON(requestParameters.deleteNetAccessPointRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => DeleteNetAccessPointResponseFromJSON(jsonValue));
-        });
+    async deleteNetAccessPointRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/DeleteNetAccessPoint`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: DeleteNetAccessPointRequestToJSON(requestParameters.deleteNetAccessPointRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => DeleteNetAccessPointResponseFromJSON(jsonValue));
     }
     /**
      */
-    deleteNetAccessPoint(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.deleteNetAccessPointRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async deleteNetAccessPoint(requestParameters = {}, initOverrides) {
+        const response = await this.deleteNetAccessPointRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    readNetAccessPointServicesRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            const response = yield this.request({
-                path: `/ReadNetAccessPointServices`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadNetAccessPointServicesRequestToJSON(requestParameters.readNetAccessPointServicesRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadNetAccessPointServicesResponseFromJSON(jsonValue));
-        });
+    async readNetAccessPointServicesRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        const response = await this.request({
+            path: `/ReadNetAccessPointServices`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadNetAccessPointServicesRequestToJSON(requestParameters.readNetAccessPointServicesRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadNetAccessPointServicesResponseFromJSON(jsonValue));
     }
     /**
      */
-    readNetAccessPointServices(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readNetAccessPointServicesRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readNetAccessPointServices(requestParameters = {}, initOverrides) {
+        const response = await this.readNetAccessPointServicesRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    readNetAccessPointsRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/ReadNetAccessPoints`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadNetAccessPointsRequestToJSON(requestParameters.readNetAccessPointsRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadNetAccessPointsResponseFromJSON(jsonValue));
-        });
+    async readNetAccessPointsRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/ReadNetAccessPoints`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadNetAccessPointsRequestToJSON(requestParameters.readNetAccessPointsRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadNetAccessPointsResponseFromJSON(jsonValue));
     }
     /**
      */
-    readNetAccessPoints(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readNetAccessPointsRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readNetAccessPoints(requestParameters = {}, initOverrides) {
+        const response = await this.readNetAccessPointsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    updateNetAccessPointRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/UpdateNetAccessPoint`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: UpdateNetAccessPointRequestToJSON(requestParameters.updateNetAccessPointRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => UpdateNetAccessPointResponseFromJSON(jsonValue));
-        });
+    async updateNetAccessPointRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/UpdateNetAccessPoint`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateNetAccessPointRequestToJSON(requestParameters.updateNetAccessPointRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateNetAccessPointResponseFromJSON(jsonValue));
     }
     /**
      */
-    updateNetAccessPoint(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.updateNetAccessPointRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async updateNetAccessPoint(requestParameters = {}, initOverrides) {
+        const response = await this.updateNetAccessPointRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 }

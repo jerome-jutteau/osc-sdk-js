@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "description": "OpenAPI client for outscale-api",
   "author": "OpenAPI-Generator",
-  "main": "./dist/index.js",
-  "typings": "./dist/index.ts",
+  "module": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
   "files": [
     "/dist"
   ],
   "scripts": {
-    "build": "tsc",
-    "prepare": "npm run build"
+    "tsc": "tsc -p tsconfig.json",
+    "prepublish": "npm run tsc"
   },
   "devDependencies": {
     "typescript": "^2.4"

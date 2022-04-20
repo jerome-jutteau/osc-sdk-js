@@ -11,15 +11,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import * as runtime from '../runtime';
 import { CheckAuthenticationRequestToJSON, CheckAuthenticationResponseFromJSON, CreateAccountRequestToJSON, CreateAccountResponseFromJSON, ReadAccountsRequestToJSON, ReadAccountsResponseFromJSON, ReadConsumptionAccountRequestToJSON, ReadConsumptionAccountResponseFromJSON, ResetAccountPasswordRequestToJSON, ResetAccountPasswordResponseFromJSON, SendResetPasswordEmailRequestToJSON, SendResetPasswordEmailResponseFromJSON, UpdateAccountRequestToJSON, UpdateAccountResponseFromJSON, } from '../models';
 /**
@@ -28,192 +19,164 @@ import { CheckAuthenticationRequestToJSON, CheckAuthenticationResponseFromJSON, 
 export class AccountApi extends runtime.BaseAPI {
     /**
      */
-    checkAuthenticationRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/CheckAuthentication`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: CheckAuthenticationRequestToJSON(requestParameters.checkAuthenticationRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => CheckAuthenticationResponseFromJSON(jsonValue));
-        });
+    async checkAuthenticationRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/CheckAuthentication`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CheckAuthenticationRequestToJSON(requestParameters.checkAuthenticationRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => CheckAuthenticationResponseFromJSON(jsonValue));
     }
     /**
      */
-    checkAuthentication(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.checkAuthenticationRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async checkAuthentication(requestParameters = {}, initOverrides) {
+        const response = await this.checkAuthenticationRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    createAccountRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/CreateAccount`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: CreateAccountRequestToJSON(requestParameters.createAccountRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => CreateAccountResponseFromJSON(jsonValue));
-        });
+    async createAccountRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/CreateAccount`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateAccountRequestToJSON(requestParameters.createAccountRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateAccountResponseFromJSON(jsonValue));
     }
     /**
      */
-    createAccount(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.createAccountRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async createAccount(requestParameters = {}, initOverrides) {
+        const response = await this.createAccountRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    readAccountsRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/ReadAccounts`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadAccountsRequestToJSON(requestParameters.readAccountsRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadAccountsResponseFromJSON(jsonValue));
-        });
+    async readAccountsRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/ReadAccounts`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadAccountsRequestToJSON(requestParameters.readAccountsRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadAccountsResponseFromJSON(jsonValue));
     }
     /**
      */
-    readAccounts(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readAccountsRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readAccounts(requestParameters = {}, initOverrides) {
+        const response = await this.readAccountsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    readConsumptionAccountRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/ReadConsumptionAccount`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadConsumptionAccountRequestToJSON(requestParameters.readConsumptionAccountRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadConsumptionAccountResponseFromJSON(jsonValue));
-        });
+    async readConsumptionAccountRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/ReadConsumptionAccount`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadConsumptionAccountRequestToJSON(requestParameters.readConsumptionAccountRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadConsumptionAccountResponseFromJSON(jsonValue));
     }
     /**
      */
-    readConsumptionAccount(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readConsumptionAccountRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readConsumptionAccount(requestParameters = {}, initOverrides) {
+        const response = await this.readConsumptionAccountRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    resetAccountPasswordRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            const response = yield this.request({
-                path: `/ResetAccountPassword`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ResetAccountPasswordRequestToJSON(requestParameters.resetAccountPasswordRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ResetAccountPasswordResponseFromJSON(jsonValue));
-        });
+    async resetAccountPasswordRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        const response = await this.request({
+            path: `/ResetAccountPassword`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ResetAccountPasswordRequestToJSON(requestParameters.resetAccountPasswordRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ResetAccountPasswordResponseFromJSON(jsonValue));
     }
     /**
      */
-    resetAccountPassword(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.resetAccountPasswordRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async resetAccountPassword(requestParameters = {}, initOverrides) {
+        const response = await this.resetAccountPasswordRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    sendResetPasswordEmailRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            const response = yield this.request({
-                path: `/SendResetPasswordEmail`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: SendResetPasswordEmailRequestToJSON(requestParameters.sendResetPasswordEmailRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => SendResetPasswordEmailResponseFromJSON(jsonValue));
-        });
+    async sendResetPasswordEmailRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        const response = await this.request({
+            path: `/SendResetPasswordEmail`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: SendResetPasswordEmailRequestToJSON(requestParameters.sendResetPasswordEmailRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => SendResetPasswordEmailResponseFromJSON(jsonValue));
     }
     /**
      */
-    sendResetPasswordEmail(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.sendResetPasswordEmailRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async sendResetPasswordEmail(requestParameters = {}, initOverrides) {
+        const response = await this.sendResetPasswordEmailRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    updateAccountRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/UpdateAccount`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: UpdateAccountRequestToJSON(requestParameters.updateAccountRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => UpdateAccountResponseFromJSON(jsonValue));
-        });
+    async updateAccountRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/UpdateAccount`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateAccountRequestToJSON(requestParameters.updateAccountRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateAccountResponseFromJSON(jsonValue));
     }
     /**
      */
-    updateAccount(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.updateAccountRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async updateAccount(requestParameters = {}, initOverrides) {
+        const response = await this.updateAccountRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 }

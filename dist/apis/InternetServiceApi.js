@@ -11,15 +11,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import * as runtime from '../runtime';
 import { CreateInternetServiceRequestToJSON, CreateInternetServiceResponseFromJSON, DeleteInternetServiceRequestToJSON, DeleteInternetServiceResponseFromJSON, LinkInternetServiceRequestToJSON, LinkInternetServiceResponseFromJSON, ReadInternetServicesRequestToJSON, ReadInternetServicesResponseFromJSON, UnlinkInternetServiceRequestToJSON, UnlinkInternetServiceResponseFromJSON, } from '../models';
 /**
@@ -28,142 +19,122 @@ import { CreateInternetServiceRequestToJSON, CreateInternetServiceResponseFromJS
 export class InternetServiceApi extends runtime.BaseAPI {
     /**
      */
-    createInternetServiceRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/CreateInternetService`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: CreateInternetServiceRequestToJSON(requestParameters.createInternetServiceRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => CreateInternetServiceResponseFromJSON(jsonValue));
-        });
+    async createInternetServiceRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/CreateInternetService`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateInternetServiceRequestToJSON(requestParameters.createInternetServiceRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateInternetServiceResponseFromJSON(jsonValue));
     }
     /**
      */
-    createInternetService(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.createInternetServiceRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async createInternetService(requestParameters = {}, initOverrides) {
+        const response = await this.createInternetServiceRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    deleteInternetServiceRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/DeleteInternetService`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: DeleteInternetServiceRequestToJSON(requestParameters.deleteInternetServiceRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => DeleteInternetServiceResponseFromJSON(jsonValue));
-        });
+    async deleteInternetServiceRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/DeleteInternetService`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: DeleteInternetServiceRequestToJSON(requestParameters.deleteInternetServiceRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => DeleteInternetServiceResponseFromJSON(jsonValue));
     }
     /**
      */
-    deleteInternetService(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.deleteInternetServiceRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async deleteInternetService(requestParameters = {}, initOverrides) {
+        const response = await this.deleteInternetServiceRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    linkInternetServiceRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/LinkInternetService`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: LinkInternetServiceRequestToJSON(requestParameters.linkInternetServiceRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => LinkInternetServiceResponseFromJSON(jsonValue));
-        });
+    async linkInternetServiceRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/LinkInternetService`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: LinkInternetServiceRequestToJSON(requestParameters.linkInternetServiceRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => LinkInternetServiceResponseFromJSON(jsonValue));
     }
     /**
      */
-    linkInternetService(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.linkInternetServiceRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async linkInternetService(requestParameters = {}, initOverrides) {
+        const response = await this.linkInternetServiceRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    readInternetServicesRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/ReadInternetServices`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadInternetServicesRequestToJSON(requestParameters.readInternetServicesRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadInternetServicesResponseFromJSON(jsonValue));
-        });
+    async readInternetServicesRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/ReadInternetServices`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadInternetServicesRequestToJSON(requestParameters.readInternetServicesRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadInternetServicesResponseFromJSON(jsonValue));
     }
     /**
      */
-    readInternetServices(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readInternetServicesRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readInternetServices(requestParameters = {}, initOverrides) {
+        const response = await this.readInternetServicesRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    unlinkInternetServiceRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/UnlinkInternetService`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: UnlinkInternetServiceRequestToJSON(requestParameters.unlinkInternetServiceRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => UnlinkInternetServiceResponseFromJSON(jsonValue));
-        });
+    async unlinkInternetServiceRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/UnlinkInternetService`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UnlinkInternetServiceRequestToJSON(requestParameters.unlinkInternetServiceRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => UnlinkInternetServiceResponseFromJSON(jsonValue));
     }
     /**
      */
-    unlinkInternetService(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.unlinkInternetServiceRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async unlinkInternetService(requestParameters = {}, initOverrides) {
+        const response = await this.unlinkInternetServiceRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 }

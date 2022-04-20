@@ -11,15 +11,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import * as runtime from '../runtime';
 import { AcceptNetPeeringRequestToJSON, AcceptNetPeeringResponseFromJSON, CreateNetPeeringRequestToJSON, CreateNetPeeringResponseFromJSON, DeleteNetPeeringRequestToJSON, DeleteNetPeeringResponseFromJSON, ReadNetPeeringsRequestToJSON, ReadNetPeeringsResponseFromJSON, RejectNetPeeringRequestToJSON, RejectNetPeeringResponseFromJSON, } from '../models';
 /**
@@ -28,142 +19,122 @@ import { AcceptNetPeeringRequestToJSON, AcceptNetPeeringResponseFromJSON, Create
 export class NetPeeringApi extends runtime.BaseAPI {
     /**
      */
-    acceptNetPeeringRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/AcceptNetPeering`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: AcceptNetPeeringRequestToJSON(requestParameters.acceptNetPeeringRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => AcceptNetPeeringResponseFromJSON(jsonValue));
-        });
+    async acceptNetPeeringRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/AcceptNetPeering`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: AcceptNetPeeringRequestToJSON(requestParameters.acceptNetPeeringRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => AcceptNetPeeringResponseFromJSON(jsonValue));
     }
     /**
      */
-    acceptNetPeering(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.acceptNetPeeringRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async acceptNetPeering(requestParameters = {}, initOverrides) {
+        const response = await this.acceptNetPeeringRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    createNetPeeringRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/CreateNetPeering`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: CreateNetPeeringRequestToJSON(requestParameters.createNetPeeringRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => CreateNetPeeringResponseFromJSON(jsonValue));
-        });
+    async createNetPeeringRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/CreateNetPeering`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateNetPeeringRequestToJSON(requestParameters.createNetPeeringRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateNetPeeringResponseFromJSON(jsonValue));
     }
     /**
      */
-    createNetPeering(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.createNetPeeringRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async createNetPeering(requestParameters = {}, initOverrides) {
+        const response = await this.createNetPeeringRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    deleteNetPeeringRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/DeleteNetPeering`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: DeleteNetPeeringRequestToJSON(requestParameters.deleteNetPeeringRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => DeleteNetPeeringResponseFromJSON(jsonValue));
-        });
+    async deleteNetPeeringRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/DeleteNetPeering`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: DeleteNetPeeringRequestToJSON(requestParameters.deleteNetPeeringRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => DeleteNetPeeringResponseFromJSON(jsonValue));
     }
     /**
      */
-    deleteNetPeering(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.deleteNetPeeringRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async deleteNetPeering(requestParameters = {}, initOverrides) {
+        const response = await this.deleteNetPeeringRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    readNetPeeringsRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/ReadNetPeerings`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadNetPeeringsRequestToJSON(requestParameters.readNetPeeringsRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadNetPeeringsResponseFromJSON(jsonValue));
-        });
+    async readNetPeeringsRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/ReadNetPeerings`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadNetPeeringsRequestToJSON(requestParameters.readNetPeeringsRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadNetPeeringsResponseFromJSON(jsonValue));
     }
     /**
      */
-    readNetPeerings(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readNetPeeringsRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readNetPeerings(requestParameters = {}, initOverrides) {
+        const response = await this.readNetPeeringsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    rejectNetPeeringRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/RejectNetPeering`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: RejectNetPeeringRequestToJSON(requestParameters.rejectNetPeeringRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => RejectNetPeeringResponseFromJSON(jsonValue));
-        });
+    async rejectNetPeeringRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/RejectNetPeering`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: RejectNetPeeringRequestToJSON(requestParameters.rejectNetPeeringRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => RejectNetPeeringResponseFromJSON(jsonValue));
     }
     /**
      */
-    rejectNetPeering(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.rejectNetPeeringRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async rejectNetPeering(requestParameters = {}, initOverrides) {
+        const response = await this.rejectNetPeeringRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 }

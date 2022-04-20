@@ -11,15 +11,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import * as runtime from '../runtime';
 import { CreateKeypairRequestToJSON, CreateKeypairResponseFromJSON, DeleteKeypairRequestToJSON, DeleteKeypairResponseFromJSON, ReadKeypairsRequestToJSON, ReadKeypairsResponseFromJSON, } from '../models';
 /**
@@ -28,86 +19,74 @@ import { CreateKeypairRequestToJSON, CreateKeypairResponseFromJSON, DeleteKeypai
 export class KeypairApi extends runtime.BaseAPI {
     /**
      */
-    createKeypairRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/CreateKeypair`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: CreateKeypairRequestToJSON(requestParameters.createKeypairRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => CreateKeypairResponseFromJSON(jsonValue));
-        });
+    async createKeypairRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/CreateKeypair`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateKeypairRequestToJSON(requestParameters.createKeypairRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateKeypairResponseFromJSON(jsonValue));
     }
     /**
      */
-    createKeypair(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.createKeypairRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async createKeypair(requestParameters = {}, initOverrides) {
+        const response = await this.createKeypairRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    deleteKeypairRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/DeleteKeypair`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: DeleteKeypairRequestToJSON(requestParameters.deleteKeypairRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => DeleteKeypairResponseFromJSON(jsonValue));
-        });
+    async deleteKeypairRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/DeleteKeypair`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: DeleteKeypairRequestToJSON(requestParameters.deleteKeypairRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => DeleteKeypairResponseFromJSON(jsonValue));
     }
     /**
      */
-    deleteKeypair(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.deleteKeypairRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async deleteKeypair(requestParameters = {}, initOverrides) {
+        const response = await this.deleteKeypairRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    readKeypairsRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/ReadKeypairs`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadKeypairsRequestToJSON(requestParameters.readKeypairsRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadKeypairsResponseFromJSON(jsonValue));
-        });
+    async readKeypairsRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/ReadKeypairs`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadKeypairsRequestToJSON(requestParameters.readKeypairsRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadKeypairsResponseFromJSON(jsonValue));
     }
     /**
      */
-    readKeypairs(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readKeypairsRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readKeypairs(requestParameters = {}, initOverrides) {
+        const response = await this.readKeypairsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 }

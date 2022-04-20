@@ -11,15 +11,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import * as runtime from '../runtime';
 import { CreateServerCertificateRequestToJSON, CreateServerCertificateResponseFromJSON, DeleteServerCertificateRequestToJSON, DeleteServerCertificateResponseFromJSON, ReadServerCertificatesRequestToJSON, ReadServerCertificatesResponseFromJSON, UpdateServerCertificateRequestToJSON, UpdateServerCertificateResponseFromJSON, } from '../models';
 /**
@@ -28,114 +19,98 @@ import { CreateServerCertificateRequestToJSON, CreateServerCertificateResponseFr
 export class ServerCertificateApi extends runtime.BaseAPI {
     /**
      */
-    createServerCertificateRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/CreateServerCertificate`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: CreateServerCertificateRequestToJSON(requestParameters.createServerCertificateRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => CreateServerCertificateResponseFromJSON(jsonValue));
-        });
+    async createServerCertificateRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/CreateServerCertificate`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateServerCertificateRequestToJSON(requestParameters.createServerCertificateRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateServerCertificateResponseFromJSON(jsonValue));
     }
     /**
      */
-    createServerCertificate(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.createServerCertificateRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async createServerCertificate(requestParameters = {}, initOverrides) {
+        const response = await this.createServerCertificateRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    deleteServerCertificateRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/DeleteServerCertificate`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: DeleteServerCertificateRequestToJSON(requestParameters.deleteServerCertificateRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => DeleteServerCertificateResponseFromJSON(jsonValue));
-        });
+    async deleteServerCertificateRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/DeleteServerCertificate`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: DeleteServerCertificateRequestToJSON(requestParameters.deleteServerCertificateRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => DeleteServerCertificateResponseFromJSON(jsonValue));
     }
     /**
      */
-    deleteServerCertificate(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.deleteServerCertificateRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async deleteServerCertificate(requestParameters = {}, initOverrides) {
+        const response = await this.deleteServerCertificateRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    readServerCertificatesRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/ReadServerCertificates`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadServerCertificatesRequestToJSON(requestParameters.readServerCertificatesRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadServerCertificatesResponseFromJSON(jsonValue));
-        });
+    async readServerCertificatesRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/ReadServerCertificates`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadServerCertificatesRequestToJSON(requestParameters.readServerCertificatesRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadServerCertificatesResponseFromJSON(jsonValue));
     }
     /**
      */
-    readServerCertificates(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readServerCertificatesRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readServerCertificates(requestParameters = {}, initOverrides) {
+        const response = await this.readServerCertificatesRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    updateServerCertificateRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/UpdateServerCertificate`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: UpdateServerCertificateRequestToJSON(requestParameters.updateServerCertificateRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => UpdateServerCertificateResponseFromJSON(jsonValue));
-        });
+    async updateServerCertificateRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/UpdateServerCertificate`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateServerCertificateRequestToJSON(requestParameters.updateServerCertificateRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateServerCertificateResponseFromJSON(jsonValue));
     }
     /**
      */
-    updateServerCertificate(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.updateServerCertificateRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async updateServerCertificate(requestParameters = {}, initOverrides) {
+        const response = await this.updateServerCertificateRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 }

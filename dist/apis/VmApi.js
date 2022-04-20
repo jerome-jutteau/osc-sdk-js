@@ -11,15 +11,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import * as runtime from '../runtime';
 import { CreateVmsRequestToJSON, CreateVmsResponseFromJSON, DeleteVmsRequestToJSON, DeleteVmsResponseFromJSON, ReadAdminPasswordRequestToJSON, ReadAdminPasswordResponseFromJSON, ReadConsoleOutputRequestToJSON, ReadConsoleOutputResponseFromJSON, ReadVmTypesRequestToJSON, ReadVmTypesResponseFromJSON, ReadVmsRequestToJSON, ReadVmsResponseFromJSON, ReadVmsStateRequestToJSON, ReadVmsStateResponseFromJSON, RebootVmsRequestToJSON, RebootVmsResponseFromJSON, StartVmsRequestToJSON, StartVmsResponseFromJSON, StopVmsRequestToJSON, StopVmsResponseFromJSON, UpdateVmRequestToJSON, UpdateVmResponseFromJSON, } from '../models';
 /**
@@ -28,307 +19,263 @@ import { CreateVmsRequestToJSON, CreateVmsResponseFromJSON, DeleteVmsRequestToJS
 export class VmApi extends runtime.BaseAPI {
     /**
      */
-    createVmsRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/CreateVms`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: CreateVmsRequestToJSON(requestParameters.createVmsRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => CreateVmsResponseFromJSON(jsonValue));
-        });
+    async createVmsRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/CreateVms`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateVmsRequestToJSON(requestParameters.createVmsRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateVmsResponseFromJSON(jsonValue));
     }
     /**
      */
-    createVms(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.createVmsRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async createVms(requestParameters = {}, initOverrides) {
+        const response = await this.createVmsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    deleteVmsRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/DeleteVms`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: DeleteVmsRequestToJSON(requestParameters.deleteVmsRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => DeleteVmsResponseFromJSON(jsonValue));
-        });
+    async deleteVmsRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/DeleteVms`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: DeleteVmsRequestToJSON(requestParameters.deleteVmsRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => DeleteVmsResponseFromJSON(jsonValue));
     }
     /**
      */
-    deleteVms(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.deleteVmsRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async deleteVms(requestParameters = {}, initOverrides) {
+        const response = await this.deleteVmsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    readAdminPasswordRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/ReadAdminPassword`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadAdminPasswordRequestToJSON(requestParameters.readAdminPasswordRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadAdminPasswordResponseFromJSON(jsonValue));
-        });
+    async readAdminPasswordRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/ReadAdminPassword`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadAdminPasswordRequestToJSON(requestParameters.readAdminPasswordRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadAdminPasswordResponseFromJSON(jsonValue));
     }
     /**
      */
-    readAdminPassword(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readAdminPasswordRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readAdminPassword(requestParameters = {}, initOverrides) {
+        const response = await this.readAdminPasswordRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    readConsoleOutputRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/ReadConsoleOutput`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadConsoleOutputRequestToJSON(requestParameters.readConsoleOutputRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadConsoleOutputResponseFromJSON(jsonValue));
-        });
+    async readConsoleOutputRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/ReadConsoleOutput`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadConsoleOutputRequestToJSON(requestParameters.readConsoleOutputRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadConsoleOutputResponseFromJSON(jsonValue));
     }
     /**
      */
-    readConsoleOutput(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readConsoleOutputRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readConsoleOutput(requestParameters = {}, initOverrides) {
+        const response = await this.readConsoleOutputRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    readVmTypesRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            const response = yield this.request({
-                path: `/ReadVmTypes`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadVmTypesRequestToJSON(requestParameters.readVmTypesRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadVmTypesResponseFromJSON(jsonValue));
-        });
+    async readVmTypesRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        const response = await this.request({
+            path: `/ReadVmTypes`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadVmTypesRequestToJSON(requestParameters.readVmTypesRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadVmTypesResponseFromJSON(jsonValue));
     }
     /**
      */
-    readVmTypes(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readVmTypesRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readVmTypes(requestParameters = {}, initOverrides) {
+        const response = await this.readVmTypesRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    readVmsRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/ReadVms`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadVmsRequestToJSON(requestParameters.readVmsRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadVmsResponseFromJSON(jsonValue));
-        });
+    async readVmsRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/ReadVms`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadVmsRequestToJSON(requestParameters.readVmsRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadVmsResponseFromJSON(jsonValue));
     }
     /**
      */
-    readVms(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readVmsRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readVms(requestParameters = {}, initOverrides) {
+        const response = await this.readVmsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    readVmsStateRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/ReadVmsState`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadVmsStateRequestToJSON(requestParameters.readVmsStateRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadVmsStateResponseFromJSON(jsonValue));
-        });
+    async readVmsStateRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/ReadVmsState`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadVmsStateRequestToJSON(requestParameters.readVmsStateRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadVmsStateResponseFromJSON(jsonValue));
     }
     /**
      */
-    readVmsState(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readVmsStateRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readVmsState(requestParameters = {}, initOverrides) {
+        const response = await this.readVmsStateRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    rebootVmsRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/RebootVms`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: RebootVmsRequestToJSON(requestParameters.rebootVmsRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => RebootVmsResponseFromJSON(jsonValue));
-        });
+    async rebootVmsRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/RebootVms`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: RebootVmsRequestToJSON(requestParameters.rebootVmsRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => RebootVmsResponseFromJSON(jsonValue));
     }
     /**
      */
-    rebootVms(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.rebootVmsRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async rebootVms(requestParameters = {}, initOverrides) {
+        const response = await this.rebootVmsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    startVmsRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/StartVms`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: StartVmsRequestToJSON(requestParameters.startVmsRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => StartVmsResponseFromJSON(jsonValue));
-        });
+    async startVmsRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/StartVms`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: StartVmsRequestToJSON(requestParameters.startVmsRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => StartVmsResponseFromJSON(jsonValue));
     }
     /**
      */
-    startVms(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.startVmsRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async startVms(requestParameters = {}, initOverrides) {
+        const response = await this.startVmsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    stopVmsRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/StopVms`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: StopVmsRequestToJSON(requestParameters.stopVmsRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => StopVmsResponseFromJSON(jsonValue));
-        });
+    async stopVmsRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/StopVms`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: StopVmsRequestToJSON(requestParameters.stopVmsRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => StopVmsResponseFromJSON(jsonValue));
     }
     /**
      */
-    stopVms(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.stopVmsRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async stopVms(requestParameters = {}, initOverrides) {
+        const response = await this.stopVmsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    updateVmRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/UpdateVm`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: UpdateVmRequestToJSON(requestParameters.updateVmRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => UpdateVmResponseFromJSON(jsonValue));
-        });
+    async updateVmRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/UpdateVm`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateVmRequestToJSON(requestParameters.updateVmRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateVmResponseFromJSON(jsonValue));
     }
     /**
      */
-    updateVm(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.updateVmRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async updateVm(requestParameters = {}, initOverrides) {
+        const response = await this.updateVmRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 }

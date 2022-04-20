@@ -11,15 +11,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import * as runtime from '../runtime';
 import { CreateAccessKeyRequestToJSON, CreateAccessKeyResponseFromJSON, DeleteAccessKeyRequestToJSON, DeleteAccessKeyResponseFromJSON, ReadAccessKeysRequestToJSON, ReadAccessKeysResponseFromJSON, ReadSecretAccessKeyRequestToJSON, ReadSecretAccessKeyResponseFromJSON, UpdateAccessKeyRequestToJSON, UpdateAccessKeyResponseFromJSON, } from '../models';
 /**
@@ -28,157 +19,137 @@ import { CreateAccessKeyRequestToJSON, CreateAccessKeyResponseFromJSON, DeleteAc
 export class AccessKeyApi extends runtime.BaseAPI {
     /**
      */
-    createAccessKeyRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuthSec authentication
-            }
-            if (this.configuration && (this.configuration.username !== undefined || this.configuration.password !== undefined)) {
-                headerParameters["Authorization"] = "Basic " + btoa(this.configuration.username + ":" + this.configuration.password);
-            }
-            const response = yield this.request({
-                path: `/CreateAccessKey`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: CreateAccessKeyRequestToJSON(requestParameters.createAccessKeyRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => CreateAccessKeyResponseFromJSON(jsonValue));
-        });
+    async createAccessKeyRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuthSec authentication
+        }
+        if (this.configuration && (this.configuration.username !== undefined || this.configuration.password !== undefined)) {
+            headerParameters["Authorization"] = "Basic " + btoa(this.configuration.username + ":" + this.configuration.password);
+        }
+        const response = await this.request({
+            path: `/CreateAccessKey`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateAccessKeyRequestToJSON(requestParameters.createAccessKeyRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateAccessKeyResponseFromJSON(jsonValue));
     }
     /**
      */
-    createAccessKey(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.createAccessKeyRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async createAccessKey(requestParameters = {}, initOverrides) {
+        const response = await this.createAccessKeyRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    deleteAccessKeyRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuthSec authentication
-            }
-            if (this.configuration && (this.configuration.username !== undefined || this.configuration.password !== undefined)) {
-                headerParameters["Authorization"] = "Basic " + btoa(this.configuration.username + ":" + this.configuration.password);
-            }
-            const response = yield this.request({
-                path: `/DeleteAccessKey`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: DeleteAccessKeyRequestToJSON(requestParameters.deleteAccessKeyRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => DeleteAccessKeyResponseFromJSON(jsonValue));
-        });
+    async deleteAccessKeyRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuthSec authentication
+        }
+        if (this.configuration && (this.configuration.username !== undefined || this.configuration.password !== undefined)) {
+            headerParameters["Authorization"] = "Basic " + btoa(this.configuration.username + ":" + this.configuration.password);
+        }
+        const response = await this.request({
+            path: `/DeleteAccessKey`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: DeleteAccessKeyRequestToJSON(requestParameters.deleteAccessKeyRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => DeleteAccessKeyResponseFromJSON(jsonValue));
     }
     /**
      */
-    deleteAccessKey(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.deleteAccessKeyRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async deleteAccessKey(requestParameters = {}, initOverrides) {
+        const response = await this.deleteAccessKeyRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    readAccessKeysRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuthSec authentication
-            }
-            if (this.configuration && (this.configuration.username !== undefined || this.configuration.password !== undefined)) {
-                headerParameters["Authorization"] = "Basic " + btoa(this.configuration.username + ":" + this.configuration.password);
-            }
-            const response = yield this.request({
-                path: `/ReadAccessKeys`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadAccessKeysRequestToJSON(requestParameters.readAccessKeysRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadAccessKeysResponseFromJSON(jsonValue));
-        });
+    async readAccessKeysRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuthSec authentication
+        }
+        if (this.configuration && (this.configuration.username !== undefined || this.configuration.password !== undefined)) {
+            headerParameters["Authorization"] = "Basic " + btoa(this.configuration.username + ":" + this.configuration.password);
+        }
+        const response = await this.request({
+            path: `/ReadAccessKeys`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadAccessKeysRequestToJSON(requestParameters.readAccessKeysRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadAccessKeysResponseFromJSON(jsonValue));
     }
     /**
      */
-    readAccessKeys(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readAccessKeysRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readAccessKeys(requestParameters = {}, initOverrides) {
+        const response = await this.readAccessKeysRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    readSecretAccessKeyRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuthSec authentication
-            }
-            if (this.configuration && (this.configuration.username !== undefined || this.configuration.password !== undefined)) {
-                headerParameters["Authorization"] = "Basic " + btoa(this.configuration.username + ":" + this.configuration.password);
-            }
-            const response = yield this.request({
-                path: `/ReadSecretAccessKey`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadSecretAccessKeyRequestToJSON(requestParameters.readSecretAccessKeyRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadSecretAccessKeyResponseFromJSON(jsonValue));
-        });
+    async readSecretAccessKeyRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuthSec authentication
+        }
+        if (this.configuration && (this.configuration.username !== undefined || this.configuration.password !== undefined)) {
+            headerParameters["Authorization"] = "Basic " + btoa(this.configuration.username + ":" + this.configuration.password);
+        }
+        const response = await this.request({
+            path: `/ReadSecretAccessKey`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadSecretAccessKeyRequestToJSON(requestParameters.readSecretAccessKeyRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadSecretAccessKeyResponseFromJSON(jsonValue));
     }
     /**
      */
-    readSecretAccessKey(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readSecretAccessKeyRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readSecretAccessKey(requestParameters = {}, initOverrides) {
+        const response = await this.readSecretAccessKeyRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    updateAccessKeyRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuthSec authentication
-            }
-            if (this.configuration && (this.configuration.username !== undefined || this.configuration.password !== undefined)) {
-                headerParameters["Authorization"] = "Basic " + btoa(this.configuration.username + ":" + this.configuration.password);
-            }
-            const response = yield this.request({
-                path: `/UpdateAccessKey`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: UpdateAccessKeyRequestToJSON(requestParameters.updateAccessKeyRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => UpdateAccessKeyResponseFromJSON(jsonValue));
-        });
+    async updateAccessKeyRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuthSec authentication
+        }
+        if (this.configuration && (this.configuration.username !== undefined || this.configuration.password !== undefined)) {
+            headerParameters["Authorization"] = "Basic " + btoa(this.configuration.username + ":" + this.configuration.password);
+        }
+        const response = await this.request({
+            path: `/UpdateAccessKey`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateAccessKeyRequestToJSON(requestParameters.updateAccessKeyRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateAccessKeyResponseFromJSON(jsonValue));
     }
     /**
      */
-    updateAccessKey(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.updateAccessKeyRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async updateAccessKey(requestParameters = {}, initOverrides) {
+        const response = await this.updateAccessKeyRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 }

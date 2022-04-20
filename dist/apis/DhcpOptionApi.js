@@ -11,15 +11,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import * as runtime from '../runtime';
 import { CreateDhcpOptionsRequestToJSON, CreateDhcpOptionsResponseFromJSON, DeleteDhcpOptionsRequestToJSON, DeleteDhcpOptionsResponseFromJSON, ReadDhcpOptionsRequestToJSON, ReadDhcpOptionsResponseFromJSON, } from '../models';
 /**
@@ -28,86 +19,74 @@ import { CreateDhcpOptionsRequestToJSON, CreateDhcpOptionsResponseFromJSON, Dele
 export class DhcpOptionApi extends runtime.BaseAPI {
     /**
      */
-    createDhcpOptionsRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/CreateDhcpOptions`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: CreateDhcpOptionsRequestToJSON(requestParameters.createDhcpOptionsRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => CreateDhcpOptionsResponseFromJSON(jsonValue));
-        });
+    async createDhcpOptionsRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/CreateDhcpOptions`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateDhcpOptionsRequestToJSON(requestParameters.createDhcpOptionsRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateDhcpOptionsResponseFromJSON(jsonValue));
     }
     /**
      */
-    createDhcpOptions(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.createDhcpOptionsRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async createDhcpOptions(requestParameters = {}, initOverrides) {
+        const response = await this.createDhcpOptionsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    deleteDhcpOptionsRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/DeleteDhcpOptions`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: DeleteDhcpOptionsRequestToJSON(requestParameters.deleteDhcpOptionsRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => DeleteDhcpOptionsResponseFromJSON(jsonValue));
-        });
+    async deleteDhcpOptionsRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/DeleteDhcpOptions`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: DeleteDhcpOptionsRequestToJSON(requestParameters.deleteDhcpOptionsRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => DeleteDhcpOptionsResponseFromJSON(jsonValue));
     }
     /**
      */
-    deleteDhcpOptions(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.deleteDhcpOptionsRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async deleteDhcpOptions(requestParameters = {}, initOverrides) {
+        const response = await this.deleteDhcpOptionsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    readDhcpOptionsRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/ReadDhcpOptions`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadDhcpOptionsRequestToJSON(requestParameters.readDhcpOptionsRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadDhcpOptionsResponseFromJSON(jsonValue));
-        });
+    async readDhcpOptionsRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/ReadDhcpOptions`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadDhcpOptionsRequestToJSON(requestParameters.readDhcpOptionsRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadDhcpOptionsResponseFromJSON(jsonValue));
     }
     /**
      */
-    readDhcpOptions(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readDhcpOptionsRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readDhcpOptions(requestParameters = {}, initOverrides) {
+        const response = await this.readDhcpOptionsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 }

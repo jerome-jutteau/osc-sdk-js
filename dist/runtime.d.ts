@@ -40,7 +40,7 @@ export declare const COLLECTION_FORMATS: {
     tsv: string;
     pipes: string;
 };
-export declare type FetchAPI = GlobalFetch['fetch'];
+export declare type FetchAPI = WindowOrWorkerGlobalScope['fetch'];
 export interface ConfigurationParameters {
     basePath?: string;
     fetchApi?: FetchAPI;
@@ -56,16 +56,16 @@ export interface ConfigurationParameters {
 export declare class Configuration {
     private configuration;
     constructor(configuration?: ConfigurationParameters);
-    readonly basePath: string;
-    readonly fetchApi: FetchAPI | undefined;
-    readonly middleware: Middleware[];
-    readonly queryParamsStringify: (params: HTTPQuery) => string;
-    readonly username: string | undefined;
-    readonly password: string | undefined;
-    readonly apiKey: ((name: string) => string) | undefined;
-    readonly accessToken: ((name?: string, scopes?: string[]) => string | Promise<string>) | undefined;
-    readonly headers: HTTPHeaders | undefined;
-    readonly credentials: RequestCredentials | undefined;
+    get basePath(): string;
+    get fetchApi(): FetchAPI | undefined;
+    get middleware(): Middleware[];
+    get queryParamsStringify(): (params: HTTPQuery) => string;
+    get username(): string | undefined;
+    get password(): string | undefined;
+    get apiKey(): ((name: string) => string) | undefined;
+    get accessToken(): ((name?: string, scopes?: string[]) => string | Promise<string>) | undefined;
+    get headers(): HTTPHeaders | undefined;
+    get credentials(): RequestCredentials | undefined;
 }
 export declare type Json = any;
 export declare type HTTPMethod = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE' | 'OPTIONS' | 'HEAD';

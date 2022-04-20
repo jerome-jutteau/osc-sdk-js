@@ -11,15 +11,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import * as runtime from '../runtime';
 import { CreateNatServiceRequestToJSON, CreateNatServiceResponseFromJSON, DeleteNatServiceRequestToJSON, DeleteNatServiceResponseFromJSON, ReadNatServicesRequestToJSON, ReadNatServicesResponseFromJSON, } from '../models';
 /**
@@ -28,86 +19,74 @@ import { CreateNatServiceRequestToJSON, CreateNatServiceResponseFromJSON, Delete
 export class NatServiceApi extends runtime.BaseAPI {
     /**
      */
-    createNatServiceRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/CreateNatService`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: CreateNatServiceRequestToJSON(requestParameters.createNatServiceRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => CreateNatServiceResponseFromJSON(jsonValue));
-        });
+    async createNatServiceRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/CreateNatService`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateNatServiceRequestToJSON(requestParameters.createNatServiceRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateNatServiceResponseFromJSON(jsonValue));
     }
     /**
      */
-    createNatService(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.createNatServiceRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async createNatService(requestParameters = {}, initOverrides) {
+        const response = await this.createNatServiceRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    deleteNatServiceRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/DeleteNatService`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: DeleteNatServiceRequestToJSON(requestParameters.deleteNatServiceRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => DeleteNatServiceResponseFromJSON(jsonValue));
-        });
+    async deleteNatServiceRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/DeleteNatService`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: DeleteNatServiceRequestToJSON(requestParameters.deleteNatServiceRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => DeleteNatServiceResponseFromJSON(jsonValue));
     }
     /**
      */
-    deleteNatService(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.deleteNatServiceRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async deleteNatService(requestParameters = {}, initOverrides) {
+        const response = await this.deleteNatServiceRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    readNatServicesRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/ReadNatServices`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadNatServicesRequestToJSON(requestParameters.readNatServicesRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadNatServicesResponseFromJSON(jsonValue));
-        });
+    async readNatServicesRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/ReadNatServices`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadNatServicesRequestToJSON(requestParameters.readNatServicesRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadNatServicesResponseFromJSON(jsonValue));
     }
     /**
      */
-    readNatServices(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readNatServicesRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readNatServices(requestParameters = {}, initOverrides) {
+        const response = await this.readNatServicesRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 }

@@ -11,15 +11,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import * as runtime from '../runtime';
 import { ReadApiAccessPolicyRequestToJSON, ReadApiAccessPolicyResponseFromJSON, UpdateApiAccessPolicyRequestToJSON, UpdateApiAccessPolicyResponseFromJSON, } from '../models';
 /**
@@ -28,64 +19,56 @@ import { ReadApiAccessPolicyRequestToJSON, ReadApiAccessPolicyResponseFromJSON, 
 export class ApiAccessPolicyApi extends runtime.BaseAPI {
     /**
      */
-    readApiAccessPolicyRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuthSec authentication
-            }
-            if (this.configuration && (this.configuration.username !== undefined || this.configuration.password !== undefined)) {
-                headerParameters["Authorization"] = "Basic " + btoa(this.configuration.username + ":" + this.configuration.password);
-            }
-            const response = yield this.request({
-                path: `/ReadApiAccessPolicy`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadApiAccessPolicyRequestToJSON(requestParameters.readApiAccessPolicyRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadApiAccessPolicyResponseFromJSON(jsonValue));
-        });
+    async readApiAccessPolicyRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuthSec authentication
+        }
+        if (this.configuration && (this.configuration.username !== undefined || this.configuration.password !== undefined)) {
+            headerParameters["Authorization"] = "Basic " + btoa(this.configuration.username + ":" + this.configuration.password);
+        }
+        const response = await this.request({
+            path: `/ReadApiAccessPolicy`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadApiAccessPolicyRequestToJSON(requestParameters.readApiAccessPolicyRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadApiAccessPolicyResponseFromJSON(jsonValue));
     }
     /**
      */
-    readApiAccessPolicy(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readApiAccessPolicyRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readApiAccessPolicy(requestParameters = {}, initOverrides) {
+        const response = await this.readApiAccessPolicyRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    updateApiAccessPolicyRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuthSec authentication
-            }
-            if (this.configuration && (this.configuration.username !== undefined || this.configuration.password !== undefined)) {
-                headerParameters["Authorization"] = "Basic " + btoa(this.configuration.username + ":" + this.configuration.password);
-            }
-            const response = yield this.request({
-                path: `/UpdateApiAccessPolicy`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: UpdateApiAccessPolicyRequestToJSON(requestParameters.updateApiAccessPolicyRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => UpdateApiAccessPolicyResponseFromJSON(jsonValue));
-        });
+    async updateApiAccessPolicyRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuthSec authentication
+        }
+        if (this.configuration && (this.configuration.username !== undefined || this.configuration.password !== undefined)) {
+            headerParameters["Authorization"] = "Basic " + btoa(this.configuration.username + ":" + this.configuration.password);
+        }
+        const response = await this.request({
+            path: `/UpdateApiAccessPolicy`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateApiAccessPolicyRequestToJSON(requestParameters.updateApiAccessPolicyRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateApiAccessPolicyResponseFromJSON(jsonValue));
     }
     /**
      */
-    updateApiAccessPolicy(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.updateApiAccessPolicyRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async updateApiAccessPolicy(requestParameters = {}, initOverrides) {
+        const response = await this.updateApiAccessPolicyRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 }

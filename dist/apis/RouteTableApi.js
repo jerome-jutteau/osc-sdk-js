@@ -11,15 +11,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import * as runtime from '../runtime';
 import { CreateRouteTableRequestToJSON, CreateRouteTableResponseFromJSON, DeleteRouteTableRequestToJSON, DeleteRouteTableResponseFromJSON, LinkRouteTableRequestToJSON, LinkRouteTableResponseFromJSON, ReadRouteTablesRequestToJSON, ReadRouteTablesResponseFromJSON, UnlinkRouteTableRequestToJSON, UnlinkRouteTableResponseFromJSON, } from '../models';
 /**
@@ -28,142 +19,122 @@ import { CreateRouteTableRequestToJSON, CreateRouteTableResponseFromJSON, Delete
 export class RouteTableApi extends runtime.BaseAPI {
     /**
      */
-    createRouteTableRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/CreateRouteTable`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: CreateRouteTableRequestToJSON(requestParameters.createRouteTableRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => CreateRouteTableResponseFromJSON(jsonValue));
-        });
+    async createRouteTableRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/CreateRouteTable`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateRouteTableRequestToJSON(requestParameters.createRouteTableRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateRouteTableResponseFromJSON(jsonValue));
     }
     /**
      */
-    createRouteTable(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.createRouteTableRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async createRouteTable(requestParameters = {}, initOverrides) {
+        const response = await this.createRouteTableRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    deleteRouteTableRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/DeleteRouteTable`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: DeleteRouteTableRequestToJSON(requestParameters.deleteRouteTableRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => DeleteRouteTableResponseFromJSON(jsonValue));
-        });
+    async deleteRouteTableRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/DeleteRouteTable`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: DeleteRouteTableRequestToJSON(requestParameters.deleteRouteTableRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => DeleteRouteTableResponseFromJSON(jsonValue));
     }
     /**
      */
-    deleteRouteTable(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.deleteRouteTableRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async deleteRouteTable(requestParameters = {}, initOverrides) {
+        const response = await this.deleteRouteTableRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    linkRouteTableRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/LinkRouteTable`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: LinkRouteTableRequestToJSON(requestParameters.linkRouteTableRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => LinkRouteTableResponseFromJSON(jsonValue));
-        });
+    async linkRouteTableRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/LinkRouteTable`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: LinkRouteTableRequestToJSON(requestParameters.linkRouteTableRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => LinkRouteTableResponseFromJSON(jsonValue));
     }
     /**
      */
-    linkRouteTable(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.linkRouteTableRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async linkRouteTable(requestParameters = {}, initOverrides) {
+        const response = await this.linkRouteTableRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    readRouteTablesRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/ReadRouteTables`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadRouteTablesRequestToJSON(requestParameters.readRouteTablesRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadRouteTablesResponseFromJSON(jsonValue));
-        });
+    async readRouteTablesRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/ReadRouteTables`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadRouteTablesRequestToJSON(requestParameters.readRouteTablesRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadRouteTablesResponseFromJSON(jsonValue));
     }
     /**
      */
-    readRouteTables(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readRouteTablesRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readRouteTables(requestParameters = {}, initOverrides) {
+        const response = await this.readRouteTablesRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    unlinkRouteTableRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/UnlinkRouteTable`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: UnlinkRouteTableRequestToJSON(requestParameters.unlinkRouteTableRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => UnlinkRouteTableResponseFromJSON(jsonValue));
-        });
+    async unlinkRouteTableRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/UnlinkRouteTable`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UnlinkRouteTableRequestToJSON(requestParameters.unlinkRouteTableRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => UnlinkRouteTableResponseFromJSON(jsonValue));
     }
     /**
      */
-    unlinkRouteTable(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.unlinkRouteTableRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async unlinkRouteTable(requestParameters = {}, initOverrides) {
+        const response = await this.unlinkRouteTableRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 }

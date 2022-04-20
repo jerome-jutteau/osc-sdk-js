@@ -11,15 +11,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import * as runtime from '../runtime';
 import { CreateListenerRuleRequestToJSON, CreateListenerRuleResponseFromJSON, CreateLoadBalancerListenersRequestToJSON, CreateLoadBalancerListenersResponseFromJSON, DeleteListenerRuleRequestToJSON, DeleteListenerRuleResponseFromJSON, DeleteLoadBalancerListenersRequestToJSON, DeleteLoadBalancerListenersResponseFromJSON, ReadListenerRulesRequestToJSON, ReadListenerRulesResponseFromJSON, UpdateListenerRuleRequestToJSON, UpdateListenerRuleResponseFromJSON, } from '../models';
 /**
@@ -28,170 +19,146 @@ import { CreateListenerRuleRequestToJSON, CreateListenerRuleResponseFromJSON, Cr
 export class ListenerApi extends runtime.BaseAPI {
     /**
      */
-    createListenerRuleRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/CreateListenerRule`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: CreateListenerRuleRequestToJSON(requestParameters.createListenerRuleRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => CreateListenerRuleResponseFromJSON(jsonValue));
-        });
+    async createListenerRuleRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/CreateListenerRule`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateListenerRuleRequestToJSON(requestParameters.createListenerRuleRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateListenerRuleResponseFromJSON(jsonValue));
     }
     /**
      */
-    createListenerRule(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.createListenerRuleRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async createListenerRule(requestParameters = {}, initOverrides) {
+        const response = await this.createListenerRuleRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    createLoadBalancerListenersRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/CreateLoadBalancerListeners`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: CreateLoadBalancerListenersRequestToJSON(requestParameters.createLoadBalancerListenersRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => CreateLoadBalancerListenersResponseFromJSON(jsonValue));
-        });
+    async createLoadBalancerListenersRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/CreateLoadBalancerListeners`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateLoadBalancerListenersRequestToJSON(requestParameters.createLoadBalancerListenersRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateLoadBalancerListenersResponseFromJSON(jsonValue));
     }
     /**
      */
-    createLoadBalancerListeners(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.createLoadBalancerListenersRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async createLoadBalancerListeners(requestParameters = {}, initOverrides) {
+        const response = await this.createLoadBalancerListenersRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    deleteListenerRuleRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/DeleteListenerRule`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: DeleteListenerRuleRequestToJSON(requestParameters.deleteListenerRuleRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => DeleteListenerRuleResponseFromJSON(jsonValue));
-        });
+    async deleteListenerRuleRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/DeleteListenerRule`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: DeleteListenerRuleRequestToJSON(requestParameters.deleteListenerRuleRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => DeleteListenerRuleResponseFromJSON(jsonValue));
     }
     /**
      */
-    deleteListenerRule(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.deleteListenerRuleRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async deleteListenerRule(requestParameters = {}, initOverrides) {
+        const response = await this.deleteListenerRuleRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    deleteLoadBalancerListenersRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/DeleteLoadBalancerListeners`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: DeleteLoadBalancerListenersRequestToJSON(requestParameters.deleteLoadBalancerListenersRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => DeleteLoadBalancerListenersResponseFromJSON(jsonValue));
-        });
+    async deleteLoadBalancerListenersRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/DeleteLoadBalancerListeners`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: DeleteLoadBalancerListenersRequestToJSON(requestParameters.deleteLoadBalancerListenersRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => DeleteLoadBalancerListenersResponseFromJSON(jsonValue));
     }
     /**
      */
-    deleteLoadBalancerListeners(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.deleteLoadBalancerListenersRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async deleteLoadBalancerListeners(requestParameters = {}, initOverrides) {
+        const response = await this.deleteLoadBalancerListenersRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    readListenerRulesRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/ReadListenerRules`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadListenerRulesRequestToJSON(requestParameters.readListenerRulesRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadListenerRulesResponseFromJSON(jsonValue));
-        });
+    async readListenerRulesRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/ReadListenerRules`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadListenerRulesRequestToJSON(requestParameters.readListenerRulesRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadListenerRulesResponseFromJSON(jsonValue));
     }
     /**
      */
-    readListenerRules(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readListenerRulesRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readListenerRules(requestParameters = {}, initOverrides) {
+        const response = await this.readListenerRulesRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    updateListenerRuleRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/UpdateListenerRule`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: UpdateListenerRuleRequestToJSON(requestParameters.updateListenerRuleRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => UpdateListenerRuleResponseFromJSON(jsonValue));
-        });
+    async updateListenerRuleRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/UpdateListenerRule`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateListenerRuleRequestToJSON(requestParameters.updateListenerRuleRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateListenerRuleResponseFromJSON(jsonValue));
     }
     /**
      */
-    updateListenerRule(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.updateListenerRuleRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async updateListenerRule(requestParameters = {}, initOverrides) {
+        const response = await this.updateListenerRuleRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 }

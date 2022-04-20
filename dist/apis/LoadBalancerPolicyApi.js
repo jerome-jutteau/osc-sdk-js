@@ -11,15 +11,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import * as runtime from '../runtime';
 import { CreateLoadBalancerPolicyRequestToJSON, CreateLoadBalancerPolicyResponseFromJSON, DeleteLoadBalancerPolicyRequestToJSON, DeleteLoadBalancerPolicyResponseFromJSON, } from '../models';
 /**
@@ -28,58 +19,50 @@ import { CreateLoadBalancerPolicyRequestToJSON, CreateLoadBalancerPolicyResponse
 export class LoadBalancerPolicyApi extends runtime.BaseAPI {
     /**
      */
-    createLoadBalancerPolicyRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/CreateLoadBalancerPolicy`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: CreateLoadBalancerPolicyRequestToJSON(requestParameters.createLoadBalancerPolicyRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => CreateLoadBalancerPolicyResponseFromJSON(jsonValue));
-        });
+    async createLoadBalancerPolicyRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/CreateLoadBalancerPolicy`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateLoadBalancerPolicyRequestToJSON(requestParameters.createLoadBalancerPolicyRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateLoadBalancerPolicyResponseFromJSON(jsonValue));
     }
     /**
      */
-    createLoadBalancerPolicy(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.createLoadBalancerPolicyRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async createLoadBalancerPolicy(requestParameters = {}, initOverrides) {
+        const response = await this.createLoadBalancerPolicyRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    deleteLoadBalancerPolicyRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/DeleteLoadBalancerPolicy`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: DeleteLoadBalancerPolicyRequestToJSON(requestParameters.deleteLoadBalancerPolicyRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => DeleteLoadBalancerPolicyResponseFromJSON(jsonValue));
-        });
+    async deleteLoadBalancerPolicyRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/DeleteLoadBalancerPolicy`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: DeleteLoadBalancerPolicyRequestToJSON(requestParameters.deleteLoadBalancerPolicyRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => DeleteLoadBalancerPolicyResponseFromJSON(jsonValue));
     }
     /**
      */
-    deleteLoadBalancerPolicy(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.deleteLoadBalancerPolicyRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async deleteLoadBalancerPolicy(requestParameters = {}, initOverrides) {
+        const response = await this.deleteLoadBalancerPolicyRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 }

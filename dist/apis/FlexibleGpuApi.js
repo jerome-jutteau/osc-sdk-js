@@ -11,15 +11,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import * as runtime from '../runtime';
 import { CreateFlexibleGpuRequestToJSON, CreateFlexibleGpuResponseFromJSON, DeleteFlexibleGpuRequestToJSON, DeleteFlexibleGpuResponseFromJSON, LinkFlexibleGpuRequestToJSON, LinkFlexibleGpuResponseFromJSON, ReadFlexibleGpuCatalogRequestToJSON, ReadFlexibleGpuCatalogResponseFromJSON, ReadFlexibleGpusRequestToJSON, ReadFlexibleGpusResponseFromJSON, UnlinkFlexibleGpuRequestToJSON, UnlinkFlexibleGpuResponseFromJSON, UpdateFlexibleGpuRequestToJSON, UpdateFlexibleGpuResponseFromJSON, } from '../models';
 /**
@@ -28,195 +19,167 @@ import { CreateFlexibleGpuRequestToJSON, CreateFlexibleGpuResponseFromJSON, Dele
 export class FlexibleGpuApi extends runtime.BaseAPI {
     /**
      */
-    createFlexibleGpuRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/CreateFlexibleGpu`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: CreateFlexibleGpuRequestToJSON(requestParameters.createFlexibleGpuRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => CreateFlexibleGpuResponseFromJSON(jsonValue));
-        });
+    async createFlexibleGpuRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/CreateFlexibleGpu`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateFlexibleGpuRequestToJSON(requestParameters.createFlexibleGpuRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateFlexibleGpuResponseFromJSON(jsonValue));
     }
     /**
      */
-    createFlexibleGpu(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.createFlexibleGpuRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async createFlexibleGpu(requestParameters = {}, initOverrides) {
+        const response = await this.createFlexibleGpuRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    deleteFlexibleGpuRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/DeleteFlexibleGpu`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: DeleteFlexibleGpuRequestToJSON(requestParameters.deleteFlexibleGpuRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => DeleteFlexibleGpuResponseFromJSON(jsonValue));
-        });
+    async deleteFlexibleGpuRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/DeleteFlexibleGpu`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: DeleteFlexibleGpuRequestToJSON(requestParameters.deleteFlexibleGpuRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => DeleteFlexibleGpuResponseFromJSON(jsonValue));
     }
     /**
      */
-    deleteFlexibleGpu(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.deleteFlexibleGpuRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async deleteFlexibleGpu(requestParameters = {}, initOverrides) {
+        const response = await this.deleteFlexibleGpuRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    linkFlexibleGpuRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/LinkFlexibleGpu`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: LinkFlexibleGpuRequestToJSON(requestParameters.linkFlexibleGpuRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => LinkFlexibleGpuResponseFromJSON(jsonValue));
-        });
+    async linkFlexibleGpuRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/LinkFlexibleGpu`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: LinkFlexibleGpuRequestToJSON(requestParameters.linkFlexibleGpuRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => LinkFlexibleGpuResponseFromJSON(jsonValue));
     }
     /**
      */
-    linkFlexibleGpu(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.linkFlexibleGpuRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async linkFlexibleGpu(requestParameters = {}, initOverrides) {
+        const response = await this.linkFlexibleGpuRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    readFlexibleGpuCatalogRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            const response = yield this.request({
-                path: `/ReadFlexibleGpuCatalog`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadFlexibleGpuCatalogRequestToJSON(requestParameters.readFlexibleGpuCatalogRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadFlexibleGpuCatalogResponseFromJSON(jsonValue));
-        });
+    async readFlexibleGpuCatalogRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        const response = await this.request({
+            path: `/ReadFlexibleGpuCatalog`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadFlexibleGpuCatalogRequestToJSON(requestParameters.readFlexibleGpuCatalogRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadFlexibleGpuCatalogResponseFromJSON(jsonValue));
     }
     /**
      */
-    readFlexibleGpuCatalog(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readFlexibleGpuCatalogRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readFlexibleGpuCatalog(requestParameters = {}, initOverrides) {
+        const response = await this.readFlexibleGpuCatalogRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    readFlexibleGpusRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/ReadFlexibleGpus`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadFlexibleGpusRequestToJSON(requestParameters.readFlexibleGpusRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadFlexibleGpusResponseFromJSON(jsonValue));
-        });
+    async readFlexibleGpusRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/ReadFlexibleGpus`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadFlexibleGpusRequestToJSON(requestParameters.readFlexibleGpusRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadFlexibleGpusResponseFromJSON(jsonValue));
     }
     /**
      */
-    readFlexibleGpus(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readFlexibleGpusRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readFlexibleGpus(requestParameters = {}, initOverrides) {
+        const response = await this.readFlexibleGpusRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    unlinkFlexibleGpuRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/UnlinkFlexibleGpu`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: UnlinkFlexibleGpuRequestToJSON(requestParameters.unlinkFlexibleGpuRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => UnlinkFlexibleGpuResponseFromJSON(jsonValue));
-        });
+    async unlinkFlexibleGpuRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/UnlinkFlexibleGpu`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UnlinkFlexibleGpuRequestToJSON(requestParameters.unlinkFlexibleGpuRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => UnlinkFlexibleGpuResponseFromJSON(jsonValue));
     }
     /**
      */
-    unlinkFlexibleGpu(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.unlinkFlexibleGpuRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async unlinkFlexibleGpu(requestParameters = {}, initOverrides) {
+        const response = await this.unlinkFlexibleGpuRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    updateFlexibleGpuRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/UpdateFlexibleGpu`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: UpdateFlexibleGpuRequestToJSON(requestParameters.updateFlexibleGpuRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => UpdateFlexibleGpuResponseFromJSON(jsonValue));
-        });
+    async updateFlexibleGpuRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/UpdateFlexibleGpu`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateFlexibleGpuRequestToJSON(requestParameters.updateFlexibleGpuRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateFlexibleGpuResponseFromJSON(jsonValue));
     }
     /**
      */
-    updateFlexibleGpu(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.updateFlexibleGpuRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async updateFlexibleGpu(requestParameters = {}, initOverrides) {
+        const response = await this.updateFlexibleGpuRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 }

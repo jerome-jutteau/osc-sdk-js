@@ -11,15 +11,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import * as runtime from '../runtime';
 import { CreateNetRequestToJSON, CreateNetResponseFromJSON, DeleteNetRequestToJSON, DeleteNetResponseFromJSON, ReadNetsRequestToJSON, ReadNetsResponseFromJSON, UpdateNetRequestToJSON, UpdateNetResponseFromJSON, } from '../models';
 /**
@@ -28,114 +19,98 @@ import { CreateNetRequestToJSON, CreateNetResponseFromJSON, DeleteNetRequestToJS
 export class NetApi extends runtime.BaseAPI {
     /**
      */
-    createNetRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/CreateNet`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: CreateNetRequestToJSON(requestParameters.createNetRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => CreateNetResponseFromJSON(jsonValue));
-        });
+    async createNetRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/CreateNet`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateNetRequestToJSON(requestParameters.createNetRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateNetResponseFromJSON(jsonValue));
     }
     /**
      */
-    createNet(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.createNetRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async createNet(requestParameters = {}, initOverrides) {
+        const response = await this.createNetRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    deleteNetRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/DeleteNet`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: DeleteNetRequestToJSON(requestParameters.deleteNetRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => DeleteNetResponseFromJSON(jsonValue));
-        });
+    async deleteNetRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/DeleteNet`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: DeleteNetRequestToJSON(requestParameters.deleteNetRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => DeleteNetResponseFromJSON(jsonValue));
     }
     /**
      */
-    deleteNet(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.deleteNetRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async deleteNet(requestParameters = {}, initOverrides) {
+        const response = await this.deleteNetRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    readNetsRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/ReadNets`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadNetsRequestToJSON(requestParameters.readNetsRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadNetsResponseFromJSON(jsonValue));
-        });
+    async readNetsRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/ReadNets`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadNetsRequestToJSON(requestParameters.readNetsRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadNetsResponseFromJSON(jsonValue));
     }
     /**
      */
-    readNets(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readNetsRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readNets(requestParameters = {}, initOverrides) {
+        const response = await this.readNetsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    updateNetRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/UpdateNet`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: UpdateNetRequestToJSON(requestParameters.updateNetRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => UpdateNetResponseFromJSON(jsonValue));
-        });
+    async updateNetRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/UpdateNet`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateNetRequestToJSON(requestParameters.updateNetRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateNetResponseFromJSON(jsonValue));
     }
     /**
      */
-    updateNet(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.updateNetRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async updateNet(requestParameters = {}, initOverrides) {
+        const response = await this.updateNetRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 }

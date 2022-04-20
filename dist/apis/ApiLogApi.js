@@ -11,15 +11,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import * as runtime from '../runtime';
 import { ReadApiLogsRequestToJSON, ReadApiLogsResponseFromJSON, } from '../models';
 /**
@@ -28,30 +19,26 @@ import { ReadApiLogsRequestToJSON, ReadApiLogsResponseFromJSON, } from '../model
 export class ApiLogApi extends runtime.BaseAPI {
     /**
      */
-    readApiLogsRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/ReadApiLogs`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadApiLogsRequestToJSON(requestParameters.readApiLogsRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadApiLogsResponseFromJSON(jsonValue));
-        });
+    async readApiLogsRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/ReadApiLogs`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadApiLogsRequestToJSON(requestParameters.readApiLogsRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadApiLogsResponseFromJSON(jsonValue));
     }
     /**
      */
-    readApiLogs(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readApiLogsRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readApiLogs(requestParameters = {}, initOverrides) {
+        const response = await this.readApiLogsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 }

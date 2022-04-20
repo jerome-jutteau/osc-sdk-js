@@ -11,15 +11,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import * as runtime from '../runtime';
 import { CreateSecurityGroupRuleRequestToJSON, CreateSecurityGroupRuleResponseFromJSON, DeleteSecurityGroupRuleRequestToJSON, DeleteSecurityGroupRuleResponseFromJSON, } from '../models';
 /**
@@ -28,58 +19,50 @@ import { CreateSecurityGroupRuleRequestToJSON, CreateSecurityGroupRuleResponseFr
 export class SecurityGroupRuleApi extends runtime.BaseAPI {
     /**
      */
-    createSecurityGroupRuleRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/CreateSecurityGroupRule`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: CreateSecurityGroupRuleRequestToJSON(requestParameters.createSecurityGroupRuleRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => CreateSecurityGroupRuleResponseFromJSON(jsonValue));
-        });
+    async createSecurityGroupRuleRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/CreateSecurityGroupRule`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateSecurityGroupRuleRequestToJSON(requestParameters.createSecurityGroupRuleRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateSecurityGroupRuleResponseFromJSON(jsonValue));
     }
     /**
      */
-    createSecurityGroupRule(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.createSecurityGroupRuleRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async createSecurityGroupRule(requestParameters = {}, initOverrides) {
+        const response = await this.createSecurityGroupRuleRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    deleteSecurityGroupRuleRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/DeleteSecurityGroupRule`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: DeleteSecurityGroupRuleRequestToJSON(requestParameters.deleteSecurityGroupRuleRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => DeleteSecurityGroupRuleResponseFromJSON(jsonValue));
-        });
+    async deleteSecurityGroupRuleRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/DeleteSecurityGroupRule`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: DeleteSecurityGroupRuleRequestToJSON(requestParameters.deleteSecurityGroupRuleRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => DeleteSecurityGroupRuleResponseFromJSON(jsonValue));
     }
     /**
      */
-    deleteSecurityGroupRule(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.deleteSecurityGroupRuleRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async deleteSecurityGroupRule(requestParameters = {}, initOverrides) {
+        const response = await this.deleteSecurityGroupRuleRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 }

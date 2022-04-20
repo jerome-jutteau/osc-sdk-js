@@ -1,11 +1,21 @@
 {
   "compilerOptions": {
-    "module": "esnext",
-    "target": "es2015",
+    "module": "es6",
+    "target": "ES2020",
     "declaration": true,
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node"
   },
   "include": [
     "src/**/*"
-  ]
+  ],
+  "devDependencies": {
+    "typescript": "^2.4"
+  },
+  "publishConfig": {
+    "registry": "https://github.com/outscale/osc-sdk-js"
+  }
 }

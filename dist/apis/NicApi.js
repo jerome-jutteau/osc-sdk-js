@@ -11,15 +11,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import * as runtime from '../runtime';
 import { CreateNicRequestToJSON, CreateNicResponseFromJSON, DeleteNicRequestToJSON, DeleteNicResponseFromJSON, LinkNicRequestToJSON, LinkNicResponseFromJSON, LinkPrivateIpsRequestToJSON, LinkPrivateIpsResponseFromJSON, ReadNicsRequestToJSON, ReadNicsResponseFromJSON, UnlinkNicRequestToJSON, UnlinkNicResponseFromJSON, UnlinkPrivateIpsRequestToJSON, UnlinkPrivateIpsResponseFromJSON, UpdateNicRequestToJSON, UpdateNicResponseFromJSON, } from '../models';
 /**
@@ -28,226 +19,194 @@ import { CreateNicRequestToJSON, CreateNicResponseFromJSON, DeleteNicRequestToJS
 export class NicApi extends runtime.BaseAPI {
     /**
      */
-    createNicRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/CreateNic`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: CreateNicRequestToJSON(requestParameters.createNicRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => CreateNicResponseFromJSON(jsonValue));
-        });
+    async createNicRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/CreateNic`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateNicRequestToJSON(requestParameters.createNicRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateNicResponseFromJSON(jsonValue));
     }
     /**
      */
-    createNic(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.createNicRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async createNic(requestParameters = {}, initOverrides) {
+        const response = await this.createNicRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    deleteNicRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/DeleteNic`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: DeleteNicRequestToJSON(requestParameters.deleteNicRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => DeleteNicResponseFromJSON(jsonValue));
-        });
+    async deleteNicRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/DeleteNic`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: DeleteNicRequestToJSON(requestParameters.deleteNicRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => DeleteNicResponseFromJSON(jsonValue));
     }
     /**
      */
-    deleteNic(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.deleteNicRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async deleteNic(requestParameters = {}, initOverrides) {
+        const response = await this.deleteNicRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    linkNicRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/LinkNic`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: LinkNicRequestToJSON(requestParameters.linkNicRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => LinkNicResponseFromJSON(jsonValue));
-        });
+    async linkNicRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/LinkNic`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: LinkNicRequestToJSON(requestParameters.linkNicRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => LinkNicResponseFromJSON(jsonValue));
     }
     /**
      */
-    linkNic(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.linkNicRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async linkNic(requestParameters = {}, initOverrides) {
+        const response = await this.linkNicRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    linkPrivateIpsRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/LinkPrivateIps`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: LinkPrivateIpsRequestToJSON(requestParameters.linkPrivateIpsRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => LinkPrivateIpsResponseFromJSON(jsonValue));
-        });
+    async linkPrivateIpsRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/LinkPrivateIps`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: LinkPrivateIpsRequestToJSON(requestParameters.linkPrivateIpsRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => LinkPrivateIpsResponseFromJSON(jsonValue));
     }
     /**
      */
-    linkPrivateIps(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.linkPrivateIpsRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async linkPrivateIps(requestParameters = {}, initOverrides) {
+        const response = await this.linkPrivateIpsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    readNicsRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/ReadNics`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadNicsRequestToJSON(requestParameters.readNicsRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadNicsResponseFromJSON(jsonValue));
-        });
+    async readNicsRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/ReadNics`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadNicsRequestToJSON(requestParameters.readNicsRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadNicsResponseFromJSON(jsonValue));
     }
     /**
      */
-    readNics(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readNicsRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readNics(requestParameters = {}, initOverrides) {
+        const response = await this.readNicsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    unlinkNicRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/UnlinkNic`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: UnlinkNicRequestToJSON(requestParameters.unlinkNicRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => UnlinkNicResponseFromJSON(jsonValue));
-        });
+    async unlinkNicRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/UnlinkNic`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UnlinkNicRequestToJSON(requestParameters.unlinkNicRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => UnlinkNicResponseFromJSON(jsonValue));
     }
     /**
      */
-    unlinkNic(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.unlinkNicRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async unlinkNic(requestParameters = {}, initOverrides) {
+        const response = await this.unlinkNicRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    unlinkPrivateIpsRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/UnlinkPrivateIps`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: UnlinkPrivateIpsRequestToJSON(requestParameters.unlinkPrivateIpsRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => UnlinkPrivateIpsResponseFromJSON(jsonValue));
-        });
+    async unlinkPrivateIpsRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/UnlinkPrivateIps`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UnlinkPrivateIpsRequestToJSON(requestParameters.unlinkPrivateIpsRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => UnlinkPrivateIpsResponseFromJSON(jsonValue));
     }
     /**
      */
-    unlinkPrivateIps(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.unlinkPrivateIpsRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async unlinkPrivateIps(requestParameters = {}, initOverrides) {
+        const response = await this.unlinkPrivateIpsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    updateNicRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/UpdateNic`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: UpdateNicRequestToJSON(requestParameters.updateNicRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => UpdateNicResponseFromJSON(jsonValue));
-        });
+    async updateNicRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/UpdateNic`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateNicRequestToJSON(requestParameters.updateNicRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateNicResponseFromJSON(jsonValue));
     }
     /**
      */
-    updateNic(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.updateNicRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async updateNic(requestParameters = {}, initOverrides) {
+        const response = await this.updateNicRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 }

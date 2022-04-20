@@ -11,15 +11,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import * as runtime from '../runtime';
 import { CreateCaRequestToJSON, CreateCaResponseFromJSON, DeleteCaRequestToJSON, DeleteCaResponseFromJSON, ReadCasRequestToJSON, ReadCasResponseFromJSON, UpdateCaRequestToJSON, UpdateCaResponseFromJSON, } from '../models';
 /**
@@ -28,126 +19,110 @@ import { CreateCaRequestToJSON, CreateCaResponseFromJSON, DeleteCaRequestToJSON,
 export class CaApi extends runtime.BaseAPI {
     /**
      */
-    createCaRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuthSec authentication
-            }
-            if (this.configuration && (this.configuration.username !== undefined || this.configuration.password !== undefined)) {
-                headerParameters["Authorization"] = "Basic " + btoa(this.configuration.username + ":" + this.configuration.password);
-            }
-            const response = yield this.request({
-                path: `/CreateCa`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: CreateCaRequestToJSON(requestParameters.createCaRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => CreateCaResponseFromJSON(jsonValue));
-        });
+    async createCaRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuthSec authentication
+        }
+        if (this.configuration && (this.configuration.username !== undefined || this.configuration.password !== undefined)) {
+            headerParameters["Authorization"] = "Basic " + btoa(this.configuration.username + ":" + this.configuration.password);
+        }
+        const response = await this.request({
+            path: `/CreateCa`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateCaRequestToJSON(requestParameters.createCaRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateCaResponseFromJSON(jsonValue));
     }
     /**
      */
-    createCa(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.createCaRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async createCa(requestParameters = {}, initOverrides) {
+        const response = await this.createCaRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    deleteCaRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuthSec authentication
-            }
-            if (this.configuration && (this.configuration.username !== undefined || this.configuration.password !== undefined)) {
-                headerParameters["Authorization"] = "Basic " + btoa(this.configuration.username + ":" + this.configuration.password);
-            }
-            const response = yield this.request({
-                path: `/DeleteCa`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: DeleteCaRequestToJSON(requestParameters.deleteCaRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => DeleteCaResponseFromJSON(jsonValue));
-        });
+    async deleteCaRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuthSec authentication
+        }
+        if (this.configuration && (this.configuration.username !== undefined || this.configuration.password !== undefined)) {
+            headerParameters["Authorization"] = "Basic " + btoa(this.configuration.username + ":" + this.configuration.password);
+        }
+        const response = await this.request({
+            path: `/DeleteCa`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: DeleteCaRequestToJSON(requestParameters.deleteCaRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => DeleteCaResponseFromJSON(jsonValue));
     }
     /**
      */
-    deleteCa(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.deleteCaRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async deleteCa(requestParameters = {}, initOverrides) {
+        const response = await this.deleteCaRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    readCasRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuthSec authentication
-            }
-            if (this.configuration && (this.configuration.username !== undefined || this.configuration.password !== undefined)) {
-                headerParameters["Authorization"] = "Basic " + btoa(this.configuration.username + ":" + this.configuration.password);
-            }
-            const response = yield this.request({
-                path: `/ReadCas`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadCasRequestToJSON(requestParameters.readCasRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadCasResponseFromJSON(jsonValue));
-        });
+    async readCasRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuthSec authentication
+        }
+        if (this.configuration && (this.configuration.username !== undefined || this.configuration.password !== undefined)) {
+            headerParameters["Authorization"] = "Basic " + btoa(this.configuration.username + ":" + this.configuration.password);
+        }
+        const response = await this.request({
+            path: `/ReadCas`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadCasRequestToJSON(requestParameters.readCasRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadCasResponseFromJSON(jsonValue));
     }
     /**
      */
-    readCas(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readCasRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readCas(requestParameters = {}, initOverrides) {
+        const response = await this.readCasRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    updateCaRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuthSec authentication
-            }
-            if (this.configuration && (this.configuration.username !== undefined || this.configuration.password !== undefined)) {
-                headerParameters["Authorization"] = "Basic " + btoa(this.configuration.username + ":" + this.configuration.password);
-            }
-            const response = yield this.request({
-                path: `/UpdateCa`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: UpdateCaRequestToJSON(requestParameters.updateCaRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => UpdateCaResponseFromJSON(jsonValue));
-        });
+    async updateCaRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuthSec authentication
+        }
+        if (this.configuration && (this.configuration.username !== undefined || this.configuration.password !== undefined)) {
+            headerParameters["Authorization"] = "Basic " + btoa(this.configuration.username + ":" + this.configuration.password);
+        }
+        const response = await this.request({
+            path: `/UpdateCa`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateCaRequestToJSON(requestParameters.updateCaRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateCaResponseFromJSON(jsonValue));
     }
     /**
      */
-    updateCa(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.updateCaRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async updateCa(requestParameters = {}, initOverrides) {
+        const response = await this.updateCaRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 }

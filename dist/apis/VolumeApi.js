@@ -11,15 +11,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import * as runtime from '../runtime';
 import { CreateVolumeRequestToJSON, CreateVolumeResponseFromJSON, DeleteVolumeRequestToJSON, DeleteVolumeResponseFromJSON, LinkVolumeRequestToJSON, LinkVolumeResponseFromJSON, ReadVolumesRequestToJSON, ReadVolumesResponseFromJSON, UnlinkVolumeRequestToJSON, UnlinkVolumeResponseFromJSON, UpdateVolumeRequestToJSON, UpdateVolumeResponseFromJSON, } from '../models';
 /**
@@ -28,170 +19,146 @@ import { CreateVolumeRequestToJSON, CreateVolumeResponseFromJSON, DeleteVolumeRe
 export class VolumeApi extends runtime.BaseAPI {
     /**
      */
-    createVolumeRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/CreateVolume`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: CreateVolumeRequestToJSON(requestParameters.createVolumeRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => CreateVolumeResponseFromJSON(jsonValue));
-        });
+    async createVolumeRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/CreateVolume`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateVolumeRequestToJSON(requestParameters.createVolumeRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateVolumeResponseFromJSON(jsonValue));
     }
     /**
      */
-    createVolume(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.createVolumeRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async createVolume(requestParameters = {}, initOverrides) {
+        const response = await this.createVolumeRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    deleteVolumeRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/DeleteVolume`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: DeleteVolumeRequestToJSON(requestParameters.deleteVolumeRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => DeleteVolumeResponseFromJSON(jsonValue));
-        });
+    async deleteVolumeRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/DeleteVolume`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: DeleteVolumeRequestToJSON(requestParameters.deleteVolumeRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => DeleteVolumeResponseFromJSON(jsonValue));
     }
     /**
      */
-    deleteVolume(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.deleteVolumeRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async deleteVolume(requestParameters = {}, initOverrides) {
+        const response = await this.deleteVolumeRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    linkVolumeRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/LinkVolume`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: LinkVolumeRequestToJSON(requestParameters.linkVolumeRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => LinkVolumeResponseFromJSON(jsonValue));
-        });
+    async linkVolumeRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/LinkVolume`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: LinkVolumeRequestToJSON(requestParameters.linkVolumeRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => LinkVolumeResponseFromJSON(jsonValue));
     }
     /**
      */
-    linkVolume(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.linkVolumeRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async linkVolume(requestParameters = {}, initOverrides) {
+        const response = await this.linkVolumeRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    readVolumesRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/ReadVolumes`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadVolumesRequestToJSON(requestParameters.readVolumesRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadVolumesResponseFromJSON(jsonValue));
-        });
+    async readVolumesRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/ReadVolumes`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadVolumesRequestToJSON(requestParameters.readVolumesRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadVolumesResponseFromJSON(jsonValue));
     }
     /**
      */
-    readVolumes(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readVolumesRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readVolumes(requestParameters = {}, initOverrides) {
+        const response = await this.readVolumesRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    unlinkVolumeRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/UnlinkVolume`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: UnlinkVolumeRequestToJSON(requestParameters.unlinkVolumeRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => UnlinkVolumeResponseFromJSON(jsonValue));
-        });
+    async unlinkVolumeRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/UnlinkVolume`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UnlinkVolumeRequestToJSON(requestParameters.unlinkVolumeRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => UnlinkVolumeResponseFromJSON(jsonValue));
     }
     /**
      */
-    unlinkVolume(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.unlinkVolumeRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async unlinkVolume(requestParameters = {}, initOverrides) {
+        const response = await this.unlinkVolumeRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    updateVolumeRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/UpdateVolume`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: UpdateVolumeRequestToJSON(requestParameters.updateVolumeRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => UpdateVolumeResponseFromJSON(jsonValue));
-        });
+    async updateVolumeRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/UpdateVolume`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateVolumeRequestToJSON(requestParameters.updateVolumeRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateVolumeResponseFromJSON(jsonValue));
     }
     /**
      */
-    updateVolume(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.updateVolumeRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async updateVolume(requestParameters = {}, initOverrides) {
+        const response = await this.updateVolumeRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 }

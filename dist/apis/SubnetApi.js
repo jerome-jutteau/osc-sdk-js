@@ -11,15 +11,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import * as runtime from '../runtime';
 import { CreateSubnetRequestToJSON, CreateSubnetResponseFromJSON, DeleteSubnetRequestToJSON, DeleteSubnetResponseFromJSON, ReadSubnetsRequestToJSON, ReadSubnetsResponseFromJSON, UpdateSubnetRequestToJSON, UpdateSubnetResponseFromJSON, } from '../models';
 /**
@@ -28,114 +19,98 @@ import { CreateSubnetRequestToJSON, CreateSubnetResponseFromJSON, DeleteSubnetRe
 export class SubnetApi extends runtime.BaseAPI {
     /**
      */
-    createSubnetRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/CreateSubnet`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: CreateSubnetRequestToJSON(requestParameters.createSubnetRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => CreateSubnetResponseFromJSON(jsonValue));
-        });
+    async createSubnetRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/CreateSubnet`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateSubnetRequestToJSON(requestParameters.createSubnetRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateSubnetResponseFromJSON(jsonValue));
     }
     /**
      */
-    createSubnet(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.createSubnetRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async createSubnet(requestParameters = {}, initOverrides) {
+        const response = await this.createSubnetRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    deleteSubnetRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/DeleteSubnet`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: DeleteSubnetRequestToJSON(requestParameters.deleteSubnetRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => DeleteSubnetResponseFromJSON(jsonValue));
-        });
+    async deleteSubnetRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/DeleteSubnet`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: DeleteSubnetRequestToJSON(requestParameters.deleteSubnetRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => DeleteSubnetResponseFromJSON(jsonValue));
     }
     /**
      */
-    deleteSubnet(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.deleteSubnetRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async deleteSubnet(requestParameters = {}, initOverrides) {
+        const response = await this.deleteSubnetRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    readSubnetsRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/ReadSubnets`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadSubnetsRequestToJSON(requestParameters.readSubnetsRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadSubnetsResponseFromJSON(jsonValue));
-        });
+    async readSubnetsRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/ReadSubnets`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadSubnetsRequestToJSON(requestParameters.readSubnetsRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadSubnetsResponseFromJSON(jsonValue));
     }
     /**
      */
-    readSubnets(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readSubnetsRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readSubnets(requestParameters = {}, initOverrides) {
+        const response = await this.readSubnetsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    updateSubnetRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/UpdateSubnet`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: UpdateSubnetRequestToJSON(requestParameters.updateSubnetRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => UpdateSubnetResponseFromJSON(jsonValue));
-        });
+    async updateSubnetRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/UpdateSubnet`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateSubnetRequestToJSON(requestParameters.updateSubnetRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateSubnetResponseFromJSON(jsonValue));
     }
     /**
      */
-    updateSubnet(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.updateSubnetRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async updateSubnet(requestParameters = {}, initOverrides) {
+        const response = await this.updateSubnetRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 }

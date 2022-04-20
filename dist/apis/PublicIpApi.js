@@ -11,15 +11,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import * as runtime from '../runtime';
 import { CreatePublicIpRequestToJSON, CreatePublicIpResponseFromJSON, DeletePublicIpRequestToJSON, DeletePublicIpResponseFromJSON, LinkPublicIpRequestToJSON, LinkPublicIpResponseFromJSON, ReadPublicIpRangesRequestToJSON, ReadPublicIpRangesResponseFromJSON, ReadPublicIpsRequestToJSON, ReadPublicIpsResponseFromJSON, UnlinkPublicIpRequestToJSON, UnlinkPublicIpResponseFromJSON, } from '../models';
 /**
@@ -28,167 +19,143 @@ import { CreatePublicIpRequestToJSON, CreatePublicIpResponseFromJSON, DeletePubl
 export class PublicIpApi extends runtime.BaseAPI {
     /**
      */
-    createPublicIpRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/CreatePublicIp`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: CreatePublicIpRequestToJSON(requestParameters.createPublicIpRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => CreatePublicIpResponseFromJSON(jsonValue));
-        });
+    async createPublicIpRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/CreatePublicIp`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreatePublicIpRequestToJSON(requestParameters.createPublicIpRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreatePublicIpResponseFromJSON(jsonValue));
     }
     /**
      */
-    createPublicIp(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.createPublicIpRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async createPublicIp(requestParameters = {}, initOverrides) {
+        const response = await this.createPublicIpRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    deletePublicIpRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/DeletePublicIp`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: DeletePublicIpRequestToJSON(requestParameters.deletePublicIpRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => DeletePublicIpResponseFromJSON(jsonValue));
-        });
+    async deletePublicIpRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/DeletePublicIp`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: DeletePublicIpRequestToJSON(requestParameters.deletePublicIpRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => DeletePublicIpResponseFromJSON(jsonValue));
     }
     /**
      */
-    deletePublicIp(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.deletePublicIpRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async deletePublicIp(requestParameters = {}, initOverrides) {
+        const response = await this.deletePublicIpRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    linkPublicIpRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/LinkPublicIp`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: LinkPublicIpRequestToJSON(requestParameters.linkPublicIpRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => LinkPublicIpResponseFromJSON(jsonValue));
-        });
+    async linkPublicIpRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/LinkPublicIp`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: LinkPublicIpRequestToJSON(requestParameters.linkPublicIpRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => LinkPublicIpResponseFromJSON(jsonValue));
     }
     /**
      */
-    linkPublicIp(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.linkPublicIpRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async linkPublicIp(requestParameters = {}, initOverrides) {
+        const response = await this.linkPublicIpRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    readPublicIpRangesRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            const response = yield this.request({
-                path: `/ReadPublicIpRanges`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadPublicIpRangesRequestToJSON(requestParameters.readPublicIpRangesRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadPublicIpRangesResponseFromJSON(jsonValue));
-        });
+    async readPublicIpRangesRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        const response = await this.request({
+            path: `/ReadPublicIpRanges`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadPublicIpRangesRequestToJSON(requestParameters.readPublicIpRangesRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadPublicIpRangesResponseFromJSON(jsonValue));
     }
     /**
      */
-    readPublicIpRanges(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readPublicIpRangesRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readPublicIpRanges(requestParameters = {}, initOverrides) {
+        const response = await this.readPublicIpRangesRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    readPublicIpsRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/ReadPublicIps`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: ReadPublicIpsRequestToJSON(requestParameters.readPublicIpsRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => ReadPublicIpsResponseFromJSON(jsonValue));
-        });
+    async readPublicIpsRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/ReadPublicIps`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ReadPublicIpsRequestToJSON(requestParameters.readPublicIpsRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReadPublicIpsResponseFromJSON(jsonValue));
     }
     /**
      */
-    readPublicIps(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.readPublicIpsRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async readPublicIps(requestParameters = {}, initOverrides) {
+        const response = await this.readPublicIpsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
-    unlinkPublicIpRaw(requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const queryParameters = {};
-            const headerParameters = {};
-            headerParameters['Content-Type'] = 'application/json';
-            if (this.configuration && this.configuration.apiKey) {
-                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
-            }
-            const response = yield this.request({
-                path: `/UnlinkPublicIp`,
-                method: 'POST',
-                headers: headerParameters,
-                query: queryParameters,
-                body: UnlinkPublicIpRequestToJSON(requestParameters.unlinkPublicIpRequest),
-            }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => UnlinkPublicIpResponseFromJSON(jsonValue));
-        });
+    async unlinkPublicIpRaw(requestParameters, initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+        const response = await this.request({
+            path: `/UnlinkPublicIp`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UnlinkPublicIpRequestToJSON(requestParameters.unlinkPublicIpRequest),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => UnlinkPublicIpResponseFromJSON(jsonValue));
     }
     /**
      */
-    unlinkPublicIp(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.unlinkPublicIpRaw(requestParameters, initOverrides);
-            return yield response.value();
-        });
+    async unlinkPublicIp(requestParameters = {}, initOverrides) {
+        const response = await this.unlinkPublicIpRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 }
