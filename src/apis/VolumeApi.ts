@@ -277,21 +277,13 @@ export class VolumeApi extends runtime.BaseAPI implements VolumeApiInterface {
         if (this.configuration && this.configuration.apiKey) {
             headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
         }
-        
-        const body: any = ReadVolumesRequestToJSON(requestParameters.readVolumesRequest)
-
-        if (this.configuration && this.configuration.awsV4SignParameters) {
-            const params = this.configuration.awsV4SignParameters;
-            const signature = await runtime.AwsV4SignHeader(params, headerParameters, body, "POST", runtime.BASE_PATH + "/ReadVolumes");
-            headerParameters["Authorization"] = signature;
-        }
 
         const response = await this.request({
             path: `/ReadVolumes`,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: body,
+            body: ReadVolumesRequestToJSON(requestParameters.readVolumesRequest),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => ReadVolumesResponseFromJSON(jsonValue));
