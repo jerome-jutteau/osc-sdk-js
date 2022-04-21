@@ -1,3 +1,4 @@
 .sdk
 osc-api
 node_modules
+dist

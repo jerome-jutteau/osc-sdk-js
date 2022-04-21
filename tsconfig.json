@@ -1,21 +1,28 @@
 {
   "compilerOptions": {
-    "module": "es6",
-    "target": "ES2020",
+    "module": "es2015",
+    "target": "es6",
     "declaration": true,
-    "outDir": "./dist",
-    "strict": true,
     "esModuleInterop": true,
+    "outDir": "./dist/esm",
+    "strict": true,
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node"
   },
   "include": [
-    "src/**/*"
+    "./src"
+  ],
+  "lib": [
+    "es6",
+    "dom"
+  ],
+  "typeRoots": [
+    "node_modules/@types"
   ],
   "devDependencies": {
-    "typescript": "^2.4"
+    "typescript": "^3.0.0"
   },
   "publishConfig": {
-    "registry": "https://github.com/outscale/osc-sdk-js"
+    "registry": "https://github.com/jerome-jutteau/osc-sdk-js"
   }
 }
