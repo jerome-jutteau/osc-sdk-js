@@ -29,14 +29,14 @@ osc-generate: osc-api/outscale.yaml
 	docker run -v $(PWD):/sdk --rm $(OPENAPI_IMG) chown -R $(USER_ID).$(GROUP_ID) /sdk/.sdk
 	mv .sdk/src ./
 	#rm -rf .sdk
-	npm run tsc
+	npm run build
 
 osc-api/outscale.yaml:
 	git clone https://github.com/outscale/osc-api.git && cd osc-api && git checkout -b $(API_VERSION) $(API_VERSION)
 
 .PHONY: clean
 clean:
-	rm -rf .sdk osc-api src node_modules || true
+	rm -rf .sdk osc-api src node_modules dist || true
 
 .PHONY: test
 test: reuse-test examples-test

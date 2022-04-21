@@ -1,3 +1,15 @@
+XXX TODO XXX
+
+
+# Build process overview
+
+Here is a quick overview of what happen when calling `make gen`:
+1. cleanup existing files
+2. download Outscale API description (OpenAPI format) (in /osc-api)
+3. call openapi-generator in order to generate typescript-based SDK (in /src)
+4. call typescipt compiler to build .js and .d.ts declaration files (in /dist)
+
+
 # Hacking Outscale SDK
 
 SDK itself is generated from Outscale's [OpenAPI description](https://github.com/outscale/osc-api) in [v2](v2/) folder using OpenAPI Genetator.
