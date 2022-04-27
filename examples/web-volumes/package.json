@@ -14,7 +14,7 @@
     "typescript": "^3.0"
   },
   "dependencies": {
-    "outscale-api": "github:jerome-jutteau/osc-sdk-js",
+    "outscale-api": "file:../..",
     "webpack-cli": "^4.9.2"
   }
 }

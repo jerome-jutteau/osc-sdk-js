@@ -286,7 +286,7 @@ export class VolumeApi extends runtime.BaseAPI implements VolumeApiInterface {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: ReadVolumesRequestToJSON(requestParameters.readVolumesRequest),
+            body: body,
         };
 
         if (this.configuration && this.configuration.awsV4SignerParameters) {
@@ -295,6 +295,8 @@ export class VolumeApi extends runtime.BaseAPI implements VolumeApiInterface {
             //request.url = url;
             //request.method = method;
             request.headers = headers;
+            console.log(headers);
+            console.log("lolilol");
         }
 
         const response = await this.request(request, initOverrides);

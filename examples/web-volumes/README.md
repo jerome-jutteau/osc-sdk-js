@@ -15,3 +15,7 @@ npm run build
 You should now have `dist/index.bundle.js` generated.
 
 You should now be able to access `/dist` folder with your browser.
+
+# Development
+
+If you want to use this example as a starting point, don't forget to change `outscale-api` reference path in `package.json` to `github:jerome-jutteau/osc-sdk-js`.
