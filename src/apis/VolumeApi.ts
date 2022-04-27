@@ -55,6 +55,7 @@ import {
     UpdateVolumeResponseFromJSON,
     UpdateVolumeResponseToJSON,
 } from '../models';
+import { AwsV4Signer } from 'aws4fetch';
 
 export interface CreateVolumeOperationRequest {
     createVolumeRequest?: CreateVolumeRequest;
@@ -280,21 +281,23 @@ export class VolumeApi extends runtime.BaseAPI implements VolumeApiInterface {
 
         const body: any = ReadVolumesRequestToJSON(requestParameters.readVolumesRequest)
 
-        if (this.configuration && this.configuration.awsV4SignParameters) {
-            const signature =  await this.configuration.awsV4Signature(headerParameters, body, "POST", runtime.BASE_PATH + "/ReadVolumes");
-            if (typeof signature === "string") {
-                headerParameters["Authorization"] = signature;
-            }
-        }
-
-        const response = await this.request({
+        const request: runtime.RequestOpts = {
             path: `/ReadVolumes`,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
             body: ReadVolumesRequestToJSON(requestParameters.readVolumesRequest),
-        }, initOverrides);
+        };
 
+        if (this.configuration && this.configuration.awsV4SignerParameters) {
+            const signer = new runtime.AwsV4Signer(this.configuration.awsV4SignerParameters);
+            const {url, headers} = await signer.sign("POST", runtime.BASE_PATH + "/ReadVolumes", headerParameters, body);
+            //request.url = url;
+            //request.method = method;
+            request.headers = headers;
+        }
+
+        const response = await this.request(request, initOverrides);
         return new runtime.JSONApiResponse(response, (jsonValue) => ReadVolumesResponseFromJSON(jsonValue));
     }
 

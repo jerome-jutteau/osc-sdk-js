@@ -1,3 +1,14 @@
+
+# THIS
+# IS
+# WORK
+# IN
+# PROGRESS
+
+
+
+
+
 https://openapi-generator.tech/docs/generators/typescript-fetch/
 
 best thread: https://github.com/microsoft/TypeScript/issues/13422

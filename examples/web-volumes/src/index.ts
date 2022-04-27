@@ -25,16 +25,18 @@ export default function ShowVolumes() {
     
     let readParameters : osc.ReadVolumesOperationRequest = {};
 
-    v.readVolumes(readParameters).catch(res => {
+    v.readVolumes(readParameters).catch((res: any) => {
         let text = document.getElementById("result");
         if (text == null) {
             return;
         }
         if (res.status == 401) {
             text.innerHTML = "Error 401, bad credentials?";
+            return;
         }
+        text.innerHTML = res.status;
     })
-    .then(res => {
+    .then((res: any) => {
         if (res == null) {
             return;
         }
@@ -53,7 +55,7 @@ export default function ShowVolumes() {
         }
         let requestId = responseContext.requestId;
         text.innerHTML = requestId.toString();
-    }, err => {
+    }, (err: any) => {
         console.error(err);
         console.log(JSON.stringify(err));
         let text = document.getElementById("result");
