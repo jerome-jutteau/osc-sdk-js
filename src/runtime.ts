@@ -12,6 +12,7 @@
  * Do not edit the class manually.
  */
 
+ import { AwsV4Signer } from 'aws4fetch'
 
 export const BASE_PATH = "https://api.eu-west-2.outscale.com/api/v1".replace(/\/+$/, "");
 
@@ -138,8 +139,19 @@ export interface ConfigurationParameters {
     apiKey?: string | ((name: string) => string); // parameter for apiKey security
     accessToken?: string | Promise<string> | ((name?: string, scopes?: string[]) => string | Promise<string>); // parameter for oauth2 security
     headers?: HTTPHeaders; //header params we want to use on every request
+    awsV4SignParameters?: AwsV4SignParameters; // parameter for aws v4 signature security
     credentials?: RequestCredentials; //value for the credentials param we want to use on each request
 }
+
+export interface AwsV4SignParameters {
+    method?: string;
+    url: string;
+    accessKeyId: string;
+    secretAccessKey: string;
+    sessionToken?: string;
+    service?: string;
+    region?: string;
+    allHeaders?: boolean;}
 
 export class Configuration {
     constructor(private configuration: ConfigurationParameters = {}) {}
@@ -182,6 +194,35 @@ export class Configuration {
             return typeof accessToken === 'function' ? accessToken : async () => accessToken;
         }
         return undefined;
+    }
+
+    get awsV4SignParameters(): AwsV4SignParameters | undefined {
+        return this.configuration.awsV4SignParameters;
+    }
+
+    awsV4Signature(headers: HTTPHeaders, body: any, method: string, url: string): Promise<String> | null {
+        if (typeof this.configuration.awsV4SignParameters === "undefined") {
+            return null;
+        }
+        const config = this.configuration.awsV4SignParameters;
+        if (typeof config.accessKeyId === 'undefined') {
+            return null
+        }
+        if (typeof config.secretAccessKey === 'undefined') {
+            return null
+        }
+
+        const signer = new AwsV4Signer({
+            method: method,
+            url: url,
+            accessKeyId: config.accessKeyId,
+            secretAccessKey: config.secretAccessKey,
+            sessionToken: config.sessionToken,
+            service: config.service,
+            region: config.region,
+            allHeaders: config.allHeaders,
+        });
+        return signer.authHeader();
     }
 
     get headers(): HTTPHeaders | undefined {

@@ -1,13 +1,24 @@
 import * as osc from "outscale-api";
 
 export default function ShowVolumes() {
-    let result = document.getElementById("result");
-    if (result == null) {
+    let accessKey = document.getElementById("accessKey");
+    if (!accessKey) {
+        console.error("Cannot getElementById(\"accessKey\")");
         return;
-    }  
+    }
+    let secretKey = document.getElementById("secretKey");
+    if (!secretKey) {
+        console.error("Cannot getElementById(\"secretKey\")");
+        return;
+    }
+    let result = document.getElementById("result");
+    if (!result) {
+        console.error("Cannot getElementById(\"result\")");
+        return;
+    }
     result.innerHTML = "Quering Outscale API ...";
-
     let configuration = new osc.Configuration();
+   
 
     let api = new osc.BaseAPI(configuration);
     let v = new osc.VolumeApi(configuration)
