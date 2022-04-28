@@ -18,4 +18,4 @@ You should now be able to access `/dist` folder with your browser.
 
 # Development
 
-If you want to use this example as a starting point, don't forget to change `outscale-api` reference path in `package.json` to `github:jerome-jutteau/osc-sdk-js`.
+If you want to use this example as a starting point, don't forget to change `outscale-api` reference path in `package.json` from `file:../..` to `github:jerome-jutteau/osc-sdk-js`.
