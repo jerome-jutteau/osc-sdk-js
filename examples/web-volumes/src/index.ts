@@ -9,27 +9,28 @@ export default function ShowVolumes() {
     }
     result.innerHTML = "Quering Outscale API ...";
 
-    const accessKeyField = document.getElementById("accessKey");
+    const accessKeyField = document.getElementById("accessKey") as HTMLInputElement;
     if (!accessKeyField) {
         console.error("Cannot getElementById(\"accessKey\")");
         return;
     }
-    const accessKey = accessKeyField.textContent ?? "";
+    const accessKey = accessKeyField.value;
 
-    const secretKeyField = document.getElementById("secretKey");
+    const secretKeyField = document.getElementById("secretKey") as HTMLInputElement;;
     if (!secretKeyField) {
         console.error("Cannot getElementById(\"secretKey\")");
         return;
     }
-    const secretKey = secretKeyField.textContent ?? "";
+    const secretKey = secretKeyField.value;
     if (accessKey.length == 0 || secretKey.length == 0 ) {
         result.innerHTML = "Please set Access Key and Secret Key";
     }
-    console.log(accessKey + ":" + secretKey);
+
     let config = new osc.Configuration({
         awsV4SignParameters: {
             accessKeyId: accessKey,
             secretAccessKey: secretKey,
+            service: "oapi",
         }
     });
     //let api = new osc.BaseAPI(config);

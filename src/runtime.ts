@@ -167,9 +167,13 @@ export class AwsV4Signer {
         });
         const signResult = await signer.sign();
 
-        console.log("original body:");
+        console.log("original url type of " + typeof url + ":");
+        console.log(url);
+        console.log("new url type of " + typeof signResult.url) + ":";
+        console.log(signResult.url);
+        console.log("original body type of " + typeof body + ":");
         console.log(body);
-        console.log("new body:");
+        console.log("new body type of " + typeof signResult.body + ":");
         console.log(signResult.body);
 
         // Convert Headers to HTTPHeaders
