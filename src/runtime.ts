@@ -169,17 +169,16 @@ export class AwsV4Signer {
 
         console.log("original body:");
         console.log(body);
-        console.log(body.length);
         console.log("new body:");
         console.log(signResult.body);
-        const b = signResult.body ?? "";
-        console.log(b);
 
         // Convert Headers to HTTPHeaders
         let newHeaders: HTTPHeaders = {};
         for (const [key, value] of signResult.headers.entries()) {
             newHeaders[key] = value;
         }
+        console.log("signResult.url:")
+        console.log(signResult.url);
         return {url: signResult.url, headers: newHeaders};
     }
 }

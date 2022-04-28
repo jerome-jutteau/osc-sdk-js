@@ -7,6 +7,8 @@ export default function ShowVolumes() {
         console.error("Cannot getElementById(\"result\")");
         return;
     }
+    result.innerHTML = "Quering Outscale API ...";
+
     const accessKeyField = document.getElementById("accessKey");
     if (!accessKeyField) {
         console.error("Cannot getElementById(\"accessKey\")");
@@ -23,8 +25,7 @@ export default function ShowVolumes() {
     if (accessKey.length == 0 || secretKey.length == 0 ) {
         result.innerHTML = "Please set Access Key and Secret Key";
     }
-    result.innerHTML = accessKey + ":" + secretKey;
-    result.innerHTML = "Quering Outscale API ...";
+    console.log(accessKey + ":" + secretKey);
     let config = new osc.Configuration({
         awsV4SignParameters: {
             accessKeyId: accessKey,
