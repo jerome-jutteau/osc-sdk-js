@@ -34,10 +34,16 @@ export default function ShowVolumes() {
         }
     });
     //let api = new osc.BaseAPI(config);
-    let readParameters : osc.ReadVolumesOperationRequest = {};
+    let readParameters : osc.ReadVolumesOperationRequest = {
+        readVolumesRequest: {
+            dryRun: true,
+        }
+    };
     let v = new osc.VolumeApi(config)
     v.readVolumes(readParameters).catch((res: any) => {
-        console.log("entering Catch");
+        console.log("entering catch");
+        console.log("catch res:");
+        console.log(res);
         let text = document.getElementById("result");
         if (text == null) {
             return;

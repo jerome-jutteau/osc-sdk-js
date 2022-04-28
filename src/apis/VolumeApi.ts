@@ -295,11 +295,14 @@ export class VolumeApi extends runtime.BaseAPI implements VolumeApiInterface {
 
         if (this.configuration && this.configuration.awsV4SignerParameters) {
             console.log("setting up signature");
+            const SignUrl = this.configuration.basePath + request.path;
+            const SignBody = JSON.stringify(request.body);
+
             const signer = new runtime.AwsV4Signer(this.configuration.awsV4SignerParameters);
-            const {url, headers} = await signer.sign("POST", runtime.BASE_PATH + "/ReadVolumes", headerParameters, body, "eu-west-2");
+            const signResult = await signer.sign("POST", SignUrl, headerParameters, SignBody, "eu-west-2");
             //request.url = url;
             //request.method = method;
-            request.headers = headers;
+            request.headers = signResult.headers;
 
         }
         console.log("making request");
