@@ -279,6 +279,10 @@ export class VolumeApi extends runtime.BaseAPI implements VolumeApiInterface {
             headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
         }
 
+        console.log("requestParameters:");
+        console.log(requestParameters);
+        console.log("requestParameters.readVolumesRequest:");
+        console.log(requestParameters.readVolumesRequest);
         const body: any = ReadVolumesRequestToJSON(requestParameters.readVolumesRequest)
 
         const request: runtime.RequestOpts = {
