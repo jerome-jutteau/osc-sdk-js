@@ -180,8 +180,6 @@ export class AwsV4Signer {
         for (const [key, value] of signResult.headers.entries()) {
             newHeaders[key] = value;
         }
-        console.log("signResult.url:")
-        console.log(signResult.url);
         return {url: signResult.url, headers: newHeaders};
     }
 }
