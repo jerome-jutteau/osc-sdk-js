@@ -163,7 +163,6 @@ export class AwsV4Signer {
             secretAccessKey: this.configuration.secretAccessKey,
             service: this.configuration.service,
             region: region,
-            signQuery: true,
         });
         const signResult = await signer.sign();
 
