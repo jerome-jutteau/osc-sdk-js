@@ -29,6 +29,7 @@ export default function ShowVolumes() {
         awsV4SignParameters: {
             accessKeyId: accessKey,
             secretAccessKey: secretKey,
+            service: "oapi",
         }
     });
     //let api = new osc.BaseAPI(config);
