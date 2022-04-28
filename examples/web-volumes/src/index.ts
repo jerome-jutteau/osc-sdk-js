@@ -23,13 +23,12 @@ export default function ShowVolumes() {
     if (accessKey.length == 0 || secretKey.length == 0 ) {
         result.innerHTML = "Please set Access Key and Secret Key";
     }
-
+    result.innerHTML = accessKey + ":" + secretKey;
     result.innerHTML = "Quering Outscale API ...";
     let config = new osc.Configuration({
         awsV4SignParameters: {
             accessKeyId: accessKey,
             secretAccessKey: secretKey,
-            service: "oapi",
         }
     });
     //let api = new osc.BaseAPI(config);

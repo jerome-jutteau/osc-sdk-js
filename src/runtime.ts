@@ -14,6 +14,7 @@
 
 import { resolveAliases } from "@digitak/grubber/library/utilities/resolveAliases";
 import * as aws4fetch from "aws4fetch";
+import { ReadVmTypesRequestFromJSON } from "./models";
 
 export const BASE_PATH = "https://api.eu-west-2.outscale.com/api/v1".replace(/\/+$/, "");
 
@@ -162,8 +163,17 @@ export class AwsV4Signer {
             secretAccessKey: this.configuration.secretAccessKey,
             service: this.configuration.service,
             region: region,
+            allHeaders: true,
         });
         const signResult = await signer.sign();
+
+        console.log("original body:");
+        console.log(body);
+        console.log(body.length);
+        console.log("new body:");
+        console.log(signResult.body);
+        const b = signResult.body ?? "";
+        console.log(b);
 
         // Convert Headers to HTTPHeaders
         let newHeaders: HTTPHeaders = {};
