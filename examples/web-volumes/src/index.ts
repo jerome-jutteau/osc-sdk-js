@@ -30,7 +30,7 @@ export default function ShowVolumes() {
         awsV4SignParameters: {
             accessKeyId: accessKey,
             secretAccessKey: secretKey,
-            //service: "oapi",
+            service: "oapi",
         }
     });
     //let api = new osc.BaseAPI(config);
@@ -56,25 +56,27 @@ export default function ShowVolumes() {
     })
     .then((res: any) => {
         console.log("entering response");
-        if (res == null) {
-            return;
-        }
         let text = document.getElementById("result");
         if (text == null) {
             return;
         }
+        if (res == null) {
+            console.log("no response");
+            return;
+        }
         if (!res.responseContext) {
-            text.innerHTML = "No response context";
+            console.log("No response context");
             return;
         }
         let responseContext = res.responseContext;
         if (!responseContext.requestId) {
-            text.innerHTML = "No requestId";
+            console.log("No request ID");
             return;
         }
         let requestId = responseContext.requestId;
         text.innerHTML = requestId.toString();
     }, (err: any) => {
+        console.log("entering error after then");
         console.error(err);
         console.log(JSON.stringify(err));
         let text = document.getElementById("result");
