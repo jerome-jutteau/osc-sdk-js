@@ -24,6 +24,12 @@ export default function ShowVolumes() {
     const secretKey = secretKeyField.value;
     if (accessKey.length == 0 || secretKey.length == 0 ) {
         result.innerHTML = "Please set Access Key and Secret Key";
+        return;
+    }
+
+    if (accessKey.length != 20 || secretKey.length != 40 ) {
+        result.innerHTML = "Bad Access Key or Secret Key";
+        return;
     }
 
     let config = new osc.Configuration({
