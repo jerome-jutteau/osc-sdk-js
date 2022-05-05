@@ -7,7 +7,11 @@ export default function ShowVolumes() {
         console.error("Cannot getElementById(\"result\")");
         return;
     }
-    result.innerHTML = "Quering Outscale API ...";
+    result.textContent = '';
+
+    const querying = document.createElement('p');
+    querying.innerHTML = "Quering Outscale API ...";
+    result.appendChild(querying);
 
     const accessKeyField = document.getElementById("accessKey") as HTMLInputElement;
     if (!accessKeyField) {
@@ -23,12 +27,16 @@ export default function ShowVolumes() {
     }
     const secretKey = secretKeyField.value;
     if (accessKey.length == 0 || secretKey.length == 0 ) {
-        result.innerHTML = "Please set Access Key and Secret Key";
+        const error = document.createElement('p');
+        error.innerHTML = "Please set Access Key and Secret Key";
+        result.appendChild(error);
         return;
     }
 
     if (accessKey.length != 20 || secretKey.length != 40 ) {
-        result.innerHTML = "Bad Access Key or Secret Key";
+        const error = document.createElement('p');
+        error.innerHTML = "Bad Access Key or Secret Key";
+        result.appendChild(error);
         return;
     }
 
@@ -39,56 +47,131 @@ export default function ShowVolumes() {
             service: "api",
         }
     });
-    //let api = new osc.BaseAPI(config);
     let readParameters : osc.ReadVolumesOperationRequest = {
-        readVolumesRequest: {
-            dryRun: true,
-        }
+        readVolumesRequest: {}
     };
+
     let v = new osc.VolumeApi(config)
     v.readVolumes(readParameters).catch((res: any) => {
         console.log("entering catch");
         console.log("catch res:");
         console.log(res);
-        let text = document.getElementById("result");
-        if (text == null) {
+        let result = document.getElementById("result");
+        if (result == null) {
             return;
         }
         if (res.status == 401) {
-            text.innerHTML = "Error 401, bad credentials?";
+            const error = document.createElement('p');
+            error.innerHTML = "Error 401, bad credentials?";
+            result.appendChild(error);
             return;
         }
-        text.innerHTML = res.status;
+        result.innerHTML = res.status;
     })
-    .then((res: any) => {
+    .then((res: osc.ReadVolumesResponse | void) => {
+        if (res === undefined) {
+            return;
+        }
         console.log("entering response");
-        let text = document.getElementById("result");
-        if (text == null) {
+        let result = document.getElementById("result");
+        if (result == null) {
             return;
         }
-        if (res == null) {
-            console.log("no response");
-            return;
-        }
-        if (!res.responseContext) {
-            console.log("No response context");
-            return;
-        }
-        let responseContext = res.responseContext;
-        if (!responseContext.requestId) {
+        let requestId = res.responseContext?.requestId;
+        if (requestId == undefined) {
             console.log("No request ID");
             return;
         }
-        let requestId = responseContext.requestId;
-        text.innerHTML = requestId.toString();
+        console.log("Request ID:" + requestId)
+        if (res.volumes === undefined || res.volumes.length == 0) {
+            const error = document.createElement('p');
+            error.innerHTML = "Listing suceeded but it seems you have no volume";
+            result.appendChild(error);
+            return;
+        }
+        result.textContent = '';
+        result.appendChild(volumes2Html(res.volumes));
     }, (err: any) => {
         console.log("entering error after then");
         console.error(err);
         console.log(JSON.stringify(err));
-        let text = document.getElementById("result");
-        if (text == null) {
+        let result = document.getElementById("result");
+        if (result == null) {
             return;
         }
-        text.innerHTML = "An error occured";
+        const error = document.createElement('p');
+        error.innerHTML = "An error occured";
+        result.appendChild(error);
     });
+}
+
+function volumes2Html(volumes: Array<osc.Volume>): HTMLDivElement {
+    const result = document.createElement('div');
+
+    const intro = document.createElement('p');
+    intro.innerHTML = "You have "+ volumes.length + " Volumes with a total of " + sizeOfAllVolumes(volumes) + " GiB";
+    result.appendChild(intro);
+
+    const table = document.createElement('table');
+    result.appendChild(table);
+
+    const header = document.createElement('tr');
+    table.appendChild(header);
+
+    const idHeader = document.createElement('th');
+    idHeader.innerHTML = "Id";
+    header.appendChild(idHeader);
+
+    const sizeHeader = document.createElement('th');
+    sizeHeader.innerHTML = "Size";
+    header.appendChild(sizeHeader);
+
+    const typeHeader = document.createElement('th');
+    typeHeader.innerHTML = "Type";
+    header.appendChild(typeHeader);
+
+    const subregionHeader = document.createElement('th');
+    subregionHeader.innerHTML = "Subregion";
+    header.appendChild(subregionHeader);
+
+    const stateHeader = document.createElement('th');
+    stateHeader.innerHTML = "State";
+    header.appendChild(stateHeader);
+
+    for (const volume of volumes) {
+        const volumeRow = document.createElement('tr');
+        table.appendChild(volumeRow);
+
+        const volumeId = document.createElement('td');
+        volumeId.innerHTML = volume.volumeId?.toString() ?? "Unknown";
+        volumeRow.appendChild(volumeId);
+
+        const size = document.createElement('td');
+        size.innerHTML = volume.size?.toString() ?? "Unknown";
+        volumeRow.appendChild(size);
+
+        const volumeType = document.createElement('td');
+        volumeType.innerHTML = volume.volumeType?.toString() ?? "Unknown";
+        volumeRow.appendChild(volumeType);
+
+        const subregionName = document.createElement('td');
+        subregionName.innerHTML = volume.subregionName?.toString() ?? "Unknown";
+        volumeRow.appendChild(subregionName);
+
+        const state = document.createElement('td');
+        state.innerHTML = volume.state?.toString() ?? "Unknown";
+        volumeRow.appendChild(state);
+    }
+    return result;
+}
+
+function sizeOfAllVolumes(volumes: Array<osc.Volume>): number {
+    let total = 0;
+    for (const volume of volumes) {
+        if (volume.size === undefined) {
+            continue;
+        }
+        total += volume.size;
+    }
+    return total;
 }
