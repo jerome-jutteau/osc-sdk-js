@@ -164,28 +164,12 @@ export class AwsV4Signer {
             service: this.configuration.service,
             region: region,
         });
-        console.log("signing ...");
         const signResult = await signer.sign();
-
-        console.log("original url type of " + typeof url + ":");
-        console.log(url);
-        console.log("new url type of " + typeof signResult.url) + ":";
-        console.log(signResult.url);
-        console.log("original body type of " + typeof body + ":");
-        console.log(body);  
-        console.log("new body type of " + typeof signResult.body + ":");
-        console.log(signResult.body);
-
         // Convert Headers to HTTPHeaders
         let newHeaders: HTTPHeaders = {};
         for (const [key, value] of signResult.headers.entries()) {
             newHeaders[key] = value;
         }
-        console.log("original headers:");
-        console.log(headers);
-        console.log("new headers:");
-        console.log(newHeaders);
-
         return {url: signResult.url, headers: newHeaders};
     }
 }

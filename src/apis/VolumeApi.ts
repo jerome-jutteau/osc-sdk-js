@@ -279,12 +279,7 @@ export class VolumeApi extends runtime.BaseAPI implements VolumeApiInterface {
             headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
         }
 
-        console.log("requestParameters:");
-        console.log(requestParameters);
-        console.log("requestParameters.readVolumesRequest:");
-        console.log(requestParameters.readVolumesRequest);
         const body: any = ReadVolumesRequestToJSON(requestParameters.readVolumesRequest)
-
         const request: runtime.RequestOpts = {
             path: `/ReadVolumes`,
             method: 'POST',
@@ -294,7 +289,6 @@ export class VolumeApi extends runtime.BaseAPI implements VolumeApiInterface {
         };
 
         if (this.configuration && this.configuration.awsV4SignerParameters) {
-            console.log("setting up signature");
             const SignUrl = this.configuration.basePath + request.path;
             const SignBody = JSON.stringify(request.body);
             const signer = new runtime.AwsV4Signer(this.configuration.awsV4SignerParameters);
@@ -303,8 +297,6 @@ export class VolumeApi extends runtime.BaseAPI implements VolumeApiInterface {
             //request.method = method;
             request.headers = signResult.headers;
         }
-        console.log("making request");
-        console.log(request);
         const response = await this.request(request, initOverrides);
         return new runtime.JSONApiResponse(response, (jsonValue) => ReadVolumesResponseFromJSON(jsonValue));
     }
