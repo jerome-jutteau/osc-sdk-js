@@ -1,17 +1,8 @@
 import * as osc from "outscale-api";
+import { PermissionsOnResourceCreationFromJSON } from "outscale-api";
 
 export default function ShowVolumes() {
-    console.log("entering ShowVolumes");
-    let result = document.getElementById("result");
-    if (!result) {
-        console.error("Cannot getElementById(\"result\")");
-        return;
-    }
-    result.textContent = '';
-
-    const querying = document.createElement('p');
-    querying.innerHTML = "Quering Outscale API ...";
-    result.appendChild(querying);
+    printResult("Quering Outscale API ...");
 
     const accessKeyField = document.getElementById("accessKey") as HTMLInputElement;
     if (!accessKeyField) {
@@ -26,20 +17,33 @@ export default function ShowVolumes() {
         return;
     }
     const secretKey = secretKeyField.value;
-    if (accessKey.length == 0 || secretKey.length == 0 ) {
-        const error = document.createElement('p');
-        error.innerHTML = "Please set Access Key and Secret Key";
-        result.appendChild(error);
+
+    getVolumes(accessKey, secretKey).then(volumesResult => {
+        if (typeof volumesResult == "string") {
+            printResult(volumesResult);
+            return;
+        }
+        printResult(volumes2Html(volumesResult));
+    });
+}
+
+function printResult(content: string | HTMLDivElement) {
+    let result = document.getElementById("result");
+    if (!result) {
+        console.error("Cannot getElementById(\"result\")");
         return;
     }
-
-    if (accessKey.length != 20 || secretKey.length != 40 ) {
-        const error = document.createElement('p');
-        error.innerHTML = "Bad Access Key or Secret Key";
-        result.appendChild(error);
-        return;
+    result.textContent = '';
+    if (typeof content == "string") {
+        const querying = document.createElement('p');
+        querying.innerHTML = content;
+        result.appendChild(querying);
+    } else {
+        result.appendChild(content);
     }
+}
 
+ async function getVolumes(accessKey: string, secretKey: string): Promise<Array<osc.Volume> | string> {
     let config = new osc.Configuration({
         awsV4SignParameters: {
             accessKeyId: accessKey,
@@ -51,59 +55,23 @@ export default function ShowVolumes() {
         readVolumesRequest: {}
     };
 
-    let v = new osc.VolumeApi(config)
-    v.readVolumes(readParameters).catch((res: any) => {
-        console.log("entering catch");
-        console.log("catch res:");
-        console.log(res);
-        let result = document.getElementById("result");
-        if (result == null) {
-            return;
-        }
-        if (res.status == 401) {
-            const error = document.createElement('p');
-            error.innerHTML = "Error 401, bad credentials?";
-            result.appendChild(error);
-            return;
-        }
-        result.innerHTML = res.status;
+    let api = new osc.VolumeApi(config)
+    return api.readVolumes(readParameters).catch((res: any) => {
+        return "Error 401, bad credentials?";
     })
-    .then((res: osc.ReadVolumesResponse | void) => {
-        if (res === undefined) {
-            return;
+    .then((res: osc.ReadVolumesResponse | string) => {
+        if (typeof res == "string") {
+            return res;
         }
-        console.log("entering response");
-        let result = document.getElementById("result");
-        if (result == null) {
-            return;
-        }
-        let requestId = res.responseContext?.requestId;
-        if (requestId == undefined) {
-            console.log("No request ID");
-            return;
-        }
-        console.log("Request ID:" + requestId)
         if (res.volumes === undefined || res.volumes.length == 0) {
-            const error = document.createElement('p');
-            error.innerHTML = "Listing suceeded but it seems you have no volume";
-            result.appendChild(error);
-            return;
+            return "Listing suceeded but it seems you have no volume";
         }
-        result.textContent = '';
-        result.appendChild(volumes2Html(res.volumes));
+        return res.volumes;
     }, (err: any) => {
-        console.log("entering error after then");
-        console.error(err);
-        console.log(JSON.stringify(err));
-        let result = document.getElementById("result");
-        if (result == null) {
-            return;
-        }
-        const error = document.createElement('p');
-        error.innerHTML = "An error occured";
-        result.appendChild(error);
+        return "error: " + err.toString();
     });
 }
+
 
 function volumes2Html(volumes: Array<osc.Volume>): HTMLDivElement {
     const result = document.createElement('div');
