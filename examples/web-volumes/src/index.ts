@@ -1,5 +1,4 @@
 import * as osc from "outscale-api";
-import { PermissionsOnResourceCreationFromJSON } from "outscale-api";
 
 export default function ShowVolumes() {
     printResult("Quering Outscale API ...");
