@@ -13,7 +13,7 @@
  */
 
 import { resolveAliases } from "@digitak/grubber/library/utilities/resolveAliases";
-import * as aws4fetch from "aws4fetch";
+import { AwsV4Signer as AwsV4SignerLib }  from "aws4fetch";
 import { ReadVmTypesRequestFromJSON } from "./models";
 
 export const BASE_PATH = "https://api.eu-west-2.outscale.com/api/v1".replace(/\/+$/, "");
@@ -154,7 +154,7 @@ export interface AwsV4SignerParameters {
 export class AwsV4Signer {
     constructor(private configuration: AwsV4SignerParameters) {}
     async sign(method: string, url: string, headers: HTTPHeaders, body: any, region?: string): Promise<{url: URL, headers: HTTPHeaders}> {
-        const signer = new aws4fetch.AwsV4Signer({
+        const signer = new AwsV4SignerLib({
             method: method,
             url: url,
             headers: headers,
