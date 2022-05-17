@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>View My Virtual Machines</title>
+    <script src="index.bundle.js"></script>
+  </head>
+  <body>
+    <div>
+      <form action="javascript:ShowVms()">
+        <label>Credentials</label>
+        <input name="username" type="text" placeholder="Access Key" id="accessKey" required autocomplete="current-password"/>
+        <input name="password" type="password" placeholder="Secret Key" id="secretKey" required autocomplete="current-password"/>
+        <input type="submit" value="Show Virtual Machines" id="submit"/>
+      </form>
+    </div>
+    <div id="result">
+    </div>
+  </body>
+</html>
