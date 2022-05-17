@@ -127,6 +127,15 @@ export class RouteApi extends runtime.BaseAPI implements RouteApiInterface {
             query: queryParameters,
             body: body,
         }
+        if (this.configuration && this.configuration.awsV4SignerParameters) {
+            const SignUrl = this.configuration.basePath + request.path;
+            const SignBody = JSON.stringify(request.body);
+            const signer = new runtime.AwsV4Signer(this.configuration.awsV4SignerParameters);
+            const signResult = await signer.sign('POST', SignUrl, headerParameters, SignBody);
+            //request.url = signResult.url;
+            //request.method = signResult.method;
+            request.headers = signResult.headers;
+        }
         const response = await this.request(request, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => CreateRouteResponseFromJSON(jsonValue));
@@ -163,6 +172,15 @@ export class RouteApi extends runtime.BaseAPI implements RouteApiInterface {
             query: queryParameters,
             body: body,
         }
+        if (this.configuration && this.configuration.awsV4SignerParameters) {
+            const SignUrl = this.configuration.basePath + request.path;
+            const SignBody = JSON.stringify(request.body);
+            const signer = new runtime.AwsV4Signer(this.configuration.awsV4SignerParameters);
+            const signResult = await signer.sign('POST', SignUrl, headerParameters, SignBody);
+            //request.url = signResult.url;
+            //request.method = signResult.method;
+            request.headers = signResult.headers;
+        }
         const response = await this.request(request, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => DeleteRouteResponseFromJSON(jsonValue));
@@ -198,6 +216,15 @@ export class RouteApi extends runtime.BaseAPI implements RouteApiInterface {
             headers: headerParameters,
             query: queryParameters,
             body: body,
+        }
+        if (this.configuration && this.configuration.awsV4SignerParameters) {
+            const SignUrl = this.configuration.basePath + request.path;
+            const SignBody = JSON.stringify(request.body);
+            const signer = new runtime.AwsV4Signer(this.configuration.awsV4SignerParameters);
+            const signResult = await signer.sign('POST', SignUrl, headerParameters, SignBody);
+            //request.url = signResult.url;
+            //request.method = signResult.method;
+            request.headers = signResult.headers;
         }
         const response = await this.request(request, initOverrides);
 

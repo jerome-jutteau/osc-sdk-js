@@ -6,4 +6,4 @@ typescriptThreePlus: true
 #packageName: outscale-api
 #gitUserId: outscale
 #gitRepoId: osc-sdk-go/v2
-#withAWSV4Signature: true
+withAWSV4Signature: true

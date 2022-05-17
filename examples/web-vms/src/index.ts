@@ -1,4 +1,5 @@
 import * as osc from "outscale-api";
+import { ErrorResponse, Errors } from "outscale-api";
 
 export default function ShowVms() {
     printResult("Quering Outscale API ...");
@@ -55,8 +56,24 @@ function printResult(content: string | HTMLDivElement) {
     };
 
     let api = new osc.VmApi(config)
-    return api.readVms(readParameters).catch((res: any) => {
-        return "Error 401, bad credentials?";
+    return api.readVms(readParameters).catch((rejected: any) => {
+        let resp: Response | undefined = rejected;
+        if (resp == undefined) {
+            return "Error: " + rejected.toString();
+        }
+        let errorResp: ErrorResponse | undefined = rejected.Errors;
+        if (errorResp == undefined) {
+            return "Error";
+        }
+        let errors: Errors[] | undefined = errorResp.errors;
+        if (errors == undefined) {
+            return "Errors not available";
+        }
+        let ret = "";
+        for (const error of errors) {
+            ret += error.type + ": " + error.details + ". ";
+        }
+        return ret;
     })
     .then((res: osc.ReadVmsResponse | string) => {
         if (typeof res == "string") {
