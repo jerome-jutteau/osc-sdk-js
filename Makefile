@@ -2,7 +2,7 @@ API_VERSION=$(shell cat api_version)
 SDK_VERSION=$(shell cat sdk_version)
 USER_ID=$(shell id -u)
 GROUP_ID=$(shell id -g)
-OPENAPI_IMG=openapitools/openapi-generator-cli:v5.4.0
+OPENAPI_IMG=openapitools/openapi-generator-cli:ts-fetch-aws-v4
 
 all: help
 
@@ -28,7 +28,6 @@ osc-generate: osc-api/outscale.yaml
 	#docker run -v $(PWD):/sdk --rm $(OPENAPI_IMG) sed -i "s/ *UserAgent:.*/                UserAgent:     \"osc-sdk-go\/$(SDK_VERSION)\",/" /sdk/.sdk/configuration.go
 	docker run -v $(PWD):/sdk --rm $(OPENAPI_IMG) chown -R $(USER_ID).$(GROUP_ID) /sdk/.sdk
 	mv .sdk/src ./
-	#rm -rf .sdk
 	npm run build
 
 osc-api/outscale.yaml:
