@@ -1,6 +1,8 @@
-# Outscale SDK for Javascript and Typescript
+# Outscale SDK for TypeScript/JavaScript
 
-Welcome to Outscale SDK for [javascript](https://en.wikipedia.org/wiki/JavaScript)/[typescript](https://www.typescriptlang.org/).
+Welcome to Outscale SDK for [typescript](https://www.typescriptlang.org/)/[javascript](https://en.wikipedia.org/wiki/JavaScript).
+
+This SDK provides a TypeScript/JavaScript client that utilizes [Fetch API](https://fetch.spec.whatwg.org/). 
 
 ## How to use the SDK ?
 
@@ -25,56 +27,3 @@ Check [contributing documentation](CONTRIBUTING.md).
 > BSD-3-Clause
 
 This project is compliant with [REUSE](https://reuse.software/).
-
-
-
-
-
-
-# outscale-api@0.1.0
-
-This generator creates TypeScript/JavaScript client that utilizes [Fetch API](https://fetch.spec.whatwg.org/). The generated Node module can be
- used in the following environments:
-
-Environment
-* Node.js
-* Webpack
-* Browserify
-
-Language level
-* ES5 - you must have a Promises/A+ library installed
-* ES6
-
-Module system
-* CommonJS
-* ES6 module system
-
-It can be used in both TypeScript and JavaScript. In TypeScript, the definition should be automatically resolved via `package.json`. ([Referenc
-e](http://www.typescriptlang.org/docs/handbook/typings-for-npm-packages.html))
-
-### Building
-
-To build and compile the typescript sources to javascript use:
-```
-npm install
-npm run build
-```
-
-### Publishing
-
-First build the package then run ```npm publish```
-
-### Consuming
-
-navigate to the folder of your consuming project and run one of the following commands.
-
-_published:_
-
-```
-npm install outscale-api@0.1.0 --save
-```
-
-_unPublished (not recommended):_
-
-```
-npm install PATH_TO_GENERATED_PACKAGE --save
