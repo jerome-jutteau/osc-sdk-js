@@ -65,24 +65,7 @@ function printResult(content: string | HTMLDivElement) {
     };
 
     let api = new osc.VmApi(config)
-    return api.readVms(readParameters).catch((rejected: osc.ErrorResponse | undefined) => {
-        if (rejected == undefined) {
-            return "Error";
-        }
-        if (rejected.responseContext == undefined) {
-            return "No response context";
-        }
-
-        let errors: Errors[] | undefined = rejected.errors;
-        if (errors == undefined) {
-            return "Errors not available";
-        }
-        let ret = "";
-        for (const error of errors) {
-            ret += error.type + ": " + error.details + ". ";
-        }
-        return ret;
-    })
+    return api.readVms(readParameters)
     .then((res: osc.ReadVmsResponse | string) => {
         if (typeof res == "string") {
             return res;
@@ -92,7 +75,16 @@ function printResult(content: string | HTMLDivElement) {
         }
         return res.vms;
     }, (err: any) => {
-        return "error: " + err.toString();
+        let errResp: ErrorResponse = err;
+        let errors: Errors[] | undefined = errResp.errors;
+        if (errors == undefined) {
+            return "Errors not available";
+        }
+        let ret = "";
+        for (const error of errors) {
+            ret += error.type + ": " + error.details + ". ";
+        }
+        return ret;
     });
 }
 
