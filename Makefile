@@ -52,7 +52,7 @@ examples-test:
 # try to regen, should not have any difference
 .PHONY: regen-test
 regen-test: gen
-	git add src
+	git add src dist
 	git diff --cached -s --exit-code
 	git diff -s --exit-code
 
