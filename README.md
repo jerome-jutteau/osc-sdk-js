@@ -1,31 +1,15 @@
+# Outscale SDK for Javascript and Typescript
 
-# THIS
-# IS
-# WORK
-# IN
-# PROGRESS
-
-
-
-
-
-https://openapi-generator.tech/docs/generators/typescript-fetch/
-
-best thread: https://github.com/microsoft/TypeScript/issues/13422
-https://github.com/digital-loukoum/tsc-esm
-
-
-# Outscale SDK for Javascript
-
-Welcome to Outscale SDK for [javascript](XXX)/[typescript](XXX).
+Welcome to Outscale SDK for [javascript](https://en.wikipedia.org/wiki/JavaScript)/[typescript](https://www.typescriptlang.org/).
 
 ## How to use the SDK ?
 
-XXX
-Simply grab go module:
-```bash
-$ export GO111MODULE=on
-$ go get github.com/outscale/osc-sdk-go/v2
+Add `outscale-api` to your `package.json`:
+
+```
+  "dependencies": {
+    "outscale-api": "github:outscale/osc-sdk-js",
+  }
 ```
 
 See [examples](examples/) folder to jump straight into the code!
@@ -94,4 +78,3 @@ _unPublished (not recommended):_
 
 ```
 npm install PATH_TO_GENERATED_PACKAGE --save
-

@@ -2,7 +2,7 @@ API_VERSION=$(shell cat api_version)
 SDK_VERSION=$(shell cat sdk_version)
 USER_ID=$(shell id -u)
 GROUP_ID=$(shell id -g)
-OPENAPI_IMG=openapitools/openapi-generator-cli:ts-fetch-aws-v4
+OPENAPI_IMG=outscale/openapi-generator:ts-fetch-aws-v4
 
 all: help
 

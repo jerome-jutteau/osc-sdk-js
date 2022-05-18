@@ -22,7 +22,7 @@
     "registry": "https://github.com/outscale/osc-sdk-js"
   },
   "dependencies": {
-    "aws4fetch": "github:jerome-jutteau/aws4fetch",
+    "aws4fetch": "github:outscale-dev/aws4fetch",
     "@digitak/tsc-esm": "^3.1.2"
   }
 }
