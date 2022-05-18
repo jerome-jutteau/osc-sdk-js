@@ -74,17 +74,8 @@ function printResult(content: string | HTMLDivElement) {
             return "Listing suceeded but it seems you have no vm";
         }
         return res.vms;
-    }, (err: any) => {
-        let errResp: ErrorResponse = err;
-        let errors: Errors[] | undefined = errResp.errors;
-        if (errors == undefined) {
-            return "Errors not available";
-        }
-        let ret = "";
-        for (const error of errors) {
-            ret += error.type + ": " + error.details + ". ";
-        }
-        return ret;
+    }, (err_: any) => {
+        return "Error, bad credential or region?";
     });
 }
 
