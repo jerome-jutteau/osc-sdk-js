@@ -48,6 +48,7 @@ function printResult(content: string | HTMLDivElement) {
             accessKeyId: accessKey,
             secretAccessKey: secretKey,
             service: "api",
+            region: "eu-west-2"
         }
     });
     let readParameters : osc.ReadVolumesOperationRequest = {

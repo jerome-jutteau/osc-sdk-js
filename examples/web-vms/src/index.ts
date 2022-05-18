@@ -49,6 +49,7 @@ function printResult(content: string | HTMLDivElement) {
             accessKeyId: accessKey,
             secretAccessKey: secretKey,
             service: "api",
+            region: "eu-west-2",
         }
     });
     let readParameters : osc.ReadVmsOperationRequest = {
@@ -63,7 +64,7 @@ function printResult(content: string | HTMLDivElement) {
         }
         let errorResp: ErrorResponse | undefined = rejected.Errors;
         if (errorResp == undefined) {
-            return "Error";
+            return "Internal server error";
         }
         let errors: Errors[] | undefined = errorResp.errors;
         if (errors == undefined) {
@@ -92,7 +93,7 @@ function vms2Html(vms: Array<osc.Vm>): HTMLDivElement {
     const result = document.createElement('div');
 
     const intro = document.createElement('p');
-    intro.innerHTML = "You have "+ vms.length + ":";
+    intro.innerHTML = "You have "+ vms.length + " Virtual Machines:";
     result.appendChild(intro);
 
     const table = document.createElement('table');
