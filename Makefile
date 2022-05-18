@@ -47,7 +47,7 @@ reuse-test:
 
 .PHONY: examples-test
 examples-test:
-	cd examples/web-vms && npm run build
+	cd examples/web-vms && npm install --local && npm run build
 
 # try to regen, should not have any difference
 .PHONY: regen-test
