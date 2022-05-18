@@ -37,7 +37,7 @@ clean:
 	rm -rf .sdk osc-api src node_modules dist || true
 
 .PHONY: test
-test: reuse-test examples-test
+test: reuse-test examples-test regen-test
 	@echo all tests OK
 
 .PHONY: reuse-test
