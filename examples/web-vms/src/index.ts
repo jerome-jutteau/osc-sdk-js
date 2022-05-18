@@ -18,7 +18,14 @@ export default function ShowVms() {
     }
     const secretKey = secretKeyField.value;
 
-    getVms(accessKey, secretKey).then(vmsResult => {
+    const regionField = document.getElementById("region") as HTMLInputElement;;
+    if (!regionField) {
+        console.error("Cannot getElementById(\"region\")");
+        return;
+    }
+    const region = regionField.value;
+
+    getVms(accessKey, secretKey, region).then(vmsResult => {
         if (typeof vmsResult == "string") {
             printResult(vmsResult);
             return;
@@ -43,13 +50,14 @@ function printResult(content: string | HTMLDivElement) {
     }
 }
 
- async function getVms(accessKey: string, secretKey: string): Promise<Array<osc.Vm> | string> {
+ async function getVms(accessKey: string, secretKey: string, region: string): Promise<Array<osc.Vm> | string> {
     let config = new osc.Configuration({
+        basePath: "https://api." + region + ".outscale.com/api/v1",
         awsV4SignParameters: {
             accessKeyId: accessKey,
             secretAccessKey: secretKey,
             service: "api",
-            region: "eu-west-2",
+            region: region,
         }
     });
     let readParameters : osc.ReadVmsOperationRequest = {
@@ -57,16 +65,15 @@ function printResult(content: string | HTMLDivElement) {
     };
 
     let api = new osc.VmApi(config)
-    return api.readVms(readParameters).catch((rejected: any) => {
-        let resp: Response | undefined = rejected;
-        if (resp == undefined) {
-            return "Error: " + rejected.toString();
+    return api.readVms(readParameters).catch((rejected: osc.ErrorResponse | undefined) => {
+        if (rejected == undefined) {
+            return "Error";
         }
-        let errorResp: ErrorResponse | undefined = rejected.Errors;
-        if (errorResp == undefined) {
-            return "Internal server error";
+        if (rejected.responseContext == undefined) {
+            return "No response context";
         }
-        let errors: Errors[] | undefined = errorResp.errors;
+
+        let errors: Errors[] | undefined = rejected.errors;
         if (errors == undefined) {
             return "Errors not available";
         }
