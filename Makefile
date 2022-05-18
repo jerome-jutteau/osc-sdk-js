@@ -27,6 +27,7 @@ osc-generate: osc-api/outscale.yaml
 	# Set default user agent including sdk version using reproductible sed.
 	docker run -v $(PWD):/sdk --rm $(OPENAPI_IMG) chown -R $(USER_ID).$(GROUP_ID) /sdk/.sdk
 	mv .sdk/src ./
+	npm install --local
 	npm run build
 
 osc-api/outscale.yaml:
