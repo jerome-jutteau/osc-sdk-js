@@ -25,7 +25,6 @@ osc-generate: osc-api/outscale.yaml
 	mkdir .sdk
 	docker run -v $(PWD):/sdk --rm $(OPENAPI_IMG) generate -i /sdk/osc-api/outscale.yaml -g typescript-fetch -c /sdk/gen.yml -o /sdk/.sdk --additional-properties=npmVersion=$(SDK_VERSION)
 	# Set default user agent including sdk version using reproductible sed.
-	#docker run -v $(PWD):/sdk --rm $(OPENAPI_IMG) sed -i "s/ *UserAgent:.*/                UserAgent:     \"osc-sdk-go\/$(SDK_VERSION)\",/" /sdk/.sdk/configuration.go
 	docker run -v $(PWD):/sdk --rm $(OPENAPI_IMG) chown -R $(USER_ID).$(GROUP_ID) /sdk/.sdk
 	mv .sdk/src ./
 	npm run build
@@ -46,12 +45,13 @@ reuse-test:
 	docker run --rm --volume $(PWD):/data fsfe/reuse:0.11.1 lint
 
 .PHONY: examples-test
-	echo TODO && false
+examples-test:
+	cd examples/web-vms && npm run build
 
 # try to regen, should not have any difference
 .PHONY: regen-test
 regen-test: gen
-	git add src
+	git add src dist
 	git diff --cached -s --exit-code
 	git diff -s --exit-code
 
